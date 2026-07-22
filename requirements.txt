@@ -1,0 +1,19 @@
+# Alpha 阿爾法投資 - 資料處理與數據分析套件需求
+# Data Processing & Stock Analysis Dependencies
+
+# 核心數據處理套件 (Core Data Processing)
+pandas>=2.0.0
+numpy>=1.24.0
+
+# HTTP 請求與數據爬取 (HTTP Requests & Data Scraping)
+requests>=2.30.0
+beautifulsoup4>=4.12.0
+
+# 日期與時間處理 (Date & Time Utilities)
+python-dateutil>=2.8.2
+
+# Excel / CSV 數據導出支援 (Excel Export Support)
+openpyxl>=3.1.0
+
+# 數據視覺化與 Web Dashboard (Data Visualization / Web App - Optional)
+streamlit>=1.30.0

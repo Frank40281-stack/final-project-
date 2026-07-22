@@ -1,0 +1,103 @@
+﻿產業編號,產業大類,股票代號,公司名稱,受惠股,受惠分類,判定依據,主要證據文件,查核截止日
+1,國防／太空／情報,2634,漢翔,有（紅色）,直接受惠（個股關係已確認）,為 Lockheed Martin F-16 計畫具名合作／供應鏈公司,AIDC－Lockheed Martin F-16 合作與供應鏈公告,2026-07-16
+1,國防／太空／情報,2645,長榮航太,有（紅色）,間接受惠（產業帶動）,與 GE Aerospace 具長期合資及維修合作，但未確認軍用政策訂單,長榮航太／GE Evergreen Engine Services 公司資料,2026-07-16
+1,國防／太空／情報,3004,豐達科,有（紅色）,直接受惠（個股關係已確認）,取得 GE Aerospace 供應商獎項並供應航太扣件,豐達科－GE Aerospace Supplier Partner Award 公告,2026-07-16
+1,國防／太空／情報,4541,晟田,有（紅色）,直接受惠（個股關係已確認）,具 GE Aviation 特殊製程認證及量產實績,晟田科技年度報告－GE Aviation 認證與量產實績,2026-07-16
+1,國防／太空／情報,4572,駐龍,有（紅色）,直接受惠（個股關係已確認）,具名供應 Spirit AeroSystems、Safran 等美國受惠航太主承包商,駐龍公司簡報／年度報告－主要航太客戶,2026-07-16
+1,國防／太空／情報,5371,中光電,有（紅色）,間接受惠（產業帶動）,公司無人機產品明確布局美國 Non-DJI 市場，但未確認具名聯邦訂單,中光電年度永續報告－美國 Non-DJI 市場布局,2026-07-16
+1,國防／太空／情報,6928,攸泰科技,有（紅色）,直接受惠（個股關係已確認）,AeroVironment 已具名與攸泰共同開發無人系統控制器,AeroVironment－Ubiqconn Common Controller MOU,2026-07-16
+1,國防／太空／情報,8222,寶一,有（紅色）,直接受惠（個股關係已確認）,具名供應 Pratt & Whitney、GE Avio 等航太引擎客戶,寶一科技年度報告－主要航太客戶,2026-07-16
+2,AI／資料中心／電力基建,1503,士電,有（紅色）,間接受惠（產業帶動）,公司明確供應北美電網與工業用變壓器，但未確認政策專案訂單,Shihlin Electric North America Transformer Company Profile,2026-07-16
+2,AI／資料中心／電力基建,1519,華城,有（紅色）,直接受惠（個股關係已確認）,公司文件確認美國AIDC／電網變壓器需求及出貨,華城2025年法人說明會－AIDC與美國變壓器案例,2026-07-16
+2,AI／資料中心／電力基建,2059,川湖,有（紅色）,間接受惠（產業帶動）,公司產品用於AI伺服器滑軌，受資料中心建置需求帶動,川湖年度報告／法人說明會－AI伺服器產品,2026-07-16
+2,AI／資料中心／電力基建,2301,光寶科,有（紅色）,直接受惠（個股關係已確認）,NVIDIA具名AI工廠電源元件合作夥伴,NVIDIA Computer Industry AI Factories Partner Announcement,2026-07-16
+2,AI／資料中心／電力基建,2308,台達電,有（紅色）,直接受惠（個股關係已確認）,NVIDIA具名AI工廠電源與散熱合作夥伴,NVIDIA Computer Industry AI Factories Partner Announcement,2026-07-16
+2,AI／資料中心／電力基建,2317,鴻海,有（紅色）,直接受惠（個股關係已確認）,NVIDIA具名AI伺服器／AI工廠系統夥伴,NVIDIA RTX PRO Server Partner Announcement,2026-07-16
+2,AI／資料中心／電力基建,2324,仁寶,有（紅色）,直接受惠（個股關係已確認）,NVIDIA具名RTX PRO伺服器系統夥伴,NVIDIA RTX PRO Server Partner Announcement,2026-07-16
+2,AI／資料中心／電力基建,2330,台積電,有（紅色）,直接受惠（個股關係已確認）,NVIDIA具名晶片製造夥伴，且TSMC Arizona取得CHIPS直接補助,NVIDIA Taiwan Ecosystem Announcement；NIST TSMC Arizona CHIPS Award,2026-07-16
+2,AI／資料中心／電力基建,2345,智邦,有（紅色）,間接受惠（產業帶動）,公司高速交換器產品屬AI資料中心網路設備,智邦年度報告／法人說明會－AI資料中心交換器,2026-07-16
+2,AI／資料中心／電力基建,2353,宏碁,有（紅色）,直接受惠（個股關係已確認）,產品列入NVIDIA-Certified Systems名錄,NVIDIA-Certified Systems Catalog,2026-07-16
+2,AI／資料中心／電力基建,2356,英業達,有（紅色）,直接受惠（個股關係已確認）,NVIDIA具名RTX PRO伺服器系統夥伴,NVIDIA RTX PRO Server Partner Announcement,2026-07-16
+2,AI／資料中心／電力基建,2357,華碩,有（紅色）,直接受惠（個股關係已確認）,NVIDIA具名RTX PRO伺服器系統夥伴,NVIDIA RTX PRO Server Partner Announcement,2026-07-16
+2,AI／資料中心／電力基建,2371,大同,有（紅色）,直接受惠（個股關係已確認）,公司公告2025年已取得美國變壓器客戶訂單並啟動美國在地投資,大同－美國大計畫正式公告,2026-07-16
+2,AI／資料中心／電力基建,2376,技嘉,有（紅色）,直接受惠（個股關係已確認）,NVIDIA具名RTX PRO伺服器系統夥伴,NVIDIA RTX PRO Server Partner Announcement,2026-07-16
+2,AI／資料中心／電力基建,2377,微星,有（紅色）,直接受惠（個股關係已確認）,NVIDIA具名RTX PRO伺服器系統夥伴,NVIDIA RTX PRO Server Partner Announcement,2026-07-16
+2,AI／資料中心／電力基建,2382,廣達,有（紅色）,直接受惠（個股關係已確認）,旗下QCT為NVIDIA具名RTX PRO伺服器系統夥伴,NVIDIA RTX PRO Server Partner Announcement,2026-07-16
+2,AI／資料中心／電力基建,2395,研華,有（紅色）,直接受惠（個股關係已確認）,NVIDIA具名RTX PRO伺服器／邊緣AI系統夥伴,NVIDIA RTX PRO Server Partner Announcement,2026-07-16
+2,AI／資料中心／電力基建,2421,建準,有（紅色）,間接受惠（產業帶動）,公司散熱產品明確用於伺服器與資料中心,建準年度報告－伺服器散熱應用,2026-07-16
+2,AI／資料中心／電力基建,2449,京元電子,有（紅色）,直接受惠（個股關係已確認）,NVIDIA具名台灣AI晶片測試生態系夥伴,NVIDIA Taiwan AI Infrastructure Ecosystem Announcement,2026-07-16
+2,AI／資料中心／電力基建,2454,聯發科,有（紅色）,直接受惠（個股關係已確認）,與NVIDIA共同設計GB10 Grace Blackwell Superchip,NVIDIA Grace Blackwell on Every Desk Announcement,2026-07-16
+2,AI／資料中心／電力基建,3013,晟銘電,有（紅色）,間接受惠（產業帶動）,公司機殼產品明確用於AI伺服器,晟銘電年度報告／法人說明會－AI伺服器機殼,2026-07-16
+2,AI／資料中心／電力基建,3017,奇鋐,有（紅色）,直接受惠（個股關係已確認）,NVIDIA具名AI工廠散熱元件合作夥伴,NVIDIA Computer Industry AI Factories Partner Announcement,2026-07-16
+2,AI／資料中心／電力基建,3037,欣興,有（紅色）,直接受惠（個股關係已確認）,NVIDIA具名台灣AI晶片載板／PCB生態系夥伴,NVIDIA Taiwan AI Infrastructure Ecosystem Announcement,2026-07-16
+2,AI／資料中心／電力基建,3189,景碩,有（紅色）,直接受惠（個股關係已確認）,NVIDIA具名台灣AI晶片載板生態系夥伴,NVIDIA Taiwan AI Infrastructure Ecosystem Announcement,2026-07-16
+2,AI／資料中心／電力基建,3231,緯創,有（紅色）,直接受惠（個股關係已確認）,NVIDIA具名RTX PRO伺服器系統夥伴,NVIDIA RTX PRO Server Partner Announcement,2026-07-16
+2,AI／資料中心／電力基建,3324,雙鴻,有（紅色）,間接受惠（產業帶動）,公司液冷與散熱產品明確用於AI伺服器,雙鴻年度報告／法人說明會－AI液冷產品,2026-07-16
+2,AI／資料中心／電力基建,3515,華擎,有（紅色）,直接受惠（個股關係已確認）,旗下ASRock Rack為NVIDIA具名RTX PRO伺服器夥伴,NVIDIA RTX PRO Server Partner Announcement,2026-07-16
+2,AI／資料中心／電力基建,3533,嘉澤,有（紅色）,間接受惠（產業帶動）,公司高速連接器產品用於伺服器平台,嘉澤年度報告－伺服器連接器,2026-07-16
+2,AI／資料中心／電力基建,3653,健策,有（紅色）,間接受惠（產業帶動）,公司均熱片等產品用於高功耗AI晶片散熱,健策年度報告／法人說明會－AI散熱產品,2026-07-16
+2,AI／資料中心／電力基建,3665,貿聯-KY,有（紅色）,間接受惠（產業帶動）,公司AI伺服器電力與高速互連產品受資料中心資本支出帶動,BizLink年度報告／法人說明會－AI Data Center產品,2026-07-16
+2,AI／資料中心／電力基建,3706,神達,有（紅色）,直接受惠（個股關係已確認）,旗下MiTAC Computing為NVIDIA具名RTX PRO伺服器夥伴,NVIDIA RTX PRO Server Partner Announcement,2026-07-16
+2,AI／資料中心／電力基建,3711,日月光投控,有（紅色）,直接受惠（個股關係已確認）,NVIDIA具名台灣AI晶片封裝生態系夥伴,NVIDIA Taiwan AI Infrastructure Ecosystem Announcement,2026-07-16
+2,AI／資料中心／電力基建,4938,和碩,有（紅色）,直接受惠（個股關係已確認）,NVIDIA具名RTX PRO伺服器夥伴，並建置美國德州伺服器產能,NVIDIA RTX PRO Server Partner Announcement；和碩德州工廠公司說明,2026-07-16
+2,AI／資料中心／電力基建,5289,宜鼎,有（紅色）,直接受惠（個股關係已確認）,旗下Aetina為NVIDIA具名AI系統夥伴,NVIDIA RTX PRO Server Partner Announcement；宜鼎法人簡報,2026-07-16
+2,AI／資料中心／電力基建,6245,立端,有（紅色）,直接受惠（個股關係已確認）,具NVIDIA認證之邊緣AI／GPU系統產品,Lanner NVIDIA GPU Solutions Product Documentation,2026-07-16
+2,AI／資料中心／電力基建,6669,緯穎,有（紅色）,直接受惠（個股關係已確認）,NVIDIA具名RTX PRO伺服器系統夥伴,NVIDIA RTX PRO Server Partner Announcement,2026-07-16
+2,AI／資料中心／電力基建,8210,勤誠,有（紅色）,間接受惠（產業帶動）,公司伺服器機殼產品受AI資料中心需求帶動,勤誠年度報告／法人說明會－AI伺服器機殼,2026-07-16
+3,半導體／美國製造／AI晶片,2303,聯電,有（紅色）,直接受惠（個股關係已確認）,與Intel合作在美國亞利桑那州開發及製造12奈米製程,Intel－UMC 12nm Foundry Collaboration Announcement,2026-07-16
+3,半導體／美國製造／AI晶片,2330,台積電,有（紅色）,直接受惠（個股關係已確認）,TSMC Arizona取得美國商務部最高66億美元CHIPS直接補助,NIST－TSMC Arizona CHIPS Award,2026-07-16
+3,半導體／美國製造／AI晶片,2404,漢唐,有（紅色）,直接受惠（個股關係已確認）,美國子公司參與TSMC Arizona Fab 21廠務工程,United Integrated Services USA－TSMC Fab 21 Project Profile,2026-07-16
+3,半導體／美國製造／AI晶片,2449,京元電子,有（紅色）,直接受惠（個股關係已確認）,NVIDIA具名AI晶片測試生態系夥伴,NVIDIA Taiwan AI Infrastructure Ecosystem Announcement,2026-07-16
+3,半導體／美國製造／AI晶片,2454,聯發科,有（紅色）,直接受惠（個股關係已確認）,與NVIDIA共同設計GB10晶片,NVIDIA Grace Blackwell on Every Desk Announcement,2026-07-16
+3,半導體／美國製造／AI晶片,3037,欣興,有（紅色）,直接受惠（個股關係已確認）,NVIDIA具名AI晶片載板／PCB生態系夥伴,NVIDIA Taiwan AI Infrastructure Ecosystem Announcement,2026-07-16
+3,半導體／美國製造／AI晶片,3189,景碩,有（紅色）,直接受惠（個股關係已確認）,NVIDIA具名AI晶片載板生態系夥伴,NVIDIA Taiwan AI Infrastructure Ecosystem Announcement,2026-07-16
+3,半導體／美國製造／AI晶片,3711,日月光投控,有（紅色）,直接受惠（個股關係已確認）,NVIDIA具名AI晶片封裝生態系夥伴,NVIDIA Taiwan AI Infrastructure Ecosystem Announcement,2026-07-16
+3,半導體／美國製造／AI晶片,6139,亞翔,有（紅色）,間接受惠（產業帶動）,具半導體廠務工程與海外據點，但未確認美國政策專案金額,亞翔年度報告－海外半導體廠務工程,2026-07-16
+3,半導體／美國製造／AI晶片,6196,帆宣,有（紅色）,間接受惠（產業帶動）,具美國子公司及半導體廠務服務能力，但未確認具名政策訂單,帆宣年度報告－美國子公司與半導體廠務業務,2026-07-16
+3,半導體／美國製造／AI晶片,6488,環球晶,有（紅色）,直接受惠（個股關係已確認）,美國子公司取得美國商務部最高4.06億美元CHIPS直接補助,NIST－GlobalWafers Texas CHIPS Award,2026-07-16
+4,關鍵礦物／國安材料,5227,立凱-KY,有（紅色）,直接受惠（個股關係已確認）,LFP技術授權給取得美國能源部1.973億美元補助的ICL美國正極材料廠,DOE BIL Battery FOA-2678 ICL Selectee Fact Sheet；Aleees－ICL License and Service Agreement,2026-07-16
+5,核能／鈾／先進電力,,未確認符合傳導條件的台股,沒有（灰色）,未確認政策曝險,截至查核日未找到台灣上市公司與美國鈾、HALEU、SMR或聯邦反應爐計畫的合格公司層級證據,美國能源部先進反應爐與核燃料計畫；台股公司公開文件查核,2026-07-16
+6,量子科技,2317,鴻海,有（紅色）,直接受惠（個股關係已確認）,鴻海研究院共同開發的SNOVA後量子簽章演算法進入美國NIST標準化第三輪,Hon Hai Research Institute－SNOVA Advances to NIST Final Round,2026-07-16
+7,傳統能源／LNG,9933,中鼎,有（紅色）,直接受惠（個股關係已確認）,承作台灣LNG接收站工程，並與Cheniere－台灣中油長約形成具名LNG供應鏈傳導,Cheniere－CPC Long-Term LNG SPA；CTCI－CPC LNG Terminal Project,2026-07-16
+8,傳統能源／油氣,,未確認符合傳導條件的台股,沒有（灰色）,未確認政策曝險,一般美國增產或油價題材不足以證明特定台股受惠,美國油氣政策文件；台股公司公開文件查核,2026-07-16
+9,煤炭／冶金煤,,未確認符合傳導條件的台股,沒有（灰色）,未確認政策曝險,未找到台灣上市公司與美國煤炭擴產、租約或出口政策的公司層級傳導證據,美國煤炭政策文件；台股公司公開文件查核,2026-07-16
+10,EV／電池／回收,1536,和大,有（紅色）,直接受惠（個股關係已確認）,具名供應Tesla、Ford、GM，並於美國設廠,Reuters－Hota U.S. Factory and Tesla／Ford／GM Supply Chain,2026-07-16
+10,EV／電池／回收,2308,台達電,有（紅色）,直接受惠（個股關係已確認）,與GM具名合作電動車電力電子與充電技術,Delta－General Motors Collaboration Announcement,2026-07-16
+10,EV／電池／回收,2317,鴻海,有（紅色）,直接受惠（個股關係已確認）,與Stellantis成立SiliconAuto並合作車用半導體／電動車平台,Foxconn－Stellantis Strategic Collaboration Announcement,2026-07-16
+10,EV／電池／回收,2330,台積電,有（紅色）,直接受惠（個股關係已確認）,具名承接Tesla AI／車用晶片製造需求,Tesla AI Chip Manufacturing Supply-Chain Disclosure,2026-07-16
+10,EV／電池／回收,3665,貿聯-KY,有（紅色）,直接受惠（個股關係已確認）,具名位於Tesla電池管理與高壓線束供應鏈,BizLink年度報告／法說會－EV High-Voltage Interconnect Business,2026-07-16
+10,EV／電池／回收,4938,和碩,有（紅色）,直接受惠（個股關係已確認）,美國德州工廠服務Tesla等美國客戶並生產伺服器／電子產品,Reuters－Pegatron Texas Factory and U.S. Customer Supply Chain,2026-07-16
+10,EV／電池／回收,5227,立凱-KY,有（紅色）,直接受惠（個股關係已確認）,LFP技術授權給DOE補助的ICL美國正極材料廠,DOE ICL Battery Materials Award；Aleees－ICL License Agreement,2026-07-16
+11,汽車／零組件／製造回流,1536,和大,有（紅色）,直接受惠（個股關係已確認）,具名供應Tesla、Ford、GM並建立美國產能,Reuters－Hota U.S. Factory and Automaker Supply Chain,2026-07-16
+11,汽車／零組件／製造回流,2308,台達電,有（紅色）,直接受惠（個股關係已確認）,與GM具名合作車用電力電子技術,Delta－General Motors Collaboration Announcement,2026-07-16
+11,汽車／零組件／製造回流,2317,鴻海,有（紅色）,直接受惠（個股關係已確認）,與Stellantis具名合作車用半導體與電動車平台,Foxconn－Stellantis Strategic Collaboration Announcement,2026-07-16
+11,汽車／零組件／製造回流,2330,台積電,有（紅色）,直接受惠（個股關係已確認）,具名承接Tesla車用／AI晶片製造需求,Tesla AI Chip Manufacturing Supply-Chain Disclosure,2026-07-16
+11,汽車／零組件／製造回流,3665,貿聯-KY,有（紅色）,直接受惠（個股關係已確認）,具名位於Tesla車用線束供應鏈,BizLink年度報告／法人說明會－Automotive Business,2026-07-16
+11,汽車／零組件／製造回流,4938,和碩,有（紅色）,直接受惠（個股關係已確認）,美國德州工廠服務Tesla等美國客戶,Reuters－Pegatron Texas Factory and U.S. Customer Supply Chain,2026-07-16
+12,製藥／製造回流,1795,美時,有（紅色）,間接受惠（產業帶動）,完成收購Alvogen美國公司及其美國製造產能，但未確認聯邦補助或豁免,Alvogen Completes Sale to Lotus Announcement,2026-07-16
+12,製藥／製造回流,6472,保瑞,有（紅色）,間接受惠（產業帶動）,公司於美國Minnesota及Maryland擁有製造據點並於2025年宣布擴產,Bora Pharmaceuticals U.S. Manufacturing Expansion Announcement,2026-07-16
+12,製藥／製造回流,6541,泰福-KY,有（紅色）,間接受惠（產業帶動）,公司於美國San Diego具生物藥開發與製造設施,Tanvex Sustainability／Investor Report－San Diego Facility,2026-07-16
+13,無人機／反無人機,5371,中光電,有（紅色）,間接受惠（產業帶動）,公司無人機產品明確布局美國Non-DJI市場，但未確認聯邦採購合約,中光電年度永續報告－美國Non-DJI市場布局,2026-07-16
+13,無人機／反無人機,6928,攸泰科技,有（紅色）,直接受惠（個股關係已確認）,AeroVironment已具名與攸泰共同開發可支援無人系統的通用控制器,AeroVironment－Ubiqconn Common Controller MOU,2026-07-16
+14,邊境安全／拘留設施,,未確認符合傳導條件的台股,沒有（灰色）,未確認政策曝險,未找到台灣上市公司與ICE、CBP或美國拘留設施聯邦合約的合格傳導證據,ICE／CBP採購文件；台股公司公開文件查核,2026-07-16
+15,數位資產／加密金融,,未確認符合傳導條件的台股,沒有（灰色）,未確認政策曝險,台灣上市金融科技或交易平台與美國監管決定之公司層級傳導尚未確認,GENIUS Act與SEC監管文件；台股公司公開文件查核,2026-07-16
+16,資安／聯邦IT現代化,2301,光寶科,有（紅色）,間接受惠（產業帶動）,電源設備用於雲端伺服器與資料中心，但未確認特定聯邦IT合約,光寶科年度報告－Cloud Infrastructure產品,2026-07-16
+16,資安／聯邦IT現代化,2308,台達電,有（紅色）,間接受惠（產業帶動）,資料中心電源與散熱設備屬聯邦雲端建設所需設備,台達電年度報告－Data Center Infrastructure,2026-07-16
+16,資安／聯邦IT現代化,2317,鴻海,有（紅色）,間接受惠（產業帶動）,雲端伺服器為聯邦雲端與IT現代化所需設備，但未確認具名聯邦訂單,鴻海年度報告－Cloud Network Products,2026-07-16
+16,資安／聯邦IT現代化,2324,仁寶,有（紅色）,間接受惠（產業帶動）,伺服器產品屬雲端IT建設設備，但未確認具名聯邦訂單,仁寶年度報告－Server Business,2026-07-16
+16,資安／聯邦IT現代化,2330,台積電,有（紅色）,間接受惠（產業帶動）,運算晶片製造位於聯邦雲端硬體供應鏈，未確認特定IT合約傳導,TSMC年度報告－HPC Business,2026-07-16
+16,資安／聯邦IT現代化,2345,智邦,有（紅色）,間接受惠（產業帶動）,高速交換器產品屬資料中心網路設備,智邦年度報告－Data Center Networking,2026-07-16
+16,資安／聯邦IT現代化,2356,英業達,有（紅色）,間接受惠（產業帶動）,伺服器產品屬雲端IT建設設備,英業達年度報告－Server Business,2026-07-16
+16,資安／聯邦IT現代化,2382,廣達,有（紅色）,間接受惠（產業帶動）,QCT雲端伺服器屬IT現代化基礎設備,廣達年度報告－Cloud Computing Business,2026-07-16
+16,資安／聯邦IT現代化,2449,京元電子,有（紅色）,間接受惠（產業帶動）,提供雲端運算晶片測試服務，屬上游供應鏈,京元電子年度報告－HPC／AI Test Business,2026-07-16
+16,資安／聯邦IT現代化,3017,奇鋐,有（紅色）,間接受惠（產業帶動）,提供資料中心伺服器散熱設備,奇鋐年度報告－Server Cooling Business,2026-07-16
+16,資安／聯邦IT現代化,3037,欣興,有（紅色）,間接受惠（產業帶動）,供應雲端伺服器與運算晶片PCB／載板,欣興年度報告－Server／HPC Applications,2026-07-16
+16,資安／聯邦IT現代化,3189,景碩,有（紅色）,間接受惠（產業帶動）,供應雲端運算晶片IC載板,景碩年度報告－HPC Substrate Applications,2026-07-16
+16,資安／聯邦IT現代化,3231,緯創,有（紅色）,間接受惠（產業帶動）,伺服器產品屬雲端IT建設設備,緯創年度報告－Server Business,2026-07-16
+16,資安／聯邦IT現代化,3711,日月光投控,有（紅色）,間接受惠（產業帶動）,提供雲端運算晶片封裝測試服務,日月光投控年度報告－HPC Packaging and Test,2026-07-16
+16,資安／聯邦IT現代化,4938,和碩,有（紅色）,間接受惠（產業帶動）,美國在地電子與伺服器產能可支援雲端硬體供應鏈,和碩年度報告／美國德州工廠公司說明,2026-07-16
+16,資安／聯邦IT現代化,6669,緯穎,有（紅色）,間接受惠（產業帶動）,雲端資料中心伺服器為IT現代化所需設備,緯穎年度報告－Cloud Data Center Products,2026-07-16
+17,林木／木材／建材,,未確認符合傳導條件的台股,沒有（灰色）,未確認政策曝險,未找到與美國木材增產、關稅或林業政策的公司層級傳導證據,美國木材政策文件；台股公司公開文件查核,2026-07-16
+18,造船／海運／海事工業,,未確認符合傳導條件的台股,沒有（灰色）,未確認政策曝險,未找到與美國造船補助、海軍造艦或Jones Act內需訂單的台股公司層級傳導證據,美國海事振興與海軍造艦文件；台股公司公開文件查核,2026-07-16
+19,住宅建築／建材,,未確認符合傳導條件的台股,沒有（灰色）,未確認政策曝險,未找到美國住宅政策資金可傳導至特定台灣上市公司的證據,美國住房政策文件；台股公司公開文件查核,2026-07-16
+20,銀行／房貸／金融科技,,未確認符合傳導條件的台股,沒有（灰色）,未確認政策曝險,未找到美國銀行、房貸或金融科技政策可傳導至特定台灣上市公司的證據,美國銀行與房貸政策文件；台股公司公開文件查核,2026-07-16

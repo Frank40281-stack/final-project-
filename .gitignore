@@ -1,0 +1,21 @@
+# System & Temp files
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+
+# Python & Environment
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.env
+
+# IDE & Editor
+.vscode/
+.idea/
+.gemini/
+
+# Node
+node_modules/
+npm-debug.log*
