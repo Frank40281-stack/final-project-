@@ -149,15 +149,6 @@
   }
 
   let activeChartInstance = null;
-  let lastFetchedTime = null;
-
-  function formatTime(date) {
-    if (!date) return '';
-    const h = String(date.getHours()).padStart(2, '0');
-    const m = String(date.getMinutes()).padStart(2, '0');
-    const s = String(date.getSeconds()).padStart(2, '0');
-    return `${h}:${m}:${s}`;
-  }
 
   function renderMarketChart(kpiState, record) {
     if (!kpiState || kpiState.status === 'loading') {
@@ -188,69 +179,7 @@
       </div>`;
     }
 
-    const summary = kpiData.backtest && kpiData.backtest.summary;
-    const latestDate = summary ? (summary.latest_date || 'N/A') : 'N/A';
-    const latestClose = summary && summary.latest_close != null ? Number(summary.latest_close).toFixed(2) : 'N/A';
-    const triggerCount = summary ? (summary.trigger_count ?? 'N/A') : 'N/A';
-    const winRate = summary && summary.win_rate != null ? `${summary.win_rate}%` : 'N/A';
-    const winLoss = summary ? (summary.win_loss || 'N/A') : 'N/A';
-    const avgRetH = summary && summary.avg_ret_h != null ? `${summary.avg_ret_h > 0 ? '+' : ''}${summary.avg_ret_h}%` : 'N/A';
-    const avgRetY = summary && summary.avg_ret_y != null ? `${summary.avg_ret_y > 0 ? '+' : ''}${summary.avg_ret_y}%` : 'N/A';
-    const avgRet2Y = summary && summary.avg_ret_2y != null ? `${summary.avg_ret_2y > 0 ? '+' : ''}${summary.avg_ret_2y}%` : 'N/A';
-
-    const updateTimeString = lastFetchedTime ? `最後更新 ${formatTime(lastFetchedTime)}` : '';
-
     return `<div class="price-context-panel" aria-label="${esc(record.ticker)} 回測圖表">
-      <header class="price-context-header">
-        <div class="price-context-title">
-          <h3>回測圖表</h3>
-          <span>KPI-18~20 Backtest ・ Chart1 - Price Context</span>
-        </div>
-        <div class="price-context-badges">
-          ${updateTimeString ? `<span class="last-updated-tag">${esc(updateTimeString)}</span>` : ''}
-          <button id="refresh-kpi-btn" class="refresh-btn" type="button" title="向資料庫重新擷取最新數據">
-            <svg class="refresh-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.3"/>
-            </svg>
-            <span>刷新數據</span>
-          </button>
-          <span class="badge-tag">INTERACTIVE CHART</span>
-        </div>
-      </header>
-      <div class="price-context-stats">
-        <div class="stat-box">
-          <span class="stat-label">最新日期</span>
-          <strong class="stat-val">${esc(latestDate)}</strong>
-        </div>
-        <div class="stat-box">
-          <span class="stat-label">最新股價 P0</span>
-          <strong class="stat-val">$${esc(latestClose)}</strong>
-        </div>
-        <div class="stat-box">
-          <span class="stat-label">觸發點</span>
-          <strong class="stat-val">${esc(triggerCount)}</strong>
-        </div>
-        <div class="stat-box">
-          <span class="stat-label">勝率</span>
-          <strong class="stat-val">${esc(winRate)}</strong>
-        </div>
-        <div class="stat-box">
-          <span class="stat-label">Win / Loss</span>
-          <strong class="stat-val">${esc(winLoss)}</strong>
-        </div>
-        <div class="stat-box">
-          <span class="stat-label">回報率 (半年)</span>
-          <strong class="stat-val ${summary && summary.avg_ret_h < 0 ? 'is-down' : summary && summary.avg_ret_h > 0 ? 'is-up' : ''}">${esc(avgRetH)}</strong>
-        </div>
-        <div class="stat-box">
-          <span class="stat-label">回報率 (1年)</span>
-          <strong class="stat-val ${summary && summary.avg_ret_y < 0 ? 'is-down' : summary && summary.avg_ret_y > 0 ? 'is-up' : ''}">${esc(avgRetY)}</strong>
-        </div>
-        <div class="stat-box">
-          <span class="stat-label">回報率 (2年)</span>
-          <strong class="stat-val ${summary && summary.avg_ret_2y < 0 ? 'is-down' : summary && summary.avg_ret_2y > 0 ? 'is-up' : ''}">${esc(avgRet2Y)}</strong>
-        </div>
-      </div>
       <div class="price-context-chart-wrap">
         <canvas id="priceContextCanvas"></canvas>
       </div>
@@ -463,7 +392,110 @@
     </aside>`;
   }
 
-  function renderCinematicStudy(stock, record, kpiState, returnCycle, industry, change) {
+  function renderIndustryStockRail(stocks, currentIndex, returnCycle, industry) {
+    return `<aside class="industry-stock-rail" aria-label="${esc(industry)}同產業股票">
+      <header class="industry-stock-rail__header">
+        <div>
+          <p class="eyebrow">INDUSTRY INDEX</p>
+          <h2>同產業個股</h2>
+        </div>
+        <span>${currentIndex + 1} / ${stocks.length}</span>
+      </header>
+      <nav class="industry-stock-list" aria-label="切換同產業個股">
+        ${stocks.map((item, index) => {
+          const isCurrent = index === currentIndex;
+          const symbol = esc(item.ticker);
+          const name = esc(item.companyName);
+          const href = `?market=${encodeURIComponent(market)}&ticker=${encodeURIComponent(item.ticker)}&cycle=${encodeURIComponent(returnCycle.id)}&industry=${encodeURIComponent(industry)}`;
+          return `<a class="industry-stock-item${isCurrent ? ' is-current' : ''}" href="${href}" data-stock-index="${index}" ${isCurrent ? 'aria-current="page"' : ''}>
+            <span class="industry-stock-logo">
+              <img src="https://financialmodelingprep.com/image-stock/${symbol}.png" alt="${name} logo" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+              <span hidden>${symbol.slice(0, 2)}</span>
+            </span>
+            <span class="industry-stock-copy"><strong>${symbol}</strong><small>${name}</small></span>
+            <span class="industry-stock-arrow" aria-hidden="true">↗</span>
+          </a>`;
+        }).join('')}
+      </nav>
+      <footer><span>SCROLL</span><i></i><small>滾輪切換</small></footer>
+    </aside>`;
+  }
+
+  function initIndustryStockRail(currentIndex) {
+    const rail = document.querySelector('.industry-stock-list');
+    if (!rail) return;
+
+    const items = [...rail.querySelectorAll('.industry-stock-item')];
+    const currentItem = items[currentIndex];
+    if (currentItem) {
+      requestAnimationFrame(() => currentItem.scrollIntoView({ block: 'center', behavior: 'instant' }));
+    }
+
+    let wheelDelta = 0;
+    let wheelLocked = false;
+    let wheelResetTimer = null;
+
+    function navigateTo(item, direction) {
+      if (!item || item.classList.contains('is-current') || wheelLocked) return;
+      wheelLocked = true;
+      item.classList.add('is-target');
+      item.scrollIntoView({ block: 'center', behavior: 'smooth' });
+      document.body.classList.add('is-switching-stock', direction < 0 ? 'is-switching-prev' : 'is-switching-next');
+      window.setTimeout(() => {
+        window.location.href = item.href;
+      }, 280);
+    }
+
+    rail.addEventListener('wheel', event => {
+      if (Math.abs(event.deltaY) <= Math.abs(event.deltaX)) return;
+      event.preventDefault();
+      if (wheelLocked) return;
+
+      wheelDelta += event.deltaY;
+      window.clearTimeout(wheelResetTimer);
+      wheelResetTimer = window.setTimeout(() => {
+        wheelDelta = 0;
+      }, 140);
+
+      if (Math.abs(wheelDelta) < 42) return;
+      const direction = wheelDelta > 0 ? 1 : -1;
+      wheelDelta = 0;
+      const targetIndex = Math.max(0, Math.min(items.length - 1, currentIndex + direction));
+
+      if (targetIndex === currentIndex) {
+        rail.animate(
+          [{ transform: 'translateY(0)' }, { transform: `translateY(${direction * -5}px)` }, { transform: 'translateY(0)' }],
+          { duration: 260, easing: 'cubic-bezier(.22,.8,.26,1)' }
+        );
+        return;
+      }
+      navigateTo(items[targetIndex], direction);
+    }, { passive: false });
+
+    items.forEach((item, index) => {
+      item.addEventListener('click', event => {
+        if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return;
+        event.preventDefault();
+        navigateTo(item, index < currentIndex ? -1 : 1);
+      });
+    });
+  }
+
+  function renderMarketReturnValue(value) {
+    const raw = String(value || 'N/A').trim();
+    const match = raw.match(/^(.*?)(%)$/);
+    const number = esc(match ? match[1] : raw);
+    const symbol = match ? '<span class="market-return-symbol">%</span>' : '';
+    const glyphs = `${number}${symbol}`;
+
+    return `<strong class="market-return-value" aria-label="${esc(raw)}">
+      <span class="market-return-layer market-return-extrusion" aria-hidden="true">${glyphs}</span>
+      <span class="market-return-layer market-return-face" aria-hidden="true">${glyphs}</span>
+      <span class="market-return-layer market-return-reflection" aria-hidden="true">${glyphs}</span>
+    </strong>`;
+  }
+
+  function renderCinematicStudy(stock, record, kpiState, returnCycle, industry, change, siblings, currentIndex) {
     const kpiData = kpiState && kpiState.status === 'ready' ? kpiState.data : null;
     const summary = kpiData && kpiData.backtest && kpiData.backtest.summary;
     const latestClose = summary && summary.latest_close != null ? Number(summary.latest_close).toFixed(2) : '';
@@ -476,7 +508,7 @@
         <section class="cinema-left">
           <p class="eyebrow">POLICY EVENT ・ MARKET RESPONSE</p>
           <div class="cinema-return ${change > 0 ? 'is-up' : change < 0 ? 'is-down' : ''}">
-            <strong>${esc(record.returnRaw || 'N/A')}</strong>
+            ${renderMarketReturnValue(record.returnRaw)}
             <span>政策事件後區間報酬</span>
             <small>${esc(record.eventDate || '資料未提供')} - ${esc(summary && summary.latest_date ? summary.latest_date : '最新資料')}</small>
           </div>
@@ -497,6 +529,7 @@
           </section>
         </section>
         ${renderValidationPanel(kpiState)}
+        ${renderIndustryStockRail(siblings, currentIndex, returnCycle, industry)}
       </div>
     </section>`;
   }
@@ -590,7 +623,7 @@
   </div>
 </section>
 ${renderKpiSection(kpiState, stock.ticker)}`;
-      const study = isUS ? renderCinematicStudy(stock, record, kpiState, returnCycle, industry, change) : legacyStudy;
+      const study = isUS ? renderCinematicStudy(stock, record, kpiState, returnCycle, industry, change, siblings, currentIndex) : legacyStudy;
 
       app.innerHTML = `<nav class="breadcrumb"><a href="../index.html">首頁</a><span>/</span><a href="${backCycle.href}">${returnCycle.title}</a><span>/</span><span>${esc(stock.ticker)}</span></nav>
 ${study}
@@ -609,25 +642,10 @@ ${isUS && stock.records.length > 1 ? `<div class="event-tabs event-tabs--cinema"
         initPriceContextChart(kpiState.data);
       }
 
-      const refreshBtn = app.querySelector('#refresh-kpi-btn');
-      if (refreshBtn) {
-        refreshBtn.onclick = () => {
-          const icon = refreshBtn.querySelector('.refresh-icon');
-          if (icon) icon.classList.add('is-spinning');
-          refreshBtn.disabled = true;
-
-          loadKpi(stock.ticker)
-            .then(apiData => {
-              lastFetchedTime = new Date();
-              kpiState = { status: 'ready', data: apiData };
-              render();
-            })
-            .catch(error => {
-              kpiState = { status: 'error', message: error.message || '請稍後再試，或確認 API CORS 設定' };
-              render();
-            });
-        };
+      if (isUS) {
+        initIndustryStockRail(currentIndex);
       }
+
     }
 
     render();
@@ -635,7 +653,6 @@ ${isUS && stock.records.length > 1 ? `<div class="event-tabs event-tabs--cinema"
     if (market === 'us') {
       loadKpi(stock.ticker)
         .then(apiData => {
-          lastFetchedTime = new Date();
           kpiState = { status: 'ready', data: apiData };
           render();
         })

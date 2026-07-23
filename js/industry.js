@@ -1,5 +1,8 @@
 (function(){'use strict';
 const D=window.StockData, app=document.getElementById('cycle-app'), params=new URLSearchParams(location.search);
+const scheduleToggle=document.getElementById('macro-schedule-toggle'), schedulePanel=document.getElementById('macro-schedule-panel'), scheduleBackdrop=document.getElementById('macro-schedule-backdrop'), scheduleClose=document.getElementById('macro-schedule-close');
+function setScheduleOpen(open){if(!scheduleToggle||!schedulePanel||!scheduleBackdrop)return;scheduleToggle.setAttribute('aria-expanded',String(open));schedulePanel.setAttribute('aria-hidden',String(!open));scheduleBackdrop.setAttribute('aria-hidden',String(!open));schedulePanel.classList.toggle('is-open',open);scheduleBackdrop.classList.toggle('is-open',open);document.body.classList.toggle('macro-schedule-open',open);}
+if(scheduleToggle){scheduleToggle.addEventListener('click',()=>setScheduleOpen(scheduleToggle.getAttribute('aria-expanded')!=='true'));scheduleClose?.addEventListener('click',()=>{setScheduleOpen(false);scheduleToggle.focus();});scheduleBackdrop?.addEventListener('click',()=>{setScheduleOpen(false);scheduleToggle.focus();});document.addEventListener('keydown',event=>{if(event.key==='Escape'&&scheduleToggle.getAttribute('aria-expanded')==='true'){setScheduleOpen(false);scheduleToggle.focus();}});}
 const cycleId=params.get('cycle')||'cycle-1', cycle=D.getCycle(cycleId);
 if(!cycle){app.innerHTML='<section class="r-empty"><h1>找不到這個循環</h1><a href="../index.html#industries">返回三大循環</a></section>';return;}
 let market=['tw','us'].includes(params.get('market'))?params.get('market'):'us';

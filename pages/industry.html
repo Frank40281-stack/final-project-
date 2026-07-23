@@ -1,4 +1,74 @@
-<!doctype html><html lang="zh-TW"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Alpha 三大產業循環研究導覽"><title>產業循環｜Alpha 阿爾法投資</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="../css/research.css"></head>
-<body><header class="r-header"><a href="../index.html" class="r-logo"><b>α</b> Alpha 阿爾法投資</a><a href="../index.html#industries" class="r-back">返回三大循環</a></header>
+<!doctype html><html lang="zh-TW"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Alpha 三大產業循環研究導覽"><title>產業循環｜Alpha 阿爾法投資</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="../css/research.css?v=20260723-7"></head>
+<body><header class="r-header"><a href="../index.html" class="r-logo"><b>α</b> Alpha 阿爾法投資</a><div class="r-header__actions"><button id="macro-schedule-toggle" class="macro-schedule-toggle" type="button" aria-expanded="false" aria-controls="macro-schedule-panel"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M8 3v4M16 3v4M3 10h18"></path></svg><span>月度常規時序表</span><i aria-hidden="true"></i></button><a href="../index.html#industries" class="r-back">返回三大循環</a></div></header>
+<div id="macro-schedule-backdrop" class="macro-schedule-backdrop" aria-hidden="true"></div>
+<section id="macro-schedule-panel" class="macro-schedule-panel" role="dialog" aria-modal="false" aria-labelledby="macro-schedule-title" aria-hidden="true">
+  <header class="macro-schedule-panel__header">
+    <div>
+      <p>MACRO DATA CALENDAR ・ TAIWAN TIME</p>
+      <h2 id="macro-schedule-title">月度常規公布時序表</h2>
+      <span>掌握月度數據節奏，交易風險時段與 FOMC 獨立時序</span>
+    </div>
+    <button id="macro-schedule-close" type="button" aria-label="關閉月度常規時序表"><span></span><span></span></button>
+  </header>
+  <div class="macro-schedule-table-wrap">
+    <table class="macro-schedule-table">
+      <colgroup><col class="col-week"><col class="col-day"><col class="col-event"><col class="col-time"></colgroup>
+      <thead><tr><th>週別</th><th>星期</th><th>核心數據／事件</th><th>具體公布時間（台灣時間）與規律</th></tr></thead>
+      <tbody>
+        <tr>
+          <th class="week-cell week-cell--one" scope="rowgroup" rowspan="3"><span>01</span><strong>第一週</strong><small>月初</small></th>
+          <td>月初／週一</td>
+          <td><div class="schedule-event"><b>PMI</b><span>ISM 製造業 PMI</span></div></td>
+          <td><div class="schedule-time"><strong>22:00 <small>(23:00)</small></strong><span>固定每月第一個工作天</span></div></td>
+        </tr>
+        <tr>
+          <td>週三</td>
+          <td><div class="schedule-event"><b>ADP</b><span>ADP 小非農就業指數</span></div><div class="schedule-event"><b>PMI</b><span>ISM 服務業 PMI</span></div></td>
+          <td><div class="schedule-time"><strong>20:15 <small>(21:15)</small></strong><span>通常在大非農前的週三</span></div><div class="schedule-time"><strong>22:00 <small>(23:00)</small></strong><span>緊接在製造業 PMI 之後</span></div></td>
+        </tr>
+        <tr>
+          <td>週五</td>
+          <td><div class="schedule-event"><b>NFP</b><span>NFP 大非農就業指數</span></div></td>
+          <td><div class="schedule-time"><strong>20:30 <small>(21:30)</small></strong><span>每月第一個星期五；遇特殊假期可能順延</span></div></td>
+        </tr>
+        <tr>
+          <th class="week-cell week-cell--two" scope="rowgroup" rowspan="2"><span>02</span><strong>第二週</strong></th>
+          <td>週三／四</td>
+          <td><div class="schedule-event"><b>CPI</b><span>CPI 消費者物價指數</span></div></td>
+          <td><div class="schedule-time"><strong>20:30 <small>(21:30)</small></strong><span>通常在每月 10～14 號之間公布</span></div></td>
+        </tr>
+        <tr>
+          <td>週四／五</td>
+          <td><div class="schedule-event"><b>PPI</b><span>PPI 生產者物價指數</span></div></td>
+          <td><div class="schedule-time"><strong>20:30 <small>(21:30)</small></strong><span>通常緊接在 CPI 公布的隔天</span></div></td>
+        </tr>
+        <tr>
+          <th class="week-cell week-cell--three" scope="rowgroup"><span>03</span><strong>第三週</strong></th>
+          <td>週二／三</td>
+          <td><div class="schedule-event"><b>RTL</b><span>零售銷售月率（恐怖數據）</span></div></td>
+          <td><div class="schedule-time"><strong>20:30 <small>(21:30)</small></strong><span>通常在每月 14～18 號之間公布</span></div></td>
+        </tr>
+        <tr>
+          <th class="week-cell week-cell--four" scope="rowgroup" rowspan="2"><span>04</span><strong>第四週</strong></th>
+          <td>週四</td>
+          <td><div class="schedule-event"><b>GDP</b><span>GDP 季度年化季率初值</span></div></td>
+          <td><div class="schedule-time"><strong>20:30 <small>(21:30)</small></strong><span>季度公布，常見於 1、4、7、10 月底週四</span></div></td>
+        </tr>
+        <tr>
+          <td>週五</td>
+          <td><div class="schedule-event"><b>PCE</b><span>核心 PCE 物價指數</span></div></td>
+          <td><div class="schedule-time"><strong>20:30 <small>(21:30)</small></strong><span>通常在每月底最後一個星期五</span></div></td>
+        </tr>
+        <tr>
+          <th class="week-cell week-cell--fixed" scope="rowgroup"><span>W</span><strong>每週固定</strong></th>
+          <td>週四</td>
+          <td><div class="schedule-event"><b>JOB</b><span>每週初請失業金人數</span></div></td>
+          <td><div class="schedule-time"><strong>20:30 <small>(21:30)</small></strong><span>每週四固定公布，反映短期就業市場</span></div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <footer class="macro-schedule-panel__footer"><span></span><p>括號內為美國冬令時間對應的台灣時間；實際日期與時間請以官方公告為準。</p><b>ALPHA / MONTHLY SIGNAL MAP</b></footer>
+</section>
 <main id="cycle-app" class="r-shell" aria-live="polite"><div class="r-loading">正在整理研究資料…</div></main>
-<script src="../js/reload-to-home.js"></script><script src="../js/cycle-data.js"></script><script src="../js/industry.js"></script></body></html>
+<script src="../js/reload-to-home.js"></script><script src="../js/cycle-data.js"></script><script src="../js/industry.js?v=20260723-1"></script></body></html>
