@@ -4,6 +4,7 @@
   const D = window.StockData;
   const app = document.getElementById('stock-app');
   const params = new URLSearchParams(location.search);
+  if (typeof Chart !== 'undefined') Chart.defaults.font.family = "'Taipei Sans TC','Noto Sans TC',sans-serif";
   const market = params.get('market');
   const ticker = D.normalizeTicker(params.get('ticker'));
   const cycle = D.getCycle(params.get('cycle'));
@@ -149,6 +150,261 @@
   }
 
   let activeChartInstance = null;
+  let activeTechnicalChart = null;
+
+  function findKpi(kpiData, code) {
+    const rows = kpiData && Array.isArray(kpiData.kpis) ? kpiData.kpis : [];
+    return rows.find(item => String(item.code).padStart(2, '0') === String(code).padStart(2, '0')) || {};
+  }
+
+  function lastSeriesItem(series) {
+    return Array.isArray(series) && series.length ? series[series.length - 1] : {};
+  }
+
+  function compactNumber(value) {
+    const number = Number(value);
+    if (!Number.isFinite(number)) return 'N/A';
+    return new Intl.NumberFormat('zh-TW', {
+      notation: Math.abs(number) >= 1000000 ? 'compact' : 'standard',
+      maximumFractionDigits: Math.abs(number) >= 1000 ? 1 : 2
+    }).format(number);
+  }
+
+  function indicatorTone(text, fallbackPositive) {
+    const value = String(text || '');
+    if (/走弱|偏弱|警訊|落後|空頭|超賣/.test(value)) return 'is-negative';
+    if (/領跑|轉強|偏多|強勢|正向|同步|超越|吸籌/.test(value) || fallbackPositive) return 'is-positive';
+    return 'is-neutral';
+  }
+
+  function gaugeMarkup(label, sublabel, displayValue, judgment, position) {
+    const safePosition = Math.max(0, Math.min(1, Number(position) || 0));
+    const angle = -76 + safePosition * 152;
+    const tone = indicatorTone(judgment, safePosition >= 0.58);
+    return `<article class="tech-gauge ${tone}">
+      <header><h3>${esc(label)}</h3><span>${esc(sublabel)}</span></header>
+      <div class="tech-gauge__dial" style="--needle-angle:${angle}deg">
+        <i class="tech-gauge__needle"></i><b></b>
+      </div>
+      <div class="tech-gauge__scale"><span>弱勢</span><span>強勢</span></div>
+      <strong>${esc(displayValue)}</strong>
+      <em>${esc(judgment || '資料待確認')}</em>
+    </article>`;
+  }
+
+  function renderTechnicalDashboard(stock, kpiState) {
+    const closeButton = `<button class="tech-dashboard__close" type="button" data-tech-close aria-label="關閉技術指標頁面"><span>返回個股</span> ×</button>`;
+    if (!kpiState || kpiState.status === 'loading') {
+      return `<section id="technical-dashboard" class="tech-dashboard" role="dialog" aria-modal="true" aria-labelledby="technical-dashboard-title" hidden>
+        ${closeButton}<div class="tech-dashboard__state"><span></span><h2 id="technical-dashboard-title">正在讀取 ${esc(stock.ticker)} 技術指標</h2><p>從資料庫整理 RSI、Composite RS、OBV 與價格趨勢…</p></div>
+      </section>`;
+    }
+    if (kpiState.status === 'error') {
+      return `<section id="technical-dashboard" class="tech-dashboard" role="dialog" aria-modal="true" aria-labelledby="technical-dashboard-title" hidden>
+        ${closeButton}<div class="tech-dashboard__state is-error"><h2 id="technical-dashboard-title">技術指標暫時無法載入</h2><p>${esc(kpiState.message)}</p></div>
+      </section>`;
+    }
+
+    const kpiData = kpiState.data;
+    const backtest = kpiData.backtest || {};
+    const series = backtest.series || {};
+    const summary = backtest.summary || {};
+    const judgments = summary.latest_judgments || {};
+    const price = lastSeriesItem(series.price);
+    const rsi = lastSeriesItem(series.rsi14);
+    const rs = lastSeriesItem(series.rs_composite);
+    const obv = lastSeriesItem(series.obv55);
+    const alpha = lastSeriesItem(series.kpi21_alpha);
+    const kpi18 = findKpi(kpiData, '18');
+    const kpi19 = findKpi(kpiData, '19');
+    const kpi20 = findKpi(kpiData, '20');
+    const kpi21 = findKpi(kpiData, '21');
+    const totalScore = Number(kpiData.scores && kpiData.scores.total_score);
+    const positiveScore = Number.isFinite(totalScore) ? Math.round(totalScore) : 0;
+    const indicatorTotal = Array.isArray(kpiData.kpis) && kpiData.kpis.length ? kpiData.kpis.length : 21;
+    const technicalScore = Number(kpiData.scores && kpiData.scores.technical_score);
+    const confluenceEstablished = Number.isFinite(technicalScore) && technicalScore >= 3;
+    const closeAboveMa = Number(price.close) >= Number(price.price_50ma);
+    const benchmarkAhead = Number(alpha.excess_return ?? kpi21.value) > 0;
+    const rsiValue = Number(rsi.value ?? kpi18.value);
+    const rsValue = Number(rs.value ?? kpi19.value);
+    const obvValue = Number(obv.value ?? kpi20.value);
+    const rsiJudgment = rsi.judgment || judgments.kpi18 || kpi18.score_label;
+    const rsJudgment = rs.judgment || judgments.kpi19 || kpi19.score_label;
+    const obvJudgment = obv.judgment || judgments.kpi20 || kpi20.score_label;
+    const obvRange = Number(obv.high55);
+    const obvPosition = Number.isFinite(obvRange) && obvRange !== 0 ? obvValue / obvRange : Number(kpi20.score_percent) / 100;
+    const mainAction = confluenceEstablished ? '適合追蹤' : '等待確認';
+    const signalText = confluenceEstablished ? '訊號成立 ｜ 條件轉強' : '訊號觀察 ｜ 條件未齊';
+    const riskText = technicalScore >= 3 ? '可分批布局' : technicalScore >= 2 ? '控制部位' : '暫緩布局';
+    const benchmarkText = benchmarkAhead ? '跑贏大盤' : '落後大盤';
+
+    return `<section id="technical-dashboard" class="tech-dashboard" role="dialog" aria-modal="true" aria-labelledby="technical-dashboard-title" hidden>
+      <div class="tech-dashboard__glow"></div>
+      ${closeButton}
+      <div class="tech-dashboard__inner">
+        <header class="tech-dashboard__header">
+          <div class="tech-dashboard__title">
+            <p>TECHNICAL VALIDATION ・ ${esc(stock.ticker)}</p>
+            <h2 id="technical-dashboard-title">技術指標總覽</h2>
+            <span>資料庫指標，持續驗證趨勢</span>
+          </div>
+          <div class="tech-benchmark ${benchmarkAhead ? 'is-positive' : 'is-negative'}">
+            <span>★</span><div><small>${esc(benchmarkText)}</small><strong>S&amp;P 500</strong></div>
+          </div>
+          <div class="tech-score"><strong>${esc(positiveScore)}</strong><span>/ ${esc(indicatorTotal)} 項正向</span></div>
+        </header>
+
+        <section class="tech-verdict ${confluenceEstablished ? 'is-established' : ''}">
+          <div><small>FOUR-CHART CONFLUENCE</small><strong>${confluenceEstablished ? '四圖共振成立' : '四圖條件<span class="tech-verdict__confirm-line">再確認</span>'}</strong></div>
+          <i></i>
+          <div class="tech-verdict__main"><strong>${esc(mainAction)}</strong><span>${esc(signalText)}</span></div>
+          <i></i>
+          <div><small>風險狀態</small><strong>${esc(riskText)}</strong></div>
+          <footer>
+            <span class="${closeAboveMa ? 'is-positive' : 'is-negative'}"><b>✓</b> Price Context <em>${closeAboveMa ? '趨勢向上，價格高於 50MA' : '價格低於 50MA'}</em></span>
+            <span class="${indicatorTone(rsiJudgment, rsiValue >= 50)}"><b>✓</b> RSI 14 <em>${esc(rsiJudgment)}</em></span>
+            <span class="${indicatorTone(rsJudgment, benchmarkAhead)}"><b>✓</b> Composite RS <em>${esc(benchmarkText)} S&amp;P 500</em></span>
+            <span class="${indicatorTone(obvJudgment, Number(kpi20.score) > 0.5)}"><b>✓</b> OBV <em>${esc(obvJudgment)}</em></span>
+          </footer>
+        </section>
+
+        <section class="tech-gauges">
+          ${gaugeMarkup('動能指標', 'RSI 14', Number.isFinite(rsiValue) ? rsiValue.toFixed(2) : kpi18.display_value || 'N/A', rsiJudgment, rsiValue / 100)}
+          ${gaugeMarkup('綜合評等', 'Composite RS Line', Number.isFinite(rsValue) ? rsValue.toFixed(2) : kpi19.display_value || 'N/A', rsJudgment, (rsValue + 10) / 20)}
+          ${gaugeMarkup('量價驗證', 'OBV / Money Flow', Number.isFinite(obvValue) ? new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 }).format(obvValue) : kpi20.display_value || 'N/A', obvJudgment, obvPosition)}
+        </section>
+
+        <section class="tech-chart-panel">
+          <div class="tech-chart-tabs" role="tablist" aria-label="技術指標圖表">
+            <button type="button" role="tab" aria-selected="true" data-tech-chart="price">Price Context</button>
+            <button type="button" role="tab" aria-selected="false" data-tech-chart="rsi">RSI 14</button>
+            <button type="button" role="tab" aria-selected="false" data-tech-chart="rs">Composite RS</button>
+            <button type="button" role="tab" aria-selected="false" data-tech-chart="obv">OBV</button>
+          </div>
+          <div class="tech-chart-panel__body">
+            <div class="tech-chart-canvas"><canvas id="technicalChartCanvas"></canvas></div>
+            <aside>
+              <div><span>趨勢</span><strong class="${closeAboveMa ? 'is-positive' : 'is-negative'}">${closeAboveMa ? '正向' : '轉弱'}</strong></div>
+              <div><span>動能</span><strong class="${indicatorTone(rsiJudgment, rsiValue >= 50)}">${esc(rsiJudgment || '待確認')}</strong></div>
+              <div><span>量價</span><strong class="${indicatorTone(obvJudgment, false)}">${esc(obvJudgment || '待確認')}</strong></div>
+            </aside>
+          </div>
+        </section>
+        <footer class="tech-dashboard__notice">ⓘ 指標僅供趨勢驗證，不構成投資建議 ・ 資料更新 ${esc(formatRunDate(kpiData.run_date))}</footer>
+      </div>
+    </section>`;
+  }
+
+  function initTechnicalDashboardChart(kpiData, chartType) {
+    const canvas = document.getElementById('technicalChartCanvas');
+    if (!canvas || typeof Chart === 'undefined' || !kpiData) return;
+    if (activeTechnicalChart) {
+      activeTechnicalChart.destroy();
+      activeTechnicalChart = null;
+    }
+
+    const series = (kpiData.backtest && kpiData.backtest.series) || {};
+    const types = {
+      price: {
+        rows: series.price || [],
+        datasets: [
+          { label: 'Close', key: 'close', borderColor: '#00cfff', backgroundColor: 'rgba(0,207,255,.08)', fill: true },
+          { label: 'Price 50MA', key: 'price_50ma', borderColor: '#f0c419', borderWidth: 2 }
+        ]
+      },
+      rsi: {
+        rows: series.rsi14 || [],
+        datasets: [{ label: 'RSI 14', key: 'value', borderColor: '#91ff32', backgroundColor: 'rgba(145,255,50,.08)', fill: true }]
+      },
+      rs: {
+        rows: series.rs_composite || [],
+        datasets: [
+          { label: 'Composite RS', key: 'value', borderColor: '#91ff32' },
+          { label: '21MA', key: 'ma21', borderColor: '#f0c419', borderWidth: 2 }
+        ]
+      },
+      obv: {
+        rows: series.obv55 || [],
+        datasets: [
+          { label: 'OBV', key: 'value', borderColor: '#91ff32', backgroundColor: 'rgba(145,255,50,.08)', fill: true },
+          { label: '55D High', key: 'high55', borderColor: '#f0c419', borderWidth: 2 }
+        ]
+      }
+    };
+    const config = types[chartType] || types.price;
+    const rows = config.rows;
+    activeTechnicalChart = new Chart(canvas.getContext('2d'), {
+      type: 'line',
+      data: {
+        labels: rows.map(item => item.date),
+        datasets: config.datasets.map(item => ({
+          label: item.label,
+          data: rows.map(row => Number.isFinite(Number(row[item.key])) ? Number(row[item.key]) : null),
+          borderColor: item.borderColor,
+          backgroundColor: item.backgroundColor || 'transparent',
+          borderWidth: item.borderWidth || 1.5,
+          pointRadius: 0,
+          pointHoverRadius: 4,
+          tension: .18,
+          fill: Boolean(item.fill),
+          spanGaps: true
+        }))
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        interaction: { mode: 'index', intersect: false },
+        animation: { duration: 260 },
+        plugins: {
+          legend: { position: 'bottom', align: 'start', labels: { color: '#b7b7b7', boxWidth: 24, boxHeight: 2, padding: 15 } },
+          tooltip: { backgroundColor: 'rgba(4,6,4,.96)', borderColor: 'rgba(145,255,50,.45)', borderWidth: 1 }
+        },
+        scales: {
+          x: { grid: { display: false }, ticks: { color: '#86c9d8', maxTicksLimit: 7, maxRotation: 0 } },
+          y: {
+            border: { color: 'rgba(255,255,255,.16)' },
+            grid: { color: 'rgba(255,255,255,.07)' },
+            ticks: { color: '#86c9d8', callback: value => compactNumber(value) }
+          }
+        }
+      }
+    });
+  }
+
+  function initTechnicalDashboard(kpiData) {
+    const dashboard = document.getElementById('technical-dashboard');
+    const trigger = document.querySelector('[data-tech-open]');
+    if (!dashboard || !trigger) return;
+    const closeButton = dashboard.querySelector('[data-tech-close]');
+
+    function closeDashboard() {
+      dashboard.hidden = true;
+      document.body.classList.remove('is-technical-open');
+      if (activeTechnicalChart) {
+        activeTechnicalChart.destroy();
+        activeTechnicalChart = null;
+      }
+      trigger.focus({ preventScroll: true });
+    }
+
+    trigger.addEventListener('click', () => {
+      dashboard.hidden = false;
+      document.body.classList.add('is-technical-open');
+      if (kpiData) requestAnimationFrame(() => initTechnicalDashboardChart(kpiData, 'price'));
+      if (closeButton) closeButton.focus({ preventScroll: true });
+    });
+    if (closeButton) closeButton.addEventListener('click', closeDashboard);
+    dashboard.addEventListener('keydown', event => {
+      if (event.key === 'Escape') closeDashboard();
+    });
+    dashboard.querySelectorAll('[data-tech-chart]').forEach(button => {
+      button.addEventListener('click', () => {
+        dashboard.querySelectorAll('[data-tech-chart]').forEach(item => item.setAttribute('aria-selected', String(item === button)));
+        initTechnicalDashboardChart(kpiData, button.dataset.techChart);
+      });
+    });
+  }
 
   function renderMarketChart(kpiState, record) {
     if (!kpiState || kpiState.status === 'loading') {
@@ -198,7 +454,16 @@
     const backtest = kpiData && kpiData.backtest;
     if (!backtest || !backtest.series || !Array.isArray(backtest.series.price)) return;
 
-    const priceSeries = backtest.series.price;
+    const rawPriceSeries = backtest.series.price;
+    const firstValidMaIndex = rawPriceSeries.findIndex(point =>
+      point.price_50ma != null &&
+      point.price_50ma !== '' &&
+      Number.isFinite(Number(point.price_50ma)) &&
+      Number(point.price_50ma) > 0
+    );
+    const priceSeries = firstValidMaIndex >= 0
+      ? rawPriceSeries.slice(firstValidMaIndex)
+      : rawPriceSeries;
     const triggers = Array.isArray(backtest.triggers) ? backtest.triggers : [];
     const triggerDateMap = new Map();
     triggers.forEach(t => {
@@ -206,8 +471,16 @@
     });
 
     const labels = priceSeries.map(p => p.date);
-    const closeData = priceSeries.map(p => Number.isFinite(Number(p.close)) ? Number(p.close) : null);
-    const maData = priceSeries.map(p => Number.isFinite(Number(p.price_50ma)) ? Number(p.price_50ma) : null);
+    const closeData = priceSeries.map(p =>
+      p.close != null && p.close !== '' && Number.isFinite(Number(p.close))
+        ? Number(p.close)
+        : null
+    );
+    const maData = priceSeries.map(p =>
+      p.price_50ma != null && p.price_50ma !== '' && Number.isFinite(Number(p.price_50ma))
+        ? Number(p.price_50ma)
+        : null
+    );
 
     const triggerPoints = [];
     priceSeries.forEach((p) => {
@@ -338,6 +611,8 @@
             }
           },
           y: {
+            beginAtZero: false,
+            grace: '6%',
             grid: {
               color: 'rgba(255, 255, 255, 0.07)'
             },
@@ -365,7 +640,7 @@
     const kpiData = kpiState.data;
     const rows = Array.isArray(kpiData.kpis) ? kpiData.kpis : [];
     const validated = rows.filter(row => Number(row.score) > 0 && String(row.status || '').toUpperCase() === 'OK').length;
-    const total = rows.length || 20;
+    const total = rows.length || 21;
     const totalScore = kpiData.scores && kpiData.scores.total_score;
 
     return `<aside class="cinema-validation">
@@ -383,8 +658,8 @@
           const tone = Number(row.score) > 0 ? 'is-up' : 'is-down';
           return `<div class="validation-row ${tone}">
             <span></span>
-            <div><strong>${esc(row.name || `KPI-${row.code}`)}</strong><small>${esc(row.score_label || row.status || '資料庫指標')}</small></div>
-            <b>${esc(row.display_value || formatScore(scorePercent, 'N/A'))}</b>
+            <div><strong>${esc(row.name || `KPI-${row.code}`)}</strong><small>${esc(row.display_value || formatScore(scorePercent, 'N/A'))}</small></div>
+            <b>${esc(row.score_label || row.status || '資料庫指標')}</b>
           </div>`;
         }).join('')}
       </div>
@@ -499,9 +774,14 @@
     const kpiData = kpiState && kpiState.status === 'ready' ? kpiState.data : null;
     const summary = kpiData && kpiData.backtest && kpiData.backtest.summary;
     const latestClose = summary && summary.latest_close != null ? Number(summary.latest_close).toFixed(2) : '';
+    const classificationEffectiveFrom = kpiData && kpiData.classification_effective_from
+      ? kpiData.classification_effective_from
+      : kpiState && kpiState.status === 'loading'
+        ? '資料載入中'
+        : '資料庫未提供';
     return `<section class="cinema-study">
       <div class="cinema-topbar">
-        <div class="cinema-brand">${logoMarkup(stock)}<div><strong>${esc(stock.companyName)}</strong><span>POLICY INTELLIGENCE</span></div></div>
+        <div class="cinema-brand">${logoMarkup(stock)}<div><strong>${esc(stock.companyName)}</strong><span>POLICY INTELLIGENCE</span></div><button class="technical-indicator-btn" type="button" data-tech-open><span>技術指標</span><b aria-hidden="true">↗</b></button></div>
         <p>${esc(stock.ticker)} ・ CASE STUDY</p>
       </div>
       <div class="cinema-layout">
@@ -510,12 +790,12 @@
           <div class="cinema-return ${change > 0 ? 'is-up' : change < 0 ? 'is-down' : ''}">
             ${renderMarketReturnValue(record.returnRaw)}
             <span>政策事件後區間報酬</span>
-            <small>${esc(record.eventDate || '資料未提供')} - ${esc(summary && summary.latest_date ? summary.latest_date : '最新資料')}</small>
+            <small>${esc(classificationEffectiveFrom)} - ${esc(summary && summary.latest_date ? summary.latest_date : '最新資料')}</small>
           </div>
           ${renderMarketChart(kpiState, record)}
           <dl class="cinema-facts">
             ${field('產業大類', industry)}
-            ${field('事件日期', record.eventDate)}
+            ${field('事件日期', classificationEffectiveFrom)}
             ${field('政策狀態', record.policyStatus)}
             ${field('最新收盤', latestClose)}
           </dl>
@@ -627,6 +907,7 @@ ${renderKpiSection(kpiState, stock.ticker)}`;
 
       app.innerHTML = `<nav class="breadcrumb"><a href="../index.html">首頁</a><span>/</span><a href="${backCycle.href}">${returnCycle.title}</a><span>/</span><span>${esc(stock.ticker)}</span></nav>
 ${study}
+${isUS ? renderTechnicalDashboard(stock, kpiState) : ''}
 ${isUS && stock.records.length > 1 ? `<div class="event-tabs event-tabs--cinema" role="tablist" aria-label="政策事件">${stock.records.map((item, index) => `<button role="tab" aria-selected="${index === selected}" data-event="${index}">${esc(item.eventDate || item.checkedAt || `紀錄 ${index + 1}`)}</button>`).join('')}</div>` : ''}
 <nav class="stock-pager"><a href="${backCycle.href}">返回產業</a><div>${prev ? `<a href="?market=${market}&ticker=${prev.ticker}&cycle=${returnCycle.id}&industry=${encodeURIComponent(industry)}">上一檔 ${prev.ticker}</a>` : ''}${next ? `<a href="?market=${market}&ticker=${next.ticker}&cycle=${returnCycle.id}&industry=${encodeURIComponent(industry)}">下一檔 ${next.ticker}</a>` : ''}</div></nav>
 <footer class="disclaimer">這是依來源資料建立的政策研究分類與資料庫 KPI 呈現，不構成投資建議。不同政策事件的漲幅各自呈現，未加總或平均。</footer>`;
@@ -644,6 +925,7 @@ ${isUS && stock.records.length > 1 ? `<div class="event-tabs event-tabs--cinema"
 
       if (isUS) {
         initIndustryStockRail(currentIndex);
+        initTechnicalDashboard(kpiState && kpiState.status === 'ready' ? kpiState.data : null);
       }
 
     }

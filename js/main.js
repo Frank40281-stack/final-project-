@@ -265,7 +265,7 @@ const HERO_REVEAL_PANEL_DURATIONS = [0.90, 0.86, 0.94, 0.88, 0.96, 0.91];
 const HERO_REVEAL_PANEL_EASE = 'power4.inOut';
 const SECTION_TRANSITION_TOUCH_THRESHOLD = 42;
 
-let transitionInputLocked = false;
+let transitionInputLocked = true;
 let transitionWheelGateHandler = null;
 let transitionTouchStartY = null;
 
@@ -521,7 +521,12 @@ function onLoadComplete(screen, wrap) {
     ease: 'power2.inOut',
 
 
-    onComplete: () => { screen.style.display = 'none'; }
+    onComplete: () => {
+      screen.style.display = 'none';
+      document.documentElement.classList.remove('is-home-booting');
+      transitionInputLocked = false;
+      if (lenis && typeof lenis.start === 'function') lenis.start();
+    }
 
 
   });
@@ -614,41 +619,24 @@ function playEntryAnimation() {
 
 
 
-  // 2. Header fades in
-
-
-  tl.to('#header-logo', { opacity: 1, y: 0, duration: 0.7 }, 0.45);
-
-
-  tl.to('#menu-btn',    { opacity: 1, y: 0, duration: 0.7 }, 0.55);
-
-
-
-
-
-  // 3. Hero collage photos snap in with stagger
+  // 2. Reveal every first-screen element in the same frame.
   var collage = document.getElementById('hero-collage');
   if (collage) {
     collage.style.opacity = '0';
     tl.add(function() {
+      var ticker = document.getElementById('hero-ticker');
       collage.style.opacity = '1';
       collage.classList.add('is-ready');
+      if (ticker) ticker.classList.add('is-in');
+      gsap.set(['#header-logo', '#menu-btn'], { opacity: 1, y: 0 });
+      document.documentElement.classList.add('is-hero-first-frame-ready');
     }, 0.7);
-  }
-
-  // 4. Ticker banner slides up
-
-
-  tl.add(function() {
-
-
+  } else {
     var ticker = document.getElementById('hero-ticker');
-
-
     if (ticker) ticker.classList.add('is-in');
-
-
-  }, 1.6);
+    gsap.set(['#header-logo', '#menu-btn'], { opacity: 1, y: 0 });
+    document.documentElement.classList.add('is-hero-first-frame-ready');
+  }
 
 
 }
@@ -1056,6 +1044,20 @@ function initHeroWheelSnap() {
   }
 
 
+  function syncHeroRevealStageLayout(reveal) {
+    if (!reveal || !reveal.stage) return;
+
+    var sourceSlot = statement.querySelector('.s-statement__title-slot');
+    var cloneSlot = reveal.stage.querySelector('.s-statement__title-slot');
+    if (!sourceSlot || !cloneSlot) return;
+
+    var sourceHeight = Math.ceil(sourceSlot.getBoundingClientRect().height || 0);
+    if (sourceHeight > 0) {
+      cloneSlot.style.minHeight = sourceHeight + 'px';
+    }
+  }
+
+
   if (document.readyState === 'complete') {
     requestAnimationFrame(getHeroRevealStage);
   } else {
@@ -1099,6 +1101,23 @@ function initHeroWheelSnap() {
     var lines = target.querySelectorAll('[data-reveal]');
 
     if (carry) carry.classList.add('is-visible');
+    if (lines.length) {
+      gsap.set(lines, { opacity: 1, y: 0 });
+    }
+  }
+
+
+  function settleStatementRevealAnimations(target) {
+    var lines = target.querySelectorAll('[data-reveal]');
+
+    lines.forEach(function(line) {
+      gsap.getTweensOf(line).forEach(function(tween) {
+        if (!tween.scrollTrigger) return;
+        tween.scrollTrigger.kill(false);
+        tween.kill();
+      });
+    });
+
     if (lines.length) {
       gsap.set(lines, { opacity: 1, y: 0 });
     }
@@ -1164,6 +1183,7 @@ function initHeroWheelSnap() {
     var targetTop = isReverse ? hero.offsetTop : getIntroSnapY();
     var lockTop = isReverse ? getIntroSnapY() : getScrollY();
     var unlockScroll = existingUnlockScroll;
+    var forwardHandoffPrepared = false;
 
     cancelActivePlayback();
     clearWheelReleaseGuard();
@@ -1172,6 +1192,14 @@ function initHeroWheelSnap() {
     if (isReverse && !unlockScroll) setImmediateScrollY(getIntroSnapY());
     if (!unlockScroll) unlockScroll = lockScrollAt(lockTop);
     setStatementCarryHeroMode(isReverse);
+
+    function prepareForwardHandoff() {
+      if (isReverse || forwardHandoffPrepared || token !== transitionToken) return;
+      forwardHandoffPrepared = true;
+      settleStatementRevealAnimations(statement);
+      revealStatementContent(statement);
+      unlockScroll(targetTop);
+    }
 
     function finishTransition(reveal) {
       if (token !== transitionToken) return;
@@ -1192,16 +1220,18 @@ function initHeroWheelSnap() {
         return;
       }
 
+      // The real statement has already been positioned beneath the fully
+      // covered reveal layer. Re-assert the final text state after
+      // ScrollTrigger's position update, then hand the frame over directly.
+      prepareForwardHandoff();
       revealStatementContent(statement);
       setStatementCarryNaturalMode();
       transitionState = 'intro-snap';
       document.body.dataset.homeTransitionState = transitionState;
       window.__homeTransitionState = transitionState;
       if (reveal && reveal.stage) gsap.set(reveal.stage, { autoAlpha: 0 });
-      unlockScroll(targetTop);
       transitionInputLocked = false;
       if (lenis && typeof lenis.start === 'function') lenis.start();
-      beginWheelReleaseGuard();
     }
 
     if (reduceMotion) {
@@ -1210,6 +1240,7 @@ function initHeroWheelSnap() {
     }
 
     var reveal = getHeroRevealStage();
+    syncHeroRevealStageLayout(reveal);
     var states = [];
     for (var i = 0; i < reveal.panelCount; i++) {
       states.push({ y: isReverse ? 0 : 105 });
@@ -1221,6 +1252,15 @@ function initHeroWheelSnap() {
     }));
 
     gsap.set(reveal.stage, { autoAlpha: 1 });
+
+    // During the reverse transition the full statement clone is the visible
+    // foreground. Move the locked document underneath it to the hero first,
+    // so every descending clip panel reveals the real first section instead
+    // of revealing the statement again and jumping only at the end.
+    if (isReverse) {
+      document.body.style.top = (-targetTop) + 'px';
+      lockedScrollY = targetTop;
+    }
 
     activeTimeline = gsap.timeline({
       paused: true,
@@ -1247,7 +1287,14 @@ function initHeroWheelSnap() {
       setStatementCarryHeroMode(!isReverse);
     }, null, 0);
 
-    activeTimeline.set({}, {}, panelCompleteAt + 0.03);
+    if (!isReverse) {
+      activeTimeline.call(function() {
+        if (token !== transitionToken || transitionState !== 'forward') return;
+        prepareForwardHandoff();
+      }, null, panelCompleteAt);
+    }
+
+    activeTimeline.set({}, {}, panelCompleteAt + (isReverse ? 0.03 : 0.016));
     activeTimeline.play(0);
   }
 
@@ -2046,6 +2093,14 @@ function goToIndustry(id) {
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  // Avoid a permanently locked page if an external animation dependency fails.
+  window.setTimeout(() => {
+    document.documentElement.classList.add('is-hero-first-frame-ready');
+    document.documentElement.classList.remove('is-home-booting');
+    transitionInputLocked = false;
+    if (lenis && typeof lenis.start === 'function') lenis.start();
+  }, 8000);
+
 
   // Start in white-hero mode (hero-new section is white)
 
@@ -2081,6 +2136,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   initLenis();
+  if (lenis && typeof lenis.stop === 'function') lenis.stop();
 
 
 

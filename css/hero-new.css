@@ -13,6 +13,14 @@
 
 
 
+@font-face {
+  font-family: "Glow Sans TC";
+  src: url("../assets/fonts/GlowSansTC-Normal-Light.otf") format("opentype");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+
 /* Hero Curtain Transition */
 
 
@@ -850,6 +858,26 @@ body {
   visibility: visible;
 }
 
+html.is-home-booting,
+html.is-home-booting body {
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+html.is-home-booting .s-hero-new__ticker {
+  transition: none;
+}
+
+html.is-home-booting .p-header__logo,
+html.is-home-booting .c-burger {
+  transition: none;
+}
+
+html:not(.is-hero-first-frame-ready) .s-hero-title-layer {
+  opacity: 0;
+  visibility: hidden;
+}
+
 body.is-industries-view .s-hero-title-layer {
   opacity: 0;
   visibility: hidden;
@@ -916,11 +944,11 @@ body.is-industries-view .s-hero-title-layer {
   margin-bottom: 18px;
   padding: 5px 16px 7px;
   border-radius: 3px;
-  font-family: 'Noto Sans TC', sans-serif;
+  font-family: 'Taipei Sans TC', 'Noto Sans TC', sans-serif;
   font-size: clamp(20px, 3vw, 48px);
   font-weight: 700;
   line-height: 1.45;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.12em;
   color: #fff;
   background: linear-gradient(to right, var(--title-green) 0, var(--title-blue) var(--title-gradient-width));
   box-shadow: 0 18px 42px rgba(0, 0, 0, 0.14);
@@ -930,6 +958,8 @@ body.is-industries-view .s-hero-title-layer {
 }
 
 .s-statement__carry-line--one {
+  white-space: nowrap;
+  max-width: none;
   background: linear-gradient(to right, var(--title-green) 0, var(--title-blue) var(--title-gradient-width));
 }
 
@@ -953,7 +983,7 @@ body.is-industries-view .s-hero-title-layer {
 }
 
 .s-statement__carry.is-hero-title .s-statement__carry-line::before {
-  background: rgba(255, 255, 255, 0.96);
+  background: rgba(255, 255, 255, 0.78);
   opacity: 1;
 }
 
@@ -1007,6 +1037,7 @@ body.is-industries-view .s-hero-title-layer {
 
 .s-statement__line {
   max-width: 760px;
+  font-family: "Glow Sans TC", "Noto Sans TC", sans-serif;
 }
 
 @media (max-width: 960px) {
@@ -1056,4 +1087,33 @@ body.is-industries-view .s-hero-title-layer {
   .s-statement__carry-subtitle {
     max-width: 100%;
   }
+}
+@font-face {
+  font-family: 'Taipei Sans TC';
+  src: url('../assets/fonts/TaipeiSansTCBeta-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Taipei Sans TC';
+  src: url('../assets/fonts/TaipeiSansTCBeta-Bold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+/* Third-section cycle cards use Taipei Sans TC without affecting other sections. */
+.s-industries .s-cycle-card,
+.s-industries .s-cycle-card * {
+  font-family: 'Taipei Sans TC', 'Noto Sans TC', sans-serif !important;
+}
+
+.s-industries .s-cycle-card h2 {
+  font-weight: 700;
+}
+
+.s-industries .s-cycle-card li {
+  font-size: calc(0.74rem + 3px);
 }
