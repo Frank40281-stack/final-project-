@@ -94,14 +94,19 @@ final-project-/
 ## 🚀 快速開始與本地執行 (Getting Started)
 
 ### 1. 本地啟動伺服器
-可以使用 Python 內建 HTTP Server 在專案根目錄啟動伺服器：
+請使用專案附帶的本地伺服器。除了靜態檔案，它也提供唯讀的台股 API
+同源代理，避免上游 API 尚未提供 CORS 標頭時被瀏覽器阻擋：
 
 ```bash
 # 在專案目錄下執行
-python -m http.server 8000
+python server.py
 ```
 
-完成後開啟瀏覽器造訪：`http://127.0.0.1:8000`
+完成後開啟瀏覽器造訪：`http://127.0.0.1:5500`
+
+台股個股頁會透過 `/twstock-api/stocks/{ticker}/daily/` 讀取
+`http://35.229.146.232/api/stocks/{ticker}/daily/`。代理只接受固定格式的
+個股日資料 GET 請求，不提供任意網址轉送。
 
 ### 2. 關於 API CORS 跨網域存取提示
 在本地測試美股個股頁面 (`stock.html`) 時，若 API 提示 `Failed to fetch (CORS 跨網域限制)`：

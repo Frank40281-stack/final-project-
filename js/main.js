@@ -2070,7 +2070,7 @@ function goToIndustry(id) {
   gsap.to('#wrapper', { opacity: 0, duration: 0.4, ease: 'power2.in',
 
 
-    onComplete: () => { window.location.href = `pages/industry.html?sector=${id}`; }
+    onComplete: () => { window.location.href = `pages/industry.html?sector=${id}&view=20260729-header2`; }
 
 
   });
@@ -2199,7 +2199,7 @@ function buildIndustryCards() {
   window.StockData.CYCLES.forEach((cycle) => {
     const link = document.createElement('a');
     link.className = 's-cycle-card';
-    link.href = `pages/industry.html?cycle=${cycle.id}&market=us&industry=${encodeURIComponent(cycle.industries[0])}`;
+    link.href = `pages/industry.html?cycle=${cycle.id}&market=us&industry=${encodeURIComponent(cycle.industries[0])}&view=20260729-header2`;
     link.setAttribute('aria-label', `進入${cycle.title}：${cycle.subtitle}`);
     link.innerHTML = `<div class="s-cycle-card__shade"></div><div class="s-cycle-card__content"><p>CYCLE ${cycle.number} / 03</p><h2>${cycle.title}</h2><h3>${cycle.subtitle}</h3><p class="s-cycle-card__desc">${cycle.description}</p><div class="s-cycle-card__count">${cycle.industries.length} INDUSTRIES</div><ul>${cycle.industries.map(name => `<li>${name}</li>`).join('')}</ul><span>進入循環 →</span></div>`;
     track.appendChild(link);
@@ -2207,7 +2207,7 @@ function buildIndustryCards() {
 }
 function buildMenuSectors() {
   const grid=document.getElementById('menu-sectors'); if(!grid||!window.StockData)return; grid.innerHTML='';
-  window.StockData.CYCLES.forEach(cycle=>{const a=document.createElement('a');a.className='p-menu__sector-btn';a.href=`pages/industry.html?cycle=${cycle.id}`;a.innerHTML=`<span class="p-menu__sector-no">( ${cycle.number} )</span><span class="p-menu__sector-name">${cycle.title}｜${cycle.subtitle}</span><i class="p-menu__sector-line" aria-hidden="true"></i>`;grid.appendChild(a);});
+  window.StockData.CYCLES.forEach(cycle=>{const a=document.createElement('a');a.className='p-menu__sector-btn';a.href=`pages/industry.html?cycle=${cycle.id}&view=20260729-header2`;a.innerHTML=`<span class="p-menu__sector-no">( ${cycle.number} )</span><span class="p-menu__sector-name">${cycle.title}｜${cycle.subtitle}</span><i class="p-menu__sector-line" aria-hidden="true"></i>`;grid.appendChild(a);});
 }
 function initIndustryScroll() {
   const hud=document.getElementById('industries-hud'); if(hud) hud.classList.remove('is-show');

@@ -10,6 +10,7 @@
   const cycle = D.getCycle(params.get('cycle'));
   const KPI_API_BASE = 'http://34.81.30.50:8000/api/stock/';
   const KPI_API_ORIGIN = 'http://34.81.30.50:8000';
+  const TW_STOCK_API_BASE = window.TW_STOCK_API_BASE || '/twstock-api/stocks/';
 
   function esc(value) {
     return String(value ?? '').replace(/[&<>"']/g, char => ({
@@ -32,6 +33,7 @@
   }
 
   function formatScore(value, fallback) {
+    if (value == null || value === '') return fallback;
     const score = Number(value);
     return Number.isFinite(score) ? score.toFixed(score % 1 ? 1 : 0) : fallback;
   }
@@ -68,6 +70,259 @@
         if (!payload || payload.success !== true || !payload.data) throw new Error(payload && payload.message ? payload.message : 'API 回傳格式不完整');
         return payload.data;
       });
+  }
+
+  function movingAverage(rows, key, period) {
+    let total = 0;
+    const queue = [];
+    return rows.map(row => {
+      const value = finiteNumber(row[key]);
+      if (value == null) {
+        queue.push(null);
+        return null;
+      }
+      queue.push(value);
+      total += value;
+      if (queue.length > period) {
+        const removed = queue.shift();
+        if (removed != null) total -= removed;
+      }
+      return queue.length === period && queue.every(value => value != null) ? total / period : null;
+    });
+  }
+
+  function finiteNumber(value) {
+    if (value == null || value === '') return null;
+    const number = Number(value);
+    return Number.isFinite(number) ? number : null;
+  }
+
+  function firstFinite(rows, key, startIndex) {
+    for (let index = Math.max(0, startIndex || 0); index < rows.length; index += 1) {
+      const value = finiteNumber(rows[index][key]);
+      if (value != null) return { index, value };
+    }
+    return null;
+  }
+
+  function sumRecent(rows, key, days) {
+    let count = 0;
+    const sum = rows.slice(-days).reduce((total, row) => {
+      const value = finiteNumber(row[key]);
+      if (value == null) return total;
+      count += 1;
+      return total + value;
+    }, 0);
+    return count ? sum : null;
+  }
+
+  function percentChange(current, base) {
+    const end = finiteNumber(current);
+    const start = finiteNumber(base);
+    return end != null && start != null && start !== 0
+      ? ((end / start) - 1) * 100
+      : null;
+  }
+
+  function signedPercent(value, digits) {
+    const number = finiteNumber(value);
+    if (number == null) return '資料未提供';
+    return `${number > 0 ? '+' : ''}${number.toFixed(digits == null ? 1 : digits)}%`;
+  }
+
+  function twJudgment(kind, value, comparison) {
+    const number = finiteNumber(value);
+    const reference = finiteNumber(comparison);
+    if (number == null) return { label: '待資料', tone: 'neutral', positive: false };
+    if (kind === 'rsi') {
+      if (number >= 50 && number <= 70) return { label: '偏多', tone: 'up', positive: true };
+      if (number > 70) return { label: '過熱', tone: 'neutral', positive: false };
+      if (number < 40) return { label: '偏弱', tone: 'down', positive: false };
+      return { label: '中性', tone: 'neutral', positive: false };
+    }
+    if (kind === 'lower') {
+      if (reference == null) return { label: '中性', tone: 'neutral', positive: false };
+      if (number < reference) return { label: '下降', tone: 'up', positive: true };
+      if (number > reference) return { label: '上升', tone: 'down', positive: false };
+      return { label: '持平', tone: 'neutral', positive: false };
+    }
+    if (kind === 'ratio') {
+      if (number >= 1.1) return { label: `${number.toFixed(2)}x`, tone: 'up', positive: true };
+      if (number < 0.8) return { label: `${number.toFixed(2)}x`, tone: 'down', positive: false };
+      return { label: `${number.toFixed(2)}x`, tone: 'neutral', positive: false };
+    }
+    if (kind === 'positive') {
+      if (number > 0) return { label: '偏多', tone: 'up', positive: true };
+      if (number < 0) return { label: '偏空', tone: 'down', positive: false };
+      return { label: '中性', tone: 'neutral', positive: false };
+    }
+    if (reference != null && number > reference) return { label: '轉強', tone: 'up', positive: true };
+    if (reference != null && number < reference) return { label: '轉弱', tone: 'down', positive: false };
+    return { label: '中性', tone: 'neutral', positive: false };
+  }
+
+  function buildTwKpi(code, name, displayValue, judgment, detail, rawValue) {
+    const tone = judgment.tone || 'neutral';
+    return {
+      code,
+      name,
+      display_value: displayValue,
+      value: rawValue,
+      score: judgment.positive ? 1 : 0,
+      score_percent: judgment.positive ? 100 : tone === 'down' ? 0 : 50,
+      score_label: judgment.label,
+      status: tone === 'up' ? 'OK' : tone === 'down' ? 'WEAK' : 'NEUTRAL',
+      tone,
+      detail,
+      source: 'Taiwan Stock API'
+    };
+  }
+
+  function adaptTwStockPayload(payload, stock) {
+    if (!payload || !Array.isArray(payload.data) || !payload.data.length) {
+      throw new Error('台股 API 回傳格式不完整或沒有日資料');
+    }
+
+    const rows = payload.data
+      .filter(row => row && row.date)
+      .slice()
+      .sort((a, b) => String(a.date).localeCompare(String(b.date)));
+    const latest = rows[rows.length - 1];
+    const previous20 = rows[Math.max(0, rows.length - 21)] || {};
+    const previous = rows[Math.max(0, rows.length - 2)] || {};
+    const price50 = movingAverage(rows, 'Close', 50);
+    const price200 = movingAverage(rows, 'Close', 200);
+    const sixMonthStart = firstFinite(rows, 'Close', Math.max(0, rows.length - 127));
+    const sixMonthMomentum = sixMonthStart ? percentChange(latest.Close, sixMonthStart.value) : null;
+    const institution20 = sumRecent(rows, '三大法人買超', 20);
+    const mainForce20 = sumRecent(rows, '主力買賣超', 20);
+    const marginChange = percentChange(latest['融資餘額'], previous20['融資餘額']);
+    const latestRetail = finiteNumber(latest['散戶持股比例']);
+    const previousRetail = finiteNumber(previous20['散戶持股比例']);
+    const retailChange = latestRetail != null && previousRetail != null ? latestRetail - previousRetail : null;
+    const rsTaiex = twJudgment('compare', latest.KPI_19_RS_TAIEX, latest.KPI_19_RS_TAIEX_21MA);
+    const rsSector = twJudgment('compare', latest.KPI_19_RS_SECTOR, latest.KPI_19_RS_SECTOR_21MA);
+    const rsi = twJudgment('rsi', latest.RSI14);
+    const obvHigh = finiteNumber(latest.KPI_20_OBV_55D_High);
+    const obv = twJudgment('compare', latest.KPI_20_OBV, obvHigh == null ? null : obvHigh * 0.9);
+    const volume = twJudgment('ratio', latest.VolumeRatio);
+    const momentum = twJudgment('positive', sixMonthMomentum);
+    const latestHolder = finiteNumber(latest['大戶持股比例']);
+    const holder = twJudgment('positive', latestHolder == null ? null : latestHolder - 50);
+    const retail = twJudgment('lower', latestRetail, previousRetail);
+    const institution = twJudgment('positive', institution20);
+    const mainForce = twJudgment('positive', mainForce20);
+    const margin = twJudgment('lower', latest['融資餘額'], previous20['融資餘額']);
+    const latestShortRatio = finiteNumber(latest['券資比']);
+    const shortRatio = latestShortRatio == null
+      ? { label: '待資料', tone: 'neutral', positive: false }
+      : latestShortRatio >= 5
+      ? { label: '偏高', tone: 'up', positive: true }
+      : { label: '中性', tone: 'neutral', positive: false };
+
+    const kpis = [
+      buildTwKpi('18', 'RSI 14', finiteNumber(latest.RSI14) == null ? '資料未提供' : finiteNumber(latest.RSI14).toFixed(1), rsi, '14 日動能強弱', latest.RSI14),
+      buildTwKpi('19', 'RS vs TAIEX', signedPercent(latest.KPI_19_RS_TAIEX, 2), rsTaiex, '相對台灣加權指數強弱', latest.KPI_19_RS_TAIEX),
+      buildTwKpi('19S', 'RS vs Sector', signedPercent(latest.KPI_19_RS_SECTOR, 2), rsSector, '相對產業指數強弱', latest.KPI_19_RS_SECTOR),
+      buildTwKpi('20', 'OBV / Money Flow', compactNumber(latest.KPI_20_OBV), obv, '量價資金流向', latest.KPI_20_OBV),
+      buildTwKpi('RV', 'Relative Volume', volume.label, volume, '當日成交量比', latest.VolumeRatio),
+      buildTwKpi('6M', '6M Momentum', signedPercent(sixMonthMomentum, 1), momentum, '約六個月價格動能', sixMonthMomentum),
+      buildTwKpi('HOLDER', 'Large-holder Ownership', `${formatScore(latest['大戶持股比例'], 'N/A')}%`, holder, '大戶持股比例', latest['大戶持股比例']),
+      buildTwKpi('RETAIL', 'Retail Ownership 20D', retailChange == null ? '資料未提供' : `${retailChange > 0 ? '+' : ''}${retailChange.toFixed(2)}pp`, retail, '散戶持股比例 20 日變化', retailChange),
+      buildTwKpi('INST', 'Institutional Net Flow 20D', compactNumber(institution20), institution, '三大法人合計 20 日買賣超', institution20),
+      buildTwKpi('MAIN', 'Main-force Net Flow 20D', compactNumber(mainForce20), mainForce, '主力 20 日買賣超', mainForce20),
+      buildTwKpi('MARGIN', 'Margin Balance 20D', signedPercent(marginChange, 1), margin, '融資餘額 20 日變化', marginChange),
+      buildTwKpi('SHORT', 'Short / Margin Ratio', `${formatScore(latest['券資比'], 'N/A')}%`, shortRatio, '最新券資比', latest['券資比'])
+    ];
+
+    const priceSeries = rows.map((row, index) => ({
+      date: row.date,
+      close: row.Close,
+      price_50ma: price50[index],
+      price_200ma: price200[index]
+    }));
+    const triggers = rows
+      .filter(row => Number(row.KPI_18_19_20_Trigger) > 0)
+      .map(row => ({
+        date: row.date,
+        close: row.Close,
+        kpi18: 'RSI 條件成立',
+        kpi19: '相對強弱條件成立',
+        kpi20: 'OBV 條件成立'
+      }));
+    const firstPrice = firstFinite(rows, 'Close', 0);
+    const firstIndex = firstFinite(rows, '台灣加權指數', 0);
+    const stockReturn = firstPrice ? percentChange(latest.Close, firstPrice.value) : null;
+    const indexReturn = firstIndex ? percentChange(latest['台灣加權指數'], firstIndex.value) : null;
+    const excessReturn = stockReturn != null && indexReturn != null ? stockReturn - indexReturn : null;
+    const positiveCount = kpis.filter(item => item.score > 0).length;
+
+    return {
+      market: 'tw',
+      stock_id: payload.stock_id || stock.ticker,
+      stock_name: stock.companyName,
+      policy_subsector: Array.isArray(payload['產業大類']) ? payload['產業大類'].join('、') : '',
+      source_section: 'Taiwan Stock Daily API',
+      run_date: latest.date,
+      raw_latest: latest,
+      rows,
+      kpis,
+      scores: {
+        total_score: positiveCount,
+        technical_score: kpis.slice(0, 6).filter(item => item.score > 0).length,
+        chip_score: kpis.slice(6).filter(item => item.score > 0).length
+      },
+      backtest: {
+        triggers,
+        summary: {
+          latest_date: latest.date,
+          latest_close: latest.Close,
+          first_date: rows[0].date,
+          first_close: rows[0].Close,
+          trigger_count: triggers.length,
+          latest_judgments: {
+            kpi18: rsi.label,
+            kpi19: rsTaiex.label,
+            kpi20: obv.label
+          }
+        },
+        series: {
+          price: priceSeries,
+          rsi14: rows.map(row => ({ date: row.date, value: row.RSI14, judgment: twJudgment('rsi', row.RSI14).label })),
+          rs_composite: rows.map(row => ({
+            date: row.date,
+            value: row.KPI_19_RS_TAIEX,
+            ma21: row.KPI_19_RS_TAIEX_21MA,
+            judgment: twJudgment('compare', row.KPI_19_RS_TAIEX, row.KPI_19_RS_TAIEX_21MA).label
+          })),
+          obv55: rows.map(row => ({
+            date: row.date,
+            value: row.KPI_20_OBV,
+            high55: row.KPI_20_OBV_55D_High,
+            judgment: twJudgment('compare', row.KPI_20_OBV, finiteNumber(row.KPI_20_OBV_55D_High) == null ? null : finiteNumber(row.KPI_20_OBV_55D_High) * 0.9).label
+          })),
+          kpi21_alpha: [{ date: latest.date, excess_return: excessReturn }]
+        }
+      }
+    };
+  }
+
+  function loadTwStock(symbol, stock) {
+    const url = `${TW_STOCK_API_BASE}${encodeURIComponent(symbol)}/daily/?_t=${Date.now()}`;
+    return fetch(url, { headers: { Accept: 'application/json' } })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(response.status === 404
+            ? '台股資料庫查無此股票代號'
+            : `台股 API 回應 ${response.status}`);
+        }
+        const contentType = response.headers.get('content-type') || '';
+        if (!contentType.includes('application/json')) {
+          throw new Error('本地伺服器未啟用台股 API 代理，請改用 python server.py 啟動');
+        }
+        return response.json();
+      })
+      .then(payload => adaptTwStockPayload(payload, stock));
   }
 
   function renderScoreCards(kpiData) {
@@ -137,8 +392,9 @@
   function logoMarkup(stock) {
     const symbol = esc(stock.ticker);
     const name = esc(stock.companyName);
+    const logoSymbol = stock.market === 'tw' ? `${symbol}.TW` : symbol;
     return `<div class="cinema-logo" aria-label="${symbol} ${name}">
-      <img src="https://financialmodelingprep.com/image-stock/${symbol}.png" alt="${name} logo" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+      <img src="https://financialmodelingprep.com/image-stock/${logoSymbol}.png" alt="${name} logo" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
       <span hidden>${symbol.slice(0, 2)}</span>
     </div>`;
   }
@@ -151,6 +407,7 @@
 
   let activeChartInstance = null;
   let activeTechnicalChart = null;
+  let beneficiaryPanelController = null;
 
   function findKpi(kpiData, code) {
     const rows = kpiData && Array.isArray(kpiData.kpis) ? kpiData.kpis : [];
@@ -162,8 +419,8 @@
   }
 
   function compactNumber(value) {
-    const number = Number(value);
-    if (!Number.isFinite(number)) return 'N/A';
+    const number = finiteNumber(value);
+    if (number == null) return 'N/A';
     return new Intl.NumberFormat('zh-TW', {
       notation: Math.abs(number) >= 1000000 ? 'compact' : 'standard',
       maximumFractionDigits: Math.abs(number) >= 1000 ? 1 : 2
@@ -219,25 +476,28 @@
     const kpi19 = findKpi(kpiData, '19');
     const kpi20 = findKpi(kpiData, '20');
     const kpi21 = findKpi(kpiData, '21');
-    const totalScore = Number(kpiData.scores && kpiData.scores.total_score);
-    const positiveScore = Number.isFinite(totalScore) ? Math.round(totalScore) : 0;
+    const totalScore = finiteNumber(kpiData.scores && kpiData.scores.total_score);
+    const positiveScore = totalScore == null ? 0 : Math.round(totalScore);
     const indicatorTotal = Array.isArray(kpiData.kpis) && kpiData.kpis.length ? kpiData.kpis.length : 21;
-    const technicalScore = Number(kpiData.scores && kpiData.scores.technical_score);
-    const confluenceEstablished = Number.isFinite(technicalScore) && technicalScore >= 3;
-    const closeAboveMa = Number(price.close) >= Number(price.price_50ma);
-    const benchmarkAhead = Number(alpha.excess_return ?? kpi21.value) > 0;
-    const rsiValue = Number(rsi.value ?? kpi18.value);
-    const rsValue = Number(rs.value ?? kpi19.value);
-    const obvValue = Number(obv.value ?? kpi20.value);
+    const technicalScore = finiteNumber(kpiData.scores && kpiData.scores.technical_score);
+    const confluenceEstablished = technicalScore != null && technicalScore >= 3;
+    const closeValue = finiteNumber(price.close);
+    const price50Value = finiteNumber(price.price_50ma);
+    const closeAboveMa = closeValue != null && price50Value != null && closeValue >= price50Value;
+    const benchmarkAhead = finiteNumber(alpha.excess_return ?? kpi21.value) > 0;
+    const rsiValue = finiteNumber(rsi.value ?? kpi18.value);
+    const rsValue = finiteNumber(rs.value ?? kpi19.value);
+    const obvValue = finiteNumber(obv.value ?? kpi20.value);
     const rsiJudgment = rsi.judgment || judgments.kpi18 || kpi18.score_label;
     const rsJudgment = rs.judgment || judgments.kpi19 || kpi19.score_label;
     const obvJudgment = obv.judgment || judgments.kpi20 || kpi20.score_label;
-    const obvRange = Number(obv.high55);
-    const obvPosition = Number.isFinite(obvRange) && obvRange !== 0 ? obvValue / obvRange : Number(kpi20.score_percent) / 100;
+    const obvRange = finiteNumber(obv.high55);
+    const obvPosition = obvRange != null && obvRange !== 0 && obvValue != null ? obvValue / obvRange : Number(kpi20.score_percent) / 100;
     const mainAction = confluenceEstablished ? '適合追蹤' : '等待確認';
     const signalText = confluenceEstablished ? '訊號成立 ｜ 條件轉強' : '訊號觀察 ｜ 條件未齊';
     const riskText = technicalScore >= 3 ? '可分批布局' : technicalScore >= 2 ? '控制部位' : '暫緩布局';
     const benchmarkText = benchmarkAhead ? '跑贏大盤' : '落後大盤';
+    const benchmarkName = kpiData.market === 'tw' ? 'TAIEX' : 'S&P 500';
 
     return `<section id="technical-dashboard" class="tech-dashboard" role="dialog" aria-modal="true" aria-labelledby="technical-dashboard-title" hidden>
       <div class="tech-dashboard__glow"></div>
@@ -250,7 +510,7 @@
             <span>資料庫指標，持續驗證趨勢</span>
           </div>
           <div class="tech-benchmark ${benchmarkAhead ? 'is-positive' : 'is-negative'}">
-            <span>★</span><div><small>${esc(benchmarkText)}</small><strong>S&amp;P 500</strong></div>
+            <span>★</span><div><small>${esc(benchmarkText)}</small><strong>${esc(benchmarkName)}</strong></div>
           </div>
           <div class="tech-score"><strong>${esc(positiveScore)}</strong><span>/ ${esc(indicatorTotal)} 項正向</span></div>
         </header>
@@ -264,15 +524,15 @@
           <footer>
             <span class="${closeAboveMa ? 'is-positive' : 'is-negative'}"><b>✓</b> Price Context <em>${closeAboveMa ? '趨勢向上，價格高於 50MA' : '價格低於 50MA'}</em></span>
             <span class="${indicatorTone(rsiJudgment, rsiValue >= 50)}"><b>✓</b> RSI 14 <em>${esc(rsiJudgment)}</em></span>
-            <span class="${indicatorTone(rsJudgment, benchmarkAhead)}"><b>✓</b> Composite RS <em>${esc(benchmarkText)} S&amp;P 500</em></span>
+            <span class="${indicatorTone(rsJudgment, benchmarkAhead)}"><b>✓</b> Composite RS <em>${esc(benchmarkText)} ${esc(benchmarkName)}</em></span>
             <span class="${indicatorTone(obvJudgment, Number(kpi20.score) > 0.5)}"><b>✓</b> OBV <em>${esc(obvJudgment)}</em></span>
           </footer>
         </section>
 
         <section class="tech-gauges">
-          ${gaugeMarkup('動能指標', 'RSI 14', Number.isFinite(rsiValue) ? rsiValue.toFixed(2) : kpi18.display_value || 'N/A', rsiJudgment, rsiValue / 100)}
-          ${gaugeMarkup('綜合評等', 'Composite RS Line', Number.isFinite(rsValue) ? rsValue.toFixed(2) : kpi19.display_value || 'N/A', rsJudgment, (rsValue + 10) / 20)}
-          ${gaugeMarkup('量價驗證', 'OBV / Money Flow', Number.isFinite(obvValue) ? new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 }).format(obvValue) : kpi20.display_value || 'N/A', obvJudgment, obvPosition)}
+          ${gaugeMarkup('動能指標', 'RSI 14', rsiValue == null ? kpi18.display_value || 'N/A' : rsiValue.toFixed(2), rsiJudgment, rsiValue == null ? 0 : rsiValue / 100)}
+          ${gaugeMarkup('綜合評等', 'Composite RS Line', rsValue == null ? kpi19.display_value || 'N/A' : rsValue.toFixed(2), rsJudgment, rsValue == null ? 0 : (rsValue + 10) / 20)}
+          ${gaugeMarkup('量價驗證', 'OBV / Money Flow', obvValue == null ? kpi20.display_value || 'N/A' : new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 }).format(obvValue), obvJudgment, obvPosition)}
         </section>
 
         <section class="tech-chart-panel">
@@ -340,7 +600,7 @@
         labels: rows.map(item => item.date),
         datasets: config.datasets.map(item => ({
           label: item.label,
-          data: rows.map(row => Number.isFinite(Number(row[item.key])) ? Number(row[item.key]) : null),
+          data: rows.map(row => finiteNumber(row[item.key])),
           borderColor: item.borderColor,
           backgroundColor: item.backgroundColor || 'transparent',
           borderWidth: item.borderWidth || 1.5,
@@ -414,15 +674,14 @@
     }
 
     if (kpiState.status === 'error') {
+      const isTaiwan = record && record.market === 'tw';
       return `<div class="price-context-panel">
         <div class="kpi-empty" style="text-align:left">
           <strong style="color:var(--red);display:block;margin-bottom:6px">⚠️ 資料庫連線失敗：${esc(kpiState.message)}</strong>
           <span style="font-size:0.82rem;color:var(--muted);line-height:1.6;display:block">
-            <strong>可能原因（CORS 跨網域限制）：</strong><br>
-            當前網頁位址 (127.0.0.1:8000) 跨網域請求 API (34.81.30.50:8000) 時，因 API 伺服器末設定 <code>Access-Control-Allow-Origin</code> 標頭被瀏覽器阻擋。<br><br>
-            <strong>解決方法：</strong><br>
-            1. 後端 Django 伺服器需配置 <code>django-cors-headers</code> 允許存取。<br>
-            2. 本地開發測試可開啟 Chrome 擴充套件「Allow CORS: Access-Control-Allow-Origin」。
+            ${isTaiwan
+              ? '本地開發請以 <code>python server.py</code> 啟動，讓頁面透過同源唯讀代理取得台股資料。'
+              : '美股 API 伺服器需允許目前網站來源，並回傳正確的 CORS 標頭。'}
           </span>
         </div>
       </div>`;
@@ -442,7 +701,7 @@
     </div>`;
   }
 
-  function initPriceContextChart(kpiData) {
+  function initPriceContextChart(kpiData, record) {
     const canvas = document.getElementById('priceContextCanvas');
     if (!canvas || typeof Chart === 'undefined') return;
 
@@ -453,6 +712,11 @@
 
     const backtest = kpiData && kpiData.backtest;
     if (!backtest || !backtest.series || !Array.isArray(backtest.series.price)) return;
+    const isTaiwan = kpiData.market === 'tw';
+    const currencyPrefix = isTaiwan ? 'NT$' : '$';
+    const eventDate = !isTaiwan
+      ? String(kpiData.classification_effective_from || (record && record.eventDate) || '').slice(0, 10)
+      : '';
 
     const rawPriceSeries = backtest.series.price;
     const firstValidMaIndex = rawPriceSeries.findIndex(point =>
@@ -461,10 +725,16 @@
       Number.isFinite(Number(point.price_50ma)) &&
       Number(point.price_50ma) > 0
     );
-    const priceSeries = firstValidMaIndex >= 0
-      ? rawPriceSeries.slice(firstValidMaIndex)
-      : rawPriceSeries;
-    const triggers = Array.isArray(backtest.triggers) ? backtest.triggers : [];
+    const eventRawIndex = eventDate
+      ? rawPriceSeries.findIndex(point => String(point.date || '') >= eventDate)
+      : -1;
+    const seriesStartIndex = firstValidMaIndex >= 0
+      ? !isTaiwan && eventRawIndex >= 0
+        ? Math.min(firstValidMaIndex, eventRawIndex)
+        : firstValidMaIndex
+      : 0;
+    const priceSeries = rawPriceSeries.slice(seriesStartIndex);
+    const triggers = isTaiwan && Array.isArray(backtest.triggers) ? backtest.triggers : [];
     const triggerDateMap = new Map();
     triggers.forEach(t => {
       if (t.date) triggerDateMap.set(t.date, t);
@@ -493,6 +763,43 @@
         });
       }
     });
+    const eventPriceRow = eventDate
+      ? priceSeries.find(point => String(point.date || '') >= eventDate)
+      : null;
+    const eventPoint = eventPriceRow && finiteNumber(eventPriceRow.close) != null
+      ? [{
+          x: eventPriceRow.date,
+          y: finiteNumber(eventPriceRow.close),
+          eventDate
+        }]
+      : [];
+
+    const policyEventDatePlugin = {
+      id: 'policy-event-date-label',
+      afterDatasetsDraw(chart) {
+        if (isTaiwan || !eventPoint.length) return;
+        const datasetIndex = chart.data.datasets.findIndex(dataset => dataset.id === 'policy-event-marker');
+        if (datasetIndex < 0) return;
+        const element = chart.getDatasetMeta(datasetIndex).data[0];
+        if (!element) return;
+
+        const chartContext = chart.ctx;
+        const labelText = `事件 ${eventDate}`;
+        chartContext.save();
+        chartContext.font = "600 11px 'Taipei Sans TC','Noto Sans TC',sans-serif";
+        const textWidth = chartContext.measureText(labelText).width;
+        let labelX = element.x + 11;
+        if (labelX + textWidth + 10 > chart.chartArea.right) {
+          labelX = element.x - textWidth - 11;
+        }
+        const labelY = Math.max(chart.chartArea.top + 14, element.y - 12);
+        chartContext.fillStyle = 'rgba(3, 14, 11, .92)';
+        chartContext.fillRect(labelX - 5, labelY - 11, textWidth + 10, 18);
+        chartContext.fillStyle = '#86ef5a';
+        chartContext.fillText(labelText, labelX, labelY + 2);
+        chartContext.restore();
+      }
+    };
 
     const ctx = canvas.getContext('2d');
     const gradient = ctx.createLinearGradient(0, 0, 0, 340);
@@ -530,7 +837,7 @@
             fill: false,
             order: 3
           },
-          {
+          ...(isTaiwan ? [{
             label: 'KPI18-20 觸發點',
             data: triggerPoints,
             type: 'scatter',
@@ -542,9 +849,23 @@
             pointHoverBackgroundColor: '#4ade80',
             pointHoverBorderColor: '#ffffff',
             order: 1
-          }
+          }] : eventPoint.length ? [{
+            id: 'policy-event-marker',
+            label: '政策事件日',
+            data: eventPoint,
+            type: 'scatter',
+            backgroundColor: '#4ade80',
+            borderColor: '#d9ffbd',
+            borderWidth: 2,
+            pointRadius: 6,
+            pointHoverRadius: 9,
+            pointHoverBackgroundColor: '#86ef5a',
+            pointHoverBorderColor: '#ffffff',
+            order: 1
+          }] : [])
         ]
       },
+      plugins: isTaiwan ? [] : [policyEventDatePlugin],
       options: {
         responsive: true,
         maintainAspectRatio: false,
@@ -580,11 +901,15 @@
                 return `日期: ${dateStr}`;
               },
               label: function(context) {
+                if (context.dataset.id === 'policy-event-marker') {
+                  const marker = context.raw || {};
+                  return `政策事件日: ${marker.eventDate || eventDate}`;
+                }
                 if (context.dataset.label === 'KPI18-20 觸發點') {
                   const info = context.raw && context.raw.triggerInfo;
                   if (info) {
                     return [
-                      `🎯 KPI18-20 三指標成立 (觸發價: $${Number(info.close).toFixed(2)})`,
+                      `🎯 KPI18-20 三指標成立 (觸發價: ${currencyPrefix}${Number(info.close).toFixed(2)})`,
                       `  • KPI-18: ${info.kpi18 || '成立'}`,
                       `  • KPI-19: ${info.kpi19 || '成立'}`,
                       `  • KPI-20: ${info.kpi20 || '成立'}`
@@ -593,7 +918,7 @@
                   return '🎯 KPI18-20 三指標成立';
                 }
                 const val = context.parsed.y;
-                return `${context.dataset.label}: $${val != null ? val.toFixed(2) : 'N/A'}`;
+                return `${context.dataset.label}: ${currencyPrefix}${val != null ? val.toFixed(2) : 'N/A'}`;
               }
             }
           }
@@ -620,7 +945,7 @@
               color: '#64748b',
               font: { family: 'Outfit, sans-serif', size: 11 },
               callback: function(value) {
-                return '$' + value;
+                return currencyPrefix + value;
               }
             }
           }
@@ -667,7 +992,184 @@
     </aside>`;
   }
 
+  function renderTwValidationPanel(kpiState) {
+    if (!kpiState || kpiState.status === 'loading') {
+      return `<aside class="cinema-validation tw-validation"><div class="kpi-empty">正在讀取台股技術與籌碼指標...</div></aside>`;
+    }
+    if (kpiState.status === 'error') {
+      return `<aside class="cinema-validation tw-validation"><div class="kpi-empty">
+        <strong>台股資料暫時無法載入</strong>
+        <span>${esc(kpiState.message)}</span>
+      </div></aside>`;
+    }
+
+    const kpiData = kpiState.data;
+    const rows = Array.isArray(kpiData.kpis) ? kpiData.kpis : [];
+    const positive = rows.filter(row => row.tone === 'up').length;
+    const technical = rows.slice(0, 6);
+    const positioning = rows.slice(6);
+    const rowMarkup = row => `<div class="validation-row is-${esc(row.tone || 'neutral')}">
+      <span></span>
+      <div><strong>${esc(row.name)}</strong><small>${esc(row.detail)}</small></div>
+      <b>${esc(row.display_value)}<em>${esc(row.score_label)}</em></b>
+    </div>`;
+
+    return `<aside class="cinema-validation tw-validation">
+      <header>
+        <div>
+          <p class="eyebrow">VALIDATION MATRIX</p>
+          <h2>技術 × 籌碼｜${rows.length} 項驗證</h2>
+          <p>只使用資料庫實際欄位；未提供的法人拆分資料不推估。</p>
+        </div>
+        <div class="validation-score"><strong>${positive}</strong><span>/ ${rows.length} 項正向</span></div>
+      </header>
+      <div class="tw-validation-columns">
+        <section>
+          <h3><span>TECHNICAL｜技術</span><b>${technical.filter(row => row.tone === 'up').length} 項正向</b></h3>
+          ${technical.map(rowMarkup).join('')}
+        </section>
+        <section>
+          <h3><span>POSITIONING｜籌碼</span><b>${positioning.filter(row => row.tone === 'up').length} 項正向</b></h3>
+          ${positioning.map(rowMarkup).join('')}
+        </section>
+      </div>
+      <footer><span></span>台股 API 資料更新 ${esc(formatRunDate(kpiData.run_date))}；外資、投信、自營商未拆分。</footer>
+    </aside>`;
+  }
+
+  function twEvidenceCell(number, title, value, note, missing) {
+    return `<article class="tw-evidence-cell${missing ? ' is-missing' : ''}">
+      <small>${esc(String(number).padStart(2, '0'))}｜${esc(title)}</small>
+      <strong>${esc(value || '資料待補')}</strong>
+      ${note ? `<p>${esc(note)}</p>` : ''}
+    </article>`;
+  }
+
+  function renderTwEvidenceField(stock, record, kpiState, industry) {
+    const ready = kpiState && kpiState.status === 'ready';
+    const latestDate = ready ? kpiState.data.run_date : record.checkedAt;
+    const direct = record.rawBenefitLabel || label(stock.benefitGroup);
+    return `<section class="tw-evidence-field">
+      <header>
+        <div><p class="eyebrow">LUMEN EVIDENCE FIELD</p><h2>政策證據光域｜七欄交叉驗證</h2></div>
+        <dl>
+          <div><dt>FIELD MAPPING</dt><dd>5 / 7 已映射</dd></div>
+          <div><dt>EVIDENCE</dt><dd>${esc(record.rawBenefit || '待確認')}</dd></div>
+          <div><dt>REPORT AS OF</dt><dd>${esc(latestDate || '資料未提供')}</dd></div>
+        </dl>
+      </header>
+      <div class="tw-evidence-grid">
+        ${twEvidenceCell(1, 'LISTING ID', `${stock.ticker}｜${stock.companyName}`, '台灣證券交易所上市公司')}
+        ${twEvidenceCell(2, 'INDUSTRY', industry, '政策產業大類')}
+        ${twEvidenceCell(3, 'BENEFIT', direct, record.rawBenefit)}
+        ${twEvidenceCell(4, 'EVENT GATE', '政策基準日待補', '來源檔目前只有查核截止日，不能代替生效日', true)}
+        ${twEvidenceCell(5, 'POLICY ACTION', record.rationale, '台股 CSV 判定依據')}
+        ${twEvidenceCell(6, 'COMPANY PROOF', record.evidence, '主要證據文件')}
+        ${twEvidenceCell(7, 'FORMAL POLICY', '正式政策欄位待補', '待加入文件名稱、編號與可查證連結', true)}
+      </div>
+      <footer>DATA BASIS｜台股政策研究 CSV × Taiwan Stock Daily API；缺少欄位明確標示，不以推估值取代。</footer>
+    </section>`;
+  }
+
+  function renderIndustryGutter(industry, stock) {
+    return `<aside class="stock-industry-gutter" aria-label="產業大類">
+      <span>INDUSTRY SECTOR</span>
+      <small>${esc(stock.market === 'tw' ? 'TAIWAN' : 'UNITED STATES')}</small>
+      <h2>${esc(industry || '產業資料待補')}</h2>
+      <i></i>
+      <b>${esc(stock.ticker)}</b>
+    </aside>`;
+  }
+
+  function renderTwCinematicStudy(stock, record, kpiState, industry, siblings, currentIndex, returnCycle) {
+    const ready = kpiState && kpiState.status === 'ready';
+    const kpiData = ready ? kpiState.data : null;
+    const summary = kpiData && kpiData.backtest && kpiData.backtest.summary;
+    const latestClose = summary && summary.latest_close != null ? `NT$${new Intl.NumberFormat('zh-TW').format(summary.latest_close)}` : '載入中';
+    const firstClose = summary && summary.first_close != null ? `NT$${new Intl.NumberFormat('zh-TW').format(summary.first_close)}` : '載入中';
+    const policyVerified = stock.benefitGroup === 'confirmed';
+    const grade = /直接受惠/.test(record.rawBenefitLabel || '') ? 'A｜公司層級' : 'B｜產業層級';
+
+    return `${renderIndustryGutter(industry, stock)}<section class="cinema-study cinema-study--tw">
+      <div class="tw-accent-line"></div>
+      <header class="tw-study-header">
+        <div class="tw-stock-identity">
+          <span class="tw-ticker-mark">${esc(stock.ticker)}</span>
+          <div><h1>${esc(stock.companyName)}</h1><p>POLICY TRANSMISSION × MARKET VALIDATION</p></div>
+          <div class="tw-study-tags"><span class="tw-industry-fallback">${esc(industry)}</span><b>${esc(record.rawBenefit || '分類待查核')}</b></div>
+          <button class="technical-indicator-btn" type="button" data-tech-open><span>技術指標</span><b aria-hidden="true">↗</b></button>
+        </div>
+        <dl class="tw-study-meta">
+          <div><dt>POLICY LINK</dt><dd class="${policyVerified ? 'is-up' : ''}">${policyVerified ? 'VERIFIED' : 'REVIEW'}</dd></div>
+          <div><dt>EVIDENCE GRADE</dt><dd>${esc(grade)}</dd></div>
+          <div><dt>REPORT AS OF</dt><dd>${esc(ready ? kpiData.run_date : record.checkedAt)}</dd></div>
+        </dl>
+      </header>
+
+      <div class="tw-study-main">
+        <section class="tw-market-response">
+          <header>
+            <div><p class="eyebrow">EVENT RETURN × MARKET RESPONSE</p><h2>政策落地之後，市場是否給出確認？</h2></div>
+            <dl>
+              <div><dt>DATA START</dt><dd>${esc(summary ? summary.first_date : '載入中')}</dd></div>
+              <div><dt>START CLOSE</dt><dd>${esc(firstClose)}</dd></div>
+              <div><dt>LATEST CLOSE</dt><dd>${esc(latestClose)}</dd></div>
+            </dl>
+          </header>
+          <div class="tw-return-pending">
+            <span>事件日後總報酬</span>
+            <strong>待補基準</strong>
+            <small>政策生效日與事件基準價尚未在來源資料中提供</small>
+          </div>
+          ${renderMarketChart(kpiState, record)}
+        </section>
+        ${renderTwValidationPanel(kpiState)}
+        ${renderIndustryStockRail(siblings, currentIndex, returnCycle, industry)}
+      </div>
+      ${renderTwEvidenceField(stock, record, kpiState, industry)}
+    </section>`;
+  }
+
   function renderIndustryStockRail(stocks, currentIndex, returnCycle, industry) {
+    const entries = stocks.map((item, index) => {
+      const industryRecords = item.records.filter(itemRecord => itemRecord.industry === industry);
+      const group = industryRecords.some(itemRecord => itemRecord.benefitGroup === 'confirmed')
+        ? 'confirmed'
+        : 'unconfirmed';
+      return { item, index, group };
+    });
+    const confirmed = entries.filter(entry => entry.group === 'confirmed');
+    const unconfirmed = entries.filter(entry => entry.group === 'unconfirmed');
+
+    function stockItemMarkup(entry) {
+      const item = entry.item;
+      const index = entry.index;
+      const isCurrent = index === currentIndex;
+      const symbol = esc(item.ticker);
+      const logoSymbol = item.market === 'tw' ? `${symbol}.TW` : symbol;
+      const name = esc(item.companyName);
+      const href = `?market=${encodeURIComponent(market)}&ticker=${encodeURIComponent(item.ticker)}&cycle=${encodeURIComponent(returnCycle.id)}&industry=${encodeURIComponent(industry)}`;
+      return `<a class="industry-stock-item${isCurrent ? ' is-current' : ''}" href="${href}" data-stock-index="${index}" ${isCurrent ? 'aria-current="page"' : ''}>
+        <span class="industry-stock-logo">
+          <img src="https://financialmodelingprep.com/image-stock/${logoSymbol}.png" alt="${name} logo" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+          <span hidden>${symbol.slice(0, 2)}</span>
+        </span>
+        <span class="industry-stock-copy"><strong>${symbol}</strong><small>${name}</small></span>
+        <span class="industry-stock-arrow" aria-hidden="true">↗</span>
+      </a>`;
+    }
+
+    function columnMarkup(title, entriesInGroup, group) {
+      return `<section class="industry-stock-column is-${group}">
+        <h3><span>${esc(title)}</span><b>${entriesInGroup.length}</b></h3>
+        <nav class="industry-stock-list" aria-label="${esc(title)}">
+          ${entriesInGroup.length
+            ? entriesInGroup.map(stockItemMarkup).join('')
+            : '<span class="industry-stock-empty">目前沒有符合條件的個股</span>'}
+        </nav>
+      </section>`;
+    }
+
     return `<aside class="industry-stock-rail" aria-label="${esc(industry)}同產業股票">
       <header class="industry-stock-rail__header">
         <div>
@@ -676,32 +1178,22 @@
         </div>
         <span>${currentIndex + 1} / ${stocks.length}</span>
       </header>
-      <nav class="industry-stock-list" aria-label="切換同產業個股">
-        ${stocks.map((item, index) => {
-          const isCurrent = index === currentIndex;
-          const symbol = esc(item.ticker);
-          const name = esc(item.companyName);
-          const href = `?market=${encodeURIComponent(market)}&ticker=${encodeURIComponent(item.ticker)}&cycle=${encodeURIComponent(returnCycle.id)}&industry=${encodeURIComponent(industry)}`;
-          return `<a class="industry-stock-item${isCurrent ? ' is-current' : ''}" href="${href}" data-stock-index="${index}" ${isCurrent ? 'aria-current="page"' : ''}>
-            <span class="industry-stock-logo">
-              <img src="https://financialmodelingprep.com/image-stock/${symbol}.png" alt="${name} logo" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
-              <span hidden>${symbol.slice(0, 2)}</span>
-            </span>
-            <span class="industry-stock-copy"><strong>${symbol}</strong><small>${name}</small></span>
-            <span class="industry-stock-arrow" aria-hidden="true">↗</span>
-          </a>`;
-        }).join('')}
-      </nav>
+      <div class="industry-stock-columns">
+        ${columnMarkup('受惠股', confirmed, 'confirmed')}
+        ${columnMarkup('未確認直接受惠股', unconfirmed, 'unconfirmed')}
+      </div>
       <footer><span>SCROLL</span><i></i><small>滾輪切換</small></footer>
     </aside>`;
   }
 
   function initIndustryStockRail(currentIndex) {
-    const rail = document.querySelector('.industry-stock-list');
+    const rail = document.querySelector('.industry-stock-rail');
     if (!rail) return;
 
-    const items = [...rail.querySelectorAll('.industry-stock-item')];
-    const currentItem = items[currentIndex];
+    const lists = [...rail.querySelectorAll('.industry-stock-list')];
+    const items = [...rail.querySelectorAll('.industry-stock-item')]
+      .sort((a, b) => Number(a.dataset.stockIndex) - Number(b.dataset.stockIndex));
+    const currentItem = rail.querySelector('.industry-stock-item.is-current');
     if (currentItem) {
       requestAnimationFrame(() => currentItem.scrollIntoView({ block: 'center', behavior: 'instant' }));
     }
@@ -721,37 +1213,39 @@
       }, 280);
     }
 
-    rail.addEventListener('wheel', event => {
-      if (Math.abs(event.deltaY) <= Math.abs(event.deltaX)) return;
-      event.preventDefault();
-      if (wheelLocked) return;
+    lists.forEach(list => {
+      list.addEventListener('wheel', event => {
+        if (Math.abs(event.deltaY) <= Math.abs(event.deltaX)) return;
+        event.preventDefault();
+        if (wheelLocked) return;
 
-      wheelDelta += event.deltaY;
-      window.clearTimeout(wheelResetTimer);
-      wheelResetTimer = window.setTimeout(() => {
+        wheelDelta += event.deltaY;
+        window.clearTimeout(wheelResetTimer);
+        wheelResetTimer = window.setTimeout(() => {
+          wheelDelta = 0;
+        }, 140);
+
+        if (Math.abs(wheelDelta) < 42) return;
+        const direction = wheelDelta > 0 ? 1 : -1;
         wheelDelta = 0;
-      }, 140);
+        const targetIndex = Math.max(0, Math.min(items.length - 1, currentIndex + direction));
 
-      if (Math.abs(wheelDelta) < 42) return;
-      const direction = wheelDelta > 0 ? 1 : -1;
-      wheelDelta = 0;
-      const targetIndex = Math.max(0, Math.min(items.length - 1, currentIndex + direction));
+        if (targetIndex === currentIndex) {
+          list.animate(
+            [{ transform: 'translateY(0)' }, { transform: `translateY(${direction * -5}px)` }, { transform: 'translateY(0)' }],
+            { duration: 260, easing: 'cubic-bezier(.22,.8,.26,1)' }
+          );
+          return;
+        }
+        navigateTo(items[targetIndex], direction);
+      }, { passive: false });
+    });
 
-      if (targetIndex === currentIndex) {
-        rail.animate(
-          [{ transform: 'translateY(0)' }, { transform: `translateY(${direction * -5}px)` }, { transform: 'translateY(0)' }],
-          { duration: 260, easing: 'cubic-bezier(.22,.8,.26,1)' }
-        );
-        return;
-      }
-      navigateTo(items[targetIndex], direction);
-    }, { passive: false });
-
-    items.forEach((item, index) => {
+    items.forEach(item => {
       item.addEventListener('click', event => {
         if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return;
         event.preventDefault();
-        navigateTo(item, index < currentIndex ? -1 : 1);
+        navigateTo(item, Number(item.dataset.stockIndex) < currentIndex ? -1 : 1);
       });
     });
   }
@@ -770,7 +1264,121 @@
     </strong>`;
   }
 
-  function renderCinematicStudy(stock, record, kpiState, returnCycle, industry, change, siblings, currentIndex) {
+  function containsCompanyToken(text, token) {
+    const normalizedText = String(text || '').toUpperCase();
+    const normalizedToken = String(token || '').trim().toUpperCase();
+    if (!normalizedToken) return false;
+    const escapedToken = normalizedToken.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    return new RegExp(`(^|[^A-Z0-9])${escapedToken}(?=$|[^A-Z0-9])`).test(normalizedText);
+  }
+
+  function findTwBeneficiaries(stocks, usStock, industry) {
+    const genericTickers = new Set(['A', 'AI', 'IT', 'ON', 'U', 'X']);
+    const tickerAlias = genericTickers.has(usStock.ticker) ? '' : usStock.ticker;
+    const companyAlias = String(usStock.companyName || '')
+      .replace(/\b(incorporated|inc|corporation|corp|company|co|limited|ltd|plc|holdings?)\b\.?/gi, ' ')
+      .replace(/[(),.-]/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+
+    return stocks
+      .filter(item => item.market === 'tw' && item.ticker)
+      .map(item => {
+        const confirmedRecords = item.records.filter(itemRecord => itemRecord.benefitGroup === 'confirmed');
+        const directMatches = confirmedRecords.filter(itemRecord => {
+          const evidenceText = `${itemRecord.rationale || ''} ${itemRecord.evidence || ''}`;
+          return (tickerAlias && containsCompanyToken(evidenceText, tickerAlias))
+            || (companyAlias.length >= 4 && String(evidenceText).toUpperCase().includes(companyAlias.toUpperCase()));
+        });
+        const directRecord = directMatches.find(itemRecord => itemRecord.industry === industry) || directMatches[0];
+        const sharedRecord = confirmedRecords.find(itemRecord => itemRecord.industry === industry);
+        const relationshipRecord = directRecord || sharedRecord;
+        if (!relationshipRecord) return null;
+        return {
+          stock: item,
+          record: relationshipRecord,
+          relation: directRecord ? '公司具名關聯' : '同政策產業',
+          direct: Boolean(directRecord)
+        };
+      })
+      .filter(Boolean)
+      .sort((a, b) => {
+        if (a.direct !== b.direct) return a.direct ? -1 : 1;
+        return a.stock.ticker.localeCompare(b.stock.ticker, undefined, { numeric: true });
+      });
+  }
+
+  function renderTwBeneficiaryPanel(beneficiaries, returnCycle) {
+    const items = beneficiaries.map(item => {
+      const candidate = item.stock;
+      const candidateIndustry = item.record.industry;
+      const candidateCycle = D.CYCLES.find(cycleItem => cycleItem.industries.includes(candidateIndustry)) || returnCycle;
+      const href = `?market=tw&ticker=${encodeURIComponent(candidate.ticker)}&cycle=${encodeURIComponent(candidateCycle.id)}&industry=${encodeURIComponent(candidateIndustry)}`;
+      const logoSymbol = `${esc(candidate.ticker)}.TW`;
+      return `<a class="tw-beneficiary-item" href="${href}">
+        <span class="tw-beneficiary-logo">
+          <img src="https://financialmodelingprep.com/image-stock/${logoSymbol}.png" alt="${esc(candidate.companyName)} logo" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+          <span hidden>${esc(candidate.ticker.slice(0, 2))}</span>
+        </span>
+        <span class="tw-beneficiary-copy">
+          <strong>${esc(candidate.ticker)}｜${esc(candidate.companyName)}</strong>
+          <small>${esc(item.relation)}・${esc(candidateIndustry)}</small>
+        </span>
+        <b aria-hidden="true">↗</b>
+      </a>`;
+    }).join('');
+
+    return `<button class="tw-beneficiary-btn" type="button" data-tw-beneficiary-open aria-expanded="false" aria-controls="tw-beneficiary-panel">
+      <span>台股受惠股</span><b>${beneficiaries.length}</b><i aria-hidden="true">＋</i>
+    </button>
+    <aside id="tw-beneficiary-panel" class="tw-beneficiary-panel" aria-labelledby="tw-beneficiary-title" hidden>
+      <header>
+        <div><p class="eyebrow">TAIWAN BENEFICIARIES</p><h2 id="tw-beneficiary-title">台股受惠股</h2></div>
+        <button type="button" data-tw-beneficiary-close aria-label="關閉台股受惠股列表">×</button>
+      </header>
+      <p class="tw-beneficiary-note">優先顯示公司具名證據，其次為同政策產業中已確認受惠的台股。</p>
+      <nav class="tw-beneficiary-list" aria-label="台股受惠股列表">
+        ${items || '<span class="tw-beneficiary-empty">目前資料尚無符合條件的台股受惠股。</span>'}
+      </nav>
+    </aside>`;
+  }
+
+  function initTwBeneficiaryPanel() {
+    const button = document.querySelector('[data-tw-beneficiary-open]');
+    const panel = document.getElementById('tw-beneficiary-panel');
+    if (!button || !panel) return;
+    const closeButton = panel.querySelector('[data-tw-beneficiary-close]');
+
+    if (beneficiaryPanelController) beneficiaryPanelController.abort();
+    beneficiaryPanelController = new AbortController();
+    const listenerOptions = { signal: beneficiaryPanelController.signal };
+
+    function setOpen(open, restoreFocus) {
+      panel.hidden = !open;
+      button.setAttribute('aria-expanded', String(open));
+      button.querySelector('i').textContent = open ? '−' : '＋';
+      if (open) {
+        requestAnimationFrame(() => closeButton && closeButton.focus({ preventScroll: true }));
+      } else if (restoreFocus) {
+        button.focus({ preventScroll: true });
+      }
+    }
+
+    button.addEventListener('click', () => {
+      setOpen(panel.hidden, false);
+    }, listenerOptions);
+    closeButton?.addEventListener('click', () => setOpen(false, true), listenerOptions);
+    document.addEventListener('click', event => {
+      if (!panel.hidden && !panel.contains(event.target) && !button.contains(event.target)) {
+        setOpen(false, false);
+      }
+    }, listenerOptions);
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && !panel.hidden) setOpen(false, true);
+    }, listenerOptions);
+  }
+
+  function renderCinematicStudy(stock, record, kpiState, returnCycle, industry, change, siblings, currentIndex, beneficiaries) {
     const kpiData = kpiState && kpiState.status === 'ready' ? kpiState.data : null;
     const summary = kpiData && kpiData.backtest && kpiData.backtest.summary;
     const latestClose = summary && summary.latest_close != null ? Number(summary.latest_close).toFixed(2) : '';
@@ -779,9 +1387,10 @@
       : kpiState && kpiState.status === 'loading'
         ? '資料載入中'
         : '資料庫未提供';
-    return `<section class="cinema-study">
+    return `${renderIndustryGutter(industry, stock)}<section class="cinema-study">
       <div class="cinema-topbar">
         <div class="cinema-brand">${logoMarkup(stock)}<div><strong>${esc(stock.companyName)}</strong><span>POLICY INTELLIGENCE</span></div><button class="technical-indicator-btn" type="button" data-tech-open><span>技術指標</span><b aria-hidden="true">↗</b></button></div>
+        ${renderTwBeneficiaryPanel(beneficiaries, returnCycle)}
         <p>${esc(stock.ticker)} ・ CASE STUDY</p>
       </div>
       <div class="cinema-layout">
@@ -794,7 +1403,7 @@
           </div>
           ${renderMarketChart(kpiState, record)}
           <dl class="cinema-facts">
-            ${field('產業大類', industry)}
+            <div class="evidence-row cinema-industry-fallback"><dt>產業大類</dt><dd>${esc(industry || '資料未提供')}</dd></div>
             ${field('事件日期', classificationEffectiveFrom)}
             ${field('政策狀態', record.policyStatus)}
             ${field('最新收盤', latestClose)}
@@ -861,12 +1470,13 @@
     const backCycle = document.getElementById('back-cycle');
     backCycle.href = `industry.html?cycle=${returnCycle.id}&market=${market}&industry=${encodeURIComponent(industry)}`;
 
-    let selected = 0;
-    let kpiState = market === 'us' ? { status: 'loading' } : null;
+    let selected = Math.max(0, stock.records.findIndex(item => item.industry === industry));
+    let kpiState = ['us', 'tw'].includes(market) ? { status: 'loading' } : null;
 
     function render() {
       const record = stock.records[selected];
       const isUS = market === 'us';
+      const isTW = market === 'tw';
       const change = record.returnValue;
       const siblings = data.stocks
         .filter(item => item.market === market && item.industries.includes(industry) && item.ticker)
@@ -874,6 +1484,9 @@
       const currentIndex = siblings.findIndex(item => item.ticker === stock.ticker);
       const prev = siblings[currentIndex - 1];
       const next = siblings[currentIndex + 1];
+      const twBeneficiaries = isUS
+        ? findTwBeneficiaries(data.stocks, stock, D.normalizeIndustryName(record.industry || industry))
+        : [];
 
       const legacyStudy = `<section class="detail-grid">
   <div class="detail-lead">
@@ -903,12 +1516,16 @@
   </div>
 </section>
 ${renderKpiSection(kpiState, stock.ticker)}`;
-      const study = isUS ? renderCinematicStudy(stock, record, kpiState, returnCycle, industry, change, siblings, currentIndex) : legacyStudy;
+      const study = isUS
+        ? renderCinematicStudy(stock, record, kpiState, returnCycle, industry, change, siblings, currentIndex, twBeneficiaries)
+        : isTW
+          ? renderTwCinematicStudy(stock, record, kpiState, industry, siblings, currentIndex, returnCycle)
+          : legacyStudy;
 
       app.innerHTML = `<nav class="breadcrumb"><a href="../index.html">首頁</a><span>/</span><a href="${backCycle.href}">${returnCycle.title}</a><span>/</span><span>${esc(stock.ticker)}</span></nav>
 ${study}
-${isUS ? renderTechnicalDashboard(stock, kpiState) : ''}
-${isUS && stock.records.length > 1 ? `<div class="event-tabs event-tabs--cinema" role="tablist" aria-label="政策事件">${stock.records.map((item, index) => `<button role="tab" aria-selected="${index === selected}" data-event="${index}">${esc(item.eventDate || item.checkedAt || `紀錄 ${index + 1}`)}</button>`).join('')}</div>` : ''}
+${isUS || isTW ? renderTechnicalDashboard(stock, kpiState) : ''}
+${(isUS || isTW) && stock.records.length > 1 ? `<div class="event-tabs event-tabs--cinema" role="tablist" aria-label="政策事件">${stock.records.map((item, index) => `<button role="tab" aria-selected="${index === selected}" data-event="${index}">${esc(isTW ? item.industry : item.eventDate || item.checkedAt || `紀錄 ${index + 1}`)}</button>`).join('')}</div>` : ''}
 <nav class="stock-pager"><a href="${backCycle.href}">返回產業</a><div>${prev ? `<a href="?market=${market}&ticker=${prev.ticker}&cycle=${returnCycle.id}&industry=${encodeURIComponent(industry)}">上一檔 ${prev.ticker}</a>` : ''}${next ? `<a href="?market=${market}&ticker=${next.ticker}&cycle=${returnCycle.id}&industry=${encodeURIComponent(industry)}">下一檔 ${next.ticker}</a>` : ''}</div></nav>
 <footer class="disclaimer">這是依來源資料建立的政策研究分類與資料庫 KPI 呈現，不構成投資建議。不同政策事件的漲幅各自呈現，未加總或平均。</footer>`;
 
@@ -920,12 +1537,17 @@ ${isUS && stock.records.length > 1 ? `<div class="event-tabs event-tabs--cinema"
       });
 
       if (kpiState && kpiState.status === 'ready') {
-        initPriceContextChart(kpiState.data);
+        initPriceContextChart(kpiState.data, record);
       }
 
-      if (isUS) {
+      if (isUS || isTW) {
         initIndustryStockRail(currentIndex);
+      }
+      if (isUS || isTW) {
         initTechnicalDashboard(kpiState && kpiState.status === 'ready' ? kpiState.data : null);
+      }
+      if (isUS) {
+        initTwBeneficiaryPanel();
       }
 
     }
@@ -940,6 +1562,16 @@ ${isUS && stock.records.length > 1 ? `<div class="event-tabs event-tabs--cinema"
         })
         .catch(error => {
           kpiState = { status: 'error', message: error.message || '請稍後再試，或確認 API CORS 設定' };
+          render();
+        });
+    } else if (market === 'tw') {
+      loadTwStock(stock.ticker, stock)
+        .then(apiData => {
+          kpiState = { status: 'ready', data: apiData };
+          render();
+        })
+        .catch(error => {
+          kpiState = { status: 'error', message: error.message || '請稍後再試，或確認本地代理伺服器' };
           render();
         });
     }
