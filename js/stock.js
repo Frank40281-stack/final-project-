@@ -8,8 +8,8 @@
   const market = params.get('market');
   const ticker = D.normalizeTicker(params.get('ticker'));
   const cycle = D.getCycle(params.get('cycle'));
-  const KPI_API_BASE = 'http://34.81.30.50:8000/api/stock/';
-  const KPI_API_ORIGIN = 'http://34.81.30.50:8000';
+  const KPI_API_BASE = 'https://t2prj.ai-future2026.cc/api/stock/';
+  const KPI_API_ORIGIN = 'https://t2prj.ai-future2026.cc/';
   const TW_STOCK_API_BASE = window.TW_STOCK_API_BASE || '/twstock-api/stocks/';
 
   function esc(value) {
