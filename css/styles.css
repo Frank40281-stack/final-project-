@@ -371,7 +371,7 @@ p { line-height: 1.8; }
 }
 .s-statement__line--indent {
   padding-left: clamp(16px, 4vw, 60px);
-  color: #c9a84c;
+  color: #ff7e00;
 }
 
 /* ════════════════════════════════════════════════════════════════
