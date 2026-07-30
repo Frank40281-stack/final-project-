@@ -1,0 +1,16 @@
+/* Theme 91: 琥珀金橘發光外框霓虹 (Port 5591) */
+body { background-color: #0d0d0d !important; color: #ffcc00 !important; font-family: 'Noto Sans TC', sans-serif !important; }
+.hero-curtain__strip { background: #0d0d0d !important; }
+.s-hero-new { background: radial-gradient(circle at 50% 40%, rgba(255, 153, 0, 0.25), transparent 55%), linear-gradient(135deg, #0d0d0d 0%, #1c1000 100%) !important; }
+.s-statement__carry-line--one { color: #ffcc00 !important; background: #0d0d0d !important; border: 2px solid #ff9900 !important; box-shadow: 0 0 20px #ff9900, inset 0 0 10px #ff9900 !important; padding: 12px 28px !important; }
+.s-statement__carry-line--two { color: #0d0d0d !important; background: #ffcc00 !important; border: 2px solid #ff9900 !important; box-shadow: 0 0 25px #ff9900 !important; -webkit-text-fill-color: initial !important; padding: 12px 28px !important; margin-top: 10px !important; font-weight: 900 !important; }
+.s-statement__carry-subtitle { color: #ff9900 !important; text-shadow: 0 0 10px #ff9900 !important; }
+.s-hero-new__ticker { border-top: 2px solid #ff9900 !important; border-bottom: 2px solid #ff9900 !important; background: #0d0d0d !important; box-shadow: 0 0 15px #ff9900 !important; }
+.s-hero-new__ticker-text { color: #ffcc00 !important; text-shadow: 0 0 10px #ff9900 !important; }
+.s-statement { background: linear-gradient(135deg, #1c1000 0%, #0d0d0d 100%) !important; border-top: 2px solid #ff9900 !important; }
+.s-statement__line { color: #ffffff !important; line-height: 2.3 !important; }
+.s-statement__line--indent { color: #ffcc00 !important; border-left: 4px solid #ff9900 !important; background: rgba(255, 153, 0, 0.1) !important; padding-left: 20px !important; }
+.s-industries { background: #0d0d0d !important; border-top: 2px solid #ff9900 !important; }
+.s-ind-card { background: #1c1000 !important; border: 2px solid #ff9900 !important; box-shadow: 0 0 20px rgba(255, 153, 0, 0.4) !important; border-radius: 12px !important; }
+.s-ind-card__num { color: #ffcc00 !important; text-shadow: 0 0 8px #ff9900 !important; }
+.s-ind-card__title { color: #ffffff !important; }

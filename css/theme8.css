@@ -1,0 +1,16 @@
+/* Theme 8: 3D幾何網格金 (Port 5508) */
+body { background-color: #111111 !important; color: #ffd700 !important; font-family: 'Noto Sans TC', sans-serif !important; }
+.hero-curtain__strip { background: #111111 !important; }
+.s-hero-new { background: radial-gradient(circle at 50% 30%, rgba(255, 215, 0, 0.2), transparent 50%), linear-gradient(135deg, #111111 0%, #1f1a08 100%) !important; }
+.s-statement__carry-line--one { color: #ffffff !important; background: #1f1a08 !important; border: 2px solid #ffd700 !important; box-shadow: 0 0 15px rgba(255, 215, 0, 0.3) !important; padding: 12px 28px !important; }
+.s-statement__carry-line--two { background: linear-gradient(180deg, #fff2a3 0%, #ffd700 60%, #997a00 100%) !important; -webkit-background-clip: text !important; -webkit-text-fill-color: transparent !important; padding: 12px 28px !important; margin-top: 10px !important; }
+.s-statement__carry-subtitle { color: #ffffff !important; font-style: italic !important; }
+.s-hero-new__ticker { border-top: 2px solid #ffd700 !important; border-bottom: 2px solid #ffd700 !important; background: #111111 !important; }
+.s-hero-new__ticker-text { color: #ffd700 !important; }
+.s-statement { background: linear-gradient(135deg, #1f1a08 0%, #111111 100%) !important; border-top: 2px solid #ffd700 !important; }
+.s-statement__line { color: #ffffff !important; line-height: 2.3 !important; }
+.s-statement__line--indent { color: #ffd700 !important; border-left: 4px solid #ffffff !important; background: rgba(255, 215, 0, 0.08) !important; padding-left: 20px !important; }
+.s-industries { background: #111111 !important; border-top: 2px solid #ffd700 !important; }
+.s-ind-card { background: #1f1a08 !important; border: 2px solid #ffd700 !important; border-radius: 12px !important; }
+.s-ind-card__num { color: #ffd700 !important; }
+.s-ind-card__title { color: #ffffff !important; }

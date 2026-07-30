@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI 股市問答機器人｜台股 · 美股智能助手</title>
+  <meta name="description" content="結合台股與美股資料的 AI 智能問答機器人，提供即時股市洞察、指標解析與投資建議。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Background Orbs -->
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-orb orb-3"></div>
+
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">
+          <div class="logo-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="url(#logo-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <defs>
+                <linearGradient id="logo-grad" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#00d4ff"/>
+                  <stop offset="1" stop-color="#7b61ff"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <span class="logo-text">StockAI</span>
+        </div>
+        <button class="sidebar-close" id="sidebar-close" aria-label="關閉側欄">✕</button>
+      </div>
+
+      <button class="new-chat-btn" id="new-chat-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+        </svg>
+        新對話
+      </button>
+
+      <div class="sidebar-section-label">對話記錄</div>
+      <nav class="chat-history" id="chat-history">
+        <!-- Dynamic history items -->
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="data-source-badge">
+          <span class="dot dot-tw"></span>
+          <span>台股 API 已連線</span>
+        </div>
+        <div class="data-source-badge">
+          <span class="dot dot-us"></span>
+          <span>美股 API 已連線</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Chat Area -->
+    <main class="chat-main">
+      <!-- Top bar -->
+      <header class="topbar">
+        <button class="menu-btn" id="menu-btn" aria-label="開啟選單">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="topbar-title">
+          <span class="model-badge">
+            <span class="model-dot"></span>
+            AI 模型：模擬模式
+          </span>
+        </div>
+        <div class="topbar-actions">
+          <button class="icon-btn" id="clear-btn" title="清除對話">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4h6v2"/>
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <!-- Chat Messages -->
+      <div class="chat-messages" id="chat-messages">
+        <!-- Welcome Screen -->
+        <div class="welcome-screen" id="welcome-screen">
+          <div class="welcome-logo">
+            <svg width="56" height="56" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="url(#wlg)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              <defs>
+                <linearGradient id="wlg" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#00d4ff"/><stop offset="1" stop-color="#7b61ff"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <h1 class="welcome-title">股市 AI 智能助手</h1>
+          <p class="welcome-subtitle">詢問台股、美股相關問題，獲取即時分析與洞察</p>
+
+          <div class="suggestion-grid">
+            <button class="suggestion-card" data-query="台積電 2330 近期走勢如何？技術面有什麼訊號？">
+              <div class="sug-icon">📈</div>
+              <div class="sug-text">
+                <div class="sug-title">技術面分析</div>
+                <div class="sug-desc">台積電近期走勢與技術訊號</div>
+              </div>
+            </button>
+            <button class="suggestion-card" data-query="目前台股籌碼面最強的 AI 相關股票有哪些？">
+              <div class="sug-icon">🧲</div>
+              <div class="sug-text">
+                <div class="sug-title">籌碼面篩選</div>
+                <div class="sug-desc">AI 題材籌碼最強個股</div>
+              </div>
+            </button>
+            <button class="suggestion-card" data-query="美國半導體政策對台灣半導體供應鏈有什麼影響？">
+              <div class="sug-icon">🌐</div>
+              <div class="sug-text">
+                <div class="sug-title">政策影響分析</div>
+                <div class="sug-desc">美國政策對台股供應鏈</div>
+              </div>
+            </button>
+            <button class="suggestion-card" data-query="解釋一下 RSI 指標超買超賣的判讀方式">
+              <div class="sug-icon">📊</div>
+              <div class="sug-text">
+                <div class="sug-title">指標教學</div>
+                <div class="sug-desc">RSI 超買超賣如何判讀</div>
+              </div>
+            </button>
+            <button class="suggestion-card" data-query="三大法人今天買超哪些股票最多？">
+              <div class="sug-icon">🏦</div>
+              <div class="sug-text">
+                <div class="sug-title">法人動向</div>
+                <div class="sug-desc">三大法人今日買超排行</div>
+              </div>
+            </button>
+            <button class="suggestion-card" data-query="什麼是 OBV 能量潮指標？如何搭配均線使用？">
+              <div class="sug-icon">⚡</div>
+              <div class="sug-text">
+                <div class="sug-title">量價分析</div>
+                <div class="sug-desc">OBV 能量潮搭配均線策略</div>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Input Area -->
+      <div class="input-area">
+        <div class="input-wrapper">
+          <div class="input-box" id="input-box">
+            <textarea
+              id="user-input"
+              class="user-textarea"
+              placeholder="詢問任何台股、美股問題..."
+              rows="1"
+              maxlength="2000"
+              aria-label="輸入問題"
+            ></textarea>
+            <div class="input-controls">
+              <span class="char-count" id="char-count">0 / 2000</span>
+              <button class="send-btn" id="send-btn" aria-label="送出" disabled>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M22 2L15 22 11 13 2 9l20-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <p class="input-disclaimer">⚠️ 目前為模擬模式，回覆僅供展示。串接 AI API 後可獲得真實分析。</p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+  <!-- 浮動 Widget 測試 -->
+  <script src="widget.js?v=2"></script>
+</body>
+</html>

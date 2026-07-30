@@ -1,0 +1,16 @@
+/* Theme 7: 古銅鏡面黑金 (Port 5507) */
+body { background-color: #1c1615 !important; color: #ffffff !important; font-family: 'Noto Sans TC', sans-serif !important; }
+.hero-curtain__strip { background: #1c1615 !important; }
+.s-hero-new { background: radial-gradient(circle at 50% 30%, rgba(245, 176, 65, 0.15), transparent 60%), linear-gradient(135deg, #1c1615 0%, #2e221f 100%) !important; }
+.s-statement__carry-line--one { color: #ffffff !important; background: #2e221f !important; border: 2px solid #f5b041 !important; padding: 12px 28px !important; }
+.s-statement__carry-line--two { background: linear-gradient(135deg, #fff2d1 0%, #f5b041 50%, #7d5a29 100%) !important; -webkit-background-clip: text !important; -webkit-text-fill-color: transparent !important; padding: 12px 28px !important; margin-top: 10px !important; }
+.s-statement__carry-subtitle { color: #f5b041 !important; letter-spacing: 0.15em !important; }
+.s-hero-new__ticker { border-top: 1px solid #f5b041 !important; border-bottom: 1px solid #f5b041 !important; background: #1c1615 !important; }
+.s-hero-new__ticker-text { color: #f5b041 !important; }
+.s-statement { background: linear-gradient(135deg, #2e221f 0%, #1c1615 100%) !important; border-top: 1px solid #f5b041 !important; }
+.s-statement__line { color: #ffffff !important; line-height: 2.3 !important; }
+.s-statement__line--indent { color: #f5b041 !important; border-left: 4px solid #7d5a29 !important; background: rgba(245, 176, 65, 0.05) !important; padding-left: 20px !important; }
+.s-industries { background: #1c1615 !important; border-top: 1px solid #f5b041 !important; }
+.s-ind-card { background: #2e221f !important; border: 1px solid #f5b041 !important; border-radius: 12px !important; }
+.s-ind-card__num { color: #f5b041 !important; }
+.s-ind-card__title { color: #ffffff !important; }

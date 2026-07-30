@@ -1,0 +1,7095 @@
+{
+  "success": true,
+  "message": "Stock KPI data retrieved successfully",
+  "data": {
+    "symbol": "WOLF",
+    "stock_name": "Wolfspeed Inc",
+    "run_id": 2321,
+    "run_date": "2026-07-17T12:03:37",
+    "scores": {
+      "chip_score": 3.0,
+      "sentiment_score": 2.5,
+      "fundamental_score": 3.0,
+      "technical_score": 0.5,
+      "total_score": 9.0
+    },
+    "score_categories": [
+      {
+        "key": "chip_score",
+        "label": "籌碼",
+        "score": 3.0,
+        "max_score": 7,
+        "stars": {
+          "filled": 3,
+          "half": false,
+          "empty": 4,
+          "max": 7,
+          "items": [
+            "full",
+            "full",
+            "full",
+            "empty",
+            "empty",
+            "empty",
+            "empty"
+          ],
+          "text": "★★★☆☆☆☆"
+        }
+      },
+      {
+        "key": "sentiment_score",
+        "label": "情緒",
+        "score": 2.5,
+        "max_score": 4,
+        "stars": {
+          "filled": 2,
+          "half": true,
+          "empty": 1,
+          "max": 4,
+          "items": [
+            "full",
+            "full",
+            "half",
+            "empty"
+          ],
+          "text": "★★1/2☆"
+        }
+      },
+      {
+        "key": "fundamental_score",
+        "label": "基本面",
+        "score": 3.0,
+        "max_score": 6,
+        "stars": {
+          "filled": 3,
+          "half": false,
+          "empty": 3,
+          "max": 6,
+          "items": [
+            "full",
+            "full",
+            "full",
+            "empty",
+            "empty",
+            "empty"
+          ],
+          "text": "★★★☆☆☆"
+        }
+      },
+      {
+        "key": "technical_score",
+        "label": "技術面",
+        "score": 0.5,
+        "max_score": 3,
+        "stars": {
+          "filled": 0,
+          "half": true,
+          "empty": 2,
+          "max": 3,
+          "items": [
+            "half",
+            "empty",
+            "empty"
+          ],
+          "text": "1/2☆☆"
+        }
+      }
+    ],
+    "kpis": [
+      {
+        "code": "01",
+        "name": "Institutional Ownership",
+        "value": 110.40599,
+        "display_value": "110.41%",
+        "score": 1.0,
+        "score_label": "優良",
+        "score_percent": 100.0,
+        "score_average": 0.8,
+        "score_average_label": "普通",
+        "score_average_percent": 80.0,
+        "status": "OK",
+        "source": "Yahoo Finance/yfinance; Fintel",
+        "detail": "Shares Outstanding=51,972,101; yfinance heldPercentInstitutions=110.41%"
+      },
+      {
+        "code": "02",
+        "name": "MRQ Institutional Shares Change",
+        "value": null,
+        "display_value": "N/A",
+        "score": null,
+        "score_label": "N/A",
+        "score_percent": 0,
+        "score_average": 0.48,
+        "score_average_label": "低",
+        "score_average_percent": 48.0,
+        "status": "需 Fintel 資料",
+        "source": "Fintel",
+        "detail": "Fintel change shares=N/A; Fintel curl_cffi 抓取失敗：chrome120: HTTP 403; chrome124: HTTP 403; chrome136: HTTP 403; safari17_0: HTTP 403; 未啟用 Fintel Playwright fallback"
+      },
+      {
+        "code": "03",
+        "name": "Owners Count Change",
+        "value": null,
+        "display_value": "N/A",
+        "score": null,
+        "score_label": "N/A",
+        "score_percent": 0,
+        "score_average": 0.19,
+        "score_average_label": "低",
+        "score_average_percent": 19.0,
+        "status": "需 Fintel 資料",
+        "source": "Fintel",
+        "detail": "Owners=210; Fintel curl_cffi 抓取失敗：chrome120: HTTP 403; chrome124: HTTP 403; chrome136: HTTP 403; safari17_0: HTTP 403; 未啟用 Fintel Playwright fallback"
+      },
+      {
+        "code": "04",
+        "name": "Portfolio Allocation Growth",
+        "value": 35.72299330526796,
+        "display_value": "35.72%",
+        "score": 1.0,
+        "score_label": "優良",
+        "score_percent": 100.0,
+        "score_average": 0.59,
+        "score_average_label": "普通",
+        "score_average_percent": 59.0,
+        "status": "yfinance 估算",
+        "source": "Fintel",
+        "detail": "Source=yfinance 估算; Average Portfolio Allocation=N/A; Fintel curl_cffi 抓取失敗：chrome120: HTTP 403; chrome124: HTTP 403; chrome136: HTTP 403; safari17_0: HTTP 403; 未啟用 Fintel Playwright fallback"
+      },
+      {
+        "code": "05",
+        "name": "Buyer/Seller Ratio",
+        "value": 2.0714285714285716,
+        "display_value": "2.07",
+        "score": 1.0,
+        "score_label": "優良",
+        "score_percent": 100.0,
+        "score_average": 0.54,
+        "score_average_label": "普通",
+        "score_average_percent": 54.0,
+        "status": "OK",
+        "source": "MarketBeat Institutional Ownership",
+        "detail": "Source=MarketBeat/MarketBeat; Buyers=58; Sellers=28; MarketBeat Institutional Ownership 自動抓取成功 (NYSE)"
+      },
+      {
+        "code": "06",
+        "name": "Relative Net Inflow",
+        "value": -751.7065306227553,
+        "display_value": "-751.71%",
+        "score": 0.0,
+        "score_label": "低",
+        "score_percent": 0.0,
+        "score_average": 0.23,
+        "score_average_label": "低",
+        "score_average_percent": 23.0,
+        "status": "OK",
+        "source": "MarketBeat Institutional Ownership + yfinance market cap fallback",
+        "detail": "Source=MarketBeat; Inflows=$538.67M; Outflows=$12.72B; Net=-$12.18B; Market Cap=$1.62B"
+      },
+      {
+        "code": "07",
+        "name": "Institutional Activity Score",
+        "value": -1557.1063848614217,
+        "display_value": "-1557.11",
+        "score": 0.0,
+        "score_label": "低",
+        "score_percent": 0.0,
+        "score_average": 0.2,
+        "score_average_label": "低",
+        "score_average_percent": 20.0,
+        "status": "OK",
+        "source": "MarketBeat Institutional Ownership",
+        "detail": "Source=KPI 5/6; Buyer/Seller Ratio=2.07; Relative Net Inflow=-751.71%"
+      },
+      {
+        "code": "08",
+        "name": "Short Interest %",
+        "value": 46.98,
+        "display_value": "46.98%",
+        "score": 0.0,
+        "score_label": "低",
+        "score_percent": 0.0,
+        "score_average": 0.79,
+        "score_average_label": "普通",
+        "score_average_percent": 79.0,
+        "status": "OK",
+        "source": "MarketBeat Short Interest",
+        "detail": "Current short=24,414,860; Previous short=25,991,343; Record date=June 30, 2026; MarketBeat Short Interest 自動抓取成功 (NYSE)"
+      },
+      {
+        "code": "09",
+        "name": "Short Interest Change",
+        "value": -6.07,
+        "display_value": "-6.07%",
+        "score": 1.0,
+        "score_label": "優良",
+        "score_percent": 100.0,
+        "score_average": 0.41,
+        "score_average_label": "低",
+        "score_average_percent": 41.0,
+        "status": "OK",
+        "source": "MarketBeat Short Interest",
+        "detail": "Current short=24,414,860; Previous short=25,991,343; Record date=June 30, 2026; MarketBeat Short Interest 自動抓取成功 (NYSE)"
+      },
+      {
+        "code": "10",
+        "name": "Days To Cover",
+        "value": 3.9,
+        "display_value": "3.90",
+        "score": 0.5,
+        "score_label": "普通",
+        "score_percent": 50.0,
+        "score_average": 0.29,
+        "score_average_label": "低",
+        "score_average_percent": 29.0,
+        "status": "OK",
+        "source": "MarketBeat Short Interest",
+        "detail": "Current short=24,414,860; Previous short=25,991,343; Record date=June 30, 2026; MarketBeat Short Interest 自動抓取成功 (NYSE)"
+      },
+      {
+        "code": "11",
+        "name": "ESG Score",
+        "value": 43.0,
+        "display_value": "43",
+        "score": 1.0,
+        "score_label": "優良",
+        "score_percent": 100.0,
+        "score_average": 0.47,
+        "score_average_label": "低",
+        "score_average_percent": 47.0,
+        "status": "OK",
+        "source": "CSRHub ESG Rank / StockCircle ESG Score fallback",
+        "detail": "Environment=33/100; Social=35/100; Governance=61/100; Total=43/100; StockCircle Playwright 渲染抓取成功; static chrome120 showed ESG Score No data"
+      },
+      {
+        "code": "12",
+        "name": "Institutional Float Control",
+        "value": 201.7570724218498,
+        "display_value": "201.76%",
+        "score": 1.0,
+        "score_label": "優良",
+        "score_percent": 100.0,
+        "score_average": 0.89,
+        "score_average_label": "普通",
+        "score_average_percent": 89.0,
+        "status": "OK",
+        "source": "Yahoo Finance/yfinance",
+        "detail": "Institutional shares estimate=57,380,313; Float=28,440,298"
+      },
+      {
+        "code": "13",
+        "name": "Volume Activity",
+        "value": 6.978109274435528,
+        "display_value": "6.98%",
+        "score": 0.5,
+        "score_label": "普通",
+        "score_percent": 50.0,
+        "score_average": 0.03,
+        "score_average_label": "低",
+        "score_average_percent": 3.0,
+        "status": "OK",
+        "source": "Yahoo Finance/yfinance",
+        "detail": "10-day avg volume=3,626,670; Float version=12.75%"
+      },
+      {
+        "code": "14",
+        "name": "Volume Growth",
+        "value": -52.47775017296685,
+        "display_value": "-52.48%",
+        "score": 0.0,
+        "score_label": "低",
+        "score_percent": 0.0,
+        "score_average": 0.21,
+        "score_average_label": "低",
+        "score_average_percent": 21.0,
+        "status": "OK",
+        "source": "Yahoo Finance/yfinance",
+        "detail": "10-day avg volume=3,626,670; 3-month avg volume=7,631,520"
+      },
+      {
+        "code": "15",
+        "name": "Insider Ownership",
+        "value": 0.519,
+        "display_value": "0.519%",
+        "score": 0.0,
+        "score_label": "低",
+        "score_percent": 0.0,
+        "score_average": 0.2,
+        "score_average_label": "低",
+        "score_average_percent": 20.0,
+        "status": "OK",
+        "source": "Yahoo Finance/yfinance",
+        "detail": "yfinance heldPercentInsiders=0.519%"
+      },
+      {
+        "code": "16",
+        "name": "Form 4 Net Insider Trading",
+        "value": null,
+        "display_value": "N/A",
+        "score": 0.5,
+        "score_label": "普通",
+        "score_percent": 50.0,
+        "score_average": 0.49,
+        "score_average_label": "低",
+        "score_average_percent": 49.0,
+        "status": "OK",
+        "source": "Finviz Insider Trading / SEC Form 4",
+        "detail": "Buy=N/A; Sale=N/A; Other=N/A; Period=2026-04-01 to 2026-06-30; Fetch ID=9; Fetched at=2026-07-17T09:50:41; Previous quarter=2026-04-01 to 2026-06-30; Finviz Form 4 使用 24 小時內快取 fetch_id=9; Finviz recent feed has no WOLF row for previous quarter 2026-04-01 to 2026-06-30; SEC CIK cache hit; SEC Form 4 fallback found no parsable Form 4 transactions for previous quarter 2026-04-01 to 2026-06-30; filing_grace_days=10; skipped=2"
+      },
+      {
+        "code": "17",
+        "name": "13F Holder Shares Change",
+        "value": 8817671.0,
+        "display_value": "8,817,671",
+        "score": 1.0,
+        "score_label": "優良",
+        "score_percent": 100.0,
+        "score_average": 0.62,
+        "score_average_label": "普通",
+        "score_average_percent": 62.0,
+        "status": "OK",
+        "source": "WhaleWisdom stock holdings",
+        "detail": "Rows downloaded=20; Total records new=48, closed_out=31, added_to=61, reduced=29; Downloaded new=5, closed_out=5, added_to=5, reduced=5; WhaleWisdom sample fetched; limit=5; max_pages=1; closed_out/reduced use source negative shares_change; WhaleWisdom stock id resolved from stock page"
+      },
+      {
+        "code": "18",
+        "name": "RSI 14 Momentum",
+        "value": 35.33338993793318,
+        "display_value": "35.33",
+        "score": 0.0,
+        "score_label": "低",
+        "score_percent": 0.0,
+        "score_average": 0.46,
+        "score_average_label": "低",
+        "score_average_percent": 46.0,
+        "status": "OK",
+        "source": "Yahoo Finance/yfinance",
+        "detail": "Date=2026-07-16; Close=31.18; RSI14=35.33; Chart=0_png\\WOLF_KPI_18_19_20_combined.png; OK"
+      },
+      {
+        "code": "19",
+        "name": "Composite RS Line",
+        "value": 0.34907592264592296,
+        "display_value": "0.35",
+        "score": 0.0,
+        "score_label": "低",
+        "score_percent": 0.0,
+        "score_average": 0.44,
+        "score_average_label": "低",
+        "score_average_percent": 44.0,
+        "status": "OK",
+        "source": "Yahoo Finance/yfinance",
+        "detail": "Date=2026-07-16; Composite RS=0.35; Composite 21MA=0.48; SP500=0.41; NASDAQ=0.12; DJI=0.06; Weights=SP500 80%, NASDAQ 10%, DJI 10%; Chart=0_png\\WOLF_KPI_18_19_20_combined.png; OK"
+      },
+      {
+        "code": "20",
+        "name": "OBV 55D Money Flow",
+        "value": 110629100.0,
+        "display_value": "110,629,100",
+        "score": 0.5,
+        "score_label": "普通",
+        "score_percent": 50.0,
+        "score_average": 0.53,
+        "score_average_label": "普通",
+        "score_average_percent": 53.0,
+        "status": "OK",
+        "source": "Yahoo Finance/yfinance",
+        "detail": "Date=2026-07-16; Close=31.18; 55D price high=73.50; OBV=110,629,100; 55D OBV high=158,649,500; Chart=0_png\\WOLF_KPI_18_19_20_combined.png; OK"
+      }
+    ],
+    "backtest": {
+      "symbol": "WOLF",
+      "source_csv": "0_data/WOLF_KPI_18_19_20_1y_report.csv",
+      "image_url": "/api/stocks/WOLF/backtest-image/",
+      "summary": {
+        "latest_date": "2026-07-16",
+        "latest_close": 31.18000030517578,
+        "latest_judgments": {
+          "kpi18": "動能轉弱",
+          "kpi19": "❌ 空頭落後",
+          "kpi20": "量價待確認"
+        },
+        "trigger_count": 5,
+        "win_count": 4,
+        "loss_count": 1,
+        "win_rate": 80.0,
+        "avg_ret_m": null,
+        "avg_ret_q": -53.5,
+        "avg_ret_h": 34.82,
+        "avg_ret_y": 34.82,
+        "avg_ret_2y": 34.82
+      },
+      "series": {
+        "price": [
+          {
+            "date": "2025-09-29",
+            "close": 22.100000381469727,
+            "price_50ma": null
+          },
+          {
+            "date": "2025-09-30",
+            "close": 28.600000381469727,
+            "price_50ma": null
+          },
+          {
+            "date": "2025-10-01",
+            "close": 24.829999923706055,
+            "price_50ma": null
+          },
+          {
+            "date": "2025-10-02",
+            "close": 24.690000534057617,
+            "price_50ma": null
+          },
+          {
+            "date": "2025-10-03",
+            "close": 24.3700008392334,
+            "price_50ma": null
+          },
+          {
+            "date": "2025-10-06",
+            "close": 26.170000076293945,
+            "price_50ma": null
+          },
+          {
+            "date": "2025-10-07",
+            "close": 26.690000534057617,
+            "price_50ma": null
+          },
+          {
+            "date": "2025-10-08",
+            "close": 30.360000610351562,
+            "price_50ma": null
+          },
+          {
+            "date": "2025-10-09",
+            "close": 35.41999816894531,
+            "price_50ma": null
+          },
+          {
+            "date": "2025-10-10",
+            "close": 31.100000381469727,
+            "price_50ma": null
+          },
+          {
+            "date": "2025-10-13",
+            "close": 32.56999969482422,
+            "price_50ma": null
+          },
+          {
+            "date": "2025-10-14",
+            "close": 32.58000183105469,
+            "price_50ma": null
+          },
+          {
+            "date": "2025-10-15",
+            "close": 32.43000030517578,
+            "price_50ma": null
+          },
+          {
+            "date": "2025-10-16",
+            "close": 32.439998626708984,
+            "price_50ma": null
+          },
+          {
+            "date": "2025-10-17",
+            "close": 31.0,
+            "price_50ma": null
+          },
+          {
+            "date": "2025-10-20",
+            "close": 30.0,
+            "price_50ma": null
+          },
+          {
+            "date": "2025-10-21",
+            "close": 30.079999923706055,
+            "price_50ma": null
+          },
+          {
+            "date": "2025-10-22",
+            "close": 29.479999542236328,
+            "price_50ma": null
+          },
+          {
+            "date": "2025-10-23",
+            "close": 29.59000015258789,
+            "price_50ma": null
+          },
+          {
+            "date": "2025-10-24",
+            "close": 29.56999969482422,
+            "price_50ma": null
+          },
+          {
+            "date": "2025-10-27",
+            "close": 30.889999389648438,
+            "price_50ma": null
+          },
+          {
+            "date": "2025-10-28",
+            "close": 30.760000228881836,
+            "price_50ma": null
+          },
+          {
+            "date": "2025-10-29",
+            "close": 31.989999771118164,
+            "price_50ma": null
+          },
+          {
+            "date": "2025-10-30",
+            "close": 26.15999984741211,
+            "price_50ma": null
+          },
+          {
+            "date": "2025-10-31",
+            "close": 26.31999969482422,
+            "price_50ma": null
+          },
+          {
+            "date": "2025-11-03",
+            "close": 23.760000228881836,
+            "price_50ma": null
+          },
+          {
+            "date": "2025-11-04",
+            "close": 21.899999618530273,
+            "price_50ma": null
+          },
+          {
+            "date": "2025-11-05",
+            "close": 20.25,
+            "price_50ma": null
+          },
+          {
+            "date": "2025-11-06",
+            "close": 18.649999618530273,
+            "price_50ma": null
+          },
+          {
+            "date": "2025-11-07",
+            "close": 17.950000762939453,
+            "price_50ma": null
+          },
+          {
+            "date": "2025-11-10",
+            "close": 17.8799991607666,
+            "price_50ma": null
+          },
+          {
+            "date": "2025-11-11",
+            "close": 17.399999618530273,
+            "price_50ma": null
+          },
+          {
+            "date": "2025-11-12",
+            "close": 19.549999237060547,
+            "price_50ma": null
+          },
+          {
+            "date": "2025-11-13",
+            "close": 18.190000534057617,
+            "price_50ma": null
+          },
+          {
+            "date": "2025-11-14",
+            "close": 17.479999542236328,
+            "price_50ma": null
+          },
+          {
+            "date": "2025-11-17",
+            "close": 18.110000610351562,
+            "price_50ma": null
+          },
+          {
+            "date": "2025-11-18",
+            "close": 17.59000015258789,
+            "price_50ma": null
+          },
+          {
+            "date": "2025-11-19",
+            "close": 17.510000228881836,
+            "price_50ma": null
+          },
+          {
+            "date": "2025-11-20",
+            "close": 17.34000015258789,
+            "price_50ma": null
+          },
+          {
+            "date": "2025-11-21",
+            "close": 17.18000030517578,
+            "price_50ma": null
+          },
+          {
+            "date": "2025-11-24",
+            "close": 18.059999465942383,
+            "price_50ma": null
+          },
+          {
+            "date": "2025-11-25",
+            "close": 19.860000610351562,
+            "price_50ma": null
+          },
+          {
+            "date": "2025-11-26",
+            "close": 20.5,
+            "price_50ma": null
+          },
+          {
+            "date": "2025-11-28",
+            "close": 20.280000686645508,
+            "price_50ma": null
+          },
+          {
+            "date": "2025-12-01",
+            "close": 22.110000610351562,
+            "price_50ma": null
+          },
+          {
+            "date": "2025-12-02",
+            "close": 21.360000610351562,
+            "price_50ma": null
+          },
+          {
+            "date": "2025-12-03",
+            "close": 21.8700008392334,
+            "price_50ma": null
+          },
+          {
+            "date": "2025-12-04",
+            "close": 22.75,
+            "price_50ma": null
+          },
+          {
+            "date": "2025-12-05",
+            "close": 22.06999969482422,
+            "price_50ma": null
+          },
+          {
+            "date": "2025-12-08",
+            "close": 22.90999984741211,
+            "price_50ma": 24.45400005340576
+          },
+          {
+            "date": "2025-12-09",
+            "close": 22.760000228881836,
+            "price_50ma": 24.467200050354005
+          },
+          {
+            "date": "2025-12-10",
+            "close": 21.1299991607666,
+            "price_50ma": 24.317800025939942
+          },
+          {
+            "date": "2025-12-11",
+            "close": 19.860000610351562,
+            "price_50ma": 24.21840003967285
+          },
+          {
+            "date": "2025-12-12",
+            "close": 18.559999465942383,
+            "price_50ma": 24.09580001831055
+          },
+          {
+            "date": "2025-12-15",
+            "close": 17.739999771118164,
+            "price_50ma": 23.96319999694824
+          },
+          {
+            "date": "2025-12-16",
+            "close": 17.850000381469727,
+            "price_50ma": 23.796800003051757
+          },
+          {
+            "date": "2025-12-17",
+            "close": 17.149999618530273,
+            "price_50ma": 23.60599998474121
+          },
+          {
+            "date": "2025-12-18",
+            "close": 17.889999389648438,
+            "price_50ma": 23.35659996032715
+          },
+          {
+            "date": "2025-12-19",
+            "close": 18.3700008392334,
+            "price_50ma": 23.01560001373291
+          },
+          {
+            "date": "2025-12-22",
+            "close": 18.3799991607666,
+            "price_50ma": 22.761199989318847
+          },
+          {
+            "date": "2025-12-23",
+            "close": 18.34000015258789,
+            "price_50ma": 22.47659999847412
+          },
+          {
+            "date": "2025-12-24",
+            "close": 18.43000030517578,
+            "price_50ma": 22.193599967956544
+          },
+          {
+            "date": "2025-12-26",
+            "close": 17.950000762939453,
+            "price_50ma": 21.903999977111816
+          },
+          {
+            "date": "2025-12-29",
+            "close": 17.309999465942383,
+            "price_50ma": 21.601399993896486
+          },
+          {
+            "date": "2025-12-30",
+            "close": 17.1200008392334,
+            "price_50ma": 21.323800010681154
+          },
+          {
+            "date": "2025-12-31",
+            "close": 17.40999984741211,
+            "price_50ma": 21.072000007629395
+          },
+          {
+            "date": "2026-01-02",
+            "close": 18.93000030517578,
+            "price_50ma": 20.849000015258788
+          },
+          {
+            "date": "2026-01-05",
+            "close": 17.979999542236328,
+            "price_50ma": 20.619000015258788
+          },
+          {
+            "date": "2026-01-06",
+            "close": 19.700000762939453,
+            "price_50ma": 20.42120002746582
+          },
+          {
+            "date": "2026-01-07",
+            "close": 19.68000030517578,
+            "price_50ma": 20.223400039672853
+          },
+          {
+            "date": "2026-01-08",
+            "close": 18.8799991607666,
+            "price_50ma": 19.983200035095216
+          },
+          {
+            "date": "2026-01-09",
+            "close": 18.600000381469727,
+            "price_50ma": 19.740000038146974
+          },
+          {
+            "date": "2026-01-12",
+            "close": 18.420000076293945,
+            "price_50ma": 19.46860004425049
+          },
+          {
+            "date": "2026-01-13",
+            "close": 19.510000228881836,
+            "price_50ma": 19.335600051879883
+          },
+          {
+            "date": "2026-01-14",
+            "close": 19.489999771118164,
+            "price_50ma": 19.19900005340576
+          },
+          {
+            "date": "2026-01-15",
+            "close": 19.920000076293945,
+            "price_50ma": 19.122200050354003
+          },
+          {
+            "date": "2026-01-16",
+            "close": 20.350000381469727,
+            "price_50ma": 19.091200065612792
+          },
+          {
+            "date": "2026-01-20",
+            "close": 20.5,
+            "price_50ma": 19.09620006561279
+          },
+          {
+            "date": "2026-01-21",
+            "close": 19.479999542236328,
+            "price_50ma": 19.112800064086915
+          },
+          {
+            "date": "2026-01-22",
+            "close": 19.18000030517578,
+            "price_50ma": 19.13740005493164
+          },
+          {
+            "date": "2026-01-23",
+            "close": 17.959999084472656,
+            "price_50ma": 19.139000053405763
+          },
+          {
+            "date": "2026-01-26",
+            "close": 17.399999618530273,
+            "price_50ma": 19.139000053405763
+          },
+          {
+            "date": "2026-01-27",
+            "close": 18.0,
+            "price_50ma": 19.108000068664552
+          },
+          {
+            "date": "2026-01-28",
+            "close": 17.459999084472656,
+            "price_50ma": 19.09340003967285
+          },
+          {
+            "date": "2026-01-29",
+            "close": 17.329999923706055,
+            "price_50ma": 19.090400047302246
+          },
+          {
+            "date": "2026-01-30",
+            "close": 15.65999984741211,
+            "price_50ma": 19.041400032043455
+          },
+          {
+            "date": "2026-02-02",
+            "close": 16.6200008392334,
+            "price_50ma": 19.022000045776366
+          },
+          {
+            "date": "2026-02-03",
+            "close": 17.0,
+            "price_50ma": 19.01180004119873
+          },
+          {
+            "date": "2026-02-04",
+            "close": 17.200000762939453,
+            "price_50ma": 19.00900005340576
+          },
+          {
+            "date": "2026-02-05",
+            "close": 15.529999732971191,
+            "price_50ma": 18.97600004196167
+          },
+          {
+            "date": "2026-02-06",
+            "close": 15.739999771118164,
+            "price_50ma": 18.929600048065186
+          },
+          {
+            "date": "2026-02-09",
+            "close": 14.890000343322754,
+            "price_50ma": 18.83020004272461
+          },
+          {
+            "date": "2026-02-10",
+            "close": 15.800000190734863,
+            "price_50ma": 18.736200046539306
+          },
+          {
+            "date": "2026-02-11",
+            "close": 18.030000686645508,
+            "price_50ma": 18.691200046539308
+          },
+          {
+            "date": "2026-02-12",
+            "close": 16.0,
+            "price_50ma": 18.569000034332277
+          },
+          {
+            "date": "2026-02-13",
+            "close": 17.739999771118164,
+            "price_50ma": 18.496600017547607
+          },
+          {
+            "date": "2026-02-17",
+            "close": 19.1200008392334,
+            "price_50ma": 18.441600017547607
+          },
+          {
+            "date": "2026-02-18",
+            "close": 19.59000015258789,
+            "price_50ma": 18.378400020599365
+          },
+          {
+            "date": "2026-02-19",
+            "close": 19.059999465942383,
+            "price_50ma": 18.318200016021727
+          },
+          {
+            "date": "2026-02-20",
+            "close": 18.65999984741211,
+            "price_50ma": 18.23320001602173
+          },
+          {
+            "date": "2026-02-23",
+            "close": 18.469999313354492,
+            "price_50ma": 18.147399997711183
+          },
+          {
+            "date": "2026-02-24",
+            "close": 20.149999618530273,
+            "price_50ma": 18.127800006866455
+          },
+          {
+            "date": "2026-02-25",
+            "close": 20.469999313354492,
+            "price_50ma": 18.139999980926515
+          },
+          {
+            "date": "2026-02-26",
+            "close": 20.209999084472656,
+            "price_50ma": 18.17299997329712
+          },
+          {
+            "date": "2026-02-27",
+            "close": 19.719999313354492,
+            "price_50ma": 18.212599964141845
+          },
+          {
+            "date": "2026-03-02",
+            "close": 21.209999084472656,
+            "price_50ma": 18.279799938201904
+          },
+          {
+            "date": "2026-03-03",
+            "close": 20.850000381469727,
+            "price_50ma": 18.353799953460694
+          },
+          {
+            "date": "2026-03-04",
+            "close": 20.59000015258789,
+            "price_50ma": 18.407799968719484
+          },
+          {
+            "date": "2026-03-05",
+            "close": 18.940000534057617,
+            "price_50ma": 18.419199962615966
+          },
+          {
+            "date": "2026-03-06",
+            "close": 16.56999969482422,
+            "price_50ma": 18.382999973297117
+          },
+          {
+            "date": "2026-03-09",
+            "close": 17.760000228881836,
+            "price_50ma": 18.371399974823
+          },
+          {
+            "date": "2026-03-10",
+            "close": 16.579999923706055,
+            "price_50ma": 18.334399967193605
+          },
+          {
+            "date": "2026-03-11",
+            "close": 18.200000762939453,
+            "price_50ma": 18.339399967193604
+          },
+          {
+            "date": "2026-03-12",
+            "close": 16.969999313354492,
+            "price_50ma": 18.332599964141846
+          },
+          {
+            "date": "2026-03-13",
+            "close": 16.700000762939453,
+            "price_50ma": 18.324199962615968
+          },
+          {
+            "date": "2026-03-16",
+            "close": 18.34000015258789,
+            "price_50ma": 18.342799968719483
+          },
+          {
+            "date": "2026-03-17",
+            "close": 17.889999389648438,
+            "price_50ma": 18.321999950408937
+          },
+          {
+            "date": "2026-03-18",
+            "close": 16.780000686645508,
+            "price_50ma": 18.29799997329712
+          },
+          {
+            "date": "2026-03-19",
+            "close": 17.059999465942383,
+            "price_50ma": 18.24519994735718
+          },
+          {
+            "date": "2026-03-20",
+            "close": 16.31999969482422,
+            "price_50ma": 18.177999935150147
+          },
+          {
+            "date": "2026-03-23",
+            "close": 16.600000381469727,
+            "price_50ma": 18.13239995956421
+          },
+          {
+            "date": "2026-03-24",
+            "close": 16.670000076293945,
+            "price_50ma": 18.093799953460692
+          },
+          {
+            "date": "2026-03-25",
+            "close": 18.5,
+            "price_50ma": 18.095399951934816
+          },
+          {
+            "date": "2026-03-26",
+            "close": 16.81999969482422,
+            "price_50ma": 18.04159994125366
+          },
+          {
+            "date": "2026-03-27",
+            "close": 15.4399995803833,
+            "price_50ma": 17.960599937438964
+          },
+          {
+            "date": "2026-03-30",
+            "close": 14.800000190734863,
+            "price_50ma": 17.858199939727783
+          },
+          {
+            "date": "2026-03-31",
+            "close": 16.31999969482422,
+            "price_50ma": 17.777599925994874
+          },
+          {
+            "date": "2026-04-01",
+            "close": 16.450000762939453,
+            "price_50ma": 17.696599941253663
+          },
+          {
+            "date": "2026-04-02",
+            "close": 17.469999313354492,
+            "price_50ma": 17.656399936676024
+          },
+          {
+            "date": "2026-04-06",
+            "close": 18.049999237060547,
+            "price_50ma": 17.63379991531372
+          },
+          {
+            "date": "2026-04-07",
+            "close": 18.93000030517578,
+            "price_50ma": 17.653199939727784
+          },
+          {
+            "date": "2026-04-08",
+            "close": 20.559999465942383,
+            "price_50ma": 17.716399936676027
+          },
+          {
+            "date": "2026-04-09",
+            "close": 24.43000030517578,
+            "price_50ma": 17.84499994277954
+          },
+          {
+            "date": "2026-04-10",
+            "close": 23.219999313354492,
+            "price_50ma": 17.96019994735718
+          },
+          {
+            "date": "2026-04-13",
+            "close": 24.149999618530273,
+            "price_50ma": 18.09659994125366
+          },
+          {
+            "date": "2026-04-14",
+            "close": 23.0,
+            "price_50ma": 18.24339994430542
+          },
+          {
+            "date": "2026-04-15",
+            "close": 23.899999618530273,
+            "price_50ma": 18.388999919891358
+          },
+          {
+            "date": "2026-04-16",
+            "close": 26.540000915527344,
+            "price_50ma": 18.579799938201905
+          },
+          {
+            "date": "2026-04-17",
+            "close": 25.559999465942383,
+            "price_50ma": 18.746999912261963
+          },
+          {
+            "date": "2026-04-20",
+            "close": 26.329999923706055,
+            "price_50ma": 18.96299991607666
+          },
+          {
+            "date": "2026-04-21",
+            "close": 24.700000762939453,
+            "price_50ma": 19.142199935913087
+          },
+          {
+            "date": "2026-04-22",
+            "close": 27.75,
+            "price_50ma": 19.39939992904663
+          },
+          {
+            "date": "2026-04-23",
+            "close": 27.549999237060547,
+            "price_50ma": 19.634399909973144
+          },
+          {
+            "date": "2026-04-24",
+            "close": 31.229999542236328,
+            "price_50ma": 19.89839988708496
+          },
+          {
+            "date": "2026-04-27",
+            "close": 29.670000076293945,
+            "price_50ma": 20.17179988861084
+          },
+          {
+            "date": "2026-04-28",
+            "close": 25.850000381469727,
+            "price_50ma": 20.333999900817872
+          },
+          {
+            "date": "2026-04-29",
+            "close": 25.6299991607666,
+            "price_50ma": 20.464199867248535
+          },
+          {
+            "date": "2026-04-30",
+            "close": 29.530000686645508,
+            "price_50ma": 20.66299987792969
+          },
+          {
+            "date": "2026-05-01",
+            "close": 36.7599983215332,
+            "price_50ma": 21.016999855041504
+          },
+          {
+            "date": "2026-05-04",
+            "close": 35.939998626708984,
+            "price_50ma": 21.362599830627442
+          },
+          {
+            "date": "2026-05-05",
+            "close": 36.630001068115234,
+            "price_50ma": 21.725799865722657
+          },
+          {
+            "date": "2026-05-06",
+            "close": 43.08000183105469,
+            "price_50ma": 22.184399909973145
+          },
+          {
+            "date": "2026-05-07",
+            "close": 45.15999984741211,
+            "price_50ma": 22.678199920654297
+          },
+          {
+            "date": "2026-05-08",
+            "close": 46.599998474121094,
+            "price_50ma": 23.205999908447264
+          },
+          {
+            "date": "2026-05-11",
+            "close": 50.310001373291016,
+            "price_50ma": 23.817799949645995
+          },
+          {
+            "date": "2026-05-12",
+            "close": 53.720001220703125,
+            "price_50ma": 24.467999992370604
+          },
+          {
+            "date": "2026-05-13",
+            "close": 62.599998474121094,
+            "price_50ma": 25.302999954223633
+          },
+          {
+            "date": "2026-05-14",
+            "close": 69.95999908447266,
+            "price_50ma": 26.290399932861327
+          },
+          {
+            "date": "2026-05-15",
+            "close": 62.130001068115234,
+            "price_50ma": 27.15419994354248
+          },
+          {
+            "date": "2026-05-18",
+            "close": 59.349998474121094,
+            "price_50ma": 28.00979991912842
+          },
+          {
+            "date": "2026-05-19",
+            "close": 58.83000183105469,
+            "price_50ma": 28.831199951171875
+          },
+          {
+            "date": "2026-05-20",
+            "close": 58.619998931884766,
+            "price_50ma": 29.67199993133545
+          },
+          {
+            "date": "2026-05-21",
+            "close": 69.5,
+            "price_50ma": 30.69799991607666
+          },
+          {
+            "date": "2026-05-22",
+            "close": 69.88999938964844,
+            "price_50ma": 31.75639991760254
+          },
+          {
+            "date": "2026-05-26",
+            "close": 73.5,
+            "price_50ma": 32.89239990234375
+          },
+          {
+            "date": "2026-05-27",
+            "close": 63.2599983215332,
+            "price_50ma": 33.790799865722654
+          },
+          {
+            "date": "2026-05-28",
+            "close": 65.05000305175781,
+            "price_50ma": 34.73399993896484
+          },
+          {
+            "date": "2026-05-29",
+            "close": 59.279998779296875,
+            "price_50ma": 35.58399990081787
+          },
+          {
+            "date": "2026-06-01",
+            "close": 52.95000076293945,
+            "price_50ma": 36.30179992675781
+          },
+          {
+            "date": "2026-06-02",
+            "close": 61.060001373291016,
+            "price_50ma": 37.19659996032715
+          },
+          {
+            "date": "2026-06-03",
+            "close": 61.66999816894531,
+            "price_50ma": 38.09799991607666
+          },
+          {
+            "date": "2026-06-04",
+            "close": 67.05999755859375,
+            "price_50ma": 39.10579986572266
+          },
+          {
+            "date": "2026-06-05",
+            "close": 55.060001373291016,
+            "price_50ma": 39.83699989318848
+          },
+          {
+            "date": "2026-06-08",
+            "close": 55.41999816894531,
+            "price_50ma": 40.6089998626709
+          },
+          {
+            "date": "2026-06-09",
+            "close": 48.779998779296875,
+            "price_50ma": 41.27579984664917
+          },
+          {
+            "date": "2026-06-10",
+            "close": 43.41999816894531,
+            "price_50ma": 41.84819980621338
+          },
+          {
+            "date": "2026-06-11",
+            "close": 45.540000915527344,
+            "price_50ma": 42.43259983062744
+          },
+          {
+            "date": "2026-06-12",
+            "close": 43.13999938964844,
+            "price_50ma": 42.96639980316162
+          },
+          {
+            "date": "2026-06-15",
+            "close": 49.09000015258789,
+            "price_50ma": 43.59879981994629
+          },
+          {
+            "date": "2026-06-16",
+            "close": 45.0,
+            "price_50ma": 44.13779983520508
+          },
+          {
+            "date": "2026-06-17",
+            "close": 48.689998626708984,
+            "price_50ma": 44.73299980163574
+          },
+          {
+            "date": "2026-06-18",
+            "close": 57.40999984741211,
+            "price_50ma": 45.46999980926514
+          },
+          {
+            "date": "2026-06-22",
+            "close": 52.970001220703125,
+            "price_50ma": 46.04079982757568
+          },
+          {
+            "date": "2026-06-23",
+            "close": 48.90999984741211,
+            "price_50ma": 46.554599838256834
+          },
+          {
+            "date": "2026-06-24",
+            "close": 45.869998931884766,
+            "price_50ma": 46.98899982452392
+          },
+          {
+            "date": "2026-06-25",
+            "close": 47.790000915527344,
+            "price_50ma": 47.48479984283447
+          },
+          {
+            "date": "2026-06-26",
+            "close": 45.970001220703125,
+            "price_50ma": 47.92619987487793
+          },
+          {
+            "date": "2026-06-29",
+            "close": 44.2400016784668,
+            "price_50ma": 48.28019989013672
+          },
+          {
+            "date": "2026-06-30",
+            "close": 48.25,
+            "price_50ma": 48.73399990081787
+          },
+          {
+            "date": "2026-07-01",
+            "close": 44.560001373291016,
+            "price_50ma": 49.09859992980957
+          },
+          {
+            "date": "2026-07-02",
+            "close": 40.0,
+            "price_50ma": 49.40459991455078
+          },
+          {
+            "date": "2026-07-06",
+            "close": 39.470001220703125,
+            "price_50ma": 49.638999938964844
+          },
+          {
+            "date": "2026-07-07",
+            "close": 36.0,
+            "price_50ma": 49.80799995422363
+          },
+          {
+            "date": "2026-07-08",
+            "close": 35.86000061035156,
+            "price_50ma": 49.90059997558594
+          },
+          {
+            "date": "2026-07-09",
+            "close": 37.25,
+            "price_50ma": 50.05219997406006
+          },
+          {
+            "date": "2026-07-10",
+            "close": 35.290000915527344,
+            "price_50ma": 50.24099998474121
+          },
+          {
+            "date": "2026-07-13",
+            "close": 33.650001525878906,
+            "price_50ma": 50.401400032043455
+          },
+          {
+            "date": "2026-07-14",
+            "close": 34.310001373291016,
+            "price_50ma": 50.49700004577637
+          },
+          {
+            "date": "2026-07-15",
+            "close": 35.099998474121094,
+            "price_50ma": 50.463800048828126
+          },
+          {
+            "date": "2026-07-16",
+            "close": 31.18000030517578,
+            "price_50ma": 50.368600082397464
+          }
+        ],
+        "rsi14": [
+          {
+            "date": "2025-09-29",
+            "value": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-09-30",
+            "value": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-01",
+            "value": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-02",
+            "value": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-03",
+            "value": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-06",
+            "value": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-07",
+            "value": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-08",
+            "value": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-09",
+            "value": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-10",
+            "value": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-13",
+            "value": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-14",
+            "value": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-15",
+            "value": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-16",
+            "value": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-17",
+            "value": 87.05591787996515,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-20",
+            "value": 85.17586689469468,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-21",
+            "value": 85.203396983132,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-22",
+            "value": 83.94425153754905,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-23",
+            "value": 83.99096181867304,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-24",
+            "value": 83.94314323849875,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-27",
+            "value": 84.56761907084959,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-28",
+            "value": 84.22022460243666,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-29",
+            "value": 84.85418275617926,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-30",
+            "value": 70.41415496848757,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-31",
+            "value": 70.56221424297468,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-03",
+            "value": 64.96067767740293,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-04",
+            "value": 61.16165324687622,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-05",
+            "value": 57.925375141585675,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-06",
+            "value": 54.892195409612384,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-07",
+            "value": 53.5705429590607,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-10",
+            "value": 53.43199396410572,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-11",
+            "value": 52.430657204695606,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-12",
+            "value": 56.37434879193274,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-13",
+            "value": 53.36076918337566,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-14",
+            "value": 51.80384219578194,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-17",
+            "value": 53.11116436976913,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-18",
+            "value": 51.86074389767784,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-19",
+            "value": 51.659237529871255,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-20",
+            "value": 51.20393756273654,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-21",
+            "value": 50.75057492218972,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-24",
+            "value": 53.204674684849635,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-25",
+            "value": 57.83314483502388,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-26",
+            "value": 59.37184349358233,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-28",
+            "value": 58.580505663063796,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-12-01",
+            "value": 62.99840911533201,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-12-02",
+            "value": 60.16599091094542,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-12-03",
+            "value": 61.43570795284047,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-12-04",
+            "value": 63.59218160863658,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-12-05",
+            "value": 60.764563779149505,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-12-08",
+            "value": 62.95581405317562,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-12-09",
+            "value": 62.28684610245038,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-12-10",
+            "value": 55.39800721009897,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-12-11",
+            "value": 50.693620482705455,
+            "judgment": "偏多動能仍在"
+          },
+          {
+            "date": "2025-12-12",
+            "value": 46.35427837334632,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2025-12-15",
+            "value": 43.80704253952943,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2025-12-16",
+            "value": 44.24962400183128,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2025-12-17",
+            "value": 41.98352771445617,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2025-12-18",
+            "value": 45.17968439819151,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2025-12-19",
+            "value": 47.2111730555416,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2025-12-22",
+            "value": 47.255018376055595,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2025-12-23",
+            "value": 47.0865242835937,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2025-12-24",
+            "value": 47.539782345025785,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2025-12-26",
+            "value": 45.31052306290992,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2025-12-29",
+            "value": 42.452095189024504,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2025-12-30",
+            "value": 41.61281011723404,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2025-12-31",
+            "value": 43.450490361263526,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-01-02",
+            "value": 51.981373553576994,
+            "judgment": "偏多動能仍在"
+          },
+          {
+            "date": "2026-01-05",
+            "value": 47.18979951583263,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-01-06",
+            "value": 55.23534003458166,
+            "judgment": "偏多動能仍在"
+          },
+          {
+            "date": "2026-01-07",
+            "value": 55.130162606295976,
+            "judgment": "偏多動能仍在"
+          },
+          {
+            "date": "2026-01-08",
+            "value": 50.95096163037693,
+            "judgment": "偏多動能仍在"
+          },
+          {
+            "date": "2026-01-09",
+            "value": 49.535586673030316,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-01-12",
+            "value": 48.600901752344456,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-01-13",
+            "value": 54.23263222135642,
+            "judgment": "偏多動能仍在"
+          },
+          {
+            "date": "2026-01-14",
+            "value": 54.11546508449211,
+            "judgment": "偏多動能仍在"
+          },
+          {
+            "date": "2026-01-15",
+            "value": 56.30134699169994,
+            "judgment": "偏多動能仍在"
+          },
+          {
+            "date": "2026-01-16",
+            "value": 58.4338275469753,
+            "judgment": "偏多動能仍在"
+          },
+          {
+            "date": "2026-01-20",
+            "value": 59.18212369389177,
+            "judgment": "偏多動能仍在"
+          },
+          {
+            "date": "2026-01-21",
+            "value": 52.28868259211038,
+            "judgment": "偏多動能仍在"
+          },
+          {
+            "date": "2026-01-22",
+            "value": 50.428208896516075,
+            "judgment": "偏多動能仍在"
+          },
+          {
+            "date": "2026-01-23",
+            "value": 43.629575545143425,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-01-26",
+            "value": 40.90360185084154,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-01-27",
+            "value": 44.87751232317826,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-01-28",
+            "value": 42.13156434958207,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-01-29",
+            "value": 41.47365422747218,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-01-30",
+            "value": 34.1057047787675,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-02-02",
+            "value": 40.634707112821005,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-02-03",
+            "value": 43.04051369937761,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-02-04",
+            "value": 44.319497198283635,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-02-05",
+            "value": 36.87406854726413,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-02-06",
+            "value": 38.27824114290154,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-02-09",
+            "value": 34.89480906160891,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-02-10",
+            "value": 40.91600438467555,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-02-11",
+            "value": 52.50752098908579,
+            "judgment": "偏多動能仍在"
+          },
+          {
+            "date": "2026-02-12",
+            "value": 44.037753813094305,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-02-13",
+            "value": 51.2904831313706,
+            "judgment": "偏多動能仍在"
+          },
+          {
+            "date": "2026-02-17",
+            "value": 56.144943110988024,
+            "judgment": "偏多動能仍在"
+          },
+          {
+            "date": "2026-02-18",
+            "value": 57.691470165464324,
+            "judgment": "偏多動能仍在"
+          },
+          {
+            "date": "2026-02-19",
+            "value": 55.32227014184923,
+            "judgment": "偏多動能仍在"
+          },
+          {
+            "date": "2026-02-20",
+            "value": 53.53537606992896,
+            "judgment": "偏多動能仍在"
+          },
+          {
+            "date": "2026-02-23",
+            "value": 52.665209175734525,
+            "judgment": "偏多動能仍在"
+          },
+          {
+            "date": "2026-02-24",
+            "value": 59.00951333058733,
+            "judgment": "偏多動能仍在"
+          },
+          {
+            "date": "2026-02-25",
+            "value": 60.10632599049733,
+            "judgment": "強勢整理"
+          },
+          {
+            "date": "2026-02-26",
+            "value": 58.73124760356714,
+            "judgment": "偏多動能仍在"
+          },
+          {
+            "date": "2026-02-27",
+            "value": 56.12525928774854,
+            "judgment": "偏多動能仍在"
+          },
+          {
+            "date": "2026-03-02",
+            "value": 61.69162767952419,
+            "judgment": "強勢整理"
+          },
+          {
+            "date": "2026-03-03",
+            "value": 59.72021228764284,
+            "judgment": "偏多動能仍在"
+          },
+          {
+            "date": "2026-03-04",
+            "value": 58.27187932009708,
+            "judgment": "偏多動能仍在"
+          },
+          {
+            "date": "2026-03-05",
+            "value": 49.986791240936476,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-03-06",
+            "value": 40.9750802164167,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-03-09",
+            "value": 46.217989799828665,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-03-10",
+            "value": 42.2138302947572,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-03-11",
+            "value": 48.7752519961381,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-03-12",
+            "value": 44.63152761304688,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-03-13",
+            "value": 43.752832907506686,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-03-16",
+            "value": 50.17014051966908,
+            "judgment": "偏多動能仍在"
+          },
+          {
+            "date": "2026-03-17",
+            "value": 48.533883604614445,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-03-18",
+            "value": 44.664329684570276,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-03-19",
+            "value": 45.83742555876464,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-03-20",
+            "value": 43.2290838011435,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-03-23",
+            "value": 44.51563504936491,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-03-24",
+            "value": 44.85210929428023,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-03-25",
+            "value": 52.89461493543979,
+            "judgment": "偏多動能仍在"
+          },
+          {
+            "date": "2026-03-26",
+            "value": 46.229272057229174,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-03-27",
+            "value": 41.59283850131493,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-03-30",
+            "value": 39.60882742686443,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-03-31",
+            "value": 46.175617838326694,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-04-01",
+            "value": 46.70934451859456,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-04-02",
+            "value": 50.8292216154599,
+            "judgment": "偏多動能仍在"
+          },
+          {
+            "date": "2026-04-06",
+            "value": 53.05183969330331,
+            "judgment": "偏多動能仍在"
+          },
+          {
+            "date": "2026-04-07",
+            "value": 56.28084988733221,
+            "judgment": "偏多動能仍在"
+          },
+          {
+            "date": "2026-04-08",
+            "value": 61.555289207412976,
+            "judgment": "強勢整理"
+          },
+          {
+            "date": "2026-04-09",
+            "value": 70.61857710133377,
+            "judgment": "高檔鈍化/過熱"
+          },
+          {
+            "date": "2026-04-10",
+            "value": 65.42515869825131,
+            "judgment": "強勢整理"
+          },
+          {
+            "date": "2026-04-13",
+            "value": 67.40903081569974,
+            "judgment": "強勢整理"
+          },
+          {
+            "date": "2026-04-14",
+            "value": 62.62390959801001,
+            "judgment": "強勢整理"
+          },
+          {
+            "date": "2026-04-15",
+            "value": 64.73381349022111,
+            "judgment": "強勢整理"
+          },
+          {
+            "date": "2026-04-16",
+            "value": 70.07094917354326,
+            "judgment": "⚠️ 動能背離(警訊)"
+          },
+          {
+            "date": "2026-04-17",
+            "value": 66.07348813475696,
+            "judgment": "強勢整理"
+          },
+          {
+            "date": "2026-04-20",
+            "value": 67.63577368938422,
+            "judgment": "強勢整理"
+          },
+          {
+            "date": "2026-04-21",
+            "value": 61.21001015927541,
+            "judgment": "強勢整理"
+          },
+          {
+            "date": "2026-04-22",
+            "value": 67.442918941881,
+            "judgment": "⚠️ 動能背離(警訊)"
+          },
+          {
+            "date": "2026-04-23",
+            "value": 66.6862188208147,
+            "judgment": "強勢整理"
+          },
+          {
+            "date": "2026-04-24",
+            "value": 72.74556213485806,
+            "judgment": "高檔鈍化/過熱"
+          },
+          {
+            "date": "2026-04-27",
+            "value": 67.16822637765361,
+            "judgment": "強勢整理"
+          },
+          {
+            "date": "2026-04-28",
+            "value": 55.871898780951426,
+            "judgment": "偏多動能仍在"
+          },
+          {
+            "date": "2026-04-29",
+            "value": 55.29512345184848,
+            "judgment": "偏多動能仍在"
+          },
+          {
+            "date": "2026-04-30",
+            "value": 62.654993609328116,
+            "judgment": "強勢整理"
+          },
+          {
+            "date": "2026-05-01",
+            "value": 71.89315288539558,
+            "judgment": "⚠️ 動能背離(警訊)"
+          },
+          {
+            "date": "2026-05-04",
+            "value": 69.78465550669299,
+            "judgment": "強勢整理"
+          },
+          {
+            "date": "2026-05-05",
+            "value": 70.566901134766,
+            "judgment": "高檔鈍化/過熱"
+          },
+          {
+            "date": "2026-05-06",
+            "value": 76.65190510822879,
+            "judgment": "高檔鈍化/過熱"
+          },
+          {
+            "date": "2026-05-07",
+            "value": 78.21595714379139,
+            "judgment": "高檔鈍化/過熱"
+          },
+          {
+            "date": "2026-05-08",
+            "value": 79.25218657386554,
+            "judgment": "高檔鈍化/過熱"
+          },
+          {
+            "date": "2026-05-11",
+            "value": 81.67124944133283,
+            "judgment": "高檔鈍化/過熱"
+          },
+          {
+            "date": "2026-05-12",
+            "value": 83.5676860835751,
+            "judgment": "高檔鈍化/過熱"
+          },
+          {
+            "date": "2026-05-13",
+            "value": 87.2634250437908,
+            "judgment": "高檔鈍化/過熱"
+          },
+          {
+            "date": "2026-05-14",
+            "value": 89.39280360657203,
+            "judgment": "高檔鈍化/過熱"
+          },
+          {
+            "date": "2026-05-15",
+            "value": 75.02265841798078,
+            "judgment": "高檔鈍化/過熱"
+          },
+          {
+            "date": "2026-05-18",
+            "value": 70.67841989803404,
+            "judgment": "高檔鈍化/過熱"
+          },
+          {
+            "date": "2026-05-19",
+            "value": 69.86350621001067,
+            "judgment": "強勢整理"
+          },
+          {
+            "date": "2026-05-20",
+            "value": 69.51491837120186,
+            "judgment": "強勢整理"
+          },
+          {
+            "date": "2026-05-21",
+            "value": 76.15349439430517,
+            "judgment": "高檔鈍化/過熱"
+          },
+          {
+            "date": "2026-05-22",
+            "value": 76.35228525837647,
+            "judgment": "高檔鈍化/過熱"
+          },
+          {
+            "date": "2026-05-26",
+            "value": 78.16663258115238,
+            "judgment": "⚠️ 動能背離(警訊)"
+          },
+          {
+            "date": "2026-05-27",
+            "value": 63.32493885359239,
+            "judgment": "強勢整理"
+          },
+          {
+            "date": "2026-05-28",
+            "value": 64.59060567282712,
+            "judgment": "強勢整理"
+          },
+          {
+            "date": "2026-05-29",
+            "value": 57.6805068891092,
+            "judgment": "偏多動能仍在"
+          },
+          {
+            "date": "2026-06-01",
+            "value": 51.208101689724806,
+            "judgment": "偏多動能仍在"
+          },
+          {
+            "date": "2026-06-02",
+            "value": 57.74949849469101,
+            "judgment": "偏多動能仍在"
+          },
+          {
+            "date": "2026-06-03",
+            "value": 58.203393239580166,
+            "judgment": "偏多動能仍在"
+          },
+          {
+            "date": "2026-06-04",
+            "value": 62.07988429192308,
+            "judgment": "強勢整理"
+          },
+          {
+            "date": "2026-06-05",
+            "value": 50.78652098652799,
+            "judgment": "偏多動能仍在"
+          },
+          {
+            "date": "2026-06-08",
+            "value": 51.074071197278826,
+            "judgment": "偏多動能仍在"
+          },
+          {
+            "date": "2026-06-09",
+            "value": 45.76282386490941,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-06-10",
+            "value": 41.96876775319296,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-06-11",
+            "value": 43.94818293923833,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-06-12",
+            "value": 42.19357066787707,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-06-15",
+            "value": 47.76181756206659,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-06-16",
+            "value": 44.582747120397784,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-06-17",
+            "value": 47.948921439867014,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-06-18",
+            "value": 54.91792283861322,
+            "judgment": "偏多動能仍在"
+          },
+          {
+            "date": "2026-06-22",
+            "value": 51.161817557401754,
+            "judgment": "偏多動能仍在"
+          },
+          {
+            "date": "2026-06-23",
+            "value": 47.933398487865084,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-06-24",
+            "value": 45.61248023159135,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-06-25",
+            "value": 47.34652887564519,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-06-26",
+            "value": 45.85409709187846,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-06-29",
+            "value": 44.42074930244213,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-06-30",
+            "value": 48.4436428820825,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-07-01",
+            "value": 45.201407701796015,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-07-02",
+            "value": 41.504595743242795,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-07-06",
+            "value": 41.084021255472905,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-07-07",
+            "value": 38.34441414465242,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-07-08",
+            "value": 38.23363903889253,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-07-09",
+            "value": 40.084411574221065,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-07-10",
+            "value": 38.33988427073622,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-07-13",
+            "value": 36.89304829201002,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-07-14",
+            "value": 37.90856030253527,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-07-15",
+            "value": 39.17035725194146,
+            "judgment": "動能轉弱"
+          },
+          {
+            "date": "2026-07-16",
+            "value": 35.33338993793318,
+            "judgment": "動能轉弱"
+          }
+        ],
+        "rs_composite": [
+          {
+            "date": "2025-09-29",
+            "value": 0.2799714040662077,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-09-30",
+            "value": 0.3608671687303495,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-01",
+            "value": 0.3122411928601911,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-02",
+            "value": 0.3102475951529692,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-03",
+            "value": 0.30621057882940417,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-06",
+            "value": 0.3276219012912531,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-07",
+            "value": 0.33543333505946993,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-08",
+            "value": 0.37931394807542274,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-09",
+            "value": 0.4437446496669725,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-10",
+            "value": 0.4005462874856613,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-13",
+            "value": 0.41296310005083137,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-14",
+            "value": 0.4137827737761567,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-15",
+            "value": 0.41022030191210745,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-16",
+            "value": 0.412925106548987,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-17",
+            "value": 0.39252808303277037,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-20",
+            "value": 0.3758124907723777,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-21",
+            "value": 0.3767940487047199,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-22",
+            "value": 0.3713227189081756,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-23",
+            "value": 0.37052728178471755,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-24",
+            "value": 0.36731490569174785,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-27",
+            "value": 0.3790041903038522,
+            "ma21": 0.36854252679544497,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-28",
+            "value": 0.3764663992552332,
+            "ma21": 0.373137526566351,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-29",
+            "value": 0.3914734112223966,
+            "ma21": 0.37459496668501985,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-30",
+            "value": 0.3233553400696363,
+            "ma21": 0.3751242117902316,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-31",
+            "value": 0.32445477333443823,
+            "ma21": 0.37580074408458725,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-03",
+            "value": 0.29239727867075194,
+            "ma21": 0.37514296788655616,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-04",
+            "value": 0.2727602405572062,
+            "ma21": 0.37253050785160147,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-05",
+            "value": 0.25126262494145796,
+            "ma21": 0.36852237879836297,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-06",
+            "value": 0.23407844750870205,
+            "ma21": 0.36160640258089993,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-07",
+            "value": 0.22503403042087394,
+            "ma21": 0.35119161118822867,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-10",
+            "value": 0.22072886335845585,
+            "ma21": 0.3426288767059807,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-11",
+            "value": 0.21435700057743387,
+            "ma21": 0.33317144339772375,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-12",
+            "value": 0.240694303590889,
+            "ma21": 0.32492913529366335,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-13",
+            "value": 0.22777192937567986,
+            "ma21": 0.31624111755383355,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-14",
+            "value": 0.2189997203837658,
+            "ma21": 0.3070065753554896,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-17",
+            "value": 0.22899516120529392,
+            "ma21": 0.299219293363705,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-18",
+            "value": 0.22431155461738106,
+            "ma21": 0.2920049630706099,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-19",
+            "value": 0.22245039157000973,
+            "ma21": 0.2846552651118142,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-20",
+            "value": 0.22379425632237798,
+            "ma21": 0.27763010022677626,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-21",
+            "value": 0.21957643381911776,
+            "ma21": 0.2704419646093667,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-24",
+            "value": 0.2272614281130079,
+            "ma21": 0.26377275139133144,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-25",
+            "value": 0.2476659736414372,
+            "ma21": 0.25751855059788314,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-26",
+            "value": 0.25388309975145207,
+            "ma21": 0.25168125062151264,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-28",
+            "value": 0.2498076997403224,
+            "ma21": 0.24493526436046148,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-12-01",
+            "value": 0.2738099854772056,
+            "ma21": 0.24257596176082194,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-12-02",
+            "value": 0.2638355565919693,
+            "ma21": 0.2396893323921329,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-12-03",
+            "value": 0.269318493929817,
+            "ma21": 0.2385903426425646,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-12-04",
+            "value": 0.2798506281204553,
+            "ma21": 0.23892798014557642,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-12-05",
+            "value": 0.2709490938505364,
+            "ma21": 0.23986543104600874,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-12-08",
+            "value": 0.2822273511806185,
+            "ma21": 0.24215823598276667,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-12-09",
+            "value": 0.28061818521983806,
+            "ma21": 0.24480510049700308,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-12-10",
+            "value": 0.2587890206465874,
+            "ma21": 0.24661748893929508,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-12-11",
+            "value": 0.2427226479851394,
+            "ma21": 0.24796823405394772,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2025-12-12",
+            "value": 0.22930809094850887,
+            "ma21": 0.2474260334519296,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2025-12-15",
+            "value": 0.21955826304576456,
+            "ma21": 0.24703490648383836,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2025-12-16",
+            "value": 0.221425342364351,
+            "ma21": 0.24715041229243764,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2025-12-17",
+            "value": 0.2152619343679921,
+            "ma21": 0.24649644910970903,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2025-12-18",
+            "value": 0.22276165225630581,
+            "ma21": 0.24642264423537213,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2025-12-19",
+            "value": 0.22672461453050646,
+            "ma21": 0.2466261786620624,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2025-12-22",
+            "value": 0.2254133161862902,
+            "ma21": 0.24670327675082013,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2025-12-23",
+            "value": 0.22390612156022666,
+            "ma21": 0.2469094523575396,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2025-12-24",
+            "value": 0.2242801189628039,
+            "ma21": 0.246767485255149,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2025-12-26",
+            "value": 0.21850997073295397,
+            "ma21": 0.2453791041642688,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2025-12-29",
+            "value": 0.21147470424741052,
+            "ma21": 0.24335965675931445,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2025-12-30",
+            "value": 0.20945085804567348,
+            "ma21": 0.24143790239290258,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2025-12-31",
+            "value": 0.21457518641856424,
+            "ma21": 0.23861719767582443,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-01-02",
+            "value": 0.23286681250660682,
+            "ma21": 0.23714249557652148,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-01-05",
+            "value": 0.21975808278274486,
+            "ma21": 0.23478247599808943,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-01-06",
+            "value": 0.23928077763563196,
+            "ma21": 0.232850578355955,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-01-07",
+            "value": 0.23984506618211668,
+            "ma21": 0.2313694341812683,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-01-08",
+            "value": 0.23009297455661448,
+            "ma21": 0.22888684481822053,
+            "judgment": "📉 底部反彈"
+          },
+          {
+            "date": "2026-01-09",
+            "value": 0.2252152502274182,
+            "ma21": 0.2262486098185815,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-01-12",
+            "value": 0.22267557704430643,
+            "ma21": 0.22452892202799668,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-01-13",
+            "value": 0.2363271637483713,
+            "ma21": 0.22422437515957913,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-01-14",
+            "value": 0.23737226023771432,
+            "ma21": 0.22460838322096988,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-01-15",
+            "value": 0.24197225793847701,
+            "ma21": 0.2256757163110991,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-01-16",
+            "value": 0.24735854155303283,
+            "ma21": 0.22691063055817917,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-01-20",
+            "value": 0.25444647309633783,
+            "ma21": 0.22877656097381469,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-01-21",
+            "value": 0.239012746397408,
+            "ma21": 0.22955042259958144,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-01-22",
+            "value": 0.23401522394901422,
+            "ma21": 0.2298975944766532,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-01-23",
+            "value": 0.2190619404723874,
+            "ma21": 0.2295951480140864,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-01-26",
+            "value": 0.2111749778138742,
+            "ma21": 0.22898890307378397,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-01-27",
+            "value": 0.21757591836014736,
+            "ma21": 0.2286696554260384,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-01-28",
+            "value": 0.21105170358145128,
+            "ma21": 0.22831449984739544,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-01-29",
+            "value": 0.20978628265210753,
+            "ma21": 0.22823409881904763,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-01-30",
+            "value": 0.19042159145187998,
+            "ma21": 0.22732794326696223,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-02-02",
+            "value": 0.20099290035942574,
+            "ma21": 0.22668116774033661,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-02-03",
+            "value": 0.20735661180509152,
+            "ma21": 0.22546639627835965,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-02-04",
+            "value": 0.210905035883161,
+            "ma21": 0.22504482261647474,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-02-05",
+            "value": 0.19281397745497125,
+            "ma21": 0.22283211784596707,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-02-06",
+            "value": 0.19161739703107336,
+            "ma21": 0.22053556217210785,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-02-09",
+            "value": 0.18040834285313256,
+            "ma21": 0.21816962732908493,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-02-10",
+            "value": 0.1920723260143066,
+            "ma21": 0.21659139284274626,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-02-11",
+            "value": 0.21920841084577533,
+            "ma21": 0.21642628969043526,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-02-12",
+            "value": 0.19764879799630714,
+            "ma21": 0.2145844627498608,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-02-13",
+            "value": 0.21905351974136433,
+            "ma21": 0.21371214177384412,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-02-17",
+            "value": 0.23584882547929076,
+            "ma21": 0.21342054975197813,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-02-18",
+            "value": 0.24030156136365516,
+            "ma21": 0.21308450307629345,
+            "judgment": "📉 底部反彈"
+          },
+          {
+            "date": "2026-02-19",
+            "value": 0.23447436565855947,
+            "ma21": 0.21213345034116116,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-02-20",
+            "value": 0.2279636175378847,
+            "ma21": 0.2116073013478505,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-02-23",
+            "value": 0.22804170546218244,
+            "ma21": 0.2113228480865728,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-02-24",
+            "value": 0.24687064530623942,
+            "ma21": 0.21264707212628003,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-02-25",
+            "value": 0.24873555627117025,
+            "ma21": 0.21443567110043704,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-02-26",
+            "value": 0.24693490232031737,
+            "ma21": 0.21583371795568318,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-02-27",
+            "value": 0.24206536667958695,
+            "ma21": 0.21731055905559443,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-03-02",
+            "value": 0.26023037658618375,
+            "ma21": 0.2197126587667409,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-03-03",
+            "value": 0.2582543563962629,
+            "ma21": 0.22294279043075915,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-03-04",
+            "value": 0.25303680405149737,
+            "ma21": 0.22542107155895305,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-03-05",
+            "value": 0.23409695298349353,
+            "ma21": 0.22669442113887694,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-03-06",
+            "value": 0.2075656693264063,
+            "ma21": 0.22653540368379338,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-03-09",
+            "value": 0.22060973200304304,
+            "ma21": 0.2278590110432254,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-03-10",
+            "value": 0.20637183705864476,
+            "ma21": 0.2285616034254907,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-03-11",
+            "value": 0.2267325830255189,
+            "ma21": 0.23076751962417572,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-03-12",
+            "value": 0.21469963601779035,
+            "ma21": 0.2318450105767226,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-03-13",
+            "value": 0.2125833842782179,
+            "ma21": 0.2315295331211246,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-03-16",
+            "value": 0.23110887708899544,
+            "ma21": 0.23312287022077643,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-03-17",
+            "value": 0.2248654595488936,
+            "ma21": 0.2333996292592302,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-03-18",
+            "value": 0.21384044568291516,
+            "ma21": 0.2323516111736885,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-03-19",
+            "value": 0.21801440221691643,
+            "ma21": 0.23129031788098667,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-03-20",
+            "value": 0.21178114634887832,
+            "ma21": 0.23020968839004943,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-03-23",
+            "value": 0.21294921946840342,
+            "ma21": 0.22949471705340752,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-03-24",
+            "value": 0.21467958124285993,
+            "ma21": 0.22885842542391593,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-03-25",
+            "value": 0.23693851068279756,
+            "ma21": 0.22838546663232345,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-03-26",
+            "value": 0.2192619028210012,
+            "ma21": 0.22698195932517254,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-03-27",
+            "value": 0.20473291083927503,
+            "ma21": 0.22497234068321817,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-03-30",
+            "value": 0.19703165885587803,
+            "ma21": 0.2228278784058987,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-03-31",
+            "value": 0.211064580140121,
+            "ma21": 0.22048665000370526,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-04-01",
+            "value": 0.2112067297893448,
+            "ma21": 0.21824628683194727,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-04-02",
+            "value": 0.22405578353074573,
+            "ma21": 0.21686623823572096,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-04-06",
+            "value": 0.23046990902878017,
+            "ma21": 0.21669352185692511,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-04-07",
+            "value": 0.24153138997051032,
+            "ma21": 0.21831093712569194,
+            "judgment": "📉 底部反彈"
+          },
+          {
+            "date": "2026-04-08",
+            "value": 0.2558700269192695,
+            "ma21": 0.2199899987883694,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-04-09",
+            "value": 0.30214758241434153,
+            "ma21": 0.22455074856721208,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-04-10",
+            "value": 0.2874839966502673,
+            "ma21": 0.22744367302553345,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-04-13",
+            "value": 0.29598473879153225,
+            "ma21": 0.23131439220523548,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-04-14",
+            "value": 0.27855619920894265,
+            "ma21": 0.2344559548209843,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-04-15",
+            "value": 0.2871334679837341,
+            "ma21": 0.23712379248263848,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-04-16",
+            "value": 0.3180106170373327,
+            "ma21": 0.24155927617256415,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-04-17",
+            "value": 0.30256199356739627,
+            "ma21": 0.24578411178611084,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-04-20",
+            "value": 0.31240903640433915,
+            "ma21": 0.25027909436646434,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-04-21",
+            "value": 0.29493470247799297,
+            "ma21": 0.2542387875154698,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-04-22",
+            "value": 0.3278771892888591,
+            "ma21": 0.2597115479831105,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-04-23",
+            "value": 0.3269159656417694,
+            "ma21": 0.2650561377163919,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-04-24",
+            "value": 0.3676089292287333,
+            "ma21": 0.2712785385995317,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-04-27",
+            "value": 0.34882186633011986,
+            "ma21": 0.27744806067139455,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-04-28",
+            "value": 0.30542577439960783,
+            "ma21": 0.28224295893617224,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-04-29",
+            "value": 0.3029670118003027,
+            "ma21": 0.28728749955257343,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-04-30",
+            "value": 0.3455115266241207,
+            "ma21": 0.2936897350994306,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-05-01",
+            "value": 0.4288062473420098,
+            "ma21": 0.3040516168876527,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-05-04",
+            "value": 0.4209722429354801,
+            "ma21": 0.313428591145021,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-05-05",
+            "value": 0.4255733412522773,
+            "ma21": 0.3227192307747114,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-05-06",
+            "value": 0.49323930851238584,
+            "ma21": 0.3347053221338483,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-05-07",
+            "value": 0.5190060327099432,
+            "ma21": 0.3472356081238804,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-05-08",
+            "value": 0.5310043917396698,
+            "ma21": 0.3581335514250865,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-05-11",
+            "value": 0.5722197659848695,
+            "ma21": 0.37169239758387707,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-05-12",
+            "value": 0.6120688265776879,
+            "ma21": 0.38674402081178927,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-05-13",
+            "value": 0.7090412890327346,
+            "ma21": 0.40724331080339843,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-05-14",
+            "value": 0.7863568455048697,
+            "ma21": 0.4310158525901192,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-05-15",
+            "value": 0.7071409434016598,
+            "ma21": 0.44954586813127756,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-05-18",
+            "value": 0.6760498060313885,
+            "ma21": 0.4673310020581344,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-05-19",
+            "value": 0.6746698396781886,
+            "ma21": 0.48458151649974623,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-05-20",
+            "value": 0.6649546301533669,
+            "ma21": 0.5022015130557165,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-05-21",
+            "value": 0.786991529950774,
+            "ma21": 0.5240641007062838,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-05-22",
+            "value": 0.78848731090848,
+            "ma21": 0.5460436885761271,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-05-26",
+            "value": 0.8241452443737503,
+            "ma21": 0.5677835131068422,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-05-27",
+            "value": 0.7091528750360534,
+            "ma21": 0.5849421325690296,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-05-28",
+            "value": 0.725034162950823,
+            "ma21": 0.6049234844048017,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-05-29",
+            "value": 0.6592354465618657,
+            "ma21": 0.6218886479648762,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-06-01",
+            "value": 0.5872859452759156,
+            "ma21": 0.6334017155197236,
+            "judgment": "📈 長多轉強"
+          },
+          {
+            "date": "2026-06-02",
+            "value": 0.6763480025383604,
+            "ma21": 0.6451894181481213,
+            "judgment": "📈 長多轉強"
+          },
+          {
+            "date": "2026-06-03",
+            "value": 0.6882703160448583,
+            "ma21": 0.6579178978199963,
+            "judgment": "📈 長多轉強"
+          },
+          {
+            "date": "2026-06-04",
+            "value": 0.745354253823284,
+            "ma21": 0.6731455603233777,
+            "judgment": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-06-05",
+            "value": 0.6287946662537677,
+            "ma21": 0.6796005773586815,
+            "judgment": "📈 長多轉強"
+          },
+          {
+            "date": "2026-06-08",
+            "value": 0.6309572108128108,
+            "ma21": 0.6849315858397704,
+            "judgment": "📈 長多轉強"
+          },
+          {
+            "date": "2026-06-09",
+            "value": 0.5568893851222743,
+            "ma21": 0.6861642045722754,
+            "judgment": "📈 長多轉強"
+          },
+          {
+            "date": "2026-06-10",
+            "value": 0.5039462102642258,
+            "ma21": 0.6829130828712924,
+            "judgment": "📈 長多待確認"
+          },
+          {
+            "date": "2026-06-11",
+            "value": 0.5193043915008839,
+            "ma21": 0.678495728820016,
+            "judgment": "📈 長多轉弱"
+          },
+          {
+            "date": "2026-06-12",
+            "value": 0.4894929891238183,
+            "ma21": 0.6680410478719724,
+            "judgment": "📈 長多轉弱"
+          },
+          {
+            "date": "2026-06-15",
+            "value": 0.5477608683363198,
+            "ma21": 0.6566793346734698,
+            "judgment": "📈 長多轉弱"
+          },
+          {
+            "date": "2026-06-16",
+            "value": 0.5049893368465479,
+            "ma21": 0.6470530676946551,
+            "judgment": "📈 長多轉弱"
+          },
+          {
+            "date": "2026-06-17",
+            "value": 0.5531195430325568,
+            "ma21": 0.6411992456470917,
+            "judgment": "📈 長多轉弱"
+          },
+          {
+            "date": "2026-06-18",
+            "value": 0.6451090608366781,
+            "ma21": 0.6397915895117817,
+            "judgment": "📈 長多轉弱"
+          },
+          {
+            "date": "2026-06-22",
+            "value": 0.5975571700927118,
+            "ma21": 0.6365821866517505,
+            "judgment": "📈 長多轉弱"
+          },
+          {
+            "date": "2026-06-23",
+            "value": 0.5598179057069753,
+            "ma21": 0.6257643950210934,
+            "judgment": "📈 長多轉弱"
+          },
+          {
+            "date": "2026-06-24",
+            "value": 0.5255591307086719,
+            "ma21": 0.6132440054877691,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-06-25",
+            "value": 0.5476838409631417,
+            "ma21": 0.6000791767539306,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-06-26",
+            "value": 0.5271134086584134,
+            "ma21": 0.5914106307359478,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-06-29",
+            "value": 0.5012832513726252,
+            "ma21": 0.5807558254227003,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-06-30",
+            "value": 0.54233922524581,
+            "ma21": 0.5751893386933643,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-07-01",
+            "value": 0.5020031899370719,
+            "ma21": 0.5711282551058003,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-07-02",
+            "value": 0.4506679417168727,
+            "ma21": 0.5603815855428723,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-07-06",
+            "value": 0.4414723109037657,
+            "ma21": 0.5486292995837728,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-07-07",
+            "value": 0.404548423294852,
+            "ma21": 0.53240045051099,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-07-08",
+            "value": 0.404102044106569,
+            "ma21": 0.5217008018373142,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-07-09",
+            "value": 0.4163455095885699,
+            "ma21": 0.5114811970171121,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-07-10",
+            "value": 0.3928125342817095,
+            "ma21": 0.5036680136437519,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-07-13",
+            "value": 0.37761615373531465,
+            "ma21": 0.49765229666618466,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-07-14",
+            "value": 0.38353488323334045,
+            "ma21": 0.49118708198677785,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-07-15",
+            "value": 0.3908475480963195,
+            "ma21": 0.48648968003308746,
+            "judgment": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-07-16",
+            "value": 0.34907592264592296,
+            "ma21": 0.4770284921430686,
+            "judgment": "❌ 空頭落後"
+          }
+        ],
+        "obv55": [
+          {
+            "date": "2025-09-29",
+            "value": 0.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-09-30",
+            "value": 47733800.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-01",
+            "value": 33718000.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-02",
+            "value": 25565200.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-03",
+            "value": 20490600.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-06",
+            "value": 24927300.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-07",
+            "value": 28532600.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-08",
+            "value": 35925900.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-09",
+            "value": 45402300.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-10",
+            "value": 40377600.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-13",
+            "value": 45165500.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-14",
+            "value": 49005300.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-15",
+            "value": 46064900.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-16",
+            "value": 49280600.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-17",
+            "value": 46094800.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-20",
+            "value": 44041300.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-21",
+            "value": 45227300.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-22",
+            "value": 43630500.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-23",
+            "value": 44424400.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-24",
+            "value": 42911800.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-27",
+            "value": 48467200.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-28",
+            "value": 45560500.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-29",
+            "value": 48761300.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-30",
+            "value": 42676000.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-10-31",
+            "value": 45032400.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-03",
+            "value": 43245500.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-04",
+            "value": 40602000.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-05",
+            "value": 38838600.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-06",
+            "value": 34868200.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-07",
+            "value": 31972900.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-10",
+            "value": 30365100.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-11",
+            "value": 28923300.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-12",
+            "value": 31324600.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-13",
+            "value": 29749600.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-14",
+            "value": 29020500.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-17",
+            "value": 30118400.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-18",
+            "value": 29514600.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-19",
+            "value": 28596000.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-20",
+            "value": 27331000.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-21",
+            "value": 25965000.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-24",
+            "value": 27381500.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-25",
+            "value": 30225100.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-26",
+            "value": 31718200.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-11-28",
+            "value": 31297900.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-12-01",
+            "value": 34982900.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-12-02",
+            "value": 33155200.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-12-03",
+            "value": 34215600.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-12-04",
+            "value": 35418700.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-12-05",
+            "value": 34596200.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-12-08",
+            "value": 35570200.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-12-09",
+            "value": 34396300.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-12-10",
+            "value": 32679400.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-12-11",
+            "value": 30193400.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-12-12",
+            "value": 29064100.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-12-15",
+            "value": 27972100.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2025-12-16",
+            "value": 28680600.0,
+            "high55": 49280600.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2025-12-17",
+            "value": 27932500.0,
+            "high55": 49280600.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2025-12-18",
+            "value": 28738400.0,
+            "high55": 49280600.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2025-12-19",
+            "value": 30360000.0,
+            "high55": 49280600.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2025-12-22",
+            "value": 31162600.0,
+            "high55": 49280600.0,
+            "judgment": "📈 盤整吸籌(資金進駐)"
+          },
+          {
+            "date": "2025-12-23",
+            "value": 30624700.0,
+            "high55": 49280600.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2025-12-24",
+            "value": 30802200.0,
+            "high55": 49280600.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2025-12-26",
+            "value": 30238600.0,
+            "high55": 49280600.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2025-12-29",
+            "value": 29668800.0,
+            "high55": 49280600.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2025-12-30",
+            "value": 29032800.0,
+            "high55": 49280600.0,
+            "judgment": "📉 量價同步走弱"
+          },
+          {
+            "date": "2025-12-31",
+            "value": 29764400.0,
+            "high55": 49280600.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-01-02",
+            "value": 30598300.0,
+            "high55": 49280600.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-01-05",
+            "value": 29889000.0,
+            "high55": 49280600.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-01-06",
+            "value": 31439000.0,
+            "high55": 49280600.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-01-07",
+            "value": 30766100.0,
+            "high55": 48761300.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-01-08",
+            "value": 30172900.0,
+            "high55": 48761300.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-01-09",
+            "value": 29534800.0,
+            "high55": 48761300.0,
+            "judgment": "📉 量價同步走弱"
+          },
+          {
+            "date": "2026-01-12",
+            "value": 28776400.0,
+            "high55": 48761300.0,
+            "judgment": "📉 量價同步走弱"
+          },
+          {
+            "date": "2026-01-13",
+            "value": 30226900.0,
+            "high55": 48761300.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-01-14",
+            "value": 28860000.0,
+            "high55": 48761300.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-01-15",
+            "value": 30409100.0,
+            "high55": 48761300.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-01-16",
+            "value": 32537100.0,
+            "high55": 48761300.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-01-20",
+            "value": 34843400.0,
+            "high55": 48761300.0,
+            "judgment": "📈 盤整吸籌(資金進駐)"
+          },
+          {
+            "date": "2026-01-21",
+            "value": 32872300.0,
+            "high55": 45032400.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-01-22",
+            "value": 31303800.0,
+            "high55": 45032400.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-01-23",
+            "value": 30086200.0,
+            "high55": 43245500.0,
+            "judgment": "📉 量價同步走弱"
+          },
+          {
+            "date": "2026-01-26",
+            "value": 28854100.0,
+            "high55": 40602000.0,
+            "judgment": "📉 量價同步走弱"
+          },
+          {
+            "date": "2026-01-27",
+            "value": 30087600.0,
+            "high55": 38838600.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-01-28",
+            "value": 29200100.0,
+            "high55": 35570200.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-01-29",
+            "value": 28287900.0,
+            "high55": 35570200.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-01-30",
+            "value": 25233900.0,
+            "high55": 35570200.0,
+            "judgment": "📉 量價同步走弱"
+          },
+          {
+            "date": "2026-02-02",
+            "value": 27188400.0,
+            "high55": 35570200.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-02-03",
+            "value": 28702600.0,
+            "high55": 35570200.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-02-04",
+            "value": 31873100.0,
+            "high55": 35570200.0,
+            "judgment": "📈 盤整吸籌(資金進駐)"
+          },
+          {
+            "date": "2026-02-05",
+            "value": 26166800.0,
+            "high55": 35570200.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-02-06",
+            "value": 28553700.0,
+            "high55": 35570200.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-02-09",
+            "value": 26458700.0,
+            "high55": 35570200.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-02-10",
+            "value": 29306100.0,
+            "high55": 35570200.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-02-11",
+            "value": 31709200.0,
+            "high55": 35570200.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-02-12",
+            "value": 29427500.0,
+            "high55": 35570200.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-02-13",
+            "value": 31437100.0,
+            "high55": 35570200.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-02-17",
+            "value": 33850000.0,
+            "high55": 35570200.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-02-18",
+            "value": 35237900.0,
+            "high55": 35570200.0,
+            "judgment": "📈 盤整吸籌(資金進駐)"
+          },
+          {
+            "date": "2026-02-19",
+            "value": 34588500.0,
+            "high55": 35570200.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-02-20",
+            "value": 33656600.0,
+            "high55": 35570200.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-02-23",
+            "value": 32543500.0,
+            "high55": 35570200.0,
+            "judgment": "📉 量價同步走弱"
+          },
+          {
+            "date": "2026-02-24",
+            "value": 34582900.0,
+            "high55": 35570200.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-02-25",
+            "value": 36775800.0,
+            "high55": 35570200.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-02-26",
+            "value": 35381800.0,
+            "high55": 36775800.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-02-27",
+            "value": 34049800.0,
+            "high55": 36775800.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-03-02",
+            "value": 36233700.0,
+            "high55": 36775800.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-03-03",
+            "value": 34462400.0,
+            "high55": 36775800.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-03-04",
+            "value": 32922000.0,
+            "high55": 36775800.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-03-05",
+            "value": 31488300.0,
+            "high55": 36775800.0,
+            "judgment": "📉 量價同步走弱"
+          },
+          {
+            "date": "2026-03-06",
+            "value": 28211500.0,
+            "high55": 36775800.0,
+            "judgment": "📉 量價同步走弱"
+          },
+          {
+            "date": "2026-03-09",
+            "value": 29705800.0,
+            "high55": 36775800.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-03-10",
+            "value": 27755700.0,
+            "high55": 36775800.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-03-11",
+            "value": 29353100.0,
+            "high55": 36775800.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-03-12",
+            "value": 28399900.0,
+            "high55": 36775800.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-03-13",
+            "value": 27198600.0,
+            "high55": 36775800.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-03-16",
+            "value": 28987500.0,
+            "high55": 36775800.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-03-17",
+            "value": 27870000.0,
+            "high55": 36775800.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-03-18",
+            "value": 26697900.0,
+            "high55": 36775800.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-03-19",
+            "value": 28236900.0,
+            "high55": 36775800.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-03-20",
+            "value": 24963600.0,
+            "high55": 36775800.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-03-23",
+            "value": 26333900.0,
+            "high55": 36775800.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-03-24",
+            "value": 27346500.0,
+            "high55": 36775800.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-03-25",
+            "value": 28543300.0,
+            "high55": 36775800.0,
+            "judgment": "📈 盤整吸籌(資金進駐)"
+          },
+          {
+            "date": "2026-03-26",
+            "value": 27755000.0,
+            "high55": 36775800.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-03-27",
+            "value": 26434700.0,
+            "high55": 36775800.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-03-30",
+            "value": 25314200.0,
+            "high55": 36775800.0,
+            "judgment": "📉 量價同步走弱"
+          },
+          {
+            "date": "2026-03-31",
+            "value": 26666800.0,
+            "high55": 36775800.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-04-01",
+            "value": 27521400.0,
+            "high55": 36775800.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-04-02",
+            "value": 28424900.0,
+            "high55": 36775800.0,
+            "judgment": "📈 盤整吸籌(資金進駐)"
+          },
+          {
+            "date": "2026-04-06",
+            "value": 29337500.0,
+            "high55": 36775800.0,
+            "judgment": "📈 盤整吸籌(資金進駐)"
+          },
+          {
+            "date": "2026-04-07",
+            "value": 30101100.0,
+            "high55": 36775800.0,
+            "judgment": "📈 盤整吸籌(資金進駐)"
+          },
+          {
+            "date": "2026-04-08",
+            "value": 32555900.0,
+            "high55": 36775800.0,
+            "judgment": "📈 盤整吸籌(資金進駐)"
+          },
+          {
+            "date": "2026-04-09",
+            "value": 37055500.0,
+            "high55": 36775800.0,
+            "judgment": "🌟 量價同步(資金流入)"
+          },
+          {
+            "date": "2026-04-10",
+            "value": 33804600.0,
+            "high55": 37055500.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-04-13",
+            "value": 35944900.0,
+            "high55": 37055500.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-04-14",
+            "value": 34018500.0,
+            "high55": 37055500.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-04-15",
+            "value": 36614400.0,
+            "high55": 37055500.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-04-16",
+            "value": 40342400.0,
+            "high55": 37055500.0,
+            "judgment": "🌟 量價同步(資金流入)"
+          },
+          {
+            "date": "2026-04-17",
+            "value": 38333800.0,
+            "high55": 40342400.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-04-20",
+            "value": 41812500.0,
+            "high55": 40342400.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-04-21",
+            "value": 31780800.0,
+            "high55": 41812500.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-04-22",
+            "value": 40851000.0,
+            "high55": 41812500.0,
+            "judgment": "⚠️ 價創高/OBV不跟(警訊)"
+          },
+          {
+            "date": "2026-04-23",
+            "value": 36000500.0,
+            "high55": 41812500.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-04-24",
+            "value": 44409300.0,
+            "high55": 41812500.0,
+            "judgment": "🌟 量價同步(資金流入)"
+          },
+          {
+            "date": "2026-04-27",
+            "value": 39525200.0,
+            "high55": 44409300.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-04-28",
+            "value": 34378100.0,
+            "high55": 44409300.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-04-29",
+            "value": 32110900.0,
+            "high55": 44409300.0,
+            "judgment": "📉 量價同步走弱"
+          },
+          {
+            "date": "2026-04-30",
+            "value": 38376800.0,
+            "high55": 44409300.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-05-01",
+            "value": 46768400.0,
+            "high55": 44409300.0,
+            "judgment": "🌟 量價同步(資金流入)"
+          },
+          {
+            "date": "2026-05-04",
+            "value": 42421200.0,
+            "high55": 46768400.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-05-05",
+            "value": 53158600.0,
+            "high55": 46768400.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-05-06",
+            "value": 68006400.0,
+            "high55": 53158600.0,
+            "judgment": "🌟 量價同步(資金流入)"
+          },
+          {
+            "date": "2026-05-07",
+            "value": 78876800.0,
+            "high55": 68006400.0,
+            "judgment": "🌟 量價同步(資金流入)"
+          },
+          {
+            "date": "2026-05-08",
+            "value": 85438100.0,
+            "high55": 78876800.0,
+            "judgment": "🌟 量價同步(資金流入)"
+          },
+          {
+            "date": "2026-05-11",
+            "value": 94577300.0,
+            "high55": 85438100.0,
+            "judgment": "🌟 量價同步(資金流入)"
+          },
+          {
+            "date": "2026-05-12",
+            "value": 106858000.0,
+            "high55": 94577300.0,
+            "judgment": "🌟 量價同步(資金流入)"
+          },
+          {
+            "date": "2026-05-13",
+            "value": 140592700.0,
+            "high55": 106858000.0,
+            "judgment": "🌟 量價同步(資金流入)"
+          },
+          {
+            "date": "2026-05-14",
+            "value": 158649500.0,
+            "high55": 140592700.0,
+            "judgment": "🌟 量價同步(資金流入)"
+          },
+          {
+            "date": "2026-05-15",
+            "value": 148628000.0,
+            "high55": 158649500.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-05-18",
+            "value": 138511200.0,
+            "high55": 158649500.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-05-19",
+            "value": 132695000.0,
+            "high55": 158649500.0,
+            "judgment": "📉 量價同步走弱"
+          },
+          {
+            "date": "2026-05-20",
+            "value": 125057700.0,
+            "high55": 158649500.0,
+            "judgment": "📉 量價同步走弱"
+          },
+          {
+            "date": "2026-05-21",
+            "value": 134377500.0,
+            "high55": 158649500.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-05-22",
+            "value": 145320400.0,
+            "high55": 158649500.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-05-26",
+            "value": 156819300.0,
+            "high55": 158649500.0,
+            "judgment": "⚠️ 價創高/OBV不跟(警訊)"
+          },
+          {
+            "date": "2026-05-27",
+            "value": 140280900.0,
+            "high55": 158649500.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-05-28",
+            "value": 147163500.0,
+            "high55": 158649500.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-05-29",
+            "value": 139599000.0,
+            "high55": 158649500.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-06-01",
+            "value": 128064700.0,
+            "high55": 158649500.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-06-02",
+            "value": 136900100.0,
+            "high55": 158649500.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-06-03",
+            "value": 144906700.0,
+            "high55": 158649500.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-06-04",
+            "value": 152665700.0,
+            "high55": 158649500.0,
+            "judgment": "📈 盤整吸籌(資金進駐)"
+          },
+          {
+            "date": "2026-06-05",
+            "value": 144877900.0,
+            "high55": 158649500.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-06-08",
+            "value": 150640600.0,
+            "high55": 158649500.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-06-09",
+            "value": 140175400.0,
+            "high55": 158649500.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-06-10",
+            "value": 132951500.0,
+            "high55": 158649500.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-06-11",
+            "value": 138460500.0,
+            "high55": 158649500.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-06-12",
+            "value": 131569900.0,
+            "high55": 158649500.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-06-15",
+            "value": 139849600.0,
+            "high55": 158649500.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-06-16",
+            "value": 134032300.0,
+            "high55": 158649500.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-06-17",
+            "value": 142163900.0,
+            "high55": 158649500.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-06-18",
+            "value": 151723300.0,
+            "high55": 158649500.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-06-22",
+            "value": 144619300.0,
+            "high55": 158649500.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-06-23",
+            "value": 139601900.0,
+            "high55": 158649500.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-06-24",
+            "value": 134920500.0,
+            "high55": 158649500.0,
+            "judgment": "📉 量價同步走弱"
+          },
+          {
+            "date": "2026-06-25",
+            "value": 138995200.0,
+            "high55": 158649500.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-06-26",
+            "value": 131424100.0,
+            "high55": 158649500.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-06-29",
+            "value": 126271200.0,
+            "high55": 158649500.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-06-30",
+            "value": 132563300.0,
+            "high55": 158649500.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-07-01",
+            "value": 128850600.0,
+            "high55": 158649500.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-07-02",
+            "value": 123872800.0,
+            "high55": 158649500.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-07-06",
+            "value": 120218900.0,
+            "high55": 158649500.0,
+            "judgment": "📉 量價同步走弱"
+          },
+          {
+            "date": "2026-07-07",
+            "value": 114333300.0,
+            "high55": 158649500.0,
+            "judgment": "📉 量價同步走弱"
+          },
+          {
+            "date": "2026-07-08",
+            "value": 110868900.0,
+            "high55": 158649500.0,
+            "judgment": "📉 量價同步走弱"
+          },
+          {
+            "date": "2026-07-09",
+            "value": 114040500.0,
+            "high55": 158649500.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-07-10",
+            "value": 111357900.0,
+            "high55": 158649500.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-07-13",
+            "value": 108653400.0,
+            "high55": 158649500.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-07-14",
+            "value": 110955900.0,
+            "high55": 158649500.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-07-15",
+            "value": 114504400.0,
+            "high55": 158649500.0,
+            "judgment": "量價待確認"
+          },
+          {
+            "date": "2026-07-16",
+            "value": 110629100.0,
+            "high55": 158649500.0,
+            "judgment": "量價待確認"
+          }
+        ]
+      },
+      "markers": {
+        "kpi18": [
+          {
+            "date": "2025-12-11",
+            "value": 50.693620482705455,
+            "label": "偏多動能仍在"
+          },
+          {
+            "date": "2025-12-12",
+            "value": 46.35427837334632,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2025-12-15",
+            "value": 43.80704253952943,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2025-12-16",
+            "value": 44.24962400183128,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2025-12-17",
+            "value": 41.98352771445617,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2025-12-18",
+            "value": 45.17968439819151,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2025-12-19",
+            "value": 47.2111730555416,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2025-12-22",
+            "value": 47.255018376055595,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2025-12-23",
+            "value": 47.0865242835937,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2025-12-24",
+            "value": 47.539782345025785,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2025-12-26",
+            "value": 45.31052306290992,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2025-12-29",
+            "value": 42.452095189024504,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2025-12-30",
+            "value": 41.61281011723404,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2025-12-31",
+            "value": 43.450490361263526,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-01-02",
+            "value": 51.981373553576994,
+            "label": "偏多動能仍在"
+          },
+          {
+            "date": "2026-01-05",
+            "value": 47.18979951583263,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-01-06",
+            "value": 55.23534003458166,
+            "label": "偏多動能仍在"
+          },
+          {
+            "date": "2026-01-07",
+            "value": 55.130162606295976,
+            "label": "偏多動能仍在"
+          },
+          {
+            "date": "2026-01-08",
+            "value": 50.95096163037693,
+            "label": "偏多動能仍在"
+          },
+          {
+            "date": "2026-01-09",
+            "value": 49.535586673030316,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-01-12",
+            "value": 48.600901752344456,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-01-13",
+            "value": 54.23263222135642,
+            "label": "偏多動能仍在"
+          },
+          {
+            "date": "2026-01-14",
+            "value": 54.11546508449211,
+            "label": "偏多動能仍在"
+          },
+          {
+            "date": "2026-01-15",
+            "value": 56.30134699169994,
+            "label": "偏多動能仍在"
+          },
+          {
+            "date": "2026-01-16",
+            "value": 58.4338275469753,
+            "label": "偏多動能仍在"
+          },
+          {
+            "date": "2026-01-20",
+            "value": 59.18212369389177,
+            "label": "偏多動能仍在"
+          },
+          {
+            "date": "2026-01-21",
+            "value": 52.28868259211038,
+            "label": "偏多動能仍在"
+          },
+          {
+            "date": "2026-01-22",
+            "value": 50.428208896516075,
+            "label": "偏多動能仍在"
+          },
+          {
+            "date": "2026-01-23",
+            "value": 43.629575545143425,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-01-26",
+            "value": 40.90360185084154,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-01-27",
+            "value": 44.87751232317826,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-01-28",
+            "value": 42.13156434958207,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-01-29",
+            "value": 41.47365422747218,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-01-30",
+            "value": 34.1057047787675,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-02-02",
+            "value": 40.634707112821005,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-02-03",
+            "value": 43.04051369937761,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-02-04",
+            "value": 44.319497198283635,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-02-05",
+            "value": 36.87406854726413,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-02-06",
+            "value": 38.27824114290154,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-02-09",
+            "value": 34.89480906160891,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-02-10",
+            "value": 40.91600438467555,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-02-11",
+            "value": 52.50752098908579,
+            "label": "偏多動能仍在"
+          },
+          {
+            "date": "2026-02-12",
+            "value": 44.037753813094305,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-02-13",
+            "value": 51.2904831313706,
+            "label": "偏多動能仍在"
+          },
+          {
+            "date": "2026-02-17",
+            "value": 56.144943110988024,
+            "label": "偏多動能仍在"
+          },
+          {
+            "date": "2026-02-18",
+            "value": 57.691470165464324,
+            "label": "偏多動能仍在"
+          },
+          {
+            "date": "2026-02-19",
+            "value": 55.32227014184923,
+            "label": "偏多動能仍在"
+          },
+          {
+            "date": "2026-02-20",
+            "value": 53.53537606992896,
+            "label": "偏多動能仍在"
+          },
+          {
+            "date": "2026-02-23",
+            "value": 52.665209175734525,
+            "label": "偏多動能仍在"
+          },
+          {
+            "date": "2026-02-24",
+            "value": 59.00951333058733,
+            "label": "偏多動能仍在"
+          },
+          {
+            "date": "2026-02-25",
+            "value": 60.10632599049733,
+            "label": "強勢整理"
+          },
+          {
+            "date": "2026-02-26",
+            "value": 58.73124760356714,
+            "label": "偏多動能仍在"
+          },
+          {
+            "date": "2026-02-27",
+            "value": 56.12525928774854,
+            "label": "偏多動能仍在"
+          },
+          {
+            "date": "2026-03-02",
+            "value": 61.69162767952419,
+            "label": "強勢整理"
+          },
+          {
+            "date": "2026-03-03",
+            "value": 59.72021228764284,
+            "label": "偏多動能仍在"
+          },
+          {
+            "date": "2026-03-04",
+            "value": 58.27187932009708,
+            "label": "偏多動能仍在"
+          },
+          {
+            "date": "2026-03-05",
+            "value": 49.986791240936476,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-03-06",
+            "value": 40.9750802164167,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-03-09",
+            "value": 46.217989799828665,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-03-10",
+            "value": 42.2138302947572,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-03-11",
+            "value": 48.7752519961381,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-03-12",
+            "value": 44.63152761304688,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-03-13",
+            "value": 43.752832907506686,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-03-16",
+            "value": 50.17014051966908,
+            "label": "偏多動能仍在"
+          },
+          {
+            "date": "2026-03-17",
+            "value": 48.533883604614445,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-03-18",
+            "value": 44.664329684570276,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-03-19",
+            "value": 45.83742555876464,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-03-20",
+            "value": 43.2290838011435,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-03-23",
+            "value": 44.51563504936491,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-03-24",
+            "value": 44.85210929428023,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-03-25",
+            "value": 52.89461493543979,
+            "label": "偏多動能仍在"
+          },
+          {
+            "date": "2026-03-26",
+            "value": 46.229272057229174,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-03-27",
+            "value": 41.59283850131493,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-03-30",
+            "value": 39.60882742686443,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-03-31",
+            "value": 46.175617838326694,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-04-01",
+            "value": 46.70934451859456,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-04-02",
+            "value": 50.8292216154599,
+            "label": "偏多動能仍在"
+          },
+          {
+            "date": "2026-04-06",
+            "value": 53.05183969330331,
+            "label": "偏多動能仍在"
+          },
+          {
+            "date": "2026-04-07",
+            "value": 56.28084988733221,
+            "label": "偏多動能仍在"
+          },
+          {
+            "date": "2026-04-08",
+            "value": 61.555289207412976,
+            "label": "強勢整理"
+          },
+          {
+            "date": "2026-04-09",
+            "value": 70.61857710133377,
+            "label": "高檔鈍化/過熱"
+          },
+          {
+            "date": "2026-04-10",
+            "value": 65.42515869825131,
+            "label": "強勢整理"
+          },
+          {
+            "date": "2026-04-13",
+            "value": 67.40903081569974,
+            "label": "強勢整理"
+          },
+          {
+            "date": "2026-04-14",
+            "value": 62.62390959801001,
+            "label": "強勢整理"
+          },
+          {
+            "date": "2026-04-15",
+            "value": 64.73381349022111,
+            "label": "強勢整理"
+          },
+          {
+            "date": "2026-04-16",
+            "value": 70.07094917354326,
+            "label": "⚠️ 動能背離(警訊)"
+          },
+          {
+            "date": "2026-04-17",
+            "value": 66.07348813475696,
+            "label": "強勢整理"
+          },
+          {
+            "date": "2026-04-20",
+            "value": 67.63577368938422,
+            "label": "強勢整理"
+          },
+          {
+            "date": "2026-04-21",
+            "value": 61.21001015927541,
+            "label": "強勢整理"
+          },
+          {
+            "date": "2026-04-22",
+            "value": 67.442918941881,
+            "label": "⚠️ 動能背離(警訊)"
+          },
+          {
+            "date": "2026-04-23",
+            "value": 66.6862188208147,
+            "label": "強勢整理"
+          },
+          {
+            "date": "2026-04-24",
+            "value": 72.74556213485806,
+            "label": "高檔鈍化/過熱"
+          },
+          {
+            "date": "2026-04-27",
+            "value": 67.16822637765361,
+            "label": "強勢整理"
+          },
+          {
+            "date": "2026-04-28",
+            "value": 55.871898780951426,
+            "label": "偏多動能仍在"
+          },
+          {
+            "date": "2026-04-29",
+            "value": 55.29512345184848,
+            "label": "偏多動能仍在"
+          },
+          {
+            "date": "2026-04-30",
+            "value": 62.654993609328116,
+            "label": "強勢整理"
+          },
+          {
+            "date": "2026-05-01",
+            "value": 71.89315288539558,
+            "label": "⚠️ 動能背離(警訊)"
+          },
+          {
+            "date": "2026-05-04",
+            "value": 69.78465550669299,
+            "label": "強勢整理"
+          },
+          {
+            "date": "2026-05-05",
+            "value": 70.566901134766,
+            "label": "高檔鈍化/過熱"
+          },
+          {
+            "date": "2026-05-06",
+            "value": 76.65190510822879,
+            "label": "高檔鈍化/過熱"
+          },
+          {
+            "date": "2026-05-07",
+            "value": 78.21595714379139,
+            "label": "高檔鈍化/過熱"
+          },
+          {
+            "date": "2026-05-08",
+            "value": 79.25218657386554,
+            "label": "高檔鈍化/過熱"
+          },
+          {
+            "date": "2026-05-11",
+            "value": 81.67124944133283,
+            "label": "高檔鈍化/過熱"
+          },
+          {
+            "date": "2026-05-12",
+            "value": 83.5676860835751,
+            "label": "高檔鈍化/過熱"
+          },
+          {
+            "date": "2026-05-13",
+            "value": 87.2634250437908,
+            "label": "高檔鈍化/過熱"
+          },
+          {
+            "date": "2026-05-14",
+            "value": 89.39280360657203,
+            "label": "高檔鈍化/過熱"
+          },
+          {
+            "date": "2026-05-15",
+            "value": 75.02265841798078,
+            "label": "高檔鈍化/過熱"
+          },
+          {
+            "date": "2026-05-18",
+            "value": 70.67841989803404,
+            "label": "高檔鈍化/過熱"
+          },
+          {
+            "date": "2026-05-19",
+            "value": 69.86350621001067,
+            "label": "強勢整理"
+          },
+          {
+            "date": "2026-05-20",
+            "value": 69.51491837120186,
+            "label": "強勢整理"
+          },
+          {
+            "date": "2026-05-21",
+            "value": 76.15349439430517,
+            "label": "高檔鈍化/過熱"
+          },
+          {
+            "date": "2026-05-22",
+            "value": 76.35228525837647,
+            "label": "高檔鈍化/過熱"
+          },
+          {
+            "date": "2026-05-26",
+            "value": 78.16663258115238,
+            "label": "⚠️ 動能背離(警訊)"
+          },
+          {
+            "date": "2026-05-27",
+            "value": 63.32493885359239,
+            "label": "強勢整理"
+          },
+          {
+            "date": "2026-05-28",
+            "value": 64.59060567282712,
+            "label": "強勢整理"
+          },
+          {
+            "date": "2026-05-29",
+            "value": 57.6805068891092,
+            "label": "偏多動能仍在"
+          },
+          {
+            "date": "2026-06-01",
+            "value": 51.208101689724806,
+            "label": "偏多動能仍在"
+          },
+          {
+            "date": "2026-06-02",
+            "value": 57.74949849469101,
+            "label": "偏多動能仍在"
+          },
+          {
+            "date": "2026-06-03",
+            "value": 58.203393239580166,
+            "label": "偏多動能仍在"
+          },
+          {
+            "date": "2026-06-04",
+            "value": 62.07988429192308,
+            "label": "強勢整理"
+          },
+          {
+            "date": "2026-06-05",
+            "value": 50.78652098652799,
+            "label": "偏多動能仍在"
+          },
+          {
+            "date": "2026-06-08",
+            "value": 51.074071197278826,
+            "label": "偏多動能仍在"
+          },
+          {
+            "date": "2026-06-09",
+            "value": 45.76282386490941,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-06-10",
+            "value": 41.96876775319296,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-06-11",
+            "value": 43.94818293923833,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-06-12",
+            "value": 42.19357066787707,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-06-15",
+            "value": 47.76181756206659,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-06-16",
+            "value": 44.582747120397784,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-06-17",
+            "value": 47.948921439867014,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-06-18",
+            "value": 54.91792283861322,
+            "label": "偏多動能仍在"
+          },
+          {
+            "date": "2026-06-22",
+            "value": 51.161817557401754,
+            "label": "偏多動能仍在"
+          },
+          {
+            "date": "2026-06-23",
+            "value": 47.933398487865084,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-06-24",
+            "value": 45.61248023159135,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-06-25",
+            "value": 47.34652887564519,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-06-26",
+            "value": 45.85409709187846,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-06-29",
+            "value": 44.42074930244213,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-06-30",
+            "value": 48.4436428820825,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-07-01",
+            "value": 45.201407701796015,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-07-02",
+            "value": 41.504595743242795,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-07-06",
+            "value": 41.084021255472905,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-07-07",
+            "value": 38.34441414465242,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-07-08",
+            "value": 38.23363903889253,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-07-09",
+            "value": 40.084411574221065,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-07-10",
+            "value": 38.33988427073622,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-07-13",
+            "value": 36.89304829201002,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-07-14",
+            "value": 37.90856030253527,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-07-15",
+            "value": 39.17035725194146,
+            "label": "動能轉弱"
+          },
+          {
+            "date": "2026-07-16",
+            "value": 35.33338993793318,
+            "label": "動能轉弱"
+          }
+        ],
+        "kpi19": [
+          {
+            "date": "2025-12-11",
+            "value": 0.2427226479851394,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2025-12-12",
+            "value": 0.22930809094850887,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2025-12-15",
+            "value": 0.21955826304576456,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2025-12-16",
+            "value": 0.221425342364351,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2025-12-17",
+            "value": 0.2152619343679921,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2025-12-18",
+            "value": 0.22276165225630581,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2025-12-19",
+            "value": 0.22672461453050646,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2025-12-22",
+            "value": 0.2254133161862902,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2025-12-23",
+            "value": 0.22390612156022666,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2025-12-24",
+            "value": 0.2242801189628039,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2025-12-26",
+            "value": 0.21850997073295397,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2025-12-29",
+            "value": 0.21147470424741052,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2025-12-30",
+            "value": 0.20945085804567348,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2025-12-31",
+            "value": 0.21457518641856424,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-01-02",
+            "value": 0.23286681250660682,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-01-05",
+            "value": 0.21975808278274486,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-01-06",
+            "value": 0.23928077763563196,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-01-07",
+            "value": 0.23984506618211668,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-01-08",
+            "value": 0.23009297455661448,
+            "label": "📉 底部反彈"
+          },
+          {
+            "date": "2026-01-09",
+            "value": 0.2252152502274182,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-01-12",
+            "value": 0.22267557704430643,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-01-13",
+            "value": 0.2363271637483713,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-01-14",
+            "value": 0.23737226023771432,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-01-15",
+            "value": 0.24197225793847701,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-01-16",
+            "value": 0.24735854155303283,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-01-20",
+            "value": 0.25444647309633783,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-01-21",
+            "value": 0.239012746397408,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-01-22",
+            "value": 0.23401522394901422,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-01-23",
+            "value": 0.2190619404723874,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-01-26",
+            "value": 0.2111749778138742,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-01-27",
+            "value": 0.21757591836014736,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-01-28",
+            "value": 0.21105170358145128,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-01-29",
+            "value": 0.20978628265210753,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-01-30",
+            "value": 0.19042159145187998,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-02-02",
+            "value": 0.20099290035942574,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-02-03",
+            "value": 0.20735661180509152,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-02-04",
+            "value": 0.210905035883161,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-02-05",
+            "value": 0.19281397745497125,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-02-06",
+            "value": 0.19161739703107336,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-02-09",
+            "value": 0.18040834285313256,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-02-10",
+            "value": 0.1920723260143066,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-02-11",
+            "value": 0.21920841084577533,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-02-12",
+            "value": 0.19764879799630714,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-02-13",
+            "value": 0.21905351974136433,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-02-17",
+            "value": 0.23584882547929076,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-02-18",
+            "value": 0.24030156136365516,
+            "label": "📉 底部反彈"
+          },
+          {
+            "date": "2026-02-19",
+            "value": 0.23447436565855947,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-02-20",
+            "value": 0.2279636175378847,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-02-23",
+            "value": 0.22804170546218244,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-02-24",
+            "value": 0.24687064530623942,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-02-25",
+            "value": 0.24873555627117025,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-02-26",
+            "value": 0.24693490232031737,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-02-27",
+            "value": 0.24206536667958695,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-03-02",
+            "value": 0.26023037658618375,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-03-03",
+            "value": 0.2582543563962629,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-03-04",
+            "value": 0.25303680405149737,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-03-05",
+            "value": 0.23409695298349353,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-03-06",
+            "value": 0.2075656693264063,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-03-09",
+            "value": 0.22060973200304304,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-03-10",
+            "value": 0.20637183705864476,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-03-11",
+            "value": 0.2267325830255189,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-03-12",
+            "value": 0.21469963601779035,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-03-13",
+            "value": 0.2125833842782179,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-03-16",
+            "value": 0.23110887708899544,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-03-17",
+            "value": 0.2248654595488936,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-03-18",
+            "value": 0.21384044568291516,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-03-19",
+            "value": 0.21801440221691643,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-03-20",
+            "value": 0.21178114634887832,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-03-23",
+            "value": 0.21294921946840342,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-03-24",
+            "value": 0.21467958124285993,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-03-25",
+            "value": 0.23693851068279756,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-03-26",
+            "value": 0.2192619028210012,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-03-27",
+            "value": 0.20473291083927503,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-03-30",
+            "value": 0.19703165885587803,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-03-31",
+            "value": 0.211064580140121,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-04-01",
+            "value": 0.2112067297893448,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-04-02",
+            "value": 0.22405578353074573,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-04-06",
+            "value": 0.23046990902878017,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-04-07",
+            "value": 0.24153138997051032,
+            "label": "📉 底部反彈"
+          },
+          {
+            "date": "2026-04-08",
+            "value": 0.2558700269192695,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-04-09",
+            "value": 0.30214758241434153,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-04-10",
+            "value": 0.2874839966502673,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-04-13",
+            "value": 0.29598473879153225,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-04-14",
+            "value": 0.27855619920894265,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-04-15",
+            "value": 0.2871334679837341,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-04-16",
+            "value": 0.3180106170373327,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-04-17",
+            "value": 0.30256199356739627,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-04-20",
+            "value": 0.31240903640433915,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-04-21",
+            "value": 0.29493470247799297,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-04-22",
+            "value": 0.3278771892888591,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-04-23",
+            "value": 0.3269159656417694,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-04-24",
+            "value": 0.3676089292287333,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-04-27",
+            "value": 0.34882186633011986,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-04-28",
+            "value": 0.30542577439960783,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-04-29",
+            "value": 0.3029670118003027,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-04-30",
+            "value": 0.3455115266241207,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-05-01",
+            "value": 0.4288062473420098,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-05-04",
+            "value": 0.4209722429354801,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-05-05",
+            "value": 0.4255733412522773,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-05-06",
+            "value": 0.49323930851238584,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-05-07",
+            "value": 0.5190060327099432,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-05-08",
+            "value": 0.5310043917396698,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-05-11",
+            "value": 0.5722197659848695,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-05-12",
+            "value": 0.6120688265776879,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-05-13",
+            "value": 0.7090412890327346,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-05-14",
+            "value": 0.7863568455048697,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-05-15",
+            "value": 0.7071409434016598,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-05-18",
+            "value": 0.6760498060313885,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-05-19",
+            "value": 0.6746698396781886,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-05-20",
+            "value": 0.6649546301533669,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-05-21",
+            "value": 0.786991529950774,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-05-22",
+            "value": 0.78848731090848,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-05-26",
+            "value": 0.8241452443737503,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-05-27",
+            "value": 0.7091528750360534,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-05-28",
+            "value": 0.725034162950823,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-05-29",
+            "value": 0.6592354465618657,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-06-01",
+            "value": 0.5872859452759156,
+            "label": "📈 長多轉強"
+          },
+          {
+            "date": "2026-06-02",
+            "value": 0.6763480025383604,
+            "label": "📈 長多轉強"
+          },
+          {
+            "date": "2026-06-03",
+            "value": 0.6882703160448583,
+            "label": "📈 長多轉強"
+          },
+          {
+            "date": "2026-06-04",
+            "value": 0.745354253823284,
+            "label": "🌟 多頭領跑"
+          },
+          {
+            "date": "2026-06-05",
+            "value": 0.6287946662537677,
+            "label": "📈 長多轉強"
+          },
+          {
+            "date": "2026-06-08",
+            "value": 0.6309572108128108,
+            "label": "📈 長多轉強"
+          },
+          {
+            "date": "2026-06-09",
+            "value": 0.5568893851222743,
+            "label": "📈 長多轉強"
+          },
+          {
+            "date": "2026-06-10",
+            "value": 0.5039462102642258,
+            "label": "📈 長多待確認"
+          },
+          {
+            "date": "2026-06-11",
+            "value": 0.5193043915008839,
+            "label": "📈 長多轉弱"
+          },
+          {
+            "date": "2026-06-12",
+            "value": 0.4894929891238183,
+            "label": "📈 長多轉弱"
+          },
+          {
+            "date": "2026-06-15",
+            "value": 0.5477608683363198,
+            "label": "📈 長多轉弱"
+          },
+          {
+            "date": "2026-06-16",
+            "value": 0.5049893368465479,
+            "label": "📈 長多轉弱"
+          },
+          {
+            "date": "2026-06-17",
+            "value": 0.5531195430325568,
+            "label": "📈 長多轉弱"
+          },
+          {
+            "date": "2026-06-18",
+            "value": 0.6451090608366781,
+            "label": "📈 長多轉弱"
+          },
+          {
+            "date": "2026-06-22",
+            "value": 0.5975571700927118,
+            "label": "📈 長多轉弱"
+          },
+          {
+            "date": "2026-06-23",
+            "value": 0.5598179057069753,
+            "label": "📈 長多轉弱"
+          },
+          {
+            "date": "2026-06-24",
+            "value": 0.5255591307086719,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-06-25",
+            "value": 0.5476838409631417,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-06-26",
+            "value": 0.5271134086584134,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-06-29",
+            "value": 0.5012832513726252,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-06-30",
+            "value": 0.54233922524581,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-07-01",
+            "value": 0.5020031899370719,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-07-02",
+            "value": 0.4506679417168727,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-07-06",
+            "value": 0.4414723109037657,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-07-07",
+            "value": 0.404548423294852,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-07-08",
+            "value": 0.404102044106569,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-07-09",
+            "value": 0.4163455095885699,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-07-10",
+            "value": 0.3928125342817095,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-07-13",
+            "value": 0.37761615373531465,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-07-14",
+            "value": 0.38353488323334045,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-07-15",
+            "value": 0.3908475480963195,
+            "label": "❌ 空頭落後"
+          },
+          {
+            "date": "2026-07-16",
+            "value": 0.34907592264592296,
+            "label": "❌ 空頭落後"
+          }
+        ],
+        "kpi20": [
+          {
+            "date": "2025-12-16",
+            "value": 28680600.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2025-12-17",
+            "value": 27932500.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2025-12-18",
+            "value": 28738400.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2025-12-19",
+            "value": 30360000.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2025-12-22",
+            "value": 31162600.0,
+            "label": "📈 盤整吸籌(資金進駐)"
+          },
+          {
+            "date": "2025-12-23",
+            "value": 30624700.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2025-12-24",
+            "value": 30802200.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2025-12-26",
+            "value": 30238600.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2025-12-29",
+            "value": 29668800.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2025-12-30",
+            "value": 29032800.0,
+            "label": "📉 量價同步走弱"
+          },
+          {
+            "date": "2025-12-31",
+            "value": 29764400.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-01-02",
+            "value": 30598300.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-01-05",
+            "value": 29889000.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-01-06",
+            "value": 31439000.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-01-07",
+            "value": 30766100.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-01-08",
+            "value": 30172900.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-01-09",
+            "value": 29534800.0,
+            "label": "📉 量價同步走弱"
+          },
+          {
+            "date": "2026-01-12",
+            "value": 28776400.0,
+            "label": "📉 量價同步走弱"
+          },
+          {
+            "date": "2026-01-13",
+            "value": 30226900.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-01-14",
+            "value": 28860000.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-01-15",
+            "value": 30409100.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-01-16",
+            "value": 32537100.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-01-20",
+            "value": 34843400.0,
+            "label": "📈 盤整吸籌(資金進駐)"
+          },
+          {
+            "date": "2026-01-21",
+            "value": 32872300.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-01-22",
+            "value": 31303800.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-01-23",
+            "value": 30086200.0,
+            "label": "📉 量價同步走弱"
+          },
+          {
+            "date": "2026-01-26",
+            "value": 28854100.0,
+            "label": "📉 量價同步走弱"
+          },
+          {
+            "date": "2026-01-27",
+            "value": 30087600.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-01-28",
+            "value": 29200100.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-01-29",
+            "value": 28287900.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-01-30",
+            "value": 25233900.0,
+            "label": "📉 量價同步走弱"
+          },
+          {
+            "date": "2026-02-02",
+            "value": 27188400.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-02-03",
+            "value": 28702600.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-02-04",
+            "value": 31873100.0,
+            "label": "📈 盤整吸籌(資金進駐)"
+          },
+          {
+            "date": "2026-02-05",
+            "value": 26166800.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-02-06",
+            "value": 28553700.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-02-09",
+            "value": 26458700.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-02-10",
+            "value": 29306100.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-02-11",
+            "value": 31709200.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-02-12",
+            "value": 29427500.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-02-13",
+            "value": 31437100.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-02-17",
+            "value": 33850000.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-02-18",
+            "value": 35237900.0,
+            "label": "📈 盤整吸籌(資金進駐)"
+          },
+          {
+            "date": "2026-02-19",
+            "value": 34588500.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-02-20",
+            "value": 33656600.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-02-23",
+            "value": 32543500.0,
+            "label": "📉 量價同步走弱"
+          },
+          {
+            "date": "2026-02-24",
+            "value": 34582900.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-02-25",
+            "value": 36775800.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-02-26",
+            "value": 35381800.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-02-27",
+            "value": 34049800.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-03-02",
+            "value": 36233700.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-03-03",
+            "value": 34462400.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-03-04",
+            "value": 32922000.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-03-05",
+            "value": 31488300.0,
+            "label": "📉 量價同步走弱"
+          },
+          {
+            "date": "2026-03-06",
+            "value": 28211500.0,
+            "label": "📉 量價同步走弱"
+          },
+          {
+            "date": "2026-03-09",
+            "value": 29705800.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-03-10",
+            "value": 27755700.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-03-11",
+            "value": 29353100.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-03-12",
+            "value": 28399900.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-03-13",
+            "value": 27198600.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-03-16",
+            "value": 28987500.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-03-17",
+            "value": 27870000.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-03-18",
+            "value": 26697900.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-03-19",
+            "value": 28236900.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-03-20",
+            "value": 24963600.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-03-23",
+            "value": 26333900.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-03-24",
+            "value": 27346500.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-03-25",
+            "value": 28543300.0,
+            "label": "📈 盤整吸籌(資金進駐)"
+          },
+          {
+            "date": "2026-03-26",
+            "value": 27755000.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-03-27",
+            "value": 26434700.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-03-30",
+            "value": 25314200.0,
+            "label": "📉 量價同步走弱"
+          },
+          {
+            "date": "2026-03-31",
+            "value": 26666800.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-04-01",
+            "value": 27521400.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-04-02",
+            "value": 28424900.0,
+            "label": "📈 盤整吸籌(資金進駐)"
+          },
+          {
+            "date": "2026-04-06",
+            "value": 29337500.0,
+            "label": "📈 盤整吸籌(資金進駐)"
+          },
+          {
+            "date": "2026-04-07",
+            "value": 30101100.0,
+            "label": "📈 盤整吸籌(資金進駐)"
+          },
+          {
+            "date": "2026-04-08",
+            "value": 32555900.0,
+            "label": "📈 盤整吸籌(資金進駐)"
+          },
+          {
+            "date": "2026-04-09",
+            "value": 37055500.0,
+            "label": "🌟 量價同步(資金流入)"
+          },
+          {
+            "date": "2026-04-10",
+            "value": 33804600.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-04-13",
+            "value": 35944900.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-04-14",
+            "value": 34018500.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-04-15",
+            "value": 36614400.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-04-16",
+            "value": 40342400.0,
+            "label": "🌟 量價同步(資金流入)"
+          },
+          {
+            "date": "2026-04-17",
+            "value": 38333800.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-04-20",
+            "value": 41812500.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-04-21",
+            "value": 31780800.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-04-22",
+            "value": 40851000.0,
+            "label": "⚠️ 價創高/OBV不跟(警訊)"
+          },
+          {
+            "date": "2026-04-23",
+            "value": 36000500.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-04-24",
+            "value": 44409300.0,
+            "label": "🌟 量價同步(資金流入)"
+          },
+          {
+            "date": "2026-04-27",
+            "value": 39525200.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-04-28",
+            "value": 34378100.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-04-29",
+            "value": 32110900.0,
+            "label": "📉 量價同步走弱"
+          },
+          {
+            "date": "2026-04-30",
+            "value": 38376800.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-05-01",
+            "value": 46768400.0,
+            "label": "🌟 量價同步(資金流入)"
+          },
+          {
+            "date": "2026-05-04",
+            "value": 42421200.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-05-05",
+            "value": 53158600.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-05-06",
+            "value": 68006400.0,
+            "label": "🌟 量價同步(資金流入)"
+          },
+          {
+            "date": "2026-05-07",
+            "value": 78876800.0,
+            "label": "🌟 量價同步(資金流入)"
+          },
+          {
+            "date": "2026-05-08",
+            "value": 85438100.0,
+            "label": "🌟 量價同步(資金流入)"
+          },
+          {
+            "date": "2026-05-11",
+            "value": 94577300.0,
+            "label": "🌟 量價同步(資金流入)"
+          },
+          {
+            "date": "2026-05-12",
+            "value": 106858000.0,
+            "label": "🌟 量價同步(資金流入)"
+          },
+          {
+            "date": "2026-05-13",
+            "value": 140592700.0,
+            "label": "🌟 量價同步(資金流入)"
+          },
+          {
+            "date": "2026-05-14",
+            "value": 158649500.0,
+            "label": "🌟 量價同步(資金流入)"
+          },
+          {
+            "date": "2026-05-15",
+            "value": 148628000.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-05-18",
+            "value": 138511200.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-05-19",
+            "value": 132695000.0,
+            "label": "📉 量價同步走弱"
+          },
+          {
+            "date": "2026-05-20",
+            "value": 125057700.0,
+            "label": "📉 量價同步走弱"
+          },
+          {
+            "date": "2026-05-21",
+            "value": 134377500.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-05-22",
+            "value": 145320400.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-05-26",
+            "value": 156819300.0,
+            "label": "⚠️ 價創高/OBV不跟(警訊)"
+          },
+          {
+            "date": "2026-05-27",
+            "value": 140280900.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-05-28",
+            "value": 147163500.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-05-29",
+            "value": 139599000.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-06-01",
+            "value": 128064700.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-06-02",
+            "value": 136900100.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-06-03",
+            "value": 144906700.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-06-04",
+            "value": 152665700.0,
+            "label": "📈 盤整吸籌(資金進駐)"
+          },
+          {
+            "date": "2026-06-05",
+            "value": 144877900.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-06-08",
+            "value": 150640600.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-06-09",
+            "value": 140175400.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-06-10",
+            "value": 132951500.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-06-11",
+            "value": 138460500.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-06-12",
+            "value": 131569900.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-06-15",
+            "value": 139849600.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-06-16",
+            "value": 134032300.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-06-17",
+            "value": 142163900.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-06-18",
+            "value": 151723300.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-06-22",
+            "value": 144619300.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-06-23",
+            "value": 139601900.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-06-24",
+            "value": 134920500.0,
+            "label": "📉 量價同步走弱"
+          },
+          {
+            "date": "2026-06-25",
+            "value": 138995200.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-06-26",
+            "value": 131424100.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-06-29",
+            "value": 126271200.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-06-30",
+            "value": 132563300.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-07-01",
+            "value": 128850600.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-07-02",
+            "value": 123872800.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-07-06",
+            "value": 120218900.0,
+            "label": "📉 量價同步走弱"
+          },
+          {
+            "date": "2026-07-07",
+            "value": 114333300.0,
+            "label": "📉 量價同步走弱"
+          },
+          {
+            "date": "2026-07-08",
+            "value": 110868900.0,
+            "label": "📉 量價同步走弱"
+          },
+          {
+            "date": "2026-07-09",
+            "value": 114040500.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-07-10",
+            "value": 111357900.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-07-13",
+            "value": 108653400.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-07-14",
+            "value": 110955900.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-07-15",
+            "value": 114504400.0,
+            "label": "量價待確認"
+          },
+          {
+            "date": "2026-07-16",
+            "value": 110629100.0,
+            "label": "量價待確認"
+          }
+        ]
+      },
+      "triggers": [
+        {
+          "date": "2026-01-20",
+          "close": 20.5,
+          "rsi14": 59.18212369389177,
+          "kpi18": "偏多動能仍在",
+          "kpi19": "🌟 多頭領跑",
+          "kpi20": "📈 盤整吸籌(資金進駐)",
+          "label": "KPI-18/19/20 三指標成立"
+        },
+        {
+          "date": "2026-02-18",
+          "close": 19.59000015258789,
+          "rsi14": 57.691470165464324,
+          "kpi18": "偏多動能仍在",
+          "kpi19": "📉 底部反彈",
+          "kpi20": "📈 盤整吸籌(資金進駐)",
+          "label": "KPI-18/19/20 三指標成立"
+        },
+        {
+          "date": "2026-04-07",
+          "close": 18.93000030517578,
+          "rsi14": 56.28084988733221,
+          "kpi18": "偏多動能仍在",
+          "kpi19": "📉 底部反彈",
+          "kpi20": "📈 盤整吸籌(資金進駐)",
+          "label": "KPI-18/19/20 三指標成立"
+        },
+        {
+          "date": "2026-04-08",
+          "close": 20.559999465942383,
+          "rsi14": 61.555289207412976,
+          "kpi18": "強勢整理",
+          "kpi19": "🌟 多頭領跑",
+          "kpi20": "📈 盤整吸籌(資金進駐)",
+          "label": "KPI-18/19/20 三指標成立"
+        },
+        {
+          "date": "2026-06-04",
+          "close": 67.05999755859375,
+          "rsi14": 62.07988429192308,
+          "kpi18": "強勢整理",
+          "kpi19": "🌟 多頭領跑",
+          "kpi20": "📈 盤整吸籌(資金進駐)",
+          "label": "KPI-18/19/20 三指標成立"
+        }
+      ]
+    },
+    "backtest_error": null
+  }
+}

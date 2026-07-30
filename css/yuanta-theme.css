@@ -1,0 +1,111 @@
+/* ════════════════════════════════════════════════════════════════
+   Alpha 阿爾法投資 — 元大證券投資先生藍橘活潑風格 (Yuanta Style)
+   Based on color/4color_palette.md
+   ════════════════════════════════════════════════════════════════ */
+
+:root {
+  --bg-yuanta-white: #ffffff;
+  --bg-yuanta-sky: #e4f4ff;
+
+  --color-yuanta-blue: #1e8bfa;
+  --color-yuanta-dark-blue: #004899;
+  --color-yuanta-orange: #feae2a;
+
+  --text-primary: #1c2833;
+}
+
+body {
+  background-color: #f8fbff !important;
+  color: #1c2833 !important;
+  font-family: 'Noto Sans TC', 'Outfit', sans-serif !important;
+}
+
+.hero-curtain__strip {
+  background: #e4f4ff !important;
+}
+
+.s-hero-new {
+  background: 
+    radial-gradient(circle at 80% 20%, rgba(254, 174, 42, 0.15), transparent 45%),
+    linear-gradient(135deg, #ffffff 0%, #e4f4ff 60%, #d4ebfc 100%) !important;
+}
+
+.s-statement__carry-line--one {
+  color: #004899 !important;
+  background: #ffffff !important;
+  border: 2px solid #1e8bfa !important;
+  box-shadow: 4px 4px 0px #c0d8f8 !important;
+  border-radius: 8px !important;
+  padding: 12px 28px !important;
+}
+
+.s-statement__carry-line--two {
+  background: linear-gradient(135deg, #1e8bfa 0%, #004899 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  filter: drop-shadow(0 2px 8px rgba(30, 139, 250, 0.25)) !important;
+  padding: 12px 28px !important;
+  margin-top: 10px !important;
+}
+
+.s-statement__carry-subtitle {
+  color: #feae2a !important;
+  font-weight: bold !important;
+  letter-spacing: 0.15em !important;
+}
+
+.s-hero-new__ticker {
+  border-top: 2px solid #1e8bfa !important;
+  border-bottom: 2px solid #1e8bfa !important;
+  background: #004899 !important;
+}
+
+.s-hero-new__ticker-text {
+  color: #ffffff !important;
+  letter-spacing: 0.2em !important;
+}
+
+.s-statement {
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(30, 139, 250, 0.1), transparent 45%),
+    linear-gradient(135deg, #ffffff 0%, #e4f4ff 100%) !important;
+  border-top: 2px solid #1e8bfa !important;
+}
+
+.s-statement__line {
+  color: #1c2833 !important;
+  line-height: 2.3 !important;
+}
+
+.s-statement__line--indent {
+  color: #004899 !important;
+  border-left: 4px solid #feae2a !important;
+  background: #ffffff !important;
+  padding-left: 20px !important;
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+  margin-top: 12px !important;
+  margin-bottom: 12px !important;
+  box-shadow: 2px 2px 10px rgba(30, 139, 250, 0.15) !important;
+}
+
+.s-industries {
+  background: #f8fbff !important;
+  border-top: 2px solid #1e8bfa !important;
+}
+
+.s-ind-card {
+  background: #ffffff !important;
+  border: 2px solid #1e8bfa !important;
+  box-shadow: 4px 4px 0px #c0d8f8 !important;
+  border-radius: 16px !important;
+}
+
+.s-ind-card__num {
+  color: #feae2a !important;
+  font-weight: bold !important;
+}
+
+.s-ind-card__title {
+  color: #004899 !important;
+}

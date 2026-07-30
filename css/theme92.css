@@ -1,0 +1,16 @@
+/* Theme 92: Plus500 極速電光藍 (Port 5592) */
+body { background-color: #06102b !important; color: #ffffff !important; font-family: 'Noto Sans TC', sans-serif !important; }
+.hero-curtain__strip { background: #06102b !important; }
+.s-hero-new { background: radial-gradient(circle at 75% 30%, rgba(0, 210, 255, 0.25), transparent 50%), linear-gradient(135deg, #06102b 0%, #0a1e4a 50%, #0d2a66 100%) !important; }
+.s-statement__carry-line--one { color: #ffffff !important; background: rgba(10, 30, 74, 0.85) !important; border: 1px solid #00d2ff !important; box-shadow: 0 0 25px rgba(0, 210, 255, 0.4) !important; padding: 12px 28px !important; border-radius: 8px !important; }
+.s-statement__carry-line--two { background: linear-gradient(135deg, #ffffff 0%, #00d2ff 60%, #1890ff 100%) !important; -webkit-background-clip: text !important; -webkit-text-fill-color: transparent !important; filter: drop-shadow(0 4px 15px rgba(0, 210, 255, 0.5)) !important; padding: 12px 28px !important; margin-top: 10px !important; font-weight: bold !important; }
+.s-statement__carry-subtitle { color: #00d2ff !important; letter-spacing: 0.15em !important; }
+.s-hero-new__ticker { border-top: 2px solid #00d2ff !important; border-bottom: 2px solid #00d2ff !important; background: #06102b !important; }
+.s-hero-new__ticker-text { color: #00d2ff !important; }
+.s-statement { background: linear-gradient(135deg, #0a1e4a 0%, #06102b 100%) !important; border-top: 2px solid #00d2ff !important; }
+.s-statement__line { color: #ffffff !important; line-height: 2.3 !important; }
+.s-statement__line--indent { color: #00d2ff !important; border-left: 4px solid #1890ff !important; background: rgba(0, 210, 255, 0.08) !important; padding-left: 20px !important; }
+.s-industries { background: #06102b !important; border-top: 2px solid #00d2ff !important; }
+.s-ind-card { background: rgba(13, 42, 102, 0.85) !important; border: 1px solid #00d2ff !important; box-shadow: 0 10px 30px rgba(0, 210, 255, 0.2) !important; border-radius: 12px !important; }
+.s-ind-card__num { color: #00d2ff !important; }
+.s-ind-card__title { color: #ffffff !important; }

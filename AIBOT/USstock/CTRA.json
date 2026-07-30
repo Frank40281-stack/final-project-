@@ -1,0 +1,485 @@
+{
+  "success": true,
+  "message": "Stock KPI data retrieved successfully",
+  "data": {
+    "symbol": "CTRA",
+    "stock_name": "Coterra Energy Inc.",
+    "run_id": 2019,
+    "run_date": "2026-07-13T17:10:23",
+    "scores": {
+      "chip_score": 2.0,
+      "sentiment_score": 0.5,
+      "fundamental_score": 2.5,
+      "technical_score": null,
+      "total_score": 5.0
+    },
+    "score_categories": [
+      {
+        "key": "chip_score",
+        "label": "籌碼",
+        "score": 2.0,
+        "max_score": 7,
+        "stars": {
+          "filled": 2,
+          "half": false,
+          "empty": 5,
+          "max": 7,
+          "items": [
+            "full",
+            "full",
+            "empty",
+            "empty",
+            "empty",
+            "empty",
+            "empty"
+          ],
+          "text": "★★☆☆☆☆☆"
+        }
+      },
+      {
+        "key": "sentiment_score",
+        "label": "情緒",
+        "score": 0.5,
+        "max_score": 4,
+        "stars": {
+          "filled": 0,
+          "half": true,
+          "empty": 3,
+          "max": 4,
+          "items": [
+            "half",
+            "empty",
+            "empty",
+            "empty"
+          ],
+          "text": "1/2☆☆☆"
+        }
+      },
+      {
+        "key": "fundamental_score",
+        "label": "基本面",
+        "score": 2.5,
+        "max_score": 6,
+        "stars": {
+          "filled": 2,
+          "half": true,
+          "empty": 3,
+          "max": 6,
+          "items": [
+            "full",
+            "full",
+            "half",
+            "empty",
+            "empty",
+            "empty"
+          ],
+          "text": "★★1/2☆☆☆"
+        }
+      },
+      {
+        "key": "technical_score",
+        "label": "技術面",
+        "score": null,
+        "max_score": 3,
+        "stars": {
+          "filled": 0,
+          "half": false,
+          "empty": 3,
+          "max": 3,
+          "items": [
+            "empty",
+            "empty",
+            "empty"
+          ],
+          "text": "☆☆☆"
+        }
+      }
+    ],
+    "kpis": [
+      {
+        "code": "01",
+        "name": "Institutional Ownership",
+        "value": 96.602994,
+        "display_value": "96.60%",
+        "score": 1.0,
+        "score_label": "優良",
+        "score_percent": 100.0,
+        "score_average": 0.8,
+        "score_average_label": "普通",
+        "score_average_percent": 80.0,
+        "status": "OK",
+        "source": "Yahoo Finance/yfinance; Fintel",
+        "detail": "Shares Outstanding=759,356,619; yfinance heldPercentInstitutions=96.60%"
+      },
+      {
+        "code": "02",
+        "name": "MRQ Institutional Shares Change",
+        "value": null,
+        "display_value": "N/A",
+        "score": null,
+        "score_label": "N/A",
+        "score_percent": 0,
+        "score_average": 0.48,
+        "score_average_label": "低",
+        "score_average_percent": 48.0,
+        "status": "需 Fintel 資料",
+        "source": "Fintel",
+        "detail": "Fintel change shares=N/A; Fintel 自動抓取成功 (chrome120, session warmup)"
+      },
+      {
+        "code": "03",
+        "name": "Owners Count Change",
+        "value": 7.25,
+        "display_value": "7.25%",
+        "score": 0.5,
+        "score_label": "普通",
+        "score_percent": 50.0,
+        "score_average": 0.19,
+        "score_average_label": "低",
+        "score_average_percent": 19.0,
+        "status": "OK",
+        "source": "Fintel",
+        "detail": "Owners=960; Fintel 自動抓取成功 (chrome120, session warmup)"
+      },
+      {
+        "code": "04",
+        "name": "Portfolio Allocation Growth",
+        "value": -3.7,
+        "display_value": "-3.70%",
+        "score": 0.0,
+        "score_label": "低",
+        "score_percent": 0.0,
+        "score_average": 0.59,
+        "score_average_label": "普通",
+        "score_average_percent": 59.0,
+        "status": "OK",
+        "source": "Fintel",
+        "detail": "Source=Fintel; Average Portfolio Allocation=0.16%; Fintel 自動抓取成功 (chrome120, session warmup)"
+      },
+      {
+        "code": "05",
+        "name": "Buyer/Seller Ratio",
+        "value": 1.3669064748201438,
+        "display_value": "1.37",
+        "score": 0.5,
+        "score_label": "普通",
+        "score_percent": 50.0,
+        "score_average": 0.54,
+        "score_average_label": "普通",
+        "score_average_percent": 54.0,
+        "status": "OK",
+        "source": "MarketBeat Institutional Ownership",
+        "detail": "Source=MarketBeat/MarketBeat; Buyers=570; Sellers=417; MarketBeat Institutional Ownership 自動抓取成功 (NYSE)"
+      },
+      {
+        "code": "06",
+        "name": "Relative Net Inflow",
+        "value": 0.08089092608508668,
+        "display_value": "0.08%",
+        "score": 0.0,
+        "score_label": "低",
+        "score_percent": 0.0,
+        "score_average": 0.23,
+        "score_average_label": "低",
+        "score_average_percent": 23.0,
+        "status": "OK",
+        "source": "MarketBeat Institutional Ownership + yfinance market cap fallback",
+        "detail": "Source=MarketBeat; Inflows=$3.20B; Outflows=$3.18B; Net=$20.00M; Market Cap=$24.72B"
+      },
+      {
+        "code": "07",
+        "name": "Institutional Activity Score",
+        "value": 0.11057033061990265,
+        "display_value": "0.11",
+        "score": 0.0,
+        "score_label": "低",
+        "score_percent": 0.0,
+        "score_average": 0.2,
+        "score_average_label": "低",
+        "score_average_percent": 20.0,
+        "status": "OK",
+        "source": "MarketBeat Institutional Ownership",
+        "detail": "Source=KPI 5/6; Buyer/Seller Ratio=1.37; Relative Net Inflow=0.08%"
+      },
+      {
+        "code": "08",
+        "name": "Short Interest %",
+        "value": null,
+        "display_value": "N/A",
+        "score": null,
+        "score_label": "N/A",
+        "score_percent": 0,
+        "score_average": 0.79,
+        "score_average_label": "普通",
+        "score_average_percent": 79.0,
+        "status": "需 MarketBeat 資料",
+        "source": "MarketBeat Short Interest",
+        "detail": "Current short=N/A; Previous short=N/A; Record date=N/A; MarketBeat Short Interest 自動抓取成功 (NYSE)"
+      },
+      {
+        "code": "09",
+        "name": "Short Interest Change",
+        "value": null,
+        "display_value": "N/A",
+        "score": null,
+        "score_label": "N/A",
+        "score_percent": 0,
+        "score_average": 0.41,
+        "score_average_label": "低",
+        "score_average_percent": 41.0,
+        "status": "需 MarketBeat 資料",
+        "source": "MarketBeat Short Interest",
+        "detail": "Current short=N/A; Previous short=N/A; Record date=N/A; MarketBeat Short Interest 自動抓取成功 (NYSE)"
+      },
+      {
+        "code": "10",
+        "name": "Days To Cover",
+        "value": null,
+        "display_value": "N/A",
+        "score": null,
+        "score_label": "N/A",
+        "score_percent": 0,
+        "score_average": 0.29,
+        "score_average_label": "低",
+        "score_average_percent": 29.0,
+        "status": "需 MarketBeat 資料",
+        "source": "MarketBeat Short Interest",
+        "detail": "Current short=N/A; Previous short=N/A; Record date=N/A; MarketBeat Short Interest 自動抓取成功 (NYSE)"
+      },
+      {
+        "code": "11",
+        "name": "ESG Score",
+        "value": 56.0,
+        "display_value": "56",
+        "score": 0.5,
+        "score_label": "普通",
+        "score_percent": 50.0,
+        "score_average": 0.47,
+        "score_average_label": "低",
+        "score_average_percent": 47.0,
+        "status": "OK",
+        "source": "CSRHub ESG Rank / StockCircle ESG Score fallback",
+        "detail": "CSRHub ESG Rank=56/100; Sources=29; Entities=46,478; Encoded=NTY=; CSRHub 抓取成功 (chrome120); url=https://www.csrhub.com/CSR_and_sustainability_information/Coterra-Energy-Inc"
+      },
+      {
+        "code": "12",
+        "name": "Institutional Float Control",
+        "value": 98.06692522907097,
+        "display_value": "98.07%",
+        "score": 1.0,
+        "score_label": "優良",
+        "score_percent": 100.0,
+        "score_average": 0.89,
+        "score_average_label": "普通",
+        "score_average_percent": 89.0,
+        "status": "OK",
+        "source": "Yahoo Finance/yfinance",
+        "detail": "Institutional shares estimate=733,561,229; Float=748,021,035"
+      },
+      {
+        "code": "13",
+        "name": "Volume Activity",
+        "value": 1.7297520916190234,
+        "display_value": "1.73%",
+        "score": 0.0,
+        "score_label": "低",
+        "score_percent": 0.0,
+        "score_average": 0.03,
+        "score_average_label": "低",
+        "score_average_percent": 3.0,
+        "status": "OK",
+        "source": "Yahoo Finance/yfinance",
+        "detail": "10-day avg volume=13,134,987; Float version=1.76%"
+      },
+      {
+        "code": "14",
+        "name": "Volume Growth",
+        "value": 32.6396044579069,
+        "display_value": "32.64%",
+        "score": 0.5,
+        "score_label": "普通",
+        "score_percent": 50.0,
+        "score_average": 0.21,
+        "score_average_label": "低",
+        "score_average_percent": 21.0,
+        "status": "OK",
+        "source": "Yahoo Finance/yfinance",
+        "detail": "10-day avg volume=13,134,987; 3-month avg volume=9,902,764"
+      },
+      {
+        "code": "15",
+        "name": "Insider Ownership",
+        "value": 0.9330000999999999,
+        "display_value": "0.933%",
+        "score": 0.0,
+        "score_label": "低",
+        "score_percent": 0.0,
+        "score_average": 0.21,
+        "score_average_label": "低",
+        "score_average_percent": 21.0,
+        "status": "OK",
+        "source": "Yahoo Finance/yfinance",
+        "detail": "yfinance heldPercentInsiders=0.933%"
+      },
+      {
+        "code": "16",
+        "name": "Form 4 Net Insider Trading",
+        "value": null,
+        "display_value": "N/A",
+        "score": 0.5,
+        "score_label": "普通",
+        "score_percent": 50.0,
+        "score_average": 0.49,
+        "score_average_label": "低",
+        "score_average_percent": 49.0,
+        "status": "OK",
+        "source": "Finviz Insider Trading / SEC Form 4",
+        "detail": "Buy=N/A; Sale=N/A; Other=N/A; Period=2026-04-01 to 2026-06-30; Fetch ID=6; Fetched at=2026-07-07T20:54:26; Previous quarter=2026-04-01 to 2026-06-30; Finviz Form 4 使用 24 小時內快取 fetch_id=6; Finviz recent feed has no CTRA row for previous quarter 2026-04-01 to 2026-06-30; SEC ticker map has no CIK for this ticker"
+      },
+      {
+        "code": "17",
+        "name": "13F Holder Shares Change",
+        "value": null,
+        "display_value": "N/A",
+        "score": 0.5,
+        "score_label": "普通",
+        "score_percent": 50.0,
+        "score_average": 0.62,
+        "score_average_label": "普通",
+        "score_average_percent": 62.0,
+        "status": "OK",
+        "source": "WhaleWisdom stock holdings",
+        "detail": "Rows downloaded=0; Total records new=N/A, closed_out=N/A, added_to=N/A, reduced=N/A; Downloaded new=N/A, closed_out=N/A, added_to=N/A, reduced=N/A; WhaleWisdom stock id resolver HTTP 404"
+      },
+      {
+        "code": "18",
+        "name": "RSI 14 Momentum",
+        "value": null,
+        "display_value": "N/A",
+        "score": null,
+        "score_label": "N/A",
+        "score_percent": 0,
+        "score_average": 0.46,
+        "score_average_label": "低",
+        "score_average_percent": 46.0,
+        "status": "KPI-18~20 technical calculation returned no data",
+        "source": "Yahoo Finance/yfinance",
+        "detail": "Date=N/A; Close=N/A; RSI14=N/A; Chart=N/A; KPI-18~20 technical calculation returned no data"
+      },
+      {
+        "code": "19",
+        "name": "Composite RS Line",
+        "value": null,
+        "display_value": "N/A",
+        "score": null,
+        "score_label": "N/A",
+        "score_percent": 0,
+        "score_average": 0.44,
+        "score_average_label": "低",
+        "score_average_percent": 44.0,
+        "status": "KPI-18~20 technical calculation returned no data",
+        "source": "Yahoo Finance/yfinance",
+        "detail": "Date=N/A; Composite RS=N/A; Composite 21MA=N/A; SP500=N/A; NASDAQ=N/A; DJI=N/A; Weights=SP500 80%, NASDAQ 10%, DJI 10%; Chart=N/A; KPI-18~20 technical calculation returned no data"
+      },
+      {
+        "code": "20",
+        "name": "OBV 55D Money Flow",
+        "value": null,
+        "display_value": "N/A",
+        "score": null,
+        "score_label": "N/A",
+        "score_percent": 0,
+        "score_average": 0.53,
+        "score_average_label": "普通",
+        "score_average_percent": 53.0,
+        "status": "KPI-18~20 technical calculation returned no data",
+        "source": "Yahoo Finance/yfinance",
+        "detail": "Date=N/A; Close=N/A; 55D price high=N/A; OBV=N/A; 55D OBV high=N/A; Chart=N/A; KPI-18~20 technical calculation returned no data"
+      }
+    ],
+    "backtest": {
+      "symbol": "CTRA",
+      "source_csv": "0_data/CTRA_KPI_18_19_20_1y_report.csv",
+      "image_url": "/api/stocks/CTRA/backtest-image/",
+      "summary": {
+        "latest_date": "2026-05-06",
+        "latest_close": 32.560001373291016,
+        "latest_judgments": {
+          "kpi18": "計算中",
+          "kpi19": "計算中",
+          "kpi20": "計算中"
+        },
+        "trigger_count": 0,
+        "win_count": 0,
+        "loss_count": 0,
+        "win_rate": null,
+        "avg_ret_m": null,
+        "avg_ret_q": null,
+        "avg_ret_h": null,
+        "avg_ret_y": null,
+        "avg_ret_2y": null
+      },
+      "series": {
+        "price": [
+          {
+            "date": "2026-03-11",
+            "close": null,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-05-06",
+            "close": 32.560001373291016,
+            "price_50ma": null
+          }
+        ],
+        "rsi14": [
+          {
+            "date": "2026-03-11",
+            "value": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-05-06",
+            "value": null,
+            "judgment": "計算中"
+          }
+        ],
+        "rs_composite": [
+          {
+            "date": "2026-03-11",
+            "value": null,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-05-06",
+            "value": 0.3727918263677385,
+            "ma21": null,
+            "judgment": "計算中"
+          }
+        ],
+        "obv55": [
+          {
+            "date": "2026-03-11",
+            "value": 0.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-05-06",
+            "value": 0.0,
+            "high55": null,
+            "judgment": "計算中"
+          }
+        ]
+      },
+      "markers": {
+        "kpi18": [],
+        "kpi19": [],
+        "kpi20": []
+      },
+      "triggers": []
+    },
+    "backtest_error": null
+  }
+}

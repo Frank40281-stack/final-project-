@@ -1,0 +1,16 @@
+/* Theme 94: 極簡黑亮玻璃金屬銀邊版 (Port 5594) */
+body { background-color: #222222 !important; color: #ffffff !important; font-family: 'Noto Sans TC', sans-serif !important; }
+.hero-curtain__strip { background: #080808 !important; }
+.s-hero-new { background: radial-gradient(circle at 50% 30%, rgba(255, 184, 0, 0.2), transparent 50%), linear-gradient(135deg, #222222 0%, #080808 100%) !important; }
+.s-statement__carry-line--one { color: #ffffff !important; background: #080808 !important; border: 2px solid #d1d5db !important; box-shadow: 0 0 15px rgba(255, 255, 255, 0.3) !important; padding: 12px 28px !important; border-radius: 6px !important; }
+.s-statement__carry-line--two { color: #080808 !important; background: #ffb800 !important; border: 2px solid #d1d5db !important; box-shadow: 0 0 20px rgba(255, 184, 0, 0.5) !important; -webkit-text-fill-color: initial !important; padding: 12px 28px !important; margin-top: 10px !important; font-weight: 900 !important; }
+.s-statement__carry-subtitle { color: #ffb800 !important; letter-spacing: 0.15em !important; }
+.s-hero-new__ticker { border-top: 2px solid #d1d5db !important; border-bottom: 2px solid #d1d5db !important; background: #080808 !important; }
+.s-hero-new__ticker-text { color: #ffb800 !important; }
+.s-statement { background: linear-gradient(135deg, #080808 0%, #222222 100%) !important; border-top: 2px solid #d1d5db !important; }
+.s-statement__line { color: #ffffff !important; line-height: 2.3 !important; }
+.s-statement__line--indent { color: #ffb800 !important; border-left: 4px solid #d1d5db !important; background: rgba(255, 184, 0, 0.08) !important; padding-left: 20px !important; }
+.s-industries { background: #222222 !important; border-top: 2px solid #d1d5db !important; }
+.s-ind-card { background: #080808 !important; border: 2px solid #d1d5db !important; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important; border-radius: 10px !important; }
+.s-ind-card__num { color: #080808 !important; background: #ffb800 !important; padding: 2px 10px !important; border-radius: 4px !important; font-weight: bold !important; }
+.s-ind-card__title { color: #ffffff !important; }

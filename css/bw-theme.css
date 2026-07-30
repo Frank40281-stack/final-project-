@@ -1,0 +1,114 @@
+/* ════════════════════════════════════════════════════════════════
+   Alpha 阿爾法投資 — 商業周刊財富網權威雜誌風格 (Business Weekly Style)
+   Based on color/5color_palette.md
+   ════════════════════════════════════════════════════════════════ */
+
+:root {
+  --bg-bw-white: #ffffff;
+  --bg-bw-header: #222222;
+
+  --color-bw-red: #c8161d;
+  --color-bw-gold: #ffc800;
+
+  --text-primary: #2b2b2b;
+}
+
+body {
+  background-color: #f9f9f9 !important;
+  color: #2b2b2b !important;
+  font-family: 'Noto Sans TC', 'Outfit', sans-serif !important;
+}
+
+.hero-curtain__strip {
+  background: #ffffff !important;
+}
+
+.s-hero-new {
+  background: 
+    radial-gradient(circle at 80% 20%, rgba(200, 22, 29, 0.08), transparent 45%),
+    linear-gradient(135deg, #ffffff 0%, #f4f4f4 100%) !important;
+}
+
+.s-statement__carry-line--one {
+  color: #ffffff !important;
+  background: #c8161d !important;
+  border: 1px solid #a00e14 !important;
+  box-shadow: 0 4px 15px rgba(200, 22, 29, 0.2) !important;
+  border-radius: 4px !important;
+  padding: 12px 28px !important;
+}
+
+.s-statement__carry-line--two {
+  background: #2b2b2b !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  font-weight: bold !important;
+  padding: 12px 28px !important;
+  margin-top: 10px !important;
+}
+
+.s-statement__carry-subtitle {
+  color: #c8161d !important;
+  font-weight: bold !important;
+  letter-spacing: 0.15em !important;
+}
+
+.s-hero-new__ticker {
+  border-top: 2px solid #ffc800 !important;
+  border-bottom: 2px solid #ffc800 !important;
+  background: #222222 !important;
+}
+
+.s-hero-new__ticker-text {
+  color: #ffc800 !important;
+  letter-spacing: 0.2em !important;
+}
+
+.s-statement {
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(200, 22, 29, 0.05), transparent 45%),
+    linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%) !important;
+  border-top: 2px solid #c8161d !important;
+}
+
+.s-statement__line {
+  color: #2b2b2b !important;
+  line-height: 2.3 !important;
+}
+
+.s-statement__line--indent {
+  color: #c8161d !important;
+  border-left: 4px solid #ffc800 !important;
+  background: #ffffff !important;
+  padding-left: 20px !important;
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+  margin-top: 12px !important;
+  margin-bottom: 12px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important;
+}
+
+.s-industries {
+  background: #ffffff !important;
+  border-top: 2px solid #c8161d !important;
+}
+
+.s-ind-card {
+  background: #ffffff !important;
+  border: 1px solid #e0e0e0 !important;
+  border-top: 4px solid #c8161d !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06) !important;
+  border-radius: 8px !important;
+}
+
+.s-ind-card__num {
+  color: #ffc800 !important;
+  background: #222222 !important;
+  padding: 2px 10px !important;
+  border-radius: 4px !important;
+}
+
+.s-ind-card__title {
+  color: #2b2b2b !important;
+  font-weight: bold !important;
+}

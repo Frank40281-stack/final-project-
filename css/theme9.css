@@ -1,0 +1,16 @@
+/* Theme 9: 金燦粒子漩渦黑 (Port 5509) */
+body { background-color: #0a0a0a !important; color: #f4c430 !important; font-family: 'Noto Sans TC', sans-serif !important; }
+.hero-curtain__strip { background: #0a0a0a !important; }
+.s-hero-new { background: radial-gradient(circle at 50% 50%, rgba(244, 196, 48, 0.18), transparent 60%), linear-gradient(135deg, #0a0a0a 0%, #1a1505 100%) !important; }
+.s-statement__carry-line--one { color: #ffffff !important; background: #1a1505 !important; border: 2px solid #f4c430 !important; padding: 12px 28px !important; }
+.s-statement__carry-line--two { background: linear-gradient(135deg, #fff3d1 0%, #f3c667 50%, #b8860b 100%) !important; -webkit-background-clip: text !important; -webkit-text-fill-color: transparent !important; padding: 12px 28px !important; margin-top: 10px !important; }
+.s-statement__carry-subtitle { color: #f4c430 !important; }
+.s-hero-new__ticker { border-top: 1px solid #f4c430 !important; border-bottom: 1px solid #f4c430 !important; background: #0a0a0a !important; }
+.s-hero-new__ticker-text { color: #f4c430 !important; }
+.s-statement { background: linear-gradient(135deg, #1a1505 0%, #0a0a0a 100%) !important; border-top: 1px solid #f4c430 !important; }
+.s-statement__line { color: #ffffff !important; line-height: 2.3 !important; }
+.s-statement__line--indent { color: #f4c430 !important; border-left: 4px solid #f3c667 !important; background: rgba(244, 196, 48, 0.08) !important; padding-left: 20px !important; }
+.s-industries { background: #0a0a0a !important; border-top: 1px solid #f4c430 !important; }
+.s-ind-card { background: #1a1505 !important; border: 1px solid #f4c430 !important; border-radius: 12px !important; }
+.s-ind-card__num { color: #f4c430 !important; }
+.s-ind-card__title { color: #ffffff !important; }
