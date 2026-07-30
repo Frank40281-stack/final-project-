@@ -477,51 +477,62 @@ body:has(.cinema-study){
     white-space: nowrap;
   }
 
-  .industry-stock-columns {
+  .industry-stock-switch {
     display: grid;
-    flex: 1;
-    min-height: 0;
+    flex: 0 0 auto;
     grid-template-columns: repeat(2,minmax(0,1fr));
-    gap: 10px;
-    padding-top: 7px;
+    gap: 8px;
+    padding: 10px 2px 8px;
+    border-bottom: 1px solid rgba(221,255,215,.12);
   }
 
-  .industry-stock-column {
+  .industry-stock-switch button {
     display: flex;
     min-width: 0;
-    min-height: 0;
-    flex-direction: column;
-  }
-
-  .industry-stock-column + .industry-stock-column {
-    padding-left: 10px;
-    border-left: 1px solid rgba(221,255,215,.12);
-  }
-
-  .industry-stock-column > h3 {
-    display: flex;
-    min-height: 38px;
-    align-items: flex-start;
+    min-height: 34px;
+    align-items: center;
     justify-content: space-between;
     gap: 7px;
-    margin: 0;
-    padding: 5px 3px 8px;
-    border-bottom: 1px solid rgba(221,255,215,.12);
-    color: #d9e0d6;
-    font-size: .65rem;
-    font-weight: 500;
-    line-height: 1.35;
+    padding: 6px 8px;
+    border: 1px solid transparent;
+    border-radius: 0;
+    background: transparent;
+    color: rgba(197,203,195,.62);
+    cursor: pointer;
+    font-size: .62rem;
+    font-weight: 600;
+    line-height: 1.25;
+    text-align: left;
+    transition: color .2s ease,border-color .2s ease,background .2s ease;
   }
 
-  .industry-stock-column.is-confirmed > h3 {
+  .industry-stock-switch button:hover,
+  .industry-stock-switch button:focus-visible {
+    border-color: rgba(186,255,142,.22);
+    color: var(--ink);
+    outline: none;
+  }
+
+  .industry-stock-switch button[aria-pressed=true] {
+    border-color: rgba(186,255,142,.34);
+    background: rgba(149,220,109,.08);
     color: #a8ff68;
   }
 
-  .industry-stock-column.is-unconfirmed > h3 {
+  .industry-stock-switch button[data-stock-group-switch="unconfirmed"][aria-pressed=true] {
+    border-color: rgba(255,139,132,.32);
+    background: rgba(255,107,99,.07);
     color: #ff8b84;
   }
 
-  .industry-stock-column > h3 b {
+  .industry-stock-switch button span {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .industry-stock-switch button b {
     display: grid;
     min-width: 20px;
     height: 20px;

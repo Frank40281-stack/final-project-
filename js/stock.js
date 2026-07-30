@@ -1118,7 +1118,6 @@
           </header>
           <div class="tw-return-pending">
             <span>事件日後總報酬</span>
-            <strong>待補基準</strong>
             <small>政策生效日與事件基準價尚未在來源資料中提供</small>
           </div>
           ${renderMarketChart(kpiState, record)}
@@ -1141,7 +1140,7 @@
     const confirmed = entries.filter(entry => entry.group === 'confirmed');
     const unconfirmed = entries.filter(entry => entry.group === 'unconfirmed');
 
-    function stockItemMarkup(entry) {
+    function stockItemMarkup(entry, isDefaultGroup) {
       const item = entry.item;
       const index = entry.index;
       const isCurrent = index === currentIndex;
@@ -1149,7 +1148,7 @@
       const logoSymbol = item.market === 'tw' ? `${symbol}.TW` : symbol;
       const name = esc(item.companyName);
       const href = `?market=${encodeURIComponent(market)}&ticker=${encodeURIComponent(item.ticker)}&cycle=${encodeURIComponent(returnCycle.id)}&industry=${encodeURIComponent(industry)}`;
-      return `<a class="industry-stock-item${isCurrent ? ' is-current' : ''}" href="${href}" data-stock-index="${index}" ${isCurrent ? 'aria-current="page"' : ''}>
+      return `<a class="industry-stock-item${isCurrent ? ' is-current' : ''}" href="${href}" data-stock-index="${index}" data-stock-group="${entry.group}" ${isCurrent ? 'aria-current="page"' : ''}${isDefaultGroup ? '' : ' hidden'}>
         <span class="industry-stock-logo">
           <img src="https://financialmodelingprep.com/image-stock/${logoSymbol}.png" alt="${name} logo" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
           <span hidden>${symbol.slice(0, 2)}</span>
@@ -1159,15 +1158,8 @@
       </a>`;
     }
 
-    function columnMarkup(title, entriesInGroup, group) {
-      return `<section class="industry-stock-column is-${group}">
-        <h3><span>${esc(title)}</span><b>${entriesInGroup.length}</b></h3>
-        <nav class="industry-stock-list" aria-label="${esc(title)}">
-          ${entriesInGroup.length
-            ? entriesInGroup.map(stockItemMarkup).join('')
-            : '<span class="industry-stock-empty">目前沒有符合條件的個股</span>'}
-        </nav>
-      </section>`;
+    function emptyMarkup(group, entriesInGroup) {
+      return `<span class="industry-stock-empty" data-stock-empty="${group}"${entriesInGroup.length || group !== 'confirmed' ? ' hidden' : ''}>目前沒有符合條件的個股</span>`;
     }
 
     return `<aside class="industry-stock-rail" aria-label="${esc(industry)}同產業股票">
@@ -1178,10 +1170,16 @@
         </div>
         <span>${currentIndex + 1} / ${stocks.length}</span>
       </header>
-      <div class="industry-stock-columns">
-        ${columnMarkup('受惠股', confirmed, 'confirmed')}
-        ${columnMarkup('未確認直接受惠股', unconfirmed, 'unconfirmed')}
+      <div class="industry-stock-switch" aria-label="同產業個股列表切換">
+        <button type="button" data-stock-group-switch="confirmed" aria-pressed="true"><span>受惠股</span><b>${confirmed.length}</b></button>
+        <button type="button" data-stock-group-switch="unconfirmed" aria-pressed="false"><span>未確認直接受惠股</span><b>${unconfirmed.length}</b></button>
       </div>
+      <nav class="industry-stock-list" aria-label="同產業個股列表" data-active-group="confirmed">
+        ${confirmed.map(entry => stockItemMarkup(entry, true)).join('')}
+        ${unconfirmed.map(entry => stockItemMarkup(entry, false)).join('')}
+        ${emptyMarkup('confirmed', confirmed)}
+        ${emptyMarkup('unconfirmed', unconfirmed)}
+      </nav>
       <footer><span>SCROLL</span><i></i><small>滾輪切換</small></footer>
     </aside>`;
   }
@@ -1190,12 +1188,39 @@
     const rail = document.querySelector('.industry-stock-rail');
     if (!rail) return;
 
-    const lists = [...rail.querySelectorAll('.industry-stock-list')];
+    const list = rail.querySelector('.industry-stock-list');
     const items = [...rail.querySelectorAll('.industry-stock-item')]
       .sort((a, b) => Number(a.dataset.stockIndex) - Number(b.dataset.stockIndex));
-    const currentItem = rail.querySelector('.industry-stock-item.is-current');
-    if (currentItem) {
-      requestAnimationFrame(() => currentItem.scrollIntoView({ block: 'center', behavior: 'instant' }));
+    const switchButtons = [...rail.querySelectorAll('[data-stock-group-switch]')];
+    const emptyStates = [...rail.querySelectorAll('[data-stock-empty]')];
+
+    function activeItems() {
+      return items.filter(item => !item.hidden);
+    }
+
+    function scrollActiveAnchor(behavior) {
+      const visibleCurrent = rail.querySelector('.industry-stock-item.is-current:not([hidden])');
+      const anchor = visibleCurrent || activeItems()[0];
+      if (anchor) anchor.scrollIntoView({ block: 'center', behavior });
+    }
+
+    function setActiveGroup(group) {
+      switchButtons.forEach(button => {
+        button.setAttribute('aria-pressed', String(button.dataset.stockGroupSwitch === group));
+      });
+      if (list) list.dataset.activeGroup = group;
+      items.forEach(item => {
+        item.hidden = item.dataset.stockGroup !== group;
+      });
+      emptyStates.forEach(emptyState => {
+        const hasItems = items.some(item => item.dataset.stockGroup === emptyState.dataset.stockEmpty);
+        emptyState.hidden = emptyState.dataset.stockEmpty !== group || hasItems;
+      });
+      requestAnimationFrame(() => scrollActiveAnchor('smooth'));
+    }
+
+    if (list) {
+      setActiveGroup(list.dataset.activeGroup || 'confirmed');
     }
 
     let wheelDelta = 0;
@@ -1213,7 +1238,7 @@
       }, 280);
     }
 
-    lists.forEach(list => {
+    if (list) {
       list.addEventListener('wheel', event => {
         if (Math.abs(event.deltaY) <= Math.abs(event.deltaX)) return;
         event.preventDefault();
@@ -1228,17 +1253,25 @@
         if (Math.abs(wheelDelta) < 42) return;
         const direction = wheelDelta > 0 ? 1 : -1;
         wheelDelta = 0;
-        const targetIndex = Math.max(0, Math.min(items.length - 1, currentIndex + direction));
+        const visibleItems = activeItems();
+        if (!visibleItems.length) return;
+        const visibleCurrentIndex = visibleItems.findIndex(item => item.classList.contains('is-current'));
+        const startIndex = visibleCurrentIndex >= 0 ? visibleCurrentIndex : direction > 0 ? -1 : visibleItems.length;
+        const targetIndex = Math.max(0, Math.min(visibleItems.length - 1, startIndex + direction));
 
-        if (targetIndex === currentIndex) {
+        if (targetIndex === visibleCurrentIndex) {
           list.animate(
             [{ transform: 'translateY(0)' }, { transform: `translateY(${direction * -5}px)` }, { transform: 'translateY(0)' }],
             { duration: 260, easing: 'cubic-bezier(.22,.8,.26,1)' }
           );
           return;
         }
-        navigateTo(items[targetIndex], direction);
+        navigateTo(visibleItems[targetIndex], direction);
       }, { passive: false });
+    }
+
+    switchButtons.forEach(button => {
+      button.addEventListener('click', () => setActiveGroup(button.dataset.stockGroupSwitch));
     });
 
     items.forEach(item => {
