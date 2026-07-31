@@ -105,7 +105,7 @@ python server.py
 完成後開啟瀏覽器造訪：`http://127.0.0.1:5500`
 
 台股個股頁會透過 `/twstock-api/stocks/{ticker}/daily/` 讀取
-`http://35.229.146.232/api/stocks/{ticker}/daily/`。代理只接受固定格式的
+`https://twstock.ai-future2026.com/api/stocks/{ticker}/daily/`。代理只接受固定格式的
 個股日資料 GET 請求，不提供任意網址轉送。
 
 ### 2. 關於 API CORS 跨網域存取提示

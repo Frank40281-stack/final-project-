@@ -18,7 +18,7 @@ from urllib.parse import urlsplit
 
 HOST = "127.0.0.1"
 PORT = 5500
-UPSTREAM_ORIGIN = "http://35.229.146.232"
+UPSTREAM_ORIGIN = "https://twstock.ai-future2026.com"
 STOCK_PATH = re.compile(r"^/twstock-api/stocks/([0-9A-Za-z.-]+)/daily/?$")
 
 
