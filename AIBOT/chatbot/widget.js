@@ -16,7 +16,7 @@
 (function () {
   'use strict';
 
-  const TW_API  = 'http://35.229.146.232/';
+  const TW_API  = 'https://35.229.146.232/';
   const US_API  = 'http://34.81.30.50:8000/api/';
   const LS_KEY  = 'stockai_api_key';
   const LS_THEME= 'stockai_theme';
@@ -97,20 +97,21 @@
   }
 
   #sai-btn {
-    position: fixed; bottom: 28px; right: 28px; z-index: 99998;
+    position: fixed; bottom: 28px; right: 28px; z-index: 2147483600 !important;
     display: flex; align-items: center; gap: 10px;
     padding: 0 20px 0 14px; height: 52px; border-radius: 999px; border: none;
     background: var(--sai-primary-grad);
     color: var(--sai-btn-color); font-family: 'Inter','Noto Sans TC',sans-serif;
-    font-size: 0.9rem; font-weight: 700; cursor: pointer; letter-spacing: 0.3px;
+    font-size: 0.9rem; font-weight: 700; cursor: none !important; letter-spacing: 0.3px;
     box-shadow: var(--sai-btn-shadow);
+    pointer-events: auto !important;
     transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1);
     animation: sai-ring 3s ease-in-out infinite;
   }
-  #sai-btn:hover { transform: translateY(-2px) scale(1.04); }
+  #sai-btn:hover { transform: translateY(-2px) scale(1.04); cursor: none !important; }
   #sai-btn.open { background: linear-gradient(135deg, #2a3142, #1a2035); color: #fff; animation: none; box-shadow: 0 4px 16px rgba(0,0,0,0.5); }
-  #sai-btn .sai-btn-icon { font-size: 1.2rem; line-height: 1; }
-  #sai-btn .sai-btn-label { white-space: nowrap; }
+  #sai-btn .sai-btn-icon { font-size: 1.2rem; line-height: 1; pointer-events: none; }
+  #sai-btn .sai-btn-label { white-space: nowrap; pointer-events: none; }
 
   #sai-badge {
     position: absolute; top: -4px; right: -4px;
@@ -127,7 +128,7 @@
   }
 
   #sai-panel {
-    position: fixed; bottom: 94px; right: 28px; z-index: 99999;
+    position: fixed; bottom: 94px; right: 28px; z-index: 2147483600 !important;
     width: 370px; height: 540px; max-height: calc(100vh - 110px);
     border-radius: 20px;
     background: var(--sai-panel-bg);
@@ -139,7 +140,7 @@
     transform: scale(0.88) translateY(16px); opacity: 0; pointer-events: none;
     transition: all 0.3s cubic-bezier(0.34,1.3,0.64,1);
   }
-  #sai-panel.open { transform: scale(1) translateY(0); opacity: 1; pointer-events: all; }
+  #sai-panel.open { transform: scale(1) translateY(0); opacity: 1; pointer-events: all !important; }
 
   /* ── Header ── */
   .sai-hd {
@@ -171,10 +172,10 @@
   .sai-icon-btn {
     width: 30px; height: 30px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);
     background: rgba(255,255,255,0.04); color: #8892a8; font-size: 0.85rem;
-    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    cursor: none !important; display: flex; align-items: center; justify-content: center;
     transition: all .2s ease;
   }
-  .sai-icon-btn:hover { background: rgba(255,255,255,0.1); color: #f0f4ff; }
+  .sai-icon-btn:hover { background: rgba(255,255,255,0.1); color: #f0f4ff; cursor: none !important; }
 
   /* ── API Key Panel ── */
   #sai-key-panel {
@@ -203,11 +204,14 @@
 
   /* ── Messages ── */
   #sai-msgs {
-    flex: 1; overflow-y: auto; padding: 14px 12px;
+    flex: 1; overflow-y: auto !important; padding: 14px 12px;
     display: flex; flex-direction: column; gap: 10px; scroll-behavior: smooth;
+    overscroll-behavior: contain !important;
+    -webkit-overflow-scrolling: touch;
+    pointer-events: auto !important;
   }
-  #sai-msgs::-webkit-scrollbar { width: 3px; }
-  #sai-msgs::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.07); border-radius: 2px; }
+  #sai-msgs::-webkit-scrollbar { width: 5px; }
+  #sai-msgs::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 4px; }
 
   .sai-row { display: flex; gap: 8px; animation: sai-fi .28s ease; }
   .sai-row.u  { flex-direction: row-reverse; }
@@ -243,20 +247,29 @@
   .sai-td:nth-child(2){animation-delay:.2s} .sai-td:nth-child(3){animation-delay:.4s}
   @keyframes sai-bce { 0%,80%,100%{transform:translateY(0);opacity:.5} 40%{transform:translateY(-5px);opacity:1} }
 
-  /* Chips */
+  /* Chips (2-Row Layout) */
   #sai-chips {
-    display: flex; flex-wrap: nowrap; overflow-x: auto; gap: 6px;
-    padding: 6px 12px 10px; flex-shrink: 0;
-    scrollbar-width: none;
+    display: flex; flex-wrap: wrap; gap: 6px;
+    padding: 8px 12px; flex-shrink: 0;
+    max-height: 84px; overflow-y: auto !important;
+    overscroll-behavior: contain !important;
+    pointer-events: auto !important;
+    background: rgba(0, 0, 0, 0.15);
+    border-top: 1px solid var(--sai-accent-border);
   }
-  #sai-chips::-webkit-scrollbar { display: none; }
+  #sai-chips::-webkit-scrollbar { width: 3px; }
+  #sai-chips::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 2px; }
   .sai-chip {
-    font-size: 0.72rem; padding: 5px 11px; border-radius: 999px; white-space: nowrap;
+    font-size: 0.74rem; padding: 5px 11px; border-radius: 8px; white-space: nowrap;
     border: 1px solid var(--sai-accent-border); background: var(--sai-accent-bg);
-    color: #8892a8; cursor: pointer; transition: all .2s ease; font-family: inherit;
-    flex-shrink: 0;
+    color: var(--sai-accent); cursor: none !important; transition: all .2s ease; font-family: inherit;
+    font-weight: 500;
   }
-  .sai-chip:hover { border-color: var(--sai-accent); color: var(--sai-accent); background: var(--sai-accent-bg); transform: translateY(-1px); }
+  .sai-chip:hover {
+    background: var(--sai-accent); color: var(--sai-btn-color);
+    border-color: var(--sai-accent); transform: translateY(-1px);
+    cursor: none !important;
+  }
   .sai-chip:active { transform: translateY(0); }
 
   /* Input */
@@ -287,8 +300,21 @@
   }
 
   @media (max-width: 480px) {
-    #sai-panel { right:10px; bottom:86px; width:calc(100vw - 20px); height:68vh; }
-    #sai-btn   { right:16px; bottom:16px; padding: 0 16px 0 12px; height:46px; font-size:.82rem; }
+    #sai-panel {
+      right: 10px !important; bottom: 76px !important;
+      width: calc(100vw - 20px) !important; max-width: 400px !important;
+      height: 72vh !important; border-radius: 16px !important;
+    }
+    #sai-btn {
+      right: 14px !important; bottom: 14px !important;
+      padding: 0 14px 0 10px !important; height: 44px !important; font-size: 0.8rem !important;
+    }
+    #sai-chips {
+      max-height: 96px !important; padding: 6px 8px !important;
+    }
+    .sai-chip {
+      font-size: 0.72rem !important; padding: 4px 9px !important;
+    }
   }
   `;
 
@@ -297,7 +323,7 @@
     { kw: ['美股','美股多少','美股數量','美股幾檔'],
       r: () => `**🇺🇸 美股資料庫規模**\n\n・**即時監測數量**：線上系統共監測 **433 檔**美股核心個股。\n・**雙軌分類**：涵蓋 **20 大美國政策主題** 與 **GICS 12 大產業板塊**。\n・**核心 API 端點**：http://34.81.30.50:8000/api/\n\n> 💡 提供歷史勝率、軋空風險與 16 分多維評分！` },
     { kw: ['數量','幾檔','多少','列表','清單'],
-      r: () => `**📊 系統監測股票數量**\n\n・**🇹🇼 台股**：即時連線監測 **133 檔**指標個股（API: http://35.229.146.232/）。\n・**🇺🇸 美股**：線上系統監測 **433 檔**核心個股，劃分為 20 大政策主題與 12 大產業（API: http://34.81.30.50:8000/api/）。` },
+      r: () => `**📊 系統監測股票數量**\n\n・**🇹🇼 台股**：即時連線監測 **133 檔**指標個股（API: https://35.229.146.232/）。\n・**🇺🇸 美股**：線上系統監測 **433 檔**核心個股，劃分為 20 大政策主題與 12 大產業（API: http://34.81.30.50:8000/api/）。` },
     { kw: ['即時','歷史','更新','時間'],
       r: () => `**🕒 資料時效性說明**\n\n1. **股票清單**：支援動態 Smart Fetch 即時連線查詢。\n2. **籌碼與財務面**：採用最新交易日與 13F、Form 4 申報。\n3. **技術面動能**：包含「近三日觸發買訊」動態篩選。` },
     { kw: ['台積電','2330','tsmc'],
@@ -412,6 +438,7 @@
           </div>
         </div>
         <div class="sai-hd-actions">
+          <button class="sai-icon-btn" id="sai-home-btn" title="返回機器人小首頁 / 選單">🏠</button>
           <button class="sai-icon-btn" id="sai-theme-btn" title="切換配色主題（黑金尊爵 / 霓虹藍）">🎨</button>
           <button class="sai-icon-btn" id="sai-key-btn" title="設定 AI API Key（Gemini / OpenAI / Claude）">🔑</button>
           <button class="sai-icon-btn" id="sai-close" title="關閉">✕</button>
@@ -446,16 +473,16 @@
         </div>
       </div>
 
-      <!-- Quick Chips -->
+      <!-- Quick Chips (2-Row Layout) -->
       <div id="sai-chips">
         <button class="sai-chip" data-q="美股最近有哪些值得關注的強勢股或題材？">🇺🇸 美股</button>
         <button class="sai-chip" data-q="台股目前有哪些強勢族群或主流類股？">🇹🇼 台股</button>
-        <button class="sai-chip" data-q="請介紹台股分析系統中使用的主要觀測指標有哪些？">📊 觀測指標</button>
-        <button class="sai-chip" data-q="目前台股籌碼面最強的股票有哪些特徵？">🧲 籌碼面</button>
+        <button class="sai-chip" data-q="請介紹台股分析系統中使用的四大維度觀測指標（籌碼、消息、基本面、技術面）？">📊 台股觀測指標</button>
+        <button class="sai-chip" data-q="請介紹美股觀測系統的 20 個政策主題與 12 大產業板塊？">🌐 美股觀測指標</button>
+        <button class="sai-chip" data-q="目前籌碼面最強的股票有哪些特徵？">🧲 籌碼面</button>
         <button class="sai-chip" data-q="請解釋 RSI 與 OBV 技術指標的使用方式">📈 技術面</button>
-        <button class="sai-chip" data-q="如何從毛利率、EPS、內部人持股分析一家公司的基本面？">📋 基本面</button>
-        <button class="sai-chip" data-q="三大法人（外資、投信、自營商）今日買超哪些股票最多？">🏦 法人動態</button>
-        <button class="sai-chip" data-q="美國政策（AI、半導體、電力基建）對台灣供應鏈有什麼影響？">🌐 政策題材</button>
+        <button class="sai-chip" data-q="如何從毛利率、EPS、內部人持股分析基本面？">📋 基本面</button>
+        <button class="sai-chip" data-q="美國政策（AI、半導體、電力基建）對台灣供應鏈有什麼影響？">🏛️ 政策題材</button>
       </div>
 
       <!-- Input -->
@@ -474,6 +501,7 @@
 
     // DOM refs
     const badge     = document.getElementById('sai-badge');
+    const homeBtn   = document.getElementById('sai-home-btn');
     const themeBtn  = document.getElementById('sai-theme-btn');
     const keyBtn    = document.getElementById('sai-key-btn');
     const closeBtn  = document.getElementById('sai-close');
@@ -488,6 +516,27 @@
     const statusTxt = document.getElementById('sai-status-txt');
 
     let isOpen = false, isBusy = false;
+
+    // 隔離滾輪事件，避免主頁 Lenis 平滑滾動攔截 AIBOT 訊息區往上滾動
+    ['wheel', 'mousewheel', 'DOMMouseScroll', 'touchmove'].forEach(evtType => {
+      panel.addEventListener(evtType, function (e) {
+        e.stopPropagation();
+      }, { passive: true });
+    });
+
+    if (msgs) {
+      msgs.addEventListener('wheel', function (e) {
+        e.stopPropagation();
+      }, { passive: true });
+    }
+
+    if (chips) {
+      ['wheel', 'mousewheel', 'DOMMouseScroll', 'touchmove'].forEach(evtType => {
+        chips.addEventListener(evtType, function (e) {
+          e.stopPropagation();
+        }, { passive: true });
+      });
+    }
 
     // Theme Management
     function applyTheme(themeName) {
@@ -519,9 +568,43 @@
       addMsg('a', `🎨 配色主題已切換為：${themeLabel}`);
     });
 
+    if (homeBtn) {
+      homeBtn.addEventListener('click', () => {
+        if (msgs) msgs.scrollTop = 0;
+        addMsg('a', `🏠 **StockAI 機器人導覽小首頁**
+
+歡迎使用！請點擊下方按鈕或輸入問題：
+
+・ 🇺🇸 **[美股]** 433 檔美股、20 大政策主題與 GICS 產業
+・ 🇹🇼 **[台股]** 104 檔台股供應鏈與三大法人籌碼
+・ 📊 **[台股觀測指標]** 籌碼、消息、基本面、技術面四大維度
+・ 🌐 **[美股觀測指標]** 行政命令與 12 大產業板塊
+・ 📈 **[技術面]** RSI 14 動能與 OBV 55D 資金流向
+・ 🧲 **[籌碼面]** 13F 機構持股與 Form 4 內部人申報
+・ 📋 **[基本面]** 營收年增率、毛利率與 ROE 數據`);
+      });
+    }
+
     // Load Key
     function loadKey() {
-      const k = localStorage.getItem(LS_KEY) || '';
+      let k = localStorage.getItem(LS_KEY) || '';
+      if (!k) {
+        fetch('AIBOT/.config.json')
+          .then(r => r.ok ? r.json() : null)
+          .then(cfg => {
+            if (cfg && cfg.api_key) {
+              const loadedKey = cfg.api_key.trim();
+              if (loadedKey) {
+                localStorage.setItem(LS_KEY, loadedKey);
+                keyInput.value = loadedKey;
+                const provider = detectProvider(loadedKey);
+                dot.className = provider === 'claude' ? 'sai-status-dot offline' : 'sai-status-dot online';
+                statusTxt.textContent = providerLabel(loadedKey);
+              }
+            }
+          })
+          .catch(() => {});
+      }
       if (k) {
         keyInput.value = k;
         const provider = detectProvider(k);

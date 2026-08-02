@@ -1,0 +1,322 @@
+/* ════════════════════════════════════════════════════════════════
+   Alpha 阿爾法投資 — 翡翠墨綠香檳金 (Emerald Forest & Champagne Gold Theme)
+   視覺特點：
+   1. 深沉墨綠背景 (#0A1810 / #0F2419)，深邃典雅、權威穩健
+   2. 香檳皇室金 (#F5D77F / #D4AF37) 標題與標籤點綴，頂級尊爵感
+   3. 翡翠電光綠 (#34D399 / #10B981) 邊框與螢光點綴，極具科技與活力
+   ════════════════════════════════════════════════════════════════ */
+
+:root {
+  --bg-emerald-dark: #0a1810;
+  --bg-emerald-surface: #0f2419;
+  --bg-emerald-card: rgba(15, 36, 25, 0.85);
+  --border-emerald-gold: rgba(212, 175, 55, 0.25);
+  --border-emerald-glow: rgba(52, 211, 153, 0.3);
+
+  --color-gold-highlight: #f5d77f;
+  --color-gold-base: #d4af37;
+  --color-gold-bronze: #9b7b38;
+  --gradient-gold: linear-gradient(135deg, #ffffff 0%, #f5d77f 50%, #d4af37 100%);
+
+  --color-emerald-glow: #34d399;
+  --color-emerald-accent: #10b981;
+
+  --text-white: #ffffff;
+  --text-sage: #a3b8ac;
+  --text-muted: #6e8577;
+}
+
+body {
+  background-color: var(--bg-emerald-dark) !important;
+  color: var(--text-sage) !important;
+  font-family: 'Noto Sans TC', 'Outfit', sans-serif !important;
+}
+
+/* ─── 1. HERO CURTAIN & HERO SECTION ─── */
+.hero-curtain__strip {
+  background: var(--bg-emerald-dark) !important;
+}
+
+.s-hero-new {
+  background: 
+    radial-gradient(circle at 75% 25%, rgba(245, 215, 127, 0.12), transparent 45%),
+    radial-gradient(circle at 25% 75%, rgba(52, 211, 153, 0.1), transparent 50%),
+    linear-gradient(135deg, #07120c 0%, #0a1810 50%, #0f2419 100%) !important;
+}
+
+/* 覆蓋 hero-new.css 預設的白色框架底色，改為透明 */
+.s-statement__carry.is-hero-title .s-statement__carry-line::before {
+  background: transparent !important;
+  opacity: 0 !important;
+}
+
+/* 標題卡片一：完全透明底色，文字直接浮於背景 */
+.s-statement__carry-line--one {
+  color: #ffffff !important;
+  background: transparent !important;
+  backdrop-filter: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.04em !important;
+  padding: 12px 28px !important;
+  border-radius: 0 !important;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* 標題卡片二：香檳皇室金漸層，透明底色 */
+.s-statement__carry-line--two {
+  background: var(--gradient-gold) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  filter: drop-shadow(0 4px 15px rgba(245, 215, 127, 0.5)) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em !important;
+  padding: 12px 28px !important;
+  margin-top: 10px !important;
+}
+
+.s-statement__carry-subtitle {
+  color: var(--color-emerald-glow) !important;
+  font-weight: 300 !important;
+  letter-spacing: 0.15em !important;
+  margin-top: 16px !important;
+}
+
+/* 跑馬燈 Ticker */
+.s-hero-new__ticker {
+  border-top: 1px solid var(--border-emerald-gold) !important;
+  border-bottom: 1px solid var(--border-emerald-gold) !important;
+  background: rgba(7, 18, 12, 0.95) !important;
+}
+
+.s-hero-new__ticker-text {
+  color: var(--color-gold-highlight) !important;
+  letter-spacing: 0.2em !important;
+}
+
+/* ─── 2. HEADER & MENU OVERLAY (與用戶截圖完全吻合) ─── */
+.p-header__logo-alpha {
+  color: var(--color-gold-highlight) !important;
+  text-shadow: 0 0 12px rgba(245, 215, 127, 0.4) !important;
+}
+
+.p-header__logo-name .brand-wordmark-en {
+  color: var(--color-gold-highlight) !important;
+}
+
+/* ─── ENHANCED MENU BURGER BUTTON (右上角 MENU 按鈕金色美化) ─── */
+header .c-burger,
+.p-header .c-burger,
+.c-burger {
+  border: 2px solid #f5d77f !important;
+  outline: none !important;
+  color: #f5d77f !important;
+  background: rgba(245, 215, 127, 0.15) !important;
+  box-shadow: 0 0 16px rgba(245, 215, 127, 0.4), 0 0 0 1px #f5d77f !important;
+  padding: 10px 20px !important;
+  border-radius: 999px !important;
+  opacity: 1 !important;
+}
+
+header .c-burger__label,
+.p-header .c-burger__label,
+.c-burger__label {
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.22em !important;
+  color: #f5d77f !important;
+  width: 58px !important;
+  height: 16px !important;
+  text-transform: uppercase !important;
+}
+
+header .c-burger__open,
+header .c-burger__close,
+.c-burger__open,
+.c-burger__close {
+  color: #f5d77f !important;
+  text-shadow: 0 0 8px rgba(245, 215, 127, 0.6) !important;
+  font-weight: 700 !important;
+}
+
+header .c-burger__line,
+.p-header .c-burger__line,
+.c-burger__line,
+.c-burger__line--top,
+.c-burger__line--bot,
+.c-burger__lines span {
+  background: #f5d77f !important;
+  background-color: #f5d77f !important;
+  height: 2px !important;
+  border-radius: 2px !important;
+  box-shadow: 0 0 8px rgba(245, 215, 127, 0.8), 0 0 12px rgba(212, 175, 55, 0.5) !important;
+  opacity: 1 !important;
+}
+
+header .c-burger:hover,
+.c-burger:hover {
+  background: #f5d77f !important;
+  color: #0a1810 !important;
+  border-color: #f5d77f !important;
+  box-shadow: 0 0 28px rgba(245, 215, 127, 0.8) !important;
+}
+
+.c-burger:hover .c-burger__open,
+.c-burger:hover .c-burger__close,
+.c-burger:hover .c-burger__label {
+  color: #0a1810 !important;
+  text-shadow: none !important;
+}
+
+.c-burger:hover .c-burger__line {
+  background: #0a1810 !important;
+  box-shadow: none !important;
+}
+
+.p-menu {
+  background: 
+    radial-gradient(circle at 80% 20%, rgba(52, 211, 153, 0.15), transparent 50%),
+    radial-gradient(circle at 20% 80%, rgba(245, 215, 127, 0.1), transparent 50%),
+    rgba(9, 22, 14, 0.96) !important;
+  backdrop-filter: blur(20px) !important;
+}
+
+.p-menu__brand-name .brand-wordmark-en {
+  color: var(--color-gold-highlight) !important;
+}
+
+.p-menu__brand-sub {
+  color: var(--text-sage) !important;
+}
+
+.p-menu__preview {
+  border: 1px solid var(--border-emerald-glow) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6) !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+}
+
+.p-menu__nav-btn {
+  color: var(--text-sage) !important;
+}
+
+.p-menu__nav-btn:hover {
+  color: var(--color-gold-highlight) !important;
+}
+
+.p-menu__sector-item {
+  background: rgba(15, 36, 25, 0.7) !important;
+  border: 1px solid var(--border-emerald-gold) !important;
+  color: var(--text-white) !important;
+  border-radius: 8px !important;
+  transition: all 0.25s ease !important;
+}
+
+.p-menu__sector-item:hover {
+  background: rgba(52, 211, 153, 0.15) !important;
+  border-color: var(--color-emerald-glow) !important;
+}
+
+.p-menu__sector-num {
+  color: var(--color-gold-highlight) !important;
+  font-weight: 700 !important;
+}
+
+/* ─── 3. STATEMENT SECTION ─── */
+.s-statement {
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(52, 211, 153, 0.08), transparent 40%),
+    linear-gradient(180deg, #0f2419 0%, #0a1810 100%) !important;
+  border-top: 1px solid var(--border-emerald-gold) !important;
+}
+
+.s-statement__line {
+  color: var(--text-white) !important;
+}
+
+.s-statement__line--indent {
+  color: var(--color-gold-highlight) !important;
+  border-left: 3px solid var(--color-gold-base) !important;
+  background: rgba(245, 215, 127, 0.05) !important;
+}
+
+/* ─── 4. INDUSTRIES CARDS SECTION ─── */
+.s-industries {
+  background: var(--bg-emerald-dark) !important;
+  border-top: 1px solid var(--border-emerald-gold) !important;
+}
+
+.c-card {
+  background: var(--bg-emerald-card) !important;
+  border: 1px solid var(--border-emerald-gold) !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5) !important;
+}
+
+.c-card:hover {
+  border-color: var(--color-emerald-glow) !important;
+  box-shadow: 0 12px 35px rgba(52, 211, 153, 0.25) !important;
+}
+
+.c-card__title {
+  color: var(--text-white) !important;
+}
+
+.c-card__desc {
+  color: var(--text-sage) !important;
+}
+
+.c-tag {
+  background: rgba(52, 211, 153, 0.15) !important;
+  color: var(--color-emerald-glow) !important;
+  border: 1px solid rgba(52, 211, 153, 0.3) !important;
+}
+
+.c-tag--gold {
+  background: rgba(245, 215, 127, 0.15) !important;
+  color: var(--color-gold-highlight) !important;
+  border: 1px solid rgba(245, 215, 127, 0.3) !important;
+}
+
+/* ─── 5. FOOTER & LOADING ─── */
+.p-footer {
+  background: #06100a !important;
+  border-top: 1px solid var(--border-emerald-gold) !important;
+  color: var(--text-sage) !important;
+}
+
+.s-loading {
+  background: var(--bg-emerald-dark) !important;
+}
+
+.s-loading__brand-en {
+  color: var(--color-gold-highlight) !important;
+}
+
+.s-loading__bar {
+  background: var(--gradient-gold) !important;
+}
+
+/* ─── 6. CUSTOM CURSOR GOLD ENHANCEMENT ─── */
+.cursor {
+  z-index: 2147483647 !important;
+  pointer-events: none !important;
+}
+
+.cursor__dot {
+  background: var(--color-gold-highlight) !important;
+  box-shadow: 0 0 10px #f5d77f, 0 0 20px #d4af37 !important;
+  width: 8px !important;
+  height: 8px !important;
+}
+
+.cursor__ring {
+  border: 2px solid #f5d77f !important;
+  box-shadow: 0 0 14px rgba(245, 215, 127, 0.6), inset 0 0 8px rgba(245, 215, 127, 0.3) !important;
+}
+
+.cursor--hover .cursor__ring,
+.cursor--view .cursor__ring {
+  border: 2px solid #ffffff !important;
+  box-shadow: 0 0 24px rgba(245, 215, 127, 0.9), 0 0 40px rgba(212, 175, 55, 0.7) !important;
+}

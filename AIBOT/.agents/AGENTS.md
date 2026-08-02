@@ -3,7 +3,7 @@
 ## Stock Query Rules
 - **US Stock (美股)**: When the user asks about US stocks or asks for US stock data/dashboard, provide the link to: http://34.81.30.50:8000/api/
 - **US Stock News (美股新聞)**: When the user asks about US stock news or AI stock news analysis, provide the link to: http://35.234.20.97/stock_ai/
-- **Taiwan Stock (台股)**: When the user asks about Taiwan stocks or asks for Taiwan stock data/dashboard, provide the link to: http://35.229.146.232/
+- **Taiwan Stock (台股)**: When the user asks about Taiwan stocks or asks for Taiwan stock data/dashboard, provide the link to: https://35.229.146.232/
 
 ## Chatbot & Data Fetching Architecture
 - **Stock AI Chat Widget (右下角機器人 v3.1 雙配色版本)**:

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpha 專案 HTML 本地展示地圖</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0f172a;
+            --bg-card: rgba(30, 41, 59, 0.7);
+            --bg-card-hover: rgba(51, 65, 85, 0.8);
+            --border-color: rgba(255, 255, 255, 0.1);
+            --accent-blue: #38bdf8;
+            --accent-gold: #fbbf24;
+            --accent-purple: #c084fc;
+            --accent-green: #4ade80;
+            --text-main: #f8fafc;
+            --text-sub: #94a3b8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Noto Sans TC', 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            min-height: 100vh;
+            padding: 2rem 1.5rem;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(56, 189, 248, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 85% 85%, rgba(192, 132, 252, 0.15) 0%, transparent 40%);
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #38bdf8, #818cf8, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.75rem;
+        }
+
+        header p {
+            color: var(--text-sub);
+            font-size: 1.1rem;
+        }
+
+        .server-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            padding: 0.4rem 1rem;
+            border-radius: 9999px;
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            color: var(--accent-blue);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--accent-green);
+            box-shadow: 0 0 8px var(--accent-green);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 2.5rem 0 1.25rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .section-title::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 24px;
+            border-radius: 2px;
+        }
+
+        .sec-main::before { background: var(--accent-blue); }
+        .sec-themes::before { background: var(--accent-gold); }
+        .sec-bot::before { background: var(--accent-purple); }
+        .sec-versions::before { background: var(--text-sub); }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.25rem;
+            transition: all 0.25s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            background: var(--bg-card-hover);
+            border-color: rgba(56, 189, 248, 0.4);
+            box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.5);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.75rem;
+        }
+
+        .card-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+
+        .tag-blue { background: rgba(56, 189, 248, 0.2); color: var(--accent-blue); }
+        .tag-gold { background: rgba(251, 191, 36, 0.2); color: var(--accent-gold); }
+        .tag-purple { background: rgba(192, 132, 252, 0.2); color: var(--accent-purple); }
+        .tag-gray { background: rgba(148, 163, 184, 0.2); color: var(--text-sub); }
+
+        .card-desc {
+            font-size: 0.875rem;
+            color: var(--text-sub);
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .card-footer {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-sub);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Alpha 投資專案 — 本地 HTML 頁面地圖</h1>
+            <p>包含核心主頁、主題配色版、迭代版本與 AI Chatbot 共 20 個 HTML 頁面</p>
+            <div class="server-badge">
+                <span class="dot"></span>
+                <span>伺服器運作中：http://127.0.0.1:5500</span>
+            </div>
+        </header>
+
+        <!-- 1. 主要核心頁面 -->
+        <h2 class="section-title sec-main">核心功能頁面</h2>
+        <div class="grid">
+            <a href="finalindex.html" class="card" target="_blank">
+                <div>
+                    <div class="card-header">
+                        <span class="card-title">finalindex.html</span>
+                        <span class="tag tag-gold">最終定案頁面</span>
+                    </div>
+                    <div class="card-desc">翡翠墨綠與皇室香檳金最終定案官方主頁</div>
+                </div>
+                <div class="card-footer">開啟預覽 &rarr;</div>
+            </a>
+            <a href="index.html" class="card" target="_blank">
+                <div>
+                    <div class="card-header">
+                        <span class="card-title">index.html</span>
+                        <span class="tag tag-blue">主要入口</span>
+                    </div>
+                    <div class="card-desc">Alpha 阿爾法投資官方主頁（正式版）</div>
+                </div>
+                <div class="card-footer">開啟預覽 &rarr;</div>
+            </a>
+            <a href="pages/industry.html" class="card" target="_blank">
+                <div>
+                    <div class="card-header">
+                        <span class="card-title">pages/industry.html</span>
+                        <span class="tag tag-blue">產業分析</span>
+                    </div>
+                    <div class="card-desc">半導體、AI 伺服器、電動車等產業趨勢分析</div>
+                </div>
+                <div class="card-footer">開啟預覽 &rarr;</div>
+            </a>
+            <a href="pages/stock.html" class="card" target="_blank">
+                <div>
+                    <div class="card-header">
+                        <span class="card-title">pages/stock.html</span>
+                        <span class="tag tag-blue">個股數據</span>
+                    </div>
+                    <div class="card-desc">台股與美股個股數據查詢與分析</div>
+                </div>
+                <div class="card-footer">開啟預覽 &rarr;</div>
+            </a>
+        </div>
+
+        <!-- 2. 主題與配色風格版本 -->
+        <h2 class="section-title sec-themes">主題風格版本 (Theme Variants)</h2>
+        <div class="grid">
+            <a href="index_emerald.html" class="card" target="_blank">
+                <div>
+                    <div class="card-header">
+                        <span class="card-title">index_emerald.html</span>
+                        <span class="tag tag-gold">翡翠墨綠香檳金</span>
+                    </div>
+                    <div class="card-desc">翡翠墨綠電光與香檳皇室金尊爵風格</div>
+                </div>
+                <div class="card-footer">開啟預覽 &rarr;</div>
+            </a>
+            <a href="index_gold.html" class="card" target="_blank">
+                <div>
+                    <div class="card-header">
+                        <span class="card-title">index_gold.html</span>
+                        <span class="tag tag-gold">黃金風格</span>
+                    </div>
+                    <div class="card-desc">尊榮黑金視覺風格設計</div>
+                </div>
+                <div class="card-footer">開啟預覽 &rarr;</div>
+            </a>
+            <a href="index_yuanta.html" class="card" target="_blank">
+                <div>
+                    <div class="card-header">
+                        <span class="card-title">index_yuanta.html</span>
+                        <span class="tag tag-gold">元大風格</span>
+                    </div>
+                    <div class="card-desc">元大證券經典企業色彩視覺版</div>
+                </div>
+                <div class="card-footer">開啟預覽 &rarr;</div>
+            </a>
+            <a href="index_ocean.html" class="card" target="_blank">
+                <div>
+                    <div class="card-header">
+                        <span class="card-title">index_ocean.html</span>
+                        <span class="tag tag-gold">深海藍風格</span>
+                    </div>
+                    <div class="card-desc">深海蔚藍質感風格與流體動效</div>
+                </div>
+                <div class="card-footer">開啟預覽 &rarr;</div>
+            </a>
+            <a href="index_casino.html" class="card" target="_blank">
+                <div>
+                    <div class="card-header">
+                        <span class="card-title">index_casino.html</span>
+                        <span class="tag tag-gold">娛樂城風格</span>
+                    </div>
+                    <div class="card-desc">霓虹璀璨賭場主題風格</div>
+                </div>
+                <div class="card-footer">開啟預覽 &rarr;</div>
+            </a>
+            <a href="index_bw.html" class="card" target="_blank">
+                <div>
+                    <div class="card-header">
+                        <span class="card-title">index_bw.html</span>
+                        <span class="tag tag-gold">極簡黑白</span>
+                    </div>
+                    <div class="card-desc">Mono 經典黑白極簡對比風格</div>
+                </div>
+                <div class="card-footer">開啟預覽 &rarr;</div>
+            </a>
+            <a href="index_ltc.html" class="card" target="_blank">
+                <div>
+                    <div class="card-header">
+                        <span class="card-title">index_ltc.html</span>
+                        <span class="tag tag-gold">萊特幣風格</span>
+                    </div>
+                    <div class="card-desc">LTC 加密貨幣意象風格設計</div>
+                </div>
+                <div class="card-footer">開啟預覽 &rarr;</div>
+            </a>
+        </div>
+
+        <!-- 3. AI 機器人相關 -->
+        <h2 class="section-title sec-bot">AI Chatbot 模組</h2>
+        <div class="grid">
+            <a href="AIBOT/chatbot/index.html" class="card" target="_blank">
+                <div>
+                    <div class="card-header">
+                        <span class="card-title">chatbot/index.html</span>
+                        <span class="tag tag-purple">獨立對話</span>
+                    </div>
+                    <div class="card-desc">AI 投資助手全頁對話介面</div>
+                </div>
+                <div class="card-footer">開啟預覽 &rarr;</div>
+            </a>
+            <a href="AIBOT/chatbot/widget-demo.html" class="card" target="_blank">
+                <div>
+                    <div class="card-header">
+                        <span class="card-title">widget-demo.html</span>
+                        <span class="tag tag-purple">浮動組件</span>
+                    </div>
+                    <div class="card-desc">右下角彈出式 Chatbot 浮動視窗 Demo</div>
+                </div>
+                <div class="card-footer">開啟預覽 &rarr;</div>
+            </a>
+        </div>
+
+        <!-- 4. 開發迭代歷史版本 -->
+        <h2 class="section-title sec-versions">歷史與開發迭代版本</h2>
+        <div class="grid">
+            <a href="index_96.html" class="card" target="_blank">
+                <div>
+                    <div class="card-header">
+                        <span class="card-title">index_96.html</span>
+                        <span class="tag tag-gray">Version 96</span>
+                    </div>
+                    <div class="card-desc">開發迭代版本 v96</div>
+                </div>
+                <div class="card-footer">開啟預覽 &rarr;</div>
+            </a>
+            <a href="index_95.html" class="card" target="_blank">
+                <div>
+                    <div class="card-header">
+                        <span class="card-title">index_95.html</span>
+                        <span class="tag tag-gray">Version 95</span>
+                    </div>
+                    <div class="card-desc">開發迭代版本 v95</div>
+                </div>
+                <div class="card-footer">開啟預覽 &rarr;</div>
+            </a>
+            <a href="index_94.html" class="card" target="_blank">
+                <div>
+                    <div class="card-header">
+                        <span class="card-title">index_94.html</span>
+                        <span class="tag tag-gray">Version 94</span>
+                    </div>
+                    <div class="card-desc">開發迭代版本 v94</div>
+                </div>
+                <div class="card-footer">開啟預覽 &rarr;</div>
+            </a>
+            <a href="index_93.html" class="card" target="_blank">
+                <div>
+                    <div class="card-header">
+                        <span class="card-title">index_93.html</span>
+                        <span class="tag tag-gray">Version 93</span>
+                    </div>
+                    <div class="card-desc">開發迭代版本 v93</div>
+                </div>
+                <div class="card-footer">開啟預覽 &rarr;</div>
+            </a>
+            <a href="index_92.html" class="card" target="_blank">
+                <div>
+                    <div class="card-header">
+                        <span class="card-title">index_92.html</span>
+                        <span class="tag tag-gray">Version 92</span>
+                    </div>
+                    <div class="card-desc">開發迭代版本 v92</div>
+                </div>
+                <div class="card-footer">開啟預覽 &rarr;</div>
+            </a>
+            <a href="index_91.html" class="card" target="_blank">
+                <div>
+                    <div class="card-header">
+                        <span class="card-title">index_91.html</span>
+                        <span class="tag tag-gray">Version 91</span>
+                    </div>
+                    <div class="card-desc">開發迭代版本 v91</div>
+                </div>
+                <div class="card-footer">開啟預覽 &rarr;</div>
+            </a>
+            <a href="index_9.html" class="card" target="_blank">
+                <div>
+                    <div class="card-header">
+                        <span class="card-title">index_9.html</span>
+                        <span class="tag tag-gray">Version 9</span>
+                    </div>
+                    <div class="card-desc">開發迭代版本 v9</div>
+                </div>
+                <div class="card-footer">開啟預覽 &rarr;</div>
+            </a>
+            <a href="index_8.html" class="card" target="_blank">
+                <div>
+                    <div class="card-header">
+                        <span class="card-title">index_8.html</span>
+                        <span class="tag tag-gray">Version 8</span>
+                    </div>
+                    <div class="card-desc">開發迭代版本 v8</div>
+                </div>
+                <div class="card-footer">開啟預覽 &rarr;</div>
+            </a>
+            <a href="index_7.html" class="card" target="_blank">
+                <div>
+                    <div class="card-header">
+                        <span class="card-title">index_7.html</span>
+                        <span class="tag tag-gray">Version 7</span>
+                    </div>
+                    <div class="card-desc">開發迭代版本 v7</div>
+                </div>
+                <div class="card-footer">開啟預覽 &rarr;</div>
+            </a>
+        </div>
+
+        <footer>
+            Alpha 阿爾法投資 — 本地開發預覽地圖
+        </footer>
+    </div>
+</body>
+</html>
