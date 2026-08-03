@@ -1,0 +1,925 @@
+{
+  "success": true,
+  "message": "Stock KPI data retrieved successfully",
+  "data": {
+    "symbol": "HONA",
+    "stock_name": "Honeywell Aerospace Inc",
+    "run_id": 2185,
+    "run_date": "2026-07-17T10:54:05",
+    "scores": {
+      "chip_score": 1.0,
+      "sentiment_score": null,
+      "fundamental_score": 1.5,
+      "technical_score": null,
+      "total_score": 2.5
+    },
+    "score_categories": [
+      {
+        "key": "chip_score",
+        "label": "籌碼",
+        "score": 1.0,
+        "max_score": 7,
+        "stars": {
+          "filled": 1,
+          "half": false,
+          "empty": 6,
+          "max": 7,
+          "items": [
+            "full",
+            "empty",
+            "empty",
+            "empty",
+            "empty",
+            "empty",
+            "empty"
+          ],
+          "text": "★☆☆☆☆☆☆"
+        }
+      },
+      {
+        "key": "sentiment_score",
+        "label": "情緒",
+        "score": null,
+        "max_score": 4,
+        "stars": {
+          "filled": 0,
+          "half": false,
+          "empty": 4,
+          "max": 4,
+          "items": [
+            "empty",
+            "empty",
+            "empty",
+            "empty"
+          ],
+          "text": "☆☆☆☆"
+        }
+      },
+      {
+        "key": "fundamental_score",
+        "label": "基本面",
+        "score": 1.5,
+        "max_score": 6,
+        "stars": {
+          "filled": 1,
+          "half": true,
+          "empty": 4,
+          "max": 6,
+          "items": [
+            "full",
+            "half",
+            "empty",
+            "empty",
+            "empty",
+            "empty"
+          ],
+          "text": "★1/2☆☆☆☆"
+        }
+      },
+      {
+        "key": "technical_score",
+        "label": "技術面",
+        "score": null,
+        "max_score": 3,
+        "stars": {
+          "filled": 0,
+          "half": false,
+          "empty": 3,
+          "max": 3,
+          "items": [
+            "empty",
+            "empty",
+            "empty"
+          ],
+          "text": "☆☆☆"
+        }
+      }
+    ],
+    "kpis": [
+      {
+        "code": "01",
+        "name": "Institutional Ownership",
+        "value": 0.624,
+        "display_value": "0.62%",
+        "score": 0.0,
+        "score_label": "低",
+        "score_percent": 0.0,
+        "score_average": 0.8,
+        "score_average_label": "普通",
+        "score_average_percent": 80.0,
+        "status": "OK",
+        "source": "Yahoo Finance/yfinance; Fintel",
+        "detail": "Shares Outstanding=316,939,750; yfinance heldPercentInstitutions=0.62%"
+      },
+      {
+        "code": "02",
+        "name": "MRQ Institutional Shares Change",
+        "value": null,
+        "display_value": "N/A",
+        "score": null,
+        "score_label": "N/A",
+        "score_percent": 0,
+        "score_average": 0.48,
+        "score_average_label": "低",
+        "score_average_percent": 48.0,
+        "status": "需 Fintel 資料",
+        "source": "Fintel",
+        "detail": "Fintel change shares=N/A; Fintel curl_cffi 抓取失敗：chrome120: HTTP 403; chrome124: HTTP 403; chrome136: HTTP 403; safari17_0: HTTP 403; 未啟用 Fintel Playwright fallback"
+      },
+      {
+        "code": "03",
+        "name": "Owners Count Change",
+        "value": null,
+        "display_value": "N/A",
+        "score": null,
+        "score_label": "N/A",
+        "score_percent": 0,
+        "score_average": 0.19,
+        "score_average_label": "低",
+        "score_average_percent": 19.0,
+        "status": "需 Fintel 資料",
+        "source": "Fintel",
+        "detail": "Owners=224; Fintel curl_cffi 抓取失敗：chrome120: HTTP 403; chrome124: HTTP 403; chrome136: HTTP 403; safari17_0: HTTP 403; 未啟用 Fintel Playwright fallback"
+      },
+      {
+        "code": "04",
+        "name": "Portfolio Allocation Growth",
+        "value": 100.0,
+        "display_value": "100.00%",
+        "score": 1.0,
+        "score_label": "優良",
+        "score_percent": 100.0,
+        "score_average": 0.59,
+        "score_average_label": "普通",
+        "score_average_percent": 59.0,
+        "status": "yfinance 估算",
+        "source": "Fintel",
+        "detail": "Source=yfinance 估算; Average Portfolio Allocation=N/A; Fintel curl_cffi 抓取失敗：chrome120: HTTP 403; chrome124: HTTP 403; chrome136: HTTP 403; safari17_0: HTTP 403; 未啟用 Fintel Playwright fallback"
+      },
+      {
+        "code": "05",
+        "name": "Buyer/Seller Ratio",
+        "value": null,
+        "display_value": "N/A",
+        "score": 0.0,
+        "score_label": "低",
+        "score_percent": 0.0,
+        "score_average": 0.54,
+        "score_average_label": "普通",
+        "score_average_percent": 54.0,
+        "status": "需 Buyers/Sellers 資料",
+        "source": "MarketBeat Institutional Ownership",
+        "detail": "Source=yfinance 估算/yfinance 估算; Buyers=10; Sellers=0; MarketBeat Institutional Ownership 自動抓取成功 (NASDAQ)"
+      },
+      {
+        "code": "06",
+        "name": "Relative Net Inflow",
+        "value": 0.1598704459977779,
+        "display_value": "0.16%",
+        "score": 0.0,
+        "score_label": "低",
+        "score_percent": 0.0,
+        "score_average": 0.23,
+        "score_average_label": "低",
+        "score_average_percent": 23.0,
+        "status": "yfinance 估算",
+        "source": "MarketBeat Institutional Ownership + yfinance market cap fallback",
+        "detail": "Source=yfinance 估算; Inflows=$105.58M; Outflows=$0; Net=$105.58M; Market Cap=$66.04B"
+      },
+      {
+        "code": "07",
+        "name": "Institutional Activity Score",
+        "value": null,
+        "display_value": "N/A",
+        "score": null,
+        "score_label": "N/A",
+        "score_percent": 0,
+        "score_average": 0.2,
+        "score_average_label": "低",
+        "score_average_percent": 20.0,
+        "status": "需 KPI 5 與 KPI 6 資料",
+        "source": "MarketBeat Institutional Ownership",
+        "detail": "Source=KPI 5/6; Buyer/Seller Ratio=N/A; Relative Net Inflow=0.16%"
+      },
+      {
+        "code": "08",
+        "name": "Short Interest %",
+        "value": null,
+        "display_value": "N/A",
+        "score": null,
+        "score_label": "N/A",
+        "score_percent": 0,
+        "score_average": 0.79,
+        "score_average_label": "普通",
+        "score_average_percent": 79.0,
+        "status": "需 MarketBeat 資料",
+        "source": "MarketBeat Short Interest",
+        "detail": "Current short=N/A; Previous short=N/A; Record date=N/A; MarketBeat Short Interest 自動抓取成功 (NASDAQ)"
+      },
+      {
+        "code": "09",
+        "name": "Short Interest Change",
+        "value": null,
+        "display_value": "N/A",
+        "score": null,
+        "score_label": "N/A",
+        "score_percent": 0,
+        "score_average": 0.41,
+        "score_average_label": "低",
+        "score_average_percent": 41.0,
+        "status": "需 MarketBeat 資料",
+        "source": "MarketBeat Short Interest",
+        "detail": "Current short=N/A; Previous short=N/A; Record date=N/A; MarketBeat Short Interest 自動抓取成功 (NASDAQ)"
+      },
+      {
+        "code": "10",
+        "name": "Days To Cover",
+        "value": null,
+        "display_value": "N/A",
+        "score": null,
+        "score_label": "N/A",
+        "score_percent": 0,
+        "score_average": 0.29,
+        "score_average_label": "低",
+        "score_average_percent": 29.0,
+        "status": "需 MarketBeat 資料",
+        "source": "MarketBeat Short Interest",
+        "detail": "Current short=N/A; Previous short=N/A; Record date=N/A; MarketBeat Short Interest 自動抓取成功 (NASDAQ)"
+      },
+      {
+        "code": "11",
+        "name": "ESG Score",
+        "value": null,
+        "display_value": "N/A",
+        "score": null,
+        "score_label": "N/A",
+        "score_percent": 0,
+        "score_average": 0.47,
+        "score_average_label": "低",
+        "score_average_percent": 47.0,
+        "status": "需 CSRHub / StockCircle ESG 資料",
+        "source": "CSRHub ESG Rank / StockCircle ESG Score fallback",
+        "detail": "Environment=N/A/100; Social=N/A/100; Governance=N/A/100; Total=N/A/100; StockCircle Playwright 渲染抓取成功; static fetch failed: chrome120: HTTP 404; chrome124: HTTP 404; chrome136: HTTP 404; safari17_0: HTTP 404"
+      },
+      {
+        "code": "12",
+        "name": "Institutional Float Control",
+        "value": null,
+        "display_value": "N/A",
+        "score": null,
+        "score_label": "N/A",
+        "score_percent": 0,
+        "score_average": 0.89,
+        "score_average_label": "普通",
+        "score_average_percent": 89.0,
+        "status": "缺資料",
+        "source": "Yahoo Finance/yfinance",
+        "detail": "Institutional shares estimate=1,977,704; Float=N/A"
+      },
+      {
+        "code": "13",
+        "name": "Volume Activity",
+        "value": 1.2192822137330517,
+        "display_value": "1.22%",
+        "score": 0.0,
+        "score_label": "低",
+        "score_percent": 0.0,
+        "score_average": 0.03,
+        "score_average_label": "低",
+        "score_average_percent": 3.0,
+        "status": "OK",
+        "source": "Yahoo Finance/yfinance",
+        "detail": "10-day avg volume=3,864,390; Float version=N/A"
+      },
+      {
+        "code": "14",
+        "name": "Volume Growth",
+        "value": 34.48012703331075,
+        "display_value": "34.48%",
+        "score": 0.5,
+        "score_label": "普通",
+        "score_percent": 50.0,
+        "score_average": 0.21,
+        "score_average_label": "低",
+        "score_average_percent": 21.0,
+        "status": "OK",
+        "source": "Yahoo Finance/yfinance",
+        "detail": "10-day avg volume=3,864,390; 3-month avg volume=2,873,577"
+      },
+      {
+        "code": "15",
+        "name": "Insider Ownership",
+        "value": 0.0,
+        "display_value": "0.000%",
+        "score": 0.0,
+        "score_label": "低",
+        "score_percent": 0.0,
+        "score_average": 0.21,
+        "score_average_label": "低",
+        "score_average_percent": 21.0,
+        "status": "OK",
+        "source": "Yahoo Finance/yfinance",
+        "detail": "yfinance heldPercentInsiders=0.000%"
+      },
+      {
+        "code": "16",
+        "name": "Form 4 Net Insider Trading",
+        "value": null,
+        "display_value": "N/A",
+        "score": 0.5,
+        "score_label": "普通",
+        "score_percent": 50.0,
+        "score_average": 0.49,
+        "score_average_label": "低",
+        "score_average_percent": 49.0,
+        "status": "OK",
+        "source": "Finviz Insider Trading / SEC Form 4",
+        "detail": "Buy=N/A; Sale=N/A; Other=N/A; Period=2026-04-01 to 2026-06-30; Fetch ID=9; Fetched at=2026-07-17T09:50:41; Previous quarter=2026-04-01 to 2026-06-30; Finviz Form 4 使用 24 小時內快取 fetch_id=9; Finviz recent feed has no HONA row for previous quarter 2026-04-01 to 2026-06-30; SEC CIK cache hit; SEC Form 4 fallback found no parsable Form 4 transactions for previous quarter 2026-04-01 to 2026-06-30; filing_grace_days=10; skipped=12"
+      },
+      {
+        "code": "17",
+        "name": "13F Holder Shares Change",
+        "value": null,
+        "display_value": "N/A",
+        "score": 0.5,
+        "score_label": "普通",
+        "score_percent": 50.0,
+        "score_average": 0.62,
+        "score_average_label": "普通",
+        "score_average_percent": 62.0,
+        "status": "OK",
+        "source": "WhaleWisdom stock holdings",
+        "detail": "Rows downloaded=0; Total records new=N/A, closed_out=N/A, added_to=N/A, reduced=N/A; Downloaded new=N/A, closed_out=N/A, added_to=N/A, reduced=N/A; WhaleWisdom stock id resolver HTTP 404"
+      },
+      {
+        "code": "18",
+        "name": "RSI 14 Momentum",
+        "value": 83.38181206044422,
+        "display_value": "83.38",
+        "score": null,
+        "score_label": "N/A",
+        "score_percent": 0,
+        "score_average": 0.46,
+        "score_average_label": "低",
+        "score_average_percent": 46.0,
+        "status": "OK",
+        "source": "Yahoo Finance/yfinance",
+        "detail": "Date=2026-07-16; Close=208.37; RSI14=83.38; Chart=0_png\\HONA_KPI_18_19_20_combined.png; OK"
+      },
+      {
+        "code": "19",
+        "name": "Composite RS Line",
+        "value": 2.3328078183056977,
+        "display_value": "2.33",
+        "score": null,
+        "score_label": "N/A",
+        "score_percent": 0,
+        "score_average": 0.44,
+        "score_average_label": "低",
+        "score_average_percent": 44.0,
+        "status": "OK",
+        "source": "Yahoo Finance/yfinance",
+        "detail": "Date=2026-07-16; Composite RS=2.33; Composite 21MA=2.63; SP500=2.77; NASDAQ=0.81; DJI=0.40; Weights=SP500 80%, NASDAQ 10%, DJI 10%; Chart=0_png\\HONA_KPI_18_19_20_combined.png; OK"
+      },
+      {
+        "code": "20",
+        "name": "OBV 55D Money Flow",
+        "value": -9551094.0,
+        "display_value": "-9,551,094",
+        "score": null,
+        "score_label": "N/A",
+        "score_percent": 0,
+        "score_average": 0.53,
+        "score_average_label": "普通",
+        "score_average_percent": 53.0,
+        "status": "OK",
+        "source": "Yahoo Finance/yfinance",
+        "detail": "Date=2026-07-16; Close=208.37; 55D price high=N/A; OBV=-9,551,094; 55D OBV high=N/A; Chart=0_png\\HONA_KPI_18_19_20_combined.png; OK"
+      }
+    ],
+    "backtest": {
+      "symbol": "HONA",
+      "source_csv": "0_data/HONA_KPI_18_19_20_1y_report.csv",
+      "image_url": "/api/stocks/HONA/backtest-image/",
+      "summary": {
+        "latest_date": "2026-07-16",
+        "latest_close": 208.3699951171875,
+        "latest_judgments": {
+          "kpi18": "計算中",
+          "kpi19": "計算中",
+          "kpi20": "計算中"
+        },
+        "trigger_count": 0,
+        "win_count": 0,
+        "loss_count": 0,
+        "win_rate": null,
+        "avg_ret_m": null,
+        "avg_ret_q": null,
+        "avg_ret_h": null,
+        "avg_ret_y": null,
+        "avg_ret_2y": null
+      },
+      "series": {
+        "price": [
+          {
+            "date": "2026-06-15",
+            "close": 200.0,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-06-16",
+            "close": 269.95001220703125,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-06-17",
+            "close": 269.95001220703125,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-06-18",
+            "close": 267.79998779296875,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-06-22",
+            "close": 261.0299987792969,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-06-23",
+            "close": 245.0,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-06-24",
+            "close": 245.0,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-06-25",
+            "close": 221.00999450683594,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-06-26",
+            "close": 221.00999450683594,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-06-29",
+            "close": 220.19000244140625,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-06-30",
+            "close": 221.0800018310547,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-07-01",
+            "close": 227.2899932861328,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-07-02",
+            "close": 247.14999389648438,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-07-06",
+            "close": 237.6999969482422,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-07-07",
+            "close": 238.13999938964844,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-07-08",
+            "close": 224.35000610351562,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-07-09",
+            "close": 223.1199951171875,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-07-10",
+            "close": 220.75,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-07-13",
+            "close": 213.0500030517578,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-07-14",
+            "close": 207.50999450683594,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-07-15",
+            "close": 212.5500030517578,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-07-16",
+            "close": 208.3699951171875,
+            "price_50ma": null
+          }
+        ],
+        "rsi14": [
+          {
+            "date": "2026-06-15",
+            "value": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-16",
+            "value": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-17",
+            "value": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-18",
+            "value": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-22",
+            "value": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-23",
+            "value": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-24",
+            "value": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-25",
+            "value": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-26",
+            "value": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-29",
+            "value": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-30",
+            "value": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-01",
+            "value": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-02",
+            "value": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-06",
+            "value": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-07",
+            "value": 91.67809116085571,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-08",
+            "value": 88.63748238393528,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-09",
+            "value": 88.35599390886455,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-10",
+            "value": 87.77756514643623,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-13",
+            "value": 85.81199013220994,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-14",
+            "value": 84.34850588512617,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-15",
+            "value": 84.6057259323251,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-16",
+            "value": 83.38181206044422,
+            "judgment": "計算中"
+          }
+        ],
+        "rs_composite": [
+          {
+            "date": "2026-06-15",
+            "value": 2.231659672575671,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-16",
+            "value": 3.0293750588032498,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-17",
+            "value": 3.066638562435273,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-18",
+            "value": 3.0092353087679635,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-22",
+            "value": 2.9446921613227435,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-23",
+            "value": 2.8042401825005534,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-24",
+            "value": 2.8071068241102717,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-25",
+            "value": 2.5328227738832028,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-26",
+            "value": 2.534203359986199,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-29",
+            "value": 2.494971884173755,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-30",
+            "value": 2.4849814903709113,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-01",
+            "value": 2.5605991506724983,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-02",
+            "value": 2.7845644761166564,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-06",
+            "value": 2.6586765571092923,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-07",
+            "value": 2.6760878132366464,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-08",
+            "value": 2.5281732994611654,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-09",
+            "value": 2.493825719905091,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-10",
+            "value": 2.457165335593236,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-13",
+            "value": 2.390820774371437,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-14",
+            "value": 2.3196536965132863,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-15",
+            "value": 2.366799178122328,
+            "ma21": 2.6274425371443537,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-16",
+            "value": 2.3328078183056977,
+            "ma21": 2.63225911551245,
+            "judgment": "計算中"
+          }
+        ],
+        "obv55": [
+          {
+            "date": "2026-06-15",
+            "value": 0.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-16",
+            "value": 7300.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-17",
+            "value": 7300.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-18",
+            "value": 4500.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-22",
+            "value": -5000.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-23",
+            "value": -13400.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-24",
+            "value": -13400.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-25",
+            "value": -57400.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-26",
+            "value": -57400.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-29",
+            "value": -8528600.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-30",
+            "value": -2542300.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-01",
+            "value": 3967400.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-02",
+            "value": 9524600.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-06",
+            "value": 1973800.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-07",
+            "value": 6839900.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-08",
+            "value": 2683200.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-09",
+            "value": -712000.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-10",
+            "value": -2638200.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-13",
+            "value": -5594900.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-14",
+            "value": -8929100.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-15",
+            "value": -6821300.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-16",
+            "value": -9551094.0,
+            "high55": null,
+            "judgment": "計算中"
+          }
+        ]
+      },
+      "markers": {
+        "kpi18": [],
+        "kpi19": [],
+        "kpi20": []
+      },
+      "triggers": []
+    },
+    "backtest_error": null
+  }
+}

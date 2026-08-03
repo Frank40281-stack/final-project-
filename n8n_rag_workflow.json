@@ -1,0 +1,303 @@
+{
+  "name": "Use RAG",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "chat-trigger-001",
+      "name": "When chat message received",
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [80, 200],
+      "webhookId": "rag-chat-webhook"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "set-session",
+              "name": "sessionId",
+              "value": "={{ $json.sessionId ?? $execution.id }}",
+              "type": "string"
+            },
+            {
+              "id": "set-query",
+              "name": "userQuery",
+              "value": "={{ $json.chatInput }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "set-001",
+      "name": "Set",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [280, 200]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://openrouter.ai/api/v1/chat/completions",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"openai/gpt-4o-mini\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"You are a query rewriting assistant. Rewrite the user's query to be more specific and suitable for vector search. Return ONLY the rewritten query, nothing else.\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": {{ JSON.stringify($json.userQuery) }}\n    }\n  ]\n}",
+        "options": {}
+      },
+      "id": "query-rewrite-001",
+      "name": "Query Rewrite",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [480, 200],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "openrouter-cred",
+          "name": "OpenRouter API Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://openrouter.ai/api/v1/embeddings",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"openai/text-embedding-3-small\",\n  \"input\": {{ JSON.stringify($json.choices[0].message.content) }}\n}",
+        "options": {}
+      },
+      "id": "embed-query-001",
+      "name": "Embed Query",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [680, 200],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "openrouter-cred",
+          "name": "OpenRouter API Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://YOUR_SUPABASE_URL/rest/v1/rpc/match_documents",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "apikey",
+              "value": "YOUR_SUPABASE_ANON_KEY"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"query_embedding\": {{ JSON.stringify($json.data[0].embedding) }},\n  \"match_threshold\": 0.78,\n  \"match_count\": 5\n}",
+        "options": {}
+      },
+      "id": "match-docs-001",
+      "name": "Match Documents",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [880, 200],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "supabase-cred",
+          "name": "Supabase API Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "language": "javaScript",
+        "jsCode": "// Assemble retrieved documents into a context string\nconst docs = $input.all();\nconst matchedDocs = docs[0].json;\n\nif (!Array.isArray(matchedDocs) || matchedDocs.length === 0) {\n  return [{ json: { context: 'No relevant documents found.', docCount: 0 } }];\n}\n\n// Build context from matched documents\nconst contextParts = matchedDocs.map((doc, i) => {\n  const content = doc.content || doc.text || doc.chunk || '';\n  const source = doc.metadata?.source || doc.source || `Document ${i + 1}`;\n  const score = doc.similarity ? `(similarity: ${(doc.similarity * 100).toFixed(1)}%)` : '';\n  return `[${i + 1}] ${source} ${score}\\n${content}`;\n});\n\nconst context = contextParts.join('\\n\\n---\\n\\n');\n\nreturn [{\n  json: {\n    context,\n    docCount: matchedDocs.length,\n    sources: matchedDocs.map(d => d.metadata?.source || d.source || 'unknown')\n  }\n}];\n"
+      },
+      "id": "assemble-context-001",
+      "name": "Assemble Context",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1080, 200]
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "=You are a helpful AI assistant. Use the following retrieved context to answer the user's question accurately.\n\n## Retrieved Context\n{{ $json.context }}\n\n---\nIf the answer is not in the context, say so clearly. Always cite the source documents when referencing information."
+        }
+      },
+      "id": "ai-agent-001",
+      "name": "AI Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [1280, 200]
+    },
+    {
+      "parameters": {
+        "modelName": "gemini-1.5-flash",
+        "options": {
+          "temperature": 0.3,
+          "maxOutputTokens": 2048
+        }
+      },
+      "id": "google-vertex-001",
+      "name": "Google Vertex Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleVertex",
+      "typeVersion": 1,
+      "position": [1280, 420],
+      "credentials": {
+        "googleApi": {
+          "id": "google-vertex-cred",
+          "name": "Google Vertex AI"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "fromInput",
+        "sessionKey": "sessionId",
+        "contextWindowLength": 10
+      },
+      "id": "memory-001",
+      "name": "Window Buffer Memory",
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [1380, 420]
+    }
+  ],
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "Set",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set": {
+      "main": [
+        [
+          {
+            "node": "Query Rewrite",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Query Rewrite": {
+      "main": [
+        [
+          {
+            "node": "Embed Query",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embed Query": {
+      "main": [
+        [
+          {
+            "node": "Match Documents",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Match Documents": {
+      "main": [
+        [
+          {
+            "node": "Assemble Context",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Assemble Context": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Vertex Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Window Buffer Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "name": "RAG"
+    },
+    {
+      "name": "AI"
+    }
+  ],
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "n8nVersion": "1.68.0"
+  }
+}

@@ -1,0 +1,4204 @@
+{
+  "schema_version": "1.0",
+  "title": "台股＋美股 AI Bot 訓練與測試問題庫",
+  "language": "zh-TW",
+  "question_count": 200,
+  "markets": [
+    "TW",
+    "US"
+  ],
+  "usage": [
+    "AI Bot訓練",
+    "網站問答測試",
+    "回答品質驗收",
+    "自有觀測技巧驗證"
+  ],
+  "disclaimer": "本題庫用於AI系統訓練與測試，不構成投資建議。市場資料、法規、交易制度與稅務資訊應以回答當下的官方來源為準。",
+  "questions": [
+    {
+      "id": 1,
+      "category": "了解使用者需求",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "在分析台股或美股前，你需要先問我哪些問題？",
+      "purpose": "需求辨識與適合性檢查",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 2,
+      "category": "了解使用者需求",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "我是投資新手，應該先從台股還是美股開始？",
+      "purpose": "需求辨識與適合性檢查",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 3,
+      "category": "了解使用者需求",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "台股與美股的交易制度有什麼主要差異？",
+      "purpose": "需求辨識與適合性檢查",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 4,
+      "category": "了解使用者需求",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "我的資金不多，適合買台股零股還是美股碎股？",
+      "purpose": "需求辨識與適合性檢查",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 5,
+      "category": "了解使用者需求",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "我預計持有一天、一個月和一年，分析方式有何不同？",
+      "purpose": "需求辨識與適合性檢查",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 6,
+      "category": "了解使用者需求",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "短線、波段與長期投資分別應觀察哪些資料？",
+      "purpose": "需求辨識與適合性檢查",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 7,
+      "category": "了解使用者需求",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "我想領股息，台股與美股該怎麼比較？",
+      "purpose": "需求辨識與適合性檢查",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 8,
+      "category": "了解使用者需求",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "我想賺價差，應優先觀察哪些指標？",
+      "purpose": "需求辨識與適合性檢查",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 9,
+      "category": "了解使用者需求",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "我能承受多少虧損，該怎麼判斷？",
+      "purpose": "需求辨識與適合性檢查",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 10,
+      "category": "了解使用者需求",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "我該如何設定單筆交易的風險上限？",
+      "purpose": "需求辨識與適合性檢查",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 11,
+      "category": "了解使用者需求",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "我的資金應該如何分配在台股和美股？",
+      "purpose": "需求辨識與適合性檢查",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 12,
+      "category": "了解使用者需求",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "同時持有台積電和美國半導體股，算不算過度集中？",
+      "purpose": "需求辨識與適合性檢查",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 13,
+      "category": "了解使用者需求",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "我應該集中持股還是分散投資？",
+      "purpose": "需求辨識與適合性檢查",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 14,
+      "category": "了解使用者需求",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "匯率變化會怎麼影響我的美股報酬？",
+      "purpose": "需求辨識與適合性檢查",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 15,
+      "category": "了解使用者需求",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "我適合個股、ETF，還是兩者搭配？",
+      "purpose": "需求辨識與適合性檢查",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 16,
+      "category": "了解使用者需求",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "投資期限改變時，策略應如何調整？",
+      "purpose": "需求辨識與適合性檢查",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 17,
+      "category": "了解使用者需求",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "我沒有設定停損時，AI應該怎麼提醒我？",
+      "purpose": "需求辨識與適合性檢查",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 18,
+      "category": "了解使用者需求",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "使用融資、融券或美股保證金交易有哪些風險？",
+      "purpose": "需求辨識與適合性檢查",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 19,
+      "category": "了解使用者需求",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "我可以用借來的錢投資股票嗎？",
+      "purpose": "需求辨識與適合性檢查",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 20,
+      "category": "了解使用者需求",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "AI如何避免在不了解我的情況下直接推薦股票？",
+      "purpose": "需求辨識與適合性檢查",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 21,
+      "category": "台股與美股基礎知識",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "這支股票屬於台股還是美股？",
+      "purpose": "市場制度與名詞解釋",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 22,
+      "category": "台股與美股基礎知識",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "這家公司的股票代號、交易所和產業是什麼？",
+      "purpose": "市場制度與名詞解釋",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 23,
+      "category": "台股與美股基礎知識",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "台灣證券交易所、櫃買中心、NYSE與Nasdaq有何不同？",
+      "purpose": "市場制度與名詞解釋",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 24,
+      "category": "台股與美股基礎知識",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "上市、上櫃、興櫃股票有什麼差別？",
+      "purpose": "市場制度與名詞解釋",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 25,
+      "category": "台股與美股基礎知識",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "普通股、特別股與ADR有什麼差別？",
+      "purpose": "市場制度與名詞解釋",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 26,
+      "category": "台股與美股基礎知識",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "台股整股、零股與美股碎股有什麼不同？",
+      "purpose": "市場制度與名詞解釋",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 27,
+      "category": "台股與美股基礎知識",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "台股和美股的正常交易時段分別是什麼？",
+      "purpose": "市場制度與名詞解釋",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 28,
+      "category": "台股與美股基礎知識",
+      "markets": [
+        "US"
+      ],
+      "question": "美股盤前、盤中與盤後交易有什麼差異？",
+      "purpose": "市場制度與名詞解釋",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 29,
+      "category": "台股與美股基礎知識",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "台股和美股的開盤價、收盤價如何形成？",
+      "purpose": "市場制度與名詞解釋",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 30,
+      "category": "台股與美股基礎知識",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "台股漲跌幅限制與美股熔斷機制有何差異？",
+      "purpose": "市場制度與名詞解釋",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 31,
+      "category": "台股與美股基礎知識",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "台股與美股的交割、手續費和稅費有何不同？",
+      "purpose": "市場制度與名詞解釋",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 32,
+      "category": "台股與美股基礎知識",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "市價單與限價單有什麼差別？",
+      "purpose": "市場制度與名詞解釋",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 33,
+      "category": "台股與美股基礎知識",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "停損單、停損限價單和移動停損單有何不同？",
+      "purpose": "市場制度與名詞解釋",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 34,
+      "category": "台股與美股基礎知識",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "台股股價顏色與美股股價顏色為什麼可能相反？",
+      "purpose": "市場制度與名詞解釋",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 35,
+      "category": "台股與美股基礎知識",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "市值是怎麼計算的？",
+      "purpose": "市場制度與名詞解釋",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 36,
+      "category": "台股與美股基礎知識",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "股票價格低是否代表公司比較便宜？",
+      "purpose": "市場制度與名詞解釋",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 37,
+      "category": "台股與美股基礎知識",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "成交量與成交金額有什麼差別？",
+      "purpose": "市場制度與名詞解釋",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 38,
+      "category": "台股與美股基礎知識",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "台股除權息與美股除息有什麼不同？",
+      "purpose": "市場制度與名詞解釋",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 39,
+      "category": "台股與美股基礎知識",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "股票分割與反向分割分別代表什麼？",
+      "purpose": "市場制度與名詞解釋",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 40,
+      "category": "台股與美股基礎知識",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "庫藏股和公司股票回購有什麼影響？",
+      "purpose": "市場制度與名詞解釋",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 41,
+      "category": "公司基本面分析",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "這家公司主要靠哪些產品或服務賺錢？",
+      "purpose": "企業營運與估值分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 42,
+      "category": "公司基本面分析",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "它的主要客戶、供應商和市場在哪裡？",
+      "purpose": "企業營運與估值分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 43,
+      "category": "公司基本面分析",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "公司在產業鏈中屬於上游、中游還是下游？",
+      "purpose": "企業營運與估值分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 44,
+      "category": "公司基本面分析",
+      "markets": [
+        "TW"
+      ],
+      "question": "台股月營收可以看出哪些變化？",
+      "purpose": "企業營運與估值分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 45,
+      "category": "公司基本面分析",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "美股為什麼通常沒有台股式的月營收公告？",
+      "purpose": "企業營運與估值分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 46,
+      "category": "公司基本面分析",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "最近一季營收是成長還是衰退？",
+      "purpose": "企業營運與估值分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 47,
+      "category": "公司基本面分析",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "應該比較年增率、季增率還是月增率？",
+      "purpose": "企業營運與估值分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 48,
+      "category": "公司基本面分析",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "營收增加是否代表公司一定更賺錢？",
+      "purpose": "企業營運與估值分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 49,
+      "category": "公司基本面分析",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "毛利率上升或下降可能代表什麼？",
+      "purpose": "企業營運與估值分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 50,
+      "category": "公司基本面分析",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "營業利益率與淨利率有什麼不同？",
+      "purpose": "企業營運與估值分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 51,
+      "category": "公司基本面分析",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "EPS增加但股價下跌，可能有哪些原因？",
+      "purpose": "企業營運與估值分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 52,
+      "category": "公司基本面分析",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "台股本益比和美股本益比可以直接比較嗎？",
+      "purpose": "企業營運與估值分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 53,
+      "category": "公司基本面分析",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "成長型公司本益比很高一定是太貴嗎？",
+      "purpose": "企業營運與估值分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 54,
+      "category": "公司基本面分析",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "股價淨值比適合分析哪些產業？",
+      "purpose": "企業營運與估值分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 55,
+      "category": "公司基本面分析",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "殖利率很高可能隱藏哪些問題？",
+      "purpose": "企業營運與估值分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 56,
+      "category": "公司基本面分析",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "ROE、ROA與ROIC分別反映什麼？",
+      "purpose": "企業營運與估值分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 57,
+      "category": "公司基本面分析",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "自由現金流為負一定代表公司不好嗎？",
+      "purpose": "企業營運與估值分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 58,
+      "category": "公司基本面分析",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "存貨與應收帳款快速增加可能代表什麼？",
+      "purpose": "企業營運與估值分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 59,
+      "category": "公司基本面分析",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "營業現金流和淨利差距過大代表什麼？",
+      "purpose": "企業營運與估值分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 60,
+      "category": "公司基本面分析",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "請把公司的基本面整理成優勢、弱點、機會與風險。",
+      "purpose": "企業營運與估值分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 61,
+      "category": "台美財報與公司公告",
+      "markets": [
+        "TW"
+      ],
+      "question": "台股公司財報應該去哪裡查？",
+      "purpose": "財報及原始公告判讀",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 62,
+      "category": "台美財報與公司公告",
+      "markets": [
+        "US"
+      ],
+      "question": "美股公司的10-K、10-Q與8-K分別是什麼？",
+      "purpose": "財報及原始公告判讀",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 63,
+      "category": "台美財報與公司公告",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "SEC EDGAR和台灣公開資訊觀測站有什麼不同？",
+      "purpose": "財報及原始公告判讀",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 64,
+      "category": "台美財報與公司公告",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "公司最新財報的發布日期是什麼時候？",
+      "purpose": "財報及原始公告判讀",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 65,
+      "category": "台美財報與公司公告",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "這份財報屬於年度、季度還是重大事件公告？",
+      "purpose": "財報及原始公告判讀",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 66,
+      "category": "台美財報與公司公告",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "財報採用的是IFRS還是US GAAP？",
+      "purpose": "財報及原始公告判讀",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 67,
+      "category": "台美財報與公司公告",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "不同會計準則會不會影響台美公司的比較？",
+      "purpose": "財報及原始公告判讀",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 68,
+      "category": "台美財報與公司公告",
+      "markets": [
+        "US"
+      ],
+      "question": "美股財報中的GAAP和Non-GAAP有什麼差別？",
+      "purpose": "財報及原始公告判讀",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 69,
+      "category": "台美財報與公司公告",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "公司調整後EPS是否排除了重要成本？",
+      "purpose": "財報及原始公告判讀",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 70,
+      "category": "台美財報與公司公告",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "台股法說會和美股Earnings Call有何不同？",
+      "purpose": "財報及原始公告判讀",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 71,
+      "category": "台美財報與公司公告",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "公司財測Guidance代表什麼？",
+      "purpose": "財報及原始公告判讀",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 72,
+      "category": "台美財報與公司公告",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "公司上調或下調財測可能如何影響股價？",
+      "purpose": "財報及原始公告判讀",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 73,
+      "category": "台美財報與公司公告",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "財報優於預期，為什麼股價仍可能下跌？",
+      "purpose": "財報及原始公告判讀",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 74,
+      "category": "台美財報與公司公告",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "財報不佳，股價為什麼反而可能上漲？",
+      "purpose": "財報及原始公告判讀",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 75,
+      "category": "台美財報與公司公告",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "市場預期值是從哪裡來的？",
+      "purpose": "財報及原始公告判讀",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 76,
+      "category": "台美財報與公司公告",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "如何分辨經常性獲利與一次性收益？",
+      "purpose": "財報及原始公告判讀",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 77,
+      "category": "台美財報與公司公告",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "股權激勵費用會如何影響美股公司獲利？",
+      "purpose": "財報及原始公告判讀",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 78,
+      "category": "台美財報與公司公告",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "公司增發股票會如何稀釋原股東權益？",
+      "purpose": "財報及原始公告判讀",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 79,
+      "category": "台美財報與公司公告",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "可轉換公司債可能如何影響股價？",
+      "purpose": "財報及原始公告判讀",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 80,
+      "category": "台美財報與公司公告",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "請比較這家公司本季財報、去年同期及市場預期。",
+      "purpose": "財報及原始公告判讀",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 81,
+      "category": "技術面與價格趨勢",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "目前股價處於上漲、下跌還是盤整趨勢？",
+      "purpose": "技術指標與價格行為分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 82,
+      "category": "技術面與價格趨勢",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "台股與美股K線的紅綠顏色有何差異？",
+      "purpose": "技術指標與價格行為分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 83,
+      "category": "技術面與價格趨勢",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "MA5、MA10、MA20、MA60和MA200代表什麼？",
+      "purpose": "技術指標與價格行為分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 84,
+      "category": "技術面與價格趨勢",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "台股常看的60日均線與美股常看的200日均線有何用途？",
+      "purpose": "技術指標與價格行為分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 85,
+      "category": "技術面與價格趨勢",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "股價站上所有均線就一定適合買進嗎？",
+      "purpose": "技術指標與價格行為分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 86,
+      "category": "技術面與價格趨勢",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "短期均線突破長期均線代表什麼？",
+      "purpose": "技術指標與價格行為分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 87,
+      "category": "技術面與價格趨勢",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "黃金交叉與死亡交叉可靠嗎？",
+      "purpose": "技術指標與價格行為分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 88,
+      "category": "技術面與價格趨勢",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "均線糾結可能表示什麼？",
+      "purpose": "技術指標與價格行為分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 89,
+      "category": "技術面與價格趨勢",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "RSI高於70或低於30應如何判讀？",
+      "purpose": "技術指標與價格行為分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 90,
+      "category": "技術面與價格趨勢",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "KD指標適合分析台股和美股嗎？",
+      "purpose": "技術指標與價格行為分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 91,
+      "category": "技術面與價格趨勢",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "MACD柱狀體變長代表什麼？",
+      "purpose": "技術指標與價格行為分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 92,
+      "category": "技術面與價格趨勢",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "布林通道收窄可能表示什麼？",
+      "purpose": "技術指標與價格行為分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 93,
+      "category": "技術面與價格趨勢",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "如何找出近期支撐區和壓力區？",
+      "purpose": "技術指標與價格行為分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 94,
+      "category": "技術面與價格趨勢",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "突破壓力但成交量不足代表什麼？",
+      "purpose": "技術指標與價格行為分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 95,
+      "category": "技術面與價格趨勢",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "價漲量縮與價跌量增應如何解讀？",
+      "purpose": "技術指標與價格行為分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 96,
+      "category": "技術面與價格趨勢",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "跳空上漲或跳空下跌後應觀察什麼？",
+      "purpose": "技術指標與價格行為分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 97,
+      "category": "技術面與價格趨勢",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "長上影線和長下影線代表什麼？",
+      "purpose": "技術指標與價格行為分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 98,
+      "category": "技術面與價格趨勢",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "如何分辨真正突破與假突破？",
+      "purpose": "技術指標與價格行為分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 99,
+      "category": "技術面與價格趨勢",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "不同技術指標互相矛盾時怎麼辦？",
+      "purpose": "技術指標與價格行為分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 100,
+      "category": "技術面與價格趨勢",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "請用趨勢、動能、成交量和關鍵價位分析這支股票。",
+      "purpose": "技術指標與價格行為分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 101,
+      "category": "台美籌碼與市場交易資料",
+      "markets": [
+        "TW"
+      ],
+      "question": "台股的外資、投信和自營商分別是什麼？",
+      "purpose": "市場參與者與籌碼分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 102,
+      "category": "台美籌碼與市場交易資料",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "三大法人同時買超就一定會上漲嗎？",
+      "purpose": "市場參與者與籌碼分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 103,
+      "category": "台美籌碼與市場交易資料",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "法人買超但股價下跌可能有哪些原因？",
+      "purpose": "市場參與者與籌碼分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 104,
+      "category": "台美籌碼與市場交易資料",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "投信連續買超可能代表什麼？",
+      "purpose": "市場參與者與籌碼分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 105,
+      "category": "台美籌碼與市場交易資料",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "外資買賣超與外資持股比例有何不同？",
+      "purpose": "市場參與者與籌碼分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 106,
+      "category": "台美籌碼與市場交易資料",
+      "markets": [
+        "TW"
+      ],
+      "question": "台股融資餘額增加通常代表什麼？",
+      "purpose": "市場參與者與籌碼分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 107,
+      "category": "台美籌碼與市場交易資料",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "股價下跌但融資增加可能有什麼風險？",
+      "purpose": "市場參與者與籌碼分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 108,
+      "category": "台美籌碼與市場交易資料",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "融券、借券賣出和券資比應該怎麼看？",
+      "purpose": "市場參與者與籌碼分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 109,
+      "category": "台美籌碼與市場交易資料",
+      "markets": [
+        "TW"
+      ],
+      "question": "台股當沖比例過高可能產生什麼現象？",
+      "purpose": "市場參與者與籌碼分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 110,
+      "category": "台美籌碼與市場交易資料",
+      "markets": [
+        "TW"
+      ],
+      "question": "台股券商分點資料能看出什麼？",
+      "purpose": "市場參與者與籌碼分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 111,
+      "category": "台美籌碼與市場交易資料",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "集保股權分散表可以如何觀察大戶持股？",
+      "purpose": "市場參與者與籌碼分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 112,
+      "category": "台美籌碼與市場交易資料",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "董監事持股和質押比例過高有什麼風險？",
+      "purpose": "市場參與者與籌碼分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 113,
+      "category": "台美籌碼與市場交易資料",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "美股是否有和台股三大法人完全相同的資料？",
+      "purpose": "市場參與者與籌碼分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 114,
+      "category": "台美籌碼與市場交易資料",
+      "markets": [
+        "US"
+      ],
+      "question": "美股機構持股資料可以如何分析？",
+      "purpose": "市場參與者與籌碼分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 115,
+      "category": "台美籌碼與市場交易資料",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "13F文件能反映機構的即時持股嗎？",
+      "purpose": "市場參與者與籌碼分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 116,
+      "category": "台美籌碼與市場交易資料",
+      "markets": [
+        "US"
+      ],
+      "question": "美股內部人買賣股票可能代表什麼？",
+      "purpose": "市場參與者與籌碼分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 117,
+      "category": "台美籌碼與市場交易資料",
+      "markets": [
+        "US"
+      ],
+      "question": "美股放空比例Short Interest應該如何解讀？",
+      "purpose": "市場參與者與籌碼分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 118,
+      "category": "台美籌碼與市場交易資料",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "Short Interest高就一定會發生軋空嗎？",
+      "purpose": "市場參與者與籌碼分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 119,
+      "category": "台美籌碼與市場交易資料",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "選擇權Put/Call Ratio可以反映哪些市場情緒？",
+      "purpose": "市場參與者與籌碼分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 120,
+      "category": "台美籌碼與市場交易資料",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "請分別使用台股或美股適合的籌碼資料分析，不要混用。",
+      "purpose": "市場參與者與籌碼分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 121,
+      "category": "產業、指數與總體經濟",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "台灣加權指數與美國三大指數有什麼差別？",
+      "purpose": "跨市場與總體環境分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 122,
+      "category": "產業、指數與總體經濟",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "道瓊、S&P 500和Nasdaq分別代表什麼？",
+      "purpose": "跨市場與總體環境分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 123,
+      "category": "產業、指數與總體經濟",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "費城半導體指數為什麼會影響台灣半導體股？",
+      "purpose": "跨市場與總體環境分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 124,
+      "category": "產業、指數與總體經濟",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "台積電ADR與台灣上市的台積電有什麼關係？",
+      "purpose": "跨市場與總體環境分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 125,
+      "category": "產業、指數與總體經濟",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "台積電股價變化如何影響台灣加權指數？",
+      "purpose": "跨市場與總體環境分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 126,
+      "category": "產業、指數與總體經濟",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "美國大型科技股如何影響Nasdaq和台股？",
+      "purpose": "跨市場與總體環境分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 127,
+      "category": "產業、指數與總體經濟",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "美國聯準會利率政策可能如何影響台美股市？",
+      "purpose": "跨市場與總體環境分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 128,
+      "category": "產業、指數與總體經濟",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "美國通膨數據為什麼會影響股票價格？",
+      "purpose": "跨市場與總體環境分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 129,
+      "category": "產業、指數與總體經濟",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "美國就業數據可能如何影響市場預期？",
+      "purpose": "跨市場與總體環境分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 130,
+      "category": "產業、指數與總體經濟",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "新台幣升值或貶值如何影響美股投資報酬？",
+      "purpose": "跨市場與總體環境分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 131,
+      "category": "產業、指數與總體經濟",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "美元升值對台灣出口公司可能有哪些影響？",
+      "purpose": "跨市場與總體環境分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 132,
+      "category": "產業、指數與總體經濟",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "美國公債殖利率上升為什麼可能壓抑成長股？",
+      "purpose": "跨市場與總體環境分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 133,
+      "category": "產業、指數與總體經濟",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "AI需求可能使哪些台美產業鏈受惠？",
+      "purpose": "跨市場與總體環境分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 134,
+      "category": "產業、指數與總體經濟",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "半導體景氣循環會如何影響台股和美股？",
+      "purpose": "跨市場與總體環境分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 135,
+      "category": "產業、指數與總體經濟",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "油價上漲對台美哪些產業有利或不利？",
+      "purpose": "跨市場與總體環境分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 136,
+      "category": "產業、指數與總體經濟",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "航運與原物料價格如何影響相關公司？",
+      "purpose": "跨市場與總體環境分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 137,
+      "category": "產業、指數與總體經濟",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "關稅政策可能如何影響全球供應鏈？",
+      "purpose": "跨市場與總體環境分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 138,
+      "category": "產業、指數與總體經濟",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "地緣政治風險可能影響哪些台美公司？",
+      "purpose": "跨市場與總體環境分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 139,
+      "category": "產業、指數與總體經濟",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "如何分辨政策題材、產業題材與實際獲利？",
+      "purpose": "跨市場與總體環境分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 140,
+      "category": "產業、指數與總體經濟",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "請整理目前影響這支股票的總體、產業和競爭因素。",
+      "purpose": "跨市場與總體環境分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 141,
+      "category": "新聞、事件與資料可信度",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "今天有哪些消息可能影響這支台股或美股？",
+      "purpose": "來源查核與事件分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 142,
+      "category": "新聞、事件與資料可信度",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "這則消息的發布時間與原始來源是什麼？",
+      "purpose": "來源查核與事件分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 143,
+      "category": "新聞、事件與資料可信度",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "這是公司公告、政府資料、媒體報導還是市場傳聞？",
+      "purpose": "來源查核與事件分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 144,
+      "category": "新聞、事件與資料可信度",
+      "markets": [
+        "TW"
+      ],
+      "question": "台股公告是否可以在公開資訊觀測站找到？",
+      "purpose": "來源查核與事件分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 145,
+      "category": "新聞、事件與資料可信度",
+      "markets": [
+        "US"
+      ],
+      "question": "美股公告是否可以在SEC資料庫找到？",
+      "purpose": "來源查核與事件分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 146,
+      "category": "新聞、事件與資料可信度",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "這則新聞是否已經反映在股價中？",
+      "purpose": "來源查核與事件分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 147,
+      "category": "新聞、事件與資料可信度",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "如何判斷新聞標題是否過度誇大？",
+      "purpose": "來源查核與事件分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 148,
+      "category": "新聞、事件與資料可信度",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "公司澄清新聞時應該注意哪些內容？",
+      "purpose": "來源查核與事件分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 149,
+      "category": "新聞、事件與資料可信度",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "董事長、CEO或重要主管更換有何影響？",
+      "purpose": "來源查核與事件分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 150,
+      "category": "新聞、事件與資料可信度",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "公司高階主管出售股票一定代表看壞公司嗎？",
+      "purpose": "來源查核與事件分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 151,
+      "category": "新聞、事件與資料可信度",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "公司被納入重要指數可能產生什麼影響？",
+      "purpose": "來源查核與事件分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 152,
+      "category": "新聞、事件與資料可信度",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "公司被剔除指數可能造成什麼影響？",
+      "purpose": "來源查核與事件分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 153,
+      "category": "新聞、事件與資料可信度",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "重大訴訟或監管調查應如何評估？",
+      "purpose": "來源查核與事件分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 154,
+      "category": "新聞、事件與資料可信度",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "公司併購消息需要確認哪些條件？",
+      "purpose": "來源查核與事件分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 155,
+      "category": "新聞、事件與資料可信度",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "同業財報很好，這家公司也一定會受惠嗎？",
+      "purpose": "來源查核與事件分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 156,
+      "category": "新聞、事件與資料可信度",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "網路社群突然熱烈討論某支股票，要注意什麼？",
+      "purpose": "來源查核與事件分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 157,
+      "category": "新聞、事件與資料可信度",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "如何辨認假消息、舊新聞和重複新聞？",
+      "purpose": "來源查核與事件分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 158,
+      "category": "新聞、事件與資料可信度",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "中文媒體與英文原始消息不一致時，以哪個為準？",
+      "purpose": "來源查核與事件分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 159,
+      "category": "新聞、事件與資料可信度",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "AI能不能把新聞內容和自己的推論分開呈現？",
+      "purpose": "來源查核與事件分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 160,
+      "category": "新聞、事件與資料可信度",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "請把資訊分成確定事實、公司說法、市場推測與未知事項。",
+      "purpose": "來源查核與事件分析",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 161,
+      "category": "網站自有觀測技巧與AI Bot",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "我們的觀測技巧適用於台股、美股，還是兩者都適用？",
+      "purpose": "自有模型解釋與品質驗證",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 162,
+      "category": "網站自有觀測技巧與AI Bot",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "台股與美股是否應使用不同的觀測參數？",
+      "purpose": "自有模型解釋與品質驗證",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 163,
+      "category": "網站自有觀測技巧與AI Bot",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "這套觀測技巧使用哪些價格、財務和籌碼資料？",
+      "purpose": "自有模型解釋與品質驗證",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 164,
+      "category": "網站自有觀測技巧與AI Bot",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "每項觀測指標的定義和計算方式是什麼？",
+      "purpose": "自有模型解釋與品質驗證",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 165,
+      "category": "網站自有觀測技巧與AI Bot",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "這套技巧適合當沖、短線、波段還是長期投資？",
+      "purpose": "自有模型解釋與品質驗證",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 166,
+      "category": "網站自有觀測技巧與AI Bot",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "這套技巧在哪些市場環境容易失效？",
+      "purpose": "自有模型解釋與品質驗證",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 167,
+      "category": "網站自有觀測技巧與AI Bot",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "訊號分數是如何計算的？",
+      "purpose": "自有模型解釋與品質驗證",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 168,
+      "category": "網站自有觀測技巧與AI Bot",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "每項指標在總分中占多少權重？",
+      "purpose": "自有模型解釋與品質驗證",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 169,
+      "category": "網站自有觀測技巧與AI Bot",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "為什麼今天的分數比昨天高或低？",
+      "purpose": "自有模型解釋與品質驗證",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 170,
+      "category": "網站自有觀測技巧與AI Bot",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "哪三項因素對這次判斷影響最大？",
+      "purpose": "自有模型解釋與品質驗證",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 171,
+      "category": "網站自有觀測技巧與AI Bot",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "台股收盤後與美股盤中資料要如何對齊？",
+      "purpose": "自有模型解釋與品質驗證",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 172,
+      "category": "網站自有觀測技巧與AI Bot",
+      "markets": [
+        "US"
+      ],
+      "question": "美股盤前、盤後價格是否會納入觀測？",
+      "purpose": "自有模型解釋與品質驗證",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 173,
+      "category": "網站自有觀測技巧與AI Bot",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "匯率是否應該納入美股投資報酬計算？",
+      "purpose": "自有模型解釋與品質驗證",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 174,
+      "category": "網站自有觀測技巧與AI Bot",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "這個訊號過去的勝率、報酬率和樣本數是多少？",
+      "purpose": "自有模型解釋與品質驗證",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 175,
+      "category": "網站自有觀測技巧與AI Bot",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "回測是否包含交易成本、稅費、匯差和滑價？",
+      "purpose": "自有模型解釋與品質驗證",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 176,
+      "category": "網站自有觀測技巧與AI Bot",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "回測是否不小心使用了未來資料？",
+      "purpose": "自有模型解釋與品質驗證",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 177,
+      "category": "網站自有觀測技巧與AI Bot",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "這套技巧在台股和美股的表現是否不同？",
+      "purpose": "自有模型解釋與品質驗證",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 178,
+      "category": "網站自有觀測技巧與AI Bot",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "訊號失敗時通常有哪些共同特徵？",
+      "purpose": "自有模型解釋與品質驗證",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 179,
+      "category": "網站自有觀測技巧與AI Bot",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "AI可以用白話說明每次判斷的依據嗎？",
+      "purpose": "自有模型解釋與品質驗證",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 180,
+      "category": "網站自有觀測技巧與AI Bot",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "如果資料不足、延遲或異常，AI會停止評分嗎？",
+      "purpose": "自有模型解釋與品質驗證",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 181,
+      "category": "選股、投資組合與風險管理",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "請根據我的條件篩選台股和美股，但不要保證上漲。",
+      "purpose": "篩選、配置及風險控制",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 182,
+      "category": "選股、投資組合與風險管理",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "如何找出台美營收和獲利同步成長的公司？",
+      "purpose": "篩選、配置及風險控制",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 183,
+      "category": "選股、投資組合與風險管理",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "如何篩選現金流穩定且負債較低的公司？",
+      "purpose": "篩選、配置及風險控制",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 184,
+      "category": "選股、投資組合與風險管理",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "如何找出成交量突然增加的台股或美股？",
+      "purpose": "篩選、配置及風險控制",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 185,
+      "category": "選股、投資組合與風險管理",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "如何找出突破後成功回測支撐的股票？",
+      "purpose": "篩選、配置及風險控制",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 186,
+      "category": "選股、投資組合與風險管理",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "如何排除成交量不足、風險過高或資料不完整的股票？",
+      "purpose": "篩選、配置及風險控制",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 187,
+      "category": "選股、投資組合與風險管理",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "如何比較台股公司和美股同產業公司？",
+      "purpose": "篩選、配置及風險控制",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 188,
+      "category": "選股、投資組合與風險管理",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "本益比不同的台美公司可以直接比較嗎？",
+      "purpose": "篩選、配置及風險控制",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 189,
+      "category": "選股、投資組合與風險管理",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "同時持有台積電和美國半導體ETF是否過度集中？",
+      "purpose": "篩選、配置及風險控制",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 190,
+      "category": "選股、投資組合與風險管理",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "我的股票是否表面分散、實際集中在同一產業？",
+      "purpose": "篩選、配置及風險控制",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 191,
+      "category": "選股、投資組合與風險管理",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "台股、美股、ETF和現金應如何分散風險？",
+      "purpose": "篩選、配置及風險控制",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 192,
+      "category": "選股、投資組合與風險管理",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "匯率風險應如何納入美股持倉管理？",
+      "purpose": "篩選、配置及風險控制",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 193,
+      "category": "選股、投資組合與風險管理",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "如果台股下跌10%，我的投資組合可能如何變化？",
+      "purpose": "篩選、配置及風險控制",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 194,
+      "category": "選股、投資組合與風險管理",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "如果Nasdaq下跌10%，哪些持股可能受影響最大？",
+      "purpose": "篩選、配置及風險控制",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 195,
+      "category": "選股、投資組合與風險管理",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "單一股票占投資組合比例過高時，AI應如何提醒？",
+      "purpose": "篩選、配置及風險控制",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 196,
+      "category": "選股、投資組合與風險管理",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "勝率很高的策略為什麼仍然可能虧損？",
+      "purpose": "篩選、配置及風險控制",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 197,
+      "category": "選股、投資組合與風險管理",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "最大回撤、波動率和夏普比率分別代表什麼？",
+      "purpose": "篩選、配置及風險控制",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 198,
+      "category": "選股、投資組合與風險管理",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "回測績效很好，為什麼實際交易仍可能失敗？",
+      "purpose": "篩選、配置及風險控制",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 199,
+      "category": "選股、投資組合與風險管理",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "AI連接券商前需要哪些人工確認、金額上限和安全機制？",
+      "purpose": "篩選、配置及風險控制",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    },
+    {
+      "id": 200,
+      "category": "選股、投資組合與風險管理",
+      "markets": [
+        "TW",
+        "US"
+      ],
+      "question": "請提供台美股分析依據、資料時間、來源和風險提醒，但不要保證獲利。",
+      "purpose": "篩選、配置及風險控制",
+      "expected_answer_requirements": [
+        "標示資料時間",
+        "說明判斷依據",
+        "區分事實與推論",
+        "揭露主要風險"
+      ],
+      "prohibited_behavior": [
+        "保證獲利",
+        "捏造資料或來源",
+        "將台股與美股制度混用"
+      ]
+    }
+  ]
+}

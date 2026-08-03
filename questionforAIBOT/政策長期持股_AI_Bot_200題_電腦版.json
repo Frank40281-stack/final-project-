@@ -1,0 +1,3014 @@
+{
+  "schema_version": "1.0",
+  "title": "政策長期持股 AI Bot 200題",
+  "question_count": 200,
+  "tiers": {
+    "general": "一般版（1-100）",
+    "premium": "付費潛力版（101-200）"
+  },
+  "method_summary": "依各項美國政府政策、行政命令、預算或聯準會事件日期起算，長期觀察美股政策受惠及價格反映；台股以重要科技供應鏈為輔。",
+  "confidentiality": "評分公式、權重、完整指標與門檻屬內部know-how，不提供給一般或付費使用者。",
+  "disclaimer": "本題庫用於AI問答訓練與測試，不構成投資建議，也不保證任何股票報酬。",
+  "questions": [
+    {
+      "id": 1,
+      "category": "政策事件與長期觀察基礎",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "目前系統追蹤哪些美國政府政策主題？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 2,
+      "category": "政策事件與長期觀察基礎",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "為什麼政府政策適合用來觀察長期持股？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 3,
+      "category": "政策事件與長期觀察基礎",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "政策公布日為什麼是重要的觀察起點？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 4,
+      "category": "政策事件與長期觀察基礎",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "不同政策可以使用不同的觀察期間嗎？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 5,
+      "category": "政策事件與長期觀察基礎",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "政策宣布、正式生效與開始執行有什麼差別？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 6,
+      "category": "政策事件與長期觀察基礎",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "行政命令與國會法案對產業的影響有何不同？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 7,
+      "category": "政策事件與長期觀察基礎",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "政府預算通過後，相關公司就一定能取得訂單嗎？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 8,
+      "category": "政策事件與長期觀察基礎",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "聯準會利率決策和產業扶植政策有什麼不同？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 9,
+      "category": "政策事件與長期觀察基礎",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "政策仍在規劃階段時，AI應該如何標示？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 10,
+      "category": "政策事件與長期觀察基礎",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "政策已經執行時，AI應該追蹤哪些後續事件？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 11,
+      "category": "政策事件與長期觀察基礎",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "政策延後會如何影響長期觀察結果？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 12,
+      "category": "政策事件與長期觀察基礎",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "政策取消後，系統是否應停止計算政策受惠？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 13,
+      "category": "政策事件與長期觀察基礎",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "同一家公司同時受到多項政策支持時如何呈現？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 14,
+      "category": "政策事件與長期觀察基礎",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "同一政策多次更新時，觀察起點應該如何選擇？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 15,
+      "category": "政策事件與長期觀察基礎",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "如何判斷政策是短期題材還是長期趨勢？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 16,
+      "category": "政策事件與長期觀察基礎",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "政策名稱相似時，AI如何避免混淆？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 17,
+      "category": "政策事件與長期觀察基礎",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "如何確認政策資料來自正式政府文件？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 18,
+      "category": "政策事件與長期觀察基礎",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "政策事件日期不明確時，AI應該怎麼回答？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 19,
+      "category": "政策事件與長期觀察基礎",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "目前哪些政策事件仍需要持續追蹤？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 20,
+      "category": "政策事件與長期觀察基礎",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "請按政策公布時間整理重要事件，不預測短期漲跌。",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 21,
+      "category": "政策受惠關係判讀",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "什麼叫做政策受惠股？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 22,
+      "category": "政策受惠關係判讀",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "直接受惠、供應鏈受惠與題材延伸有什麼不同？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 23,
+      "category": "政策受惠關係判讀",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "如何確認公司是直接受到政策支持？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 24,
+      "category": "政策受惠關係判讀",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "只有產業名稱相關，就能算政策受惠股嗎？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 25,
+      "category": "政策受惠關係判讀",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "公司取得政府合約是否代表直接受惠？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 26,
+      "category": "政策受惠關係判讀",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "公司是政策受惠企業的供應商時應如何分類？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 27,
+      "category": "政策受惠關係判讀",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "沒有實際訂單但可能受惠時應如何標示？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 28,
+      "category": "政策受惠關係判讀",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "政策受惠證據應該包含哪些資料？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 29,
+      "category": "政策受惠關係判讀",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "公司新聞稿可以作為唯一政策證據嗎？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 30,
+      "category": "政策受惠關係判讀",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "AI如何區分正式政策和媒體推測？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 31,
+      "category": "政策受惠關係判讀",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "受惠關係多久需要重新查核一次？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 32,
+      "category": "政策受惠關係判讀",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "公司業務改變後，原本的受惠分類需要更新嗎？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 33,
+      "category": "政策受惠關係判讀",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "同一公司在不同政策下可以有不同受惠程度嗎？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 34,
+      "category": "政策受惠關係判讀",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "政策受惠關係尚未確認時，AI應該怎麼回答？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 35,
+      "category": "政策受惠關係判讀",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "如何避免把熱門概念股誤認為核心受惠股？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 36,
+      "category": "政策受惠關係判讀",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "政策受惠和公司實際獲利之間可能有哪些落差？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 37,
+      "category": "政策受惠關係判讀",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "公司取得補助和取得訂單有什麼不同？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 38,
+      "category": "政策受惠關係判讀",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "政策對上游與下游公司的影響有何不同？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 39,
+      "category": "政策受惠關係判讀",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "請說明某支股票的受惠理由及證據日期。",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 40,
+      "category": "政策受惠關係判讀",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "請把受惠判定分成確定、可能與尚未確認。",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 41,
+      "category": "美國科技政策產業",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "AI資料中心政策可能影響哪些產業？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 42,
+      "category": "美國科技政策產業",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "半導體製造回流政策可能使哪些公司受惠？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 43,
+      "category": "美國科技政策產業",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "CHIPS相關政策應觀察哪些後續發展？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 44,
+      "category": "美國科技政策產業",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "資料中心擴建為什麼會帶動電力基礎建設？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 45,
+      "category": "美國科技政策產業",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "核能與先進電力政策和AI產業有什麼關係？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 46,
+      "category": "美國科技政策產業",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "國防科技政策可能影響哪些美股公司？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 47,
+      "category": "美國科技政策產業",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "無人機與反無人機政策有哪些不同受惠者？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 48,
+      "category": "美國科技政策產業",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "資安與聯邦IT現代化政策應觀察哪些公司？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 49,
+      "category": "美國科技政策產業",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "量子科技政策目前可能影響哪些產業鏈？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 50,
+      "category": "美國科技政策產業",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "EV、電池及回收政策可能影響哪些公司？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 51,
+      "category": "美國科技政策產業",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "關鍵礦物政策為什麼與國家安全有關？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 52,
+      "category": "美國科技政策產業",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "製藥製造回流政策可能影響哪些企業？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 53,
+      "category": "美國科技政策產業",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "美國製造回流對自動化公司有什麼影響？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 54,
+      "category": "美國科技政策產業",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "能源政策改變可能如何影響科技公司的成本？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 55,
+      "category": "美國科技政策產業",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "哪些科技政策彼此之間具有供應鏈關聯？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 56,
+      "category": "美國科技政策產業",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "同一家公司跨越多個科技政策時如何分析？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 57,
+      "category": "美國科技政策產業",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "哪些政策偏向硬體建設，哪些偏向軟體服務？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 58,
+      "category": "美國科技政策產業",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "政策主題內股票數量太少時應該如何解讀？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 59,
+      "category": "美國科技政策產業",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "如何比較兩個科技政策的長期影響？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 60,
+      "category": "美國科技政策產業",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "請整理目前系統最重視的科技政策方向。",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 61,
+      "category": "台灣科技供應鏈觀察",
+      "access_tier": "general",
+      "market_focus": "TW_US",
+      "question": "美國科技政策為什麼可能影響台股？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 62,
+      "category": "台灣科技供應鏈觀察",
+      "access_tier": "general",
+      "market_focus": "TW_US",
+      "question": "台灣公司如何透過美國供應鏈間接受惠？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 63,
+      "category": "台灣科技供應鏈觀察",
+      "access_tier": "general",
+      "market_focus": "TW_US",
+      "question": "台股直接受惠和間接受惠應如何區分？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 64,
+      "category": "台灣科技供應鏈觀察",
+      "access_tier": "general",
+      "market_focus": "TW_US",
+      "question": "如何確認台灣公司是美國企業的正式供應商？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 65,
+      "category": "台灣科技供應鏈觀察",
+      "access_tier": "general",
+      "market_focus": "TW_US",
+      "question": "台灣半導體公司可能受到哪些美國政策影響？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 66,
+      "category": "台灣科技供應鏈觀察",
+      "access_tier": "general",
+      "market_focus": "TW_US",
+      "question": "AI伺服器供應鏈中有哪些台灣產業角色？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 67,
+      "category": "台灣科技供應鏈觀察",
+      "access_tier": "general",
+      "market_focus": "TW_US",
+      "question": "資料中心電力需求可能帶動哪些台灣公司？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 68,
+      "category": "台灣科技供應鏈觀察",
+      "access_tier": "general",
+      "market_focus": "TW_US",
+      "question": "資安政策可能如何影響台灣科技公司？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 69,
+      "category": "台灣科技供應鏈觀察",
+      "access_tier": "general",
+      "market_focus": "TW_US",
+      "question": "軍工與無人機政策可能帶動哪些台灣供應鏈？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 70,
+      "category": "台灣科技供應鏈觀察",
+      "access_tier": "general",
+      "market_focus": "TW_US",
+      "question": "次世代通訊政策可能影響哪些台灣產業？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 71,
+      "category": "台灣科技供應鏈觀察",
+      "access_tier": "general",
+      "market_focus": "TW_US",
+      "question": "量子科技題材在台股應如何謹慎判讀？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 72,
+      "category": "台灣科技供應鏈觀察",
+      "access_tier": "general",
+      "market_focus": "TW_US",
+      "question": "美國製造回流會不會對部分台灣公司不利？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 73,
+      "category": "台灣科技供應鏈觀察",
+      "access_tier": "general",
+      "market_focus": "TW_US",
+      "question": "匯率變化會如何影響台灣出口公司的政策受惠？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 74,
+      "category": "台灣科技供應鏈觀察",
+      "access_tier": "general",
+      "market_focus": "TW_US",
+      "question": "台灣公司沒有美國訂單證據時應如何標示？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 75,
+      "category": "台灣科技供應鏈觀察",
+      "access_tier": "general",
+      "market_focus": "TW_US",
+      "question": "台股資料較少時，AI應該如何說明限制？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 76,
+      "category": "台灣科技供應鏈觀察",
+      "access_tier": "general",
+      "market_focus": "TW_US",
+      "question": "為什麼台股與美股不能使用完全相同的評分？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 77,
+      "category": "台灣科技供應鏈觀察",
+      "access_tier": "general",
+      "market_focus": "TW_US",
+      "question": "台股約8項觀察和美股約20多項觀察有何差異？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 78,
+      "category": "台灣科技供應鏈觀察",
+      "access_tier": "general",
+      "market_focus": "TW_US",
+      "question": "台股缺少某類資料時，AI可以自行推測嗎？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 79,
+      "category": "台灣科技供應鏈觀察",
+      "access_tier": "general",
+      "market_focus": "TW_US",
+      "question": "哪些非核心產業可以只列為參考而不完整評分？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 80,
+      "category": "台灣科技供應鏈觀察",
+      "access_tier": "general",
+      "market_focus": "TW_US",
+      "question": "請整理台灣科技供應鏈的政策受惠證據。",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 81,
+      "category": "評分結果與資料品質",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "網站的綜合觀察結果代表什麼？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 82,
+      "category": "評分結果與資料品質",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "為什麼評分高不等於保證股價上漲？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 83,
+      "category": "評分結果與資料品質",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "台股和美股的原始總分可以直接比較嗎？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 84,
+      "category": "評分結果與資料品質",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "AI可以公開完整評分公式嗎？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 85,
+      "category": "評分結果與資料品質",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "為什麼部分觀察方法屬於網站know-how？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 86,
+      "category": "評分結果與資料品質",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "一般會員可以看到哪些評分資訊？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 87,
+      "category": "評分結果與資料品質",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "AI應如何用模糊但正確的方式說明觀察指標？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 88,
+      "category": "評分結果與資料品質",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "資料更新時間為什麼會影響評分解讀？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 89,
+      "category": "評分結果與資料品質",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "不同欄位更新時間不一致時應如何提醒？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 90,
+      "category": "評分結果與資料品質",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "資料缺失時是否應暫停評分？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 91,
+      "category": "評分結果與資料品質",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "後台沒有某個產業資料時，AI應該怎麼說？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 92,
+      "category": "評分結果與資料品質",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "總分相同的兩支股票應如何進一步比較？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 93,
+      "category": "評分結果與資料品質",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "分數突然上升可能有哪些原因？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 94,
+      "category": "評分結果與資料品質",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "分數突然下降時應該檢查什麼？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 95,
+      "category": "評分結果與資料品質",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "政策資料與市場資料衝突時以什麼為準？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 96,
+      "category": "評分結果與資料品質",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "舊的政策證據需要重新查核嗎？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 97,
+      "category": "評分結果與資料品質",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "如何避免AI捏造不存在的分數？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 98,
+      "category": "評分結果與資料品質",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "AI回答時是否應顯示資料截止時間？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 99,
+      "category": "評分結果與資料品質",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "如何區分後台事實和AI解釋？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 100,
+      "category": "評分結果與資料品質",
+      "access_tier": "general",
+      "market_focus": "US",
+      "question": "請用白話解釋評分結果，但不要揭露內部公式。",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 101,
+      "category": "政策潛力股辨識",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "目前哪些受惠股的政策潛力尚未充分反映？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 102,
+      "category": "政策潛力股辨識",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "哪些高評價股票在政策公布後仍沒有明顯上漲？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 103,
+      "category": "政策潛力股辨識",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "哪些股票屬於政策受惠確認但價格反應較慢？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 104,
+      "category": "政策潛力股辨識",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "請列出政策潛力觀察名單及資料日期。",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 105,
+      "category": "政策潛力股辨識",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "哪些潛力候選股的受惠證據最完整？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 106,
+      "category": "政策潛力股辨識",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "哪些潛力候選股屬於核心直接受惠？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 107,
+      "category": "政策潛力股辨識",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "哪些潛力候選股只是間接供應鏈受惠？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 108,
+      "category": "政策潛力股辨識",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "如何區分尚未反映和基本面惡化？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 109,
+      "category": "政策潛力股辨識",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "股價下跌的政策受惠股都算潛力股嗎？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 110,
+      "category": "政策潛力股辨識",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "小幅上漲的股票仍可能屬於潛力股嗎？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 111,
+      "category": "政策潛力股辨識",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "如何判斷政策利多已經大部分反映？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 112,
+      "category": "政策潛力股辨識",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "哪些高評價股票的政策後漲幅低於同類公司？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 113,
+      "category": "政策潛力股辨識",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "哪些潛力候選股同時受到兩項以上政策支持？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 114,
+      "category": "政策潛力股辨識",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "同一公司有多個政策日期時如何判斷潛力？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 115,
+      "category": "政策潛力股辨識",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "哪些股票因資料不足而不能列入潛力池？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 116,
+      "category": "政策潛力股辨識",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "請將潛力分成高、中、低三個觀察等級。",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 117,
+      "category": "政策潛力股辨識",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "為什麼某支股票被列入政策潛力池？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 118,
+      "category": "政策潛力股辨識",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "某支股票退出潛力池可能有哪些原因？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 119,
+      "category": "政策潛力股辨識",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "目前政策潛力池最後更新時間是什麼？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 120,
+      "category": "政策潛力股辨識",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "請列出潛力候選，不要把它描述成保證買進名單。",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 121,
+      "category": "政策溢價與價格反映",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "什麼是政策溢價？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 122,
+      "category": "政策溢價與價格反映",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "如何判斷政策溢價尚未反映在股價中？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 123,
+      "category": "政策溢價與價格反映",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "政策公布日至今漲幅應該如何解讀？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 124,
+      "category": "政策溢價與價格反映",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "政策公布後立即上漲代表利多已完全反映嗎？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 125,
+      "category": "政策溢價與價格反映",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "政策公布後先漲再跌應該怎麼判斷？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 126,
+      "category": "政策溢價與價格反映",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "股價沒有上漲可能是市場尚未注意嗎？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 127,
+      "category": "政策溢價與價格反映",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "股價沒有上漲也可能反映哪些公司問題？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 128,
+      "category": "政策溢價與價格反映",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "如何比較受惠股和非受惠股的政策後表現？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 129,
+      "category": "政策溢價與價格反映",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "政策受惠股勝率可以證明未來一定上漲嗎？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 130,
+      "category": "政策溢價與價格反映",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "政策板塊整體上漲但個股下跌代表什麼？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 131,
+      "category": "政策溢價與價格反映",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "個股上漲但落後整體市場應如何解讀？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 132,
+      "category": "政策溢價與價格反映",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "S&P 500可以如何協助判斷股票是否真正強勢？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 133,
+      "category": "政策溢價與價格反映",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "不使用S&P 500比較時有哪些限制？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 134,
+      "category": "政策溢價與價格反映",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "政策後漲幅計算應使用哪一個事件日期？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 135,
+      "category": "政策溢價與價格反映",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "股票分割或股利會不會影響漲幅計算？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 136,
+      "category": "政策溢價與價格反映",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "政策溢價已經很高時還適合列為潛力股嗎？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 137,
+      "category": "政策溢價與價格反映",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "如何判斷市場可能過度反映政策利多？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 138,
+      "category": "政策溢價與價格反映",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "不同政策觀察期間不同時可以直接比較漲幅嗎？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 139,
+      "category": "政策溢價與價格反映",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "請說明股價反映程度，不要預測明天價格。",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 140,
+      "category": "政策溢價與價格反映",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "請把價格狀態標示為尚未、初步、部分或明顯反映。",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 141,
+      "category": "長期驗證與催化事件",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "政策潛力股需要哪些事件才能獲得驗證？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 142,
+      "category": "長期驗證與催化事件",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "政府正式編列預算是否屬於重要催化事件？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 143,
+      "category": "長期驗證與催化事件",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "公司取得實際訂單後應如何更新判斷？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 144,
+      "category": "長期驗證與催化事件",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "營收開始成長是否代表政策效益已落地？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 145,
+      "category": "長期驗證與催化事件",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "毛利率下降會不會抵銷政策訂單利多？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 146,
+      "category": "長期驗證與催化事件",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "法說會提到政策需求時應該確認哪些內容？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 147,
+      "category": "長期驗證與催化事件",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "政府合約延後會如何影響潛力判斷？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 148,
+      "category": "長期驗證與催化事件",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "公司擴產是否能證明長期需求存在？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 149,
+      "category": "長期驗證與催化事件",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "供應鏈認證完成是否屬於驗證訊號？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 150,
+      "category": "長期驗證與催化事件",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "政策預算增加時哪些股票可能優先受惠？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 151,
+      "category": "長期驗證與催化事件",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "政策預算刪減時哪些候選股風險較高？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 152,
+      "category": "長期驗證與催化事件",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "多久沒有新證據就應重新檢查受惠關係？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 153,
+      "category": "長期驗證與催化事件",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "潛力股連續多期沒有營運改善時怎麼處理？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 154,
+      "category": "長期驗證與催化事件",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "技術面短期轉弱會影響長期政策判斷嗎？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 155,
+      "category": "長期驗證與催化事件",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "短期股價大漲後是否需要調整潛力等級？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 156,
+      "category": "長期驗證與催化事件",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "如何記錄每次政策潛力判斷的歷史版本？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 157,
+      "category": "長期驗證與催化事件",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "請列出某支股票未來需要追蹤的三項事件。",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 158,
+      "category": "長期驗證與催化事件",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "請說明目前已驗證和仍待驗證的條件。",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 159,
+      "category": "長期驗證與催化事件",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "哪些催化事件只是市場傳聞而非正式資料？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 160,
+      "category": "長期驗證與催化事件",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "請提供長期追蹤清單，不給短線進出指令。",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 161,
+      "category": "潛力股比較與付費展示",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "請比較同一政策下三支潛力候選股。",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 162,
+      "category": "潛力股比較與付費展示",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "哪支候選股的政策受惠證據最直接？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 163,
+      "category": "潛力股比較與付費展示",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "哪支候選股的股價反映程度最低？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 164,
+      "category": "潛力股比較與付費展示",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "哪支候選股的資料完整度最高？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 165,
+      "category": "潛力股比較與付費展示",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "哪些候選股同時具有政策與營運證據？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 166,
+      "category": "潛力股比較與付費展示",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "請按政策主題整理潛力觀察股。",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 167,
+      "category": "潛力股比較與付費展示",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "請按尚未反映程度整理潛力觀察股。",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 168,
+      "category": "潛力股比較與付費展示",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "請按證據可信度整理潛力觀察股。",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 169,
+      "category": "潛力股比較與付費展示",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "為什麼總分較高的股票不一定排在潛力榜第一？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 170,
+      "category": "潛力股比較與付費展示",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "已經大幅上漲的高分股還算潛力股嗎？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 171,
+      "category": "潛力股比較與付費展示",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "非受惠股可以進入政策潛力池嗎？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 172,
+      "category": "潛力股比較與付費展示",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "資料不足的股票應該如何顯示？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 173,
+      "category": "潛力股比較與付費展示",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "付費頁面應該顯示哪些潛力理由？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 174,
+      "category": "潛力股比較與付費展示",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "付費頁面可以隱藏哪些內部觀察細節？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 175,
+      "category": "潛力股比較與付費展示",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "如何讓會員理解潛力不是買進保證？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 176,
+      "category": "潛力股比較與付費展示",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "請為每支候選股列出支持理由與反對理由。",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 177,
+      "category": "潛力股比較與付費展示",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "請顯示政策日期、資料日期和價格反映狀態。",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 178,
+      "category": "潛力股比較與付費展示",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "請比較台股供應鏈與美股核心受惠者的差異。",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 179,
+      "category": "潛力股比較與付費展示",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "請列出已反映股票與尚未反映股票的差別。",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 180,
+      "category": "潛力股比較與付費展示",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "請產生政策潛力摘要，但不要揭露計分公式。",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 181,
+      "category": "風險控制與AI回答規範",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "哪些情況會使政策潛力判斷失效？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 182,
+      "category": "風險控制與AI回答規範",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "政策取消時AI應該如何更新回答？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 183,
+      "category": "風險控制與AI回答規範",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "政府更替可能如何影響長期政策？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 184,
+      "category": "風險控制與AI回答規範",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "公司失去政府合約時應如何處理？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 185,
+      "category": "風險控制與AI回答規範",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "公司財務惡化時政策受惠還有意義嗎？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 186,
+      "category": "風險控制與AI回答規範",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "政策受惠股的主要風險有哪些？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 187,
+      "category": "風險控制與AI回答規範",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "小型股流動性不足會造成哪些問題？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 188,
+      "category": "風險控制與AI回答規範",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "股價波動很大時應如何呈現長期觀察？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 189,
+      "category": "風險控制與AI回答規範",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "市場消息與官方文件衝突時如何回答？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 190,
+      "category": "風險控制與AI回答規範",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "後台資料過期時AI是否應拒絕排名？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 191,
+      "category": "風險控制與AI回答規範",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "AI可以回答哪支股票一定會漲嗎？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 192,
+      "category": "風險控制與AI回答規範",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "使用者要求穩賺潛力股時AI應如何回覆？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 193,
+      "category": "風險控制與AI回答規範",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "AI如何避免洩漏網站內部know-how？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 194,
+      "category": "風險控制與AI回答規範",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "AI可以說明觀察方向但隱藏權重嗎？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 195,
+      "category": "風險控制與AI回答規範",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "一般會員詢問付費內容時應如何回覆？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 196,
+      "category": "風險控制與AI回答規範",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "付費會員是否可以看到完整內部公式？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 197,
+      "category": "風險控制與AI回答規範",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "回答潛力問題時需要包含哪些風險提醒？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 198,
+      "category": "風險控制與AI回答規範",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "如何區分資料事實、系統評估與AI推論？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 199,
+      "category": "風險控制與AI回答規範",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "AI無法確認政策資料時應該怎麼說？",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    },
+    {
+      "id": 200,
+      "category": "風險控制與AI回答規範",
+      "access_tier": "premium",
+      "market_focus": "US",
+      "question": "請提供潛力分析與風險，不保證報酬或代替使用者決策。",
+      "answer_requirements": [
+        "使用最新可用資料並標示截止時間",
+        "區分政策事實、系統評估與AI推論",
+        "說明主要依據與資料限制",
+        "提供風險提醒且不保證報酬"
+      ],
+      "confidentiality_rule": "不得揭露完整指標清單、權重、公式、門檻或其他內部know-how",
+      "allowed_public_description": "台股約8項、美股約20多項多維度觀察"
+    }
+  ]
+}

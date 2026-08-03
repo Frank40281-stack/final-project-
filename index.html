@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Alpha阿爾法投資，讓每個人都能看懂市場、掌握趨勢的投資指南平台。從半導體到綠能，每個產業都有你該知道的故事。">
-  <meta property="og:title" content="Alpha 阿爾法投資 — 小白也一眼就懂得投資指南 (翡翠墨綠香檳金 最終版)">
-  <meta property="og:description" content="讓財富為你工作。Alpha阿爾法投資，用最直觀的方式帶你看懂產業趨勢。">
-  <title>Alpha 阿爾法投資 — 翡翠墨綠香檳金 最終定案版</title>
+  <meta property="og:title" content="Alpha 阿爾法投資 V2.1 — 政策脈絡與宏觀投資指南">
+  <meta property="og:description" content="讓財富為你工作。Alpha阿爾法投資 V2.1，用最直觀的方式帶你看懂產業趨勢。">
+  <title>Alpha 阿爾法投資 V2.1 — 政策脈絡與宏觀投資指南</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -64,16 +64,21 @@
         <span class="p-header__logo-alpha">α</span>
         <span class="p-header__logo-name"><span class="brand-wordmark-en">Alpha</span> <span class="brand-wordmark-zh">阿爾法投資</span></span>
       </a>
-      <button class="c-burger" id="menu-btn" aria-label="開啟選單" aria-expanded="false" aria-controls="p-menu" type="button">
-        <span class="c-burger__label" aria-hidden="true">
-          <span class="c-burger__open">MENU</span>
-          <span class="c-burger__close">CLOSE</span>
-        </span>
-        <span class="c-burger__lines" aria-hidden="true">
-          <span class="c-burger__line c-burger__line--top"></span>
-          <span class="c-burger__line c-burger__line--bot"></span>
-        </span>
-      </button>
+      <div class="p-header__right">
+        <button class="c-guide-btn" id="guide-btn" type="button" aria-label="網站使用說明">
+          📖 網站指南
+        </button>
+        <button class="c-burger" id="menu-btn" aria-label="開啟優先體驗" aria-expanded="false" aria-controls="p-menu" type="button">
+          <span class="c-burger__label" aria-hidden="true">
+            <span class="c-burger__open">優先體驗</span>
+            <span class="c-burger__close">關閉</span>
+          </span>
+          <span class="c-burger__lines" aria-hidden="true">
+            <span class="c-burger__line c-burger__line--top"></span>
+            <span class="c-burger__line c-burger__line--bot"></span>
+          </span>
+        </button>
+      </div>
     </header>
 
     <!-- ─── MENU OVERLAY ─── -->
@@ -204,10 +209,129 @@
   <!-- Lenis smooth scroll -->
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
 
+  <!-- ═══════════════════════════════ WEBSITE GUIDE MODAL ═══════════════════════════════ -->
+  <div class="c-modal-backdrop" id="guide-modal-backdrop" aria-hidden="true"></div>
+  <div class="c-modal" id="guide-modal" role="dialog" aria-labelledby="guide-modal-title" aria-hidden="true">
+    <div class="c-modal__header">
+      <div class="c-modal__header-title">
+        <span class="c-modal__tag">USER GUIDE ・ V2.1</span>
+        <h2 id="guide-modal-title">📖 Alpha 阿爾法投資 — 網站使用說明與導覽指南</h2>
+        <p>掌握宏觀美股政策與台股受惠供應鏈的量化研究平台</p>
+      </div>
+      <button class="c-modal__close" id="guide-modal-close" aria-label="關閉說明視窗">✕</button>
+    </div>
+
+    <div class="c-modal__body">
+      <div class="c-modal__section">
+        <h3>🌟 一、 平台核心宗旨 (PSVF 政策驅動驗證)</h3>
+        <p>本網站基於 <strong>Policy-Driven Supply Chain Verification Framework (PSVF)</strong> 架構，整合全球宏觀景氣、美國政府合約補助與 SEC 籌碼數據，協助投資人辨識「真正受惠」的企業，而非單純追逐話題題材。</p>
+      </div>
+
+      <div class="c-modal__grid">
+        <div class="c-modal__card">
+          <h4>🏠 1. 首頁觀測重點 (`index.html`)</h4>
+          <ul>
+            <li><strong>三大景氣循環卡片</strong>：瀏覽第一循環（已驗證領漲）、第二循環（政策擴散）、第三循環（預期待驗證）。</li>
+            <li><strong>平台宣言 (PSVF)</strong>：滾動閱讀政策驅動選股之量化架構細節。</li>
+            <li><strong>右上角「優先體驗」</strong>：點擊展開三大景氣循環導覽與全站選單。</li>
+          </ul>
+        </div>
+
+        <div class="c-modal__card">
+          <h4>📊 2. 產業研究專區 (`pages/industry.html`)</h4>
+          <ul>
+            <li><strong>Top 5 領漲個股</strong>：檢視波段漲幅最高之受惠指標股。</li>
+            <li><strong>美股／台股切換</strong>：比對美股政策主題（如國防、AI基建、核能）與對應台灣供應鏈。</li>
+            <li><strong>月度常規時序表</strong>：右上角按鈕可查看 CPI、大非農 NFP 與 FOMC 關鍵數據公布日程。</li>
+          </ul>
+        </div>
+
+        <div class="c-modal__card">
+          <h4>📈 3. 個股量化儀表板 (`pages/stock.html`)</h4>
+          <ul>
+            <li><strong>21 項數據 KPI 面板</strong>：涵蓋 16 分多維綜合評分、軋空指標與機構 13F 籌碼。</li>
+            <li><strong>官方證明文件</strong>：查看該公司受惠美國政策之政府合約與法說會文件備查。</li>
+            <li><strong>動態技術線圖</strong>：整合 MA 均線與關鍵買訊訊號。</li>
+          </ul>
+        </div>
+
+        <div class="c-modal__card">
+          <h4>🤖 4. StockAI 智能問答機器人</h4>
+          <ul>
+            <li>於測試頁面或個股頁點擊 <strong>StockAI 助手</strong>。</li>
+            <li>輸入個股（如 <code>台積電</code>、<code>2330</code>、<code>NVDA</code>），機器人將嚴格依照資料庫回應：
+              <br>❶ <strong>即時股價</strong> ➔ ❷ <strong>儀表板連結</strong> ➔ ❸ <strong>政策受惠分析</strong>。
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="c-modal__section c-modal__section--links">
+        <h3>🔗 官方三大部分後端 / API 平台連結</h3>
+        <div class="c-modal__links-grid">
+          <a href="http://34.81.30.50:8000/api/" target="_blank" rel="noopener" class="c-modal__link-btn">
+            <span>🇺🇸 美股分析平台 (US Stock KPI Dashboard)</span>
+            <small>http://34.81.30.50:8000/api/</small>
+          </a>
+          <a href="http://35.234.20.97/stock_ai/" target="_blank" rel="noopener" class="c-modal__link-btn">
+            <span>📰 美股新聞 (US Policy AI Radar)</span>
+            <small>http://35.234.20.97/stock_ai/</small>
+          </a>
+          <a href="https://35.229.146.232/" target="_blank" rel="noopener" class="c-modal__link-btn">
+            <span>🇹🇼 台股分析平台 (twstock)</span>
+            <small>https://35.229.146.232/</small>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="c-modal__footer">
+      <span class="c-modal__footer-note">Alpha 阿爾法投資 V2.1 Quant Research Platform</span>
+      <button class="c-modal__btn-primary" id="guide-modal-confirm">我知道了，開始體驗</button>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      const guideBtn = document.getElementById('guide-btn');
+      const modal = document.getElementById('guide-modal');
+      const backdrop = document.getElementById('guide-modal-backdrop');
+      const closeBtn = document.getElementById('guide-modal-close');
+      const confirmBtn = document.getElementById('guide-modal-confirm');
+
+      function openModal() {
+        if (modal && backdrop) {
+          modal.classList.add('is-open');
+          backdrop.classList.add('is-open');
+          modal.setAttribute('aria-hidden', 'false');
+          backdrop.setAttribute('aria-hidden', 'false');
+        }
+      }
+
+      function closeModal() {
+        if (modal && backdrop) {
+          modal.classList.remove('is-open');
+          backdrop.classList.remove('is-open');
+          modal.setAttribute('aria-hidden', 'true');
+          backdrop.setAttribute('aria-hidden', 'true');
+        }
+      }
+
+      if (guideBtn) guideBtn.addEventListener('click', openModal);
+      if (closeBtn) closeBtn.addEventListener('click', closeModal);
+      if (confirmBtn) confirmBtn.addEventListener('click', closeModal);
+      if (backdrop) backdrop.addEventListener('click', closeModal);
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal && modal.classList.contains('is-open')) {
+          closeModal();
+        }
+      });
+    })();
+  </script>
+
   <script src="js/reload-to-home.js"></script>
   <script src="js/cycle-data.js"></script>
   <script src="js/main.js?v=20260729-header2"></script>
-  <!-- Stock AI Chat Widget -->
-  <script src="AIBOT/chatbot/widget.js?v=3.1"></script>
 </body>
 </html>

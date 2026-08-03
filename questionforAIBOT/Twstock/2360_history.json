@@ -1,0 +1,36 @@
+{
+  "status": "success",
+  "stock_id": "2360",
+  "name": "致茂",
+  "count": 1,
+  "data": [
+    {
+      "date": "2026-07-09",
+      "price": null,
+      "pe": null,
+      "pb": null,
+      "eps": null,
+      "quarterly_revenue_growth": null,
+      "gross_margin": null,
+      "net_margin": null,
+      "peg": null,
+      "bps": null,
+      "depreciation_ratio": null,
+      "contract_liability_growth": null,
+      "contract_liability_ratio": null,
+      "current_ratio": null,
+      "inventory_ratio": null,
+      "cash_flow_quality": null,
+      "margin_buying": null,
+      "short_selling": null,
+      "margin_short_ratio": null,
+      "large_shareholders_ratio": null,
+      "retail_shareholders_ratio": null,
+      "institutional_net_buy": null,
+      "volume_ratio": null,
+      "us_policy_theme": "10.量子科技",
+      "policy_relation": "核心受惠",
+      "main_benefit_item": null
+    }
+  ]
+}
