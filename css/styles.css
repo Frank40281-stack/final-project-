@@ -629,30 +629,42 @@ p { line-height: 1.8; }
 .p-header__logo {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 16px;
   opacity: 0;
   transform: translateY(-10px);
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
 .p-header__logo-alpha {
   font-family: var(--font-en);
-  font-size: 28px;
+  font-size: 56px;
   font-weight: 300;
   color: var(--gold);
 }
 .p-header__logo-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
   font-family: var(--font-zh);
-  font-size: 15px;
+  font-size: 30px;
   font-weight: 300;
   letter-spacing: 0.05em;
   color: var(--white);
   transition: color 0.4s ease;
+}
+.p-header__logo-tagline {
+  padding-left: 12px;
+  border-left: 1px solid currentColor;
+  font-size: 0.72em;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
 }
 
 /* Burger Button styling */
 .c-burger {
   display: inline-flex;
   align-items: center;
+  text-decoration: none;
   gap: 12px;
   padding: 8px 16px;
   border: 1px solid rgba(255,255,255,0.15) !important;

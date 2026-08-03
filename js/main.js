@@ -696,7 +696,7 @@ function initHeroWheelSnap() {
   var lastWheelAt = 0;
   var wheelIdleTimer = null;
   var lockedScrollY = 0;
-  var WHEEL_IDLE_MS = 140;
+  var WHEEL_IDLE_MS = 220;
   var SNAP_HOLD_MS = 220;
   var SNAP_TOLERANCE_PX = 2;
   var snapHoldTimer = null;
@@ -1230,8 +1230,10 @@ function initHeroWheelSnap() {
       document.body.dataset.homeTransitionState = transitionState;
       window.__homeTransitionState = transitionState;
       if (reveal && reveal.stage) gsap.set(reveal.stage, { autoAlpha: 0 });
-      transitionInputLocked = false;
       if (lenis && typeof lenis.start === 'function') lenis.start();
+      lastWheelDirection = null;
+      transitionInputLocked = false;
+      beginWheelReleaseGuard();
     }
 
     if (reduceMotion) {
@@ -1696,6 +1698,8 @@ function initMenu() {
 
 
   const menu = document.getElementById('p-menu');
+
+  if (!btn || !menu) return;
 
 
   let open = false;

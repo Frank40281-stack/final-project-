@@ -62,54 +62,23 @@
     <header class="p-header" id="p-header">
       <a class="p-header__logo" href="index.html" id="header-logo">
         <span class="p-header__logo-alpha">α</span>
-        <span class="p-header__logo-name"><span class="brand-wordmark-en">Alpha</span> <span class="brand-wordmark-zh">阿爾法投資</span></span>
+        <span class="p-header__logo-name"><span class="brand-wordmark-en">Alpha</span> <span class="brand-wordmark-zh">阿爾法投資</span><span class="p-header__logo-tagline">股市投資導航</span></span>
       </a>
       <div class="p-header__right">
         <button class="c-guide-btn" id="guide-btn" type="button" aria-label="網站使用說明">
           📖 網站指南
         </button>
-        <button class="c-burger" id="menu-btn" aria-label="開啟優先體驗" aria-expanded="false" aria-controls="p-menu" type="button">
+        <a class="c-burger" id="menu-btn" href="pages/industry.html?cycle=cycle-1" aria-label="會員登入，前往第一循環股票頁面">
           <span class="c-burger__label" aria-hidden="true">
-            <span class="c-burger__open">優先體驗</span>
-            <span class="c-burger__close">關閉</span>
+            <span class="c-burger__open">會員登入</span>
           </span>
           <span class="c-burger__lines" aria-hidden="true">
             <span class="c-burger__line c-burger__line--top"></span>
             <span class="c-burger__line c-burger__line--bot"></span>
           </span>
-        </button>
+        </a>
       </div>
     </header>
-
-    <!-- ─── MENU OVERLAY ─── -->
-    <nav class="p-menu" id="p-menu" role="dialog" aria-label="主選單" aria-hidden="true">
-      <div class="p-menu__inner">
-
-        <!-- Left -->
-        <div class="p-menu__left">
-          <div class="p-menu__left-top">
-            <h2 class="p-menu__brand-name"><span class="brand-wordmark-en">Alpha</span><br><span class="brand-wordmark-zh">阿爾法投資</span></h2>
-            <p class="p-menu__brand-sub">小白也一眼就懂得<br>投資指南網站</p>
-          </div>
-          <div class="p-menu__preview" aria-hidden="true">
-            <img id="menu-preview" src="assets/img/sector-ai-cloud.jpg" alt="" class="p-menu__preview-img" loading="lazy">
-          </div>
-        </div>
-
-        <!-- Right -->
-        <div class="p-menu__right">
-          <div class="p-menu__nav-main" role="navigation" aria-label="主要導覽">
-            <button class="p-menu__nav-btn p-menu__nav-btn--lg" data-goto="hero" type="button">TOP</button>
-            <button class="p-menu__nav-btn p-menu__nav-btn--lg" data-goto="statement" type="button">STATEMENT</button>
-            <button class="p-menu__nav-btn p-menu__nav-btn--lg" data-goto="industries" type="button">SECTORS</button>
-          </div>
-          <div class="p-menu__sectors-grid" id="menu-sectors" role="list" aria-label="產業導覽">
-            <!-- Populated by JS -->
-          </div>
-        </div>
-
-      </div>
-    </nav>
 
     <!-- ═══════════════════════════════ HERO NEW (HJSD-inspired) ═══════════════════════════════ -->
     <section class="s-hero-new" id="hero" aria-label="首頁">
@@ -233,7 +202,7 @@
           <ul>
             <li><strong>三大景氣循環卡片</strong>：瀏覽第一循環（已驗證領漲）、第二循環（政策擴散）、第三循環（預期待驗證）。</li>
             <li><strong>平台宣言 (PSVF)</strong>：滾動閱讀政策驅動選股之量化架構細節。</li>
-            <li><strong>右上角「優先體驗」</strong>：點擊展開三大景氣循環導覽與全站選單。</li>
+            <li><strong>右上角「會員登入」</strong>：點擊直接前往第一循環股票頁面。</li>
           </ul>
         </div>
 
@@ -266,23 +235,6 @@
         </div>
       </div>
 
-      <div class="c-modal__section c-modal__section--links">
-        <h3>🔗 官方三大部分後端 / API 平台連結</h3>
-        <div class="c-modal__links-grid">
-          <a href="http://34.81.30.50:8000/api/" target="_blank" rel="noopener" class="c-modal__link-btn">
-            <span>🇺🇸 美股分析平台 (US Stock KPI Dashboard)</span>
-            <small>http://34.81.30.50:8000/api/</small>
-          </a>
-          <a href="http://35.234.20.97/stock_ai/" target="_blank" rel="noopener" class="c-modal__link-btn">
-            <span>📰 美股新聞 (US Policy AI Radar)</span>
-            <small>http://35.234.20.97/stock_ai/</small>
-          </a>
-          <a href="https://35.229.146.232/" target="_blank" rel="noopener" class="c-modal__link-btn">
-            <span>🇹🇼 台股分析平台 (twstock)</span>
-            <small>https://35.229.146.232/</small>
-          </a>
-        </div>
-      </div>
     </div>
 
     <div class="c-modal__footer">
