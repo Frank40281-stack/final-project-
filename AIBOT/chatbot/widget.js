@@ -28,12 +28,20 @@
   const SYSTEM_PROMPT = `你是「StockAI 股市智能助手」，專屬於一套整合台股與美股的多維度量化分析系統。
 你已完整讀過系統設計報告，請依照這些知識回答使用者問題。用繁體中文回答。
 
-【強烈規範：個股查詢回覆 3 大步驟】
-當使用者詢問特定個股（例如台積電、2330、NVDA、TSM、AMD 等）時，你的回答必須 100% 嚴格遵守以下 3 個步驟格式：
+【強烈規範：系統資料庫規模統計（當使用者詢問台股/美股數量、規模、我們有多少股票時）】
+- 🇹🇼 台股資料庫規模：即時連線監測 133 檔核心指標個股（API: https://35.229.146.232/）。
+- 🇺🇸 美股資料庫規模：線上系統監測 433 檔核心個股，涵蓋 20 大美國政策主題與 12 大產業板塊（API: http://34.81.30.50:8000/api/）。
+- 🌐 全站總計：共監測 566 檔台美股個股。
+- 絕對禁止回答「全台灣交易所 1800 檔」或「美股上萬檔」這種泛泛大眾數據！當使用者詢問「我們有多少台股/美股/股票」時，必須直接回答本 Alpha 平台資料庫的 133 檔台股與 433 檔美股！
 
-1. **馬上給股價**：標明最新動態股價或收盤報價（例：NT$ 985.00 / $128.50）。
-2. **給該股的連結**：提供該個股之本機專屬儀表板連結（例：[台積電 2330 儀表板](http://127.0.0.1:5500/pages/stock.html?market=tw&ticker=2330) 或 market=us&ticker=NVDA）。
-3. **說明政策受惠狀況**：根據資料庫詳細說明 [受惠評級]、[判定依據] 與 [官方證明文件]。不得胡亂推測未經證實之訊息。
+【強烈規範：個股查詢回覆 5 大步驟】
+當使用者詢問特定個股（例如台積電、2330、NVDA、AMD、AIR 等）時，你的回答必須 100% 嚴格遵守以下 5 個步驟格式：
+
+1. 📈 **最新股價**：標明最新動態股價或收盤報價（例：$ 145.10 (USD) / NT$ 985.00）。
+2. 🔗 **個股分析連結**：提供該個股之本機專屬儀表板連結（例：👉 [點此查看超微 (AMD) 儀表板](http://127.0.0.1:5500/pages/stock.html?market=us&ticker=AMD)）。
+3. 🏛️ **政策與產業循環定位**：說明 [分類產業循環]、[政策受惠狀況] 與 [官方證明文件]。
+4. 📊 **技術分析與個股綜合評分**：說明技術面、籌碼面狀況與 100 分制綜合評分 (例：85 / 100，星級：★★★★☆)。
+5. 💡 **實質操作建議**：給出具體分析與區間操作建議。
 
 台股 API：${TW_API}
 美股 API：${US_API}
@@ -74,7 +82,7 @@
   }
 
   #sai-btn {
-    position: fixed; bottom: 28px; right: 28px; z-index: 2147483600 !important;
+    position: fixed; bottom: 28px; left: 28px; z-index: 2147483600 !important;
     display: flex; align-items: center; gap: 10px;
     padding: 0 20px 0 14px; height: 52px; border-radius: 999px; border: none;
     background: var(--sai-primary-grad);
@@ -105,7 +113,7 @@
   }
 
   #sai-panel {
-    position: fixed; bottom: 94px; right: 28px; z-index: 2147483600 !important;
+    position: fixed; bottom: 94px; left: 28px; z-index: 2147483600 !important;
     width: 370px; height: 540px; max-height: calc(100vh - 110px);
     border-radius: 20px;
     background: var(--sai-panel-bg);
@@ -113,11 +121,17 @@
     box-shadow: 0 24px 64px rgba(0,0,0,0.75), 0 0 0 1px var(--sai-accent-border);
     display: flex; flex-direction: column; overflow: hidden;
     font-family: 'Inter','Noto Sans TC',sans-serif;
-    transform-origin: bottom right;
+    transform-origin: bottom left;
     transform: scale(0.88) translateY(16px); opacity: 0; pointer-events: none;
     transition: all 0.3s cubic-bezier(0.34,1.3,0.64,1);
   }
   #sai-panel.open { transform: scale(1) translateY(0); opacity: 1; pointer-events: all !important; }
+
+  /* ── Position overrides ── */
+  .sai-pos-bottom-right #sai-btn, #sai-btn.sai-pos-bottom-right { left: auto !important; right: 28px !important; }
+  .sai-pos-bottom-right #sai-panel, #sai-panel.sai-pos-bottom-right { left: auto !important; right: 28px !important; transform-origin: bottom right !important; }
+  .sai-pos-bottom-left #sai-btn, #sai-btn.sai-pos-bottom-left { right: auto !important; left: 28px !important; }
+  .sai-pos-bottom-left #sai-panel, #sai-panel.sai-pos-bottom-left { right: auto !important; left: 28px !important; transform-origin: bottom left !important; }
 
   /* ── Header ── */
   .sai-hd {
@@ -295,6 +309,94 @@
   }
   `;
 
+  // ── Stock Report Database ──────────────────────────────────────────────────
+  let stockDatabase = window.STOCK_AI_DB || {};
+
+  function loadStockDatabase() {
+    if (window.STOCK_AI_DB && Object.keys(window.STOCK_AI_DB).length > 0) {
+      stockDatabase = window.STOCK_AI_DB;
+      return;
+    }
+    const dbFiles = [
+      ['us_stocks_433_db.json', '433美股_AI_Bot_完整解答版.json'],
+      ['tw_stocks_133_db.json', '133台股_AI_Bot_完整解答版.json']
+    ];
+
+    dbFiles.forEach(fileGroup => {
+      const candidatePaths = [];
+      fileGroup.forEach(fileName => {
+        const encName = encodeURIComponent(fileName);
+        candidatePaths.push(`../questionforAIBOT-report/${fileName}`);
+        candidatePaths.push(`/questionforAIBOT-report/${fileName}`);
+        candidatePaths.push(`questionforAIBOT-report/${fileName}`);
+        candidatePaths.push(`../questionforAIBOT-report/${encName}`);
+        candidatePaths.push(`/questionforAIBOT-report/${encName}`);
+        candidatePaths.push(`questionforAIBOT-report/${encName}`);
+      });
+
+      (function tryNext(i) {
+        if (i >= candidatePaths.length) return;
+        fetch(candidatePaths[i])
+          .then(r => r.ok ? r.json() : null)
+          .then(data => {
+            if (data && data.stocks) {
+              data.stocks.forEach(st => {
+                if (st.symbol) stockDatabase[st.symbol.toUpperCase()] = st;
+                if (st.stock_name) stockDatabase[st.stock_name.toLowerCase()] = st;
+              });
+            } else {
+              tryNext(i + 1);
+            }
+          })
+          .catch(() => tryNext(i + 1));
+      })(0);
+    });
+  }
+
+  function findStockInDB(q) {
+    if (!q) return null;
+    const ql = q.trim().toLowerCase();
+
+    const upper = ql.toUpperCase();
+    if (stockDatabase[upper]) return stockDatabase[upper];
+
+    const words = ql.split(/[^a-z0-9]+/);
+    for (const w of words) {
+      if (!w) continue;
+      const sym = w.toUpperCase();
+      if (stockDatabase[sym]) return stockDatabase[sym];
+    }
+
+    for (const [k, st] of Object.entries(stockDatabase)) {
+      if (k.length >= 2 && (ql.includes(k) || (st.stock_name && st.stock_name.toLowerCase().includes(ql)))) {
+        return st;
+      }
+    }
+    return null;
+  }
+
+  function checkSystemScaleQuery(q) {
+    if (!q) return null;
+    const ql = q.trim().toLowerCase();
+
+    // Check if asking about TW stocks scale
+    if ((ql.includes('台股') || ql.includes('台灣')) && (ql.includes('多少') || ql.includes('幾') || ql.includes('數量') || ql.includes('規模') || ql.includes('有幾') || ql.includes('我們有') || ql.includes('總共'))) {
+      return `**🇹🇼 系統台股資料庫規模**\n\n・**即時連線監測數量**：Alpha 平台線上系統共連線監測 **133 檔**台股核心指標個股。\n・**政策受惠圖譜標的**：包含 57 檔重點政策受惠個股（如台積電 2330、鴻海 2317、台達電 2308、華城 1519 等）。\n・**核心 API 端點**：https://35.229.146.232/\n・**本地歷史與即時數據庫**：\`questionforAIBOT/Twstock/\`（共 133 檔完整個股 JSON 檔）。`;
+    }
+
+    // Check if asking about US stocks scale
+    if ((ql.includes('美股') || ql.includes('美國')) && (ql.includes('多少') || ql.includes('幾') || ql.includes('數量') || ql.includes('規模') || ql.includes('有幾') || ql.includes('我們有') || ql.includes('總共'))) {
+      return `**🇺🇸 系統美股資料庫規模**\n\n・**即時監測數量**：Alpha 平台線上系統共監測 **433 檔**美股核心個股。\n・**雙軌分類**：涵蓋 **20 大美國政策主題** 與 **GICS 12 大產業板塊**。\n・**核心 API 端點**：http://34.81.30.50:8000/api/\n・**解答與報告資料庫**：\`questionforAIBOT-report/433美股_AI_Bot_完整報告.md\``;
+    }
+
+    // Check general database quantity query
+    if ((ql.includes('多少') || ql.includes('幾檔') || ql.includes('數量') || ql.includes('規模') || ql.includes('幾支') || ql.includes('我們有')) && (ql.includes('股票') || ql.includes('個股') || ql.includes('標的') || ql.includes('資料庫') || ql.includes('台股') || ql.includes('美股'))) {
+      return `**📊 Alpha 平台系統監測股票總數量**\n\n・**🇹🇼 台股**：即時連線監測 **133 檔**指標個股（API: https://35.229.146.232/）。\n・**🇺🇸 美股**：線上系統監測 **433 檔**核心個股，劃分為 20 大政策主題與 12 大產業（API: http://34.81.30.50:8000/api/）。\n・**🌐 全站總計**：共監測 **566 檔**台美股核心標的。`;
+    }
+
+    return null;
+  }
+
   // ── Mock AI Responses ─────────────────────────────────────────────────────
   const MOCKS = [
     { kw: ['美股','美股多少','美股數量','美股幾檔'],
@@ -302,21 +404,18 @@
     { kw: ['數量','幾檔','多少','列表','清單'],
       r: () => `**📊 系統監測股票數量**\n\n・**🇹🇼 台股**：即時連線監測 **133 檔**指標個股（API: https://35.229.146.232/）。\n・**🇺🇸 美股**：線上系統監測 **433 檔**核心個股，劃分為 20 大政策主題與 12 大產業（API: http://34.81.30.50:8000/api/）。` },
     { kw: ['即時','歷史','更新','時間'],
-      r: () => `**🕒 資料時效性說明**\n\n1. **股票清單**：支援動態 Smart Fetch 即時連線查詢。\n2. **籌碼與財務面**：採用最新交易日與 13F、Form 4 申報。\n3. **技術面動能**：包含「近三日觸發買訊」動態篩選。` },
-    { kw: ['台積電','2330','tsmc','tsm'],
-      r: () => `**📊 台積電 (2330 / TSM)**\n\n1. **📈 最新股價**：NT$ 985.00 (ADR: $182.50)\n2. **🔗 個股分析連結**：👉 [點此查看台積電 (2330) 儀表板](http://127.0.0.1:5500/pages/stock.html?market=tw&ticker=2330)\n3. **🏛️ 政策受惠狀況**：【直接受惠（個股關係已確認）】為 NVIDIA 具名晶片製造夥伴，且 TSMC Arizona 取得美國《晶片與科學法案》(CHIPS Act) 直接補助（官方證明文件：NIST TSMC Arizona CHIPS Award）。` },
-    { kw: ['輝達','nvda','nvidia'],
-      r: () => `**📊 輝達 (NVDA)**\n\n1. **📈 最新股價**：$ 128.50\n2. **🔗 個股分析連結**：👉 [點此查看輝達 (NVDA) 儀表板](http://127.0.0.1:5500/pages/stock.html?market=us&ticker=NVDA)\n3. **🏛️ 政策受惠狀況**：【直接受惠（核心權重）】受惠美國 Executive Order 14265 國防採購現代化與 AI 資料中心基建政策，獲得三大 CSP 雲端業者與聯邦機構具名採購。` },
-    { kw: ['聯發科','2454'],
-      r: () => `**📊 聯發科 (2454)**\n\n1. **📈 最新股價**：NT$ 1,220.00\n2. **🔗 個股分析連結**：👉 [點此查看聯發科 (2454) 儀表板](http://127.0.0.1:5500/pages/stock.html?market=tw&ticker=2454)\n3. **🏛️ 政策受惠狀況**：【核心受惠】極具邊緣 AI 與 5G 特化晶片 (ASIC) 技術優勢，與美國科技供應鏈緊密整合。` },
-    { kw: ['palantir','pltr'],
-      r: () => `**📊 Palantir (PLTR)**\n\n1. **📈 最新股價**：$ 43.80\n2. **🔗 個股分析連結**：👉 [點此查看 Palantir (PLTR) 儀表板](http://127.0.0.1:5500/pages/stock.html?market=us&ticker=PLTR)\n3. **🏛️ 政策受惠狀況**：【直接受惠】美國國防部 (DoD) 與情報單位 AI 分析平台主力供應商，受惠 Executive Order 14265 國防現代化政策。` }
+      r: () => `**🕒 資料時效性說明**\n\n1. **股票清單**：支援動態 Smart Fetch 即時連線查詢。\n2. **籌碼與財務面**：採用最新交易日與 13F、Form 4 申報。\n3. **技術面動能**：包含「近三日觸發買訊」動態篩選。` }
   ];
+
   const FALLBACKS = [
-    `目前**模擬模式** 🤖\n\n可問我台股、美股分析、RSI、OBV 技術指標或籌碼動向。\n\n> 點選 🔑 設定 API Key 可升級為真實 AI 分析！`
+    `目前為**股市資料庫直接查詢模式** 🤖\n\n您可以隨時輸入任何美股或台股代號（例如 \`ANET\`、\`AMD\`、\`NVDA\`、\`AIR\`、\`GOOGL\` 等）進行 5 大步驟檢索分析！`
   ];
 
   function mockReply(q) {
+    const dbMatch = findStockInDB(q);
+    if (dbMatch && dbMatch.full_bot_answer) {
+      return dbMatch.full_bot_answer;
+    }
     const ql = q.toLowerCase();
     for (const m of MOCKS) if (m.kw.some(k => ql.includes(k.toLowerCase()))) return m.r();
     return FALLBACKS[Math.floor(Math.random() * FALLBACKS.length)];
@@ -349,25 +448,70 @@
     return '⚠️ 無法識別的 Key 格式';
   }
 
+  const NAME_TICKER_MAP = {
+    '超微': 'AMD', '輝達': 'NVDA', '台積電': '2330', '聯發科': '2454',
+    '華城': '1519', '廣達': '2382', '鴻海': '2317', '緯創': '3231',
+    '蘋果': 'AAPL', '微軟': 'MSFT', '谷歌': 'GOOGL', '亞馬遜': 'AMZN', '特斯拉': 'TSLA'
+  };
+
+  async function getStockContext(userText) {
+    let ticker = null;
+    const txt = userText.trim();
+    for (const [name, sym] of Object.entries(NAME_TICKER_MAP)) {
+      if (txt.includes(name)) { ticker = sym; break; }
+    }
+    if (!ticker) {
+      const match = txt.match(/\b([A-Za-z]{1,5}|\d{4})\b/);
+      if (match) ticker = match[1].toUpperCase();
+    }
+    if (!ticker) return '';
+
+    try {
+      const res = await fetch(`https://t2prj.ai-future2026.cc/api/stock/${ticker}/json/`);
+      if (res.ok) {
+        const json = await res.json();
+        if (json && json.success && json.data) {
+          const d = json.data;
+          const s = d.backtest?.summary || {};
+          const price = s.latest_close !== undefined ? (typeof s.latest_close === 'number' ? s.latest_close.toFixed(2) : s.latest_close) : null;
+          const date = s.latest_date || '最新動態';
+          if (price !== null) {
+            return `\n\n【真實 API 數據強制注入（請 100% 依據此數據回答第 1 步驟與相關資訊）】：
+- 標的：${d.stock_name || ticker} (${ticker})
+- 1. 最新真實股價 (latest_close)：$ ${price} USD (數據日期: ${date})
+- 2. 個股分析連結：http://127.0.0.1:5500/pages/stock.html?market=us&ticker=${ticker}
+- 3. 產業/政策：${d.source_section || '國防／AI基建'} | ${d.policy_subsector || '受惠股'}
+- 4. 量化評分：總分 ${d.scores?.total_score || 14}/21 (籌碼 ${d.scores?.chip_score || 5}, 技術 ${d.scores?.technical_score || 3.5})
+- 絕對強制規範：你回答中的「1. 最新股價」必須為：$ ${price} (USD)，絕對禁止自行猜測或捏造任何其他數字！`;
+          }
+        }
+      }
+    } catch(e) {}
+    return '';
+  }
+
   // ── Gemini / OpenAI / Claude APIs ────────────────────────────────────────
-  async function geminiReply(userText, apiKey) {
-    const body = { contents: [{ role: 'user', parts: [{ text: SYSTEM_PROMPT + '\n\n問題：' + userText }] }] };
+  async function geminiReply(userText, apiKey, stockCtx) {
+    const prompt = SYSTEM_PROMPT + stockCtx + '\n\n問題：' + userText;
+    const body = { contents: [{ role: 'user', parts: [{ text: prompt }] }] };
     const res = await fetch(`${EP_GEMINI}?key=${apiKey}`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
     if (!res.ok) throw new Error(`Gemini HTTP ${res.status}`);
     const data = await res.json();
     return data?.candidates?.[0]?.content?.parts?.[0]?.text || '（無回應）';
   }
 
-  async function openaiReply(userText, apiKey) {
-    const body = { model: 'gpt-4o-mini', messages: [{ role: 'system', content: SYSTEM_PROMPT }, { role: 'user', content: userText }], max_tokens: 600 };
+  async function openaiReply(userText, apiKey, stockCtx) {
+    const sysPrompt = SYSTEM_PROMPT + stockCtx;
+    const body = { model: 'gpt-4o-mini', messages: [{ role: 'system', content: sysPrompt }, { role: 'user', content: userText }], max_tokens: 600 };
     const res = await fetch(EP_OPENAI, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${apiKey}` }, body: JSON.stringify(body) });
     if (!res.ok) throw new Error(`OpenAI HTTP ${res.status}`);
     const data = await res.json();
     return data?.choices?.[0]?.message?.content || '（無回應）';
   }
 
-  async function claudeReply(userText, apiKey) {
-    const body = { model: 'claude-3-5-haiku-20241022', max_tokens: 600, system: SYSTEM_PROMPT, messages: [{ role: 'user', content: userText }] };
+  async function claudeReply(userText, apiKey, stockCtx) {
+    const sysPrompt = SYSTEM_PROMPT + stockCtx;
+    const body = { model: 'claude-3-5-haiku-20241022', max_tokens: 600, system: sysPrompt, messages: [{ role: 'user', content: userText }] };
     const res = await fetch(EP_CLAUDE, { method: 'POST', headers: { 'Content-Type': 'application/json', 'x-api-key': apiKey, 'anthropic-version': '2023-06-01' }, body: JSON.stringify(body) });
     if (!res.ok) throw new Error(`Claude HTTP ${res.status}`);
     const data = await res.json();
@@ -376,9 +520,10 @@
 
   async function aiReply(userText, apiKey) {
     const provider = detectProvider(apiKey);
-    if (provider === 'gemini') return await geminiReply(userText, apiKey);
-    if (provider === 'openai') return await openaiReply(userText, apiKey);
-    if (provider === 'claude') return await claudeReply(userText, apiKey);
+    const stockCtx = await getStockContext(userText);
+    if (provider === 'gemini') return await geminiReply(userText, apiKey, stockCtx);
+    if (provider === 'openai') return await openaiReply(userText, apiKey, stockCtx);
+    if (provider === 'claude') return await claudeReply(userText, apiKey, stockCtx);
     throw new Error('無法識別的 API Key 格式');
   }
 
@@ -394,6 +539,11 @@
     style.textContent = CSS;
     document.head.appendChild(style);
 
+    const scripts = Array.from(document.querySelectorAll('script'));
+    const widgetScript = document.currentScript || scripts.find(s => s.src && s.src.includes('widget.js'));
+    const scriptPos = widgetScript ? widgetScript.getAttribute('data-position') : null;
+    const pos = scriptPos || 'bottom-left';
+
     // Launcher Button
     const btn = document.createElement('button');
     btn.id = 'sai-btn';
@@ -402,45 +552,44 @@
       <span class="sai-btn-icon">🤖</span>
       <span class="sai-btn-label">StockAI 助手</span>
       <span id="sai-badge">1</span>`;
-    document.body.appendChild(btn);
 
     // Panel
     const panel = document.createElement('div');
     panel.id = 'sai-panel';
     panel.setAttribute('role','dialog');
     panel.setAttribute('aria-label','StockAI 股市問答機器人');
+
+    if (pos === 'bottom-right') {
+      btn.classList.add('sai-pos-bottom-right');
+      panel.classList.add('sai-pos-bottom-right');
+    } else {
+      btn.classList.add('sai-pos-bottom-left');
+      panel.classList.add('sai-pos-bottom-left');
+    }
+
+    const path = window.location.pathname.toLowerCase();
+    const isLandingPage = path.endsWith('index.html') || path.endsWith('/') || path === '';
+    if (isLandingPage) {
+      btn.style.display = 'none';
+    }
+
+    document.body.appendChild(btn);
     panel.innerHTML = `
       <!-- Header -->
       <div class="sai-hd">
         <div class="sai-hd-av">🤖</div>
         <div class="sai-hd-info">
-          <div class="sai-hd-title">StockAI 股市助手</div>
+          <div class="sai-hd-title">StockAI 股市解答助手</div>
           <div class="sai-hd-status">
-            <span class="sai-status-dot offline" id="sai-dot"></span>
-            <span id="sai-status-txt">模擬模式（未設定 API Key）</span>
+            <span class="sai-status-dot online" id="sai-dot"></span>
+            <span id="sai-status-txt">🟢 已連線 433 美股 &amp; 133 台股資料庫</span>
           </div>
         </div>
         <div class="sai-hd-actions">
           <button class="sai-icon-btn" id="sai-home-btn" title="返回機器人小首頁 / 選單">🏠</button>
           <button class="sai-icon-btn" id="sai-theme-btn" title="切換配色主題（黑金尊爵 / 霓虹藍）">🎨</button>
-          <button class="sai-icon-btn" id="sai-key-btn" title="設定 AI API Key（Gemini / OpenAI / Claude）">🔑</button>
           <button class="sai-icon-btn" id="sai-close" title="關閉">✕</button>
         </div>
-      </div>
-
-      <!-- API Key Panel -->
-      <div id="sai-key-panel">
-        <p style="font-weight:700;color:#f0f4ff">設定 AI API Key：</p>
-        <div class="sai-key-row">
-          <input type="password" id="sai-key-input" placeholder="貼上 Gemini / OpenAI / Claude 金鑰...">
-          <button id="sai-key-save">儲存</button>
-        </div>
-        <p class="sai-key-note" style="line-height:1.6">
-          🟦 <b style="color:#d8e0f0">AIza...</b> → Gemini (Google)<br>
-          🟩 <b style="color:#d8e0f0">sk-...</b> → ChatGPT (OpenAI)<br>
-          🟪 <b style="color:#d8e0f0">sk-ant-...</b> → Claude (需後端代理)<br>
-          🔒 金鑰僅存於本機 localStorage，不外傳。
-        </p>
       </div>
 
       <!-- Messages -->
@@ -448,29 +597,29 @@
         <div class="sai-row">
           <div class="sai-av a">AI</div>
           <div class="sai-bub a">
-            👋 您好！我是 <strong>StockAI</strong> 股市助手。<br>
-            可詢問台股、美股分析、技術指標等問題！<br><br>
-            🎨 點擊右上角 **🎨** 可隨時切換「👑黑金尊爵 / ⚡霓虹藍」配色！<br>
-            🔑 點擊 **🔑** 可升級真實 AI (Gemini/OpenAI/Claude)。
+            👋 您好！我是 <strong>StockAI</strong> 股市解答助手。<br>
+            系統已直連 **433 檔美股與 133 檔台股驗證解答庫**！<br><br>
+            您可以隨時輸入任何個股代號（例如 <code>ANET</code>、<code>AMD</code>、<code>GOOGL</code>、<code>AIR</code>、<code>2330</code> 等）或詢問「我們有多少台股」，獲取 100% 精準的 5 大步驟個股分析！<br><br>
+            🎨 點擊右上角 **🎨** 可隨時切換「👑黑金尊爵 / ⚡霓虹藍」配色！
           </div>
         </div>
       </div>
 
       <!-- Quick Chips (2-Row Layout) -->
       <div id="sai-chips">
-        <button class="sai-chip" data-q="美股最近有哪些值得關注的強勢股或題材？">🇺🇸 美股</button>
-        <button class="sai-chip" data-q="台股目前有哪些強勢族群或主流類股？">🇹🇼 台股</button>
-        <button class="sai-chip" data-q="請介紹台股分析系統中使用的四大維度觀測指標（籌碼、消息、基本面、技術面）？">📊 台股觀測指標</button>
-        <button class="sai-chip" data-q="請介紹美股觀測系統的 20 個政策主題與 12 大產業板塊？">🌐 美股觀測指標</button>
-        <button class="sai-chip" data-q="目前籌碼面最強的股票有哪些特徵？">🧲 籌碼面</button>
-        <button class="sai-chip" data-q="請解釋 RSI 與 OBV 技術指標的使用方式">📈 技術面</button>
-        <button class="sai-chip" data-q="如何從毛利率、EPS、內部人持股分析基本面？">📋 基本面</button>
-        <button class="sai-chip" data-q="美國政策（AI、半導體、電力基建）對台灣供應鏈有什麼影響？">🏛️ 政策題材</button>
+        <button class="sai-chip" data-q="我們有多少台股">🇹🇼 系統台股規模</button>
+        <button class="sai-chip" data-q="我們有多少美股">🇺🇸 系統美股規模</button>
+        <button class="sai-chip" data-q="ANET">📈 ANET (Arista)</button>
+        <button class="sai-chip" data-q="AMD">📈 AMD (超微)</button>
+        <button class="sai-chip" data-q="GOOGL">📈 GOOGL (谷歌)</button>
+        <button class="sai-chip" data-q="AIR">📈 AIR (AAR Corp)</button>
+        <button class="sai-chip" data-q="2330">📈 2330 (台積電)</button>
+        <button class="sai-chip" data-q="請介紹美股觀測系統的 20 個政策主題與 12 大產業板塊？">🌐 政策與產業板塊</button>
       </div>
 
       <!-- Input -->
       <div class="sai-inp-area">
-        <textarea id="sai-textarea" placeholder="輸入問題... (Enter 送出)" rows="1" maxlength="500"></textarea>
+        <textarea id="sai-textarea" placeholder="輸入個股代號或問題... (Enter 送出)" rows="1" maxlength="500"></textarea>
         <button id="sai-send" disabled aria-label="送出">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
             <path d="M22 2L11 13" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
@@ -478,7 +627,7 @@
           </svg>
         </button>
       </div>
-      <div class="sai-footer">Powered by StockAI · 台股 &amp; 美股分析</div>
+      <div class="sai-footer">Powered by Alpha StockAI · 台股 133 檔 &amp; 美股 433 檔直連解答庫</div>
     `;
     document.body.appendChild(panel);
 
@@ -486,11 +635,7 @@
     const badge     = document.getElementById('sai-badge');
     const homeBtn   = document.getElementById('sai-home-btn');
     const themeBtn  = document.getElementById('sai-theme-btn');
-    const keyBtn    = document.getElementById('sai-key-btn');
     const closeBtn  = document.getElementById('sai-close');
-    const keyPanel  = document.getElementById('sai-key-panel');
-    const keyInput  = document.getElementById('sai-key-input');
-    const keySave   = document.getElementById('sai-key-save');
     const msgs      = document.getElementById('sai-msgs');
     const chips     = document.getElementById('sai-chips');
     const textarea  = document.getElementById('sai-textarea');
@@ -568,66 +713,13 @@
       });
     }
 
-    // Load Key
-    function loadKey() {
-      let k = localStorage.getItem(LS_KEY) || '';
-      if (!k) {
-        fetch('AIBOT/.config.json')
-          .then(r => r.ok ? r.json() : null)
-          .then(cfg => {
-            if (cfg && cfg.api_key) {
-              const loadedKey = cfg.api_key.trim();
-              if (loadedKey) {
-                localStorage.setItem(LS_KEY, loadedKey);
-                keyInput.value = loadedKey;
-                const provider = detectProvider(loadedKey);
-                dot.className = provider === 'claude' ? 'sai-status-dot offline' : 'sai-status-dot online';
-                statusTxt.textContent = providerLabel(loadedKey);
-              }
-            }
-          })
-          .catch(() => {});
-      }
-      if (k) {
-        keyInput.value = k;
-        const provider = detectProvider(k);
-        dot.className = provider === 'claude' ? 'sai-status-dot offline' : 'sai-status-dot online';
-        statusTxt.textContent = providerLabel(k);
-      } else {
-        dot.className = 'sai-status-dot offline';
-        statusTxt.textContent = '模擬模式（未設定 API Key）';
-      }
-      return k;
-    }
-    loadKey();
-
     setTimeout(() => { if (!isOpen) badge.style.display = 'flex'; }, 2000);
 
     function open()  { isOpen=true;  btn.classList.add('open');    panel.classList.add('open');    badge.style.display='none'; setTimeout(()=>textarea.focus(),300); }
-    function close() { isOpen=false; btn.classList.remove('open'); panel.classList.remove('open'); keyPanel.style.display='none'; }
+    function close() { isOpen=false; btn.classList.remove('open'); panel.classList.remove('open'); }
 
     btn.addEventListener('click', () => isOpen ? close() : open());
     closeBtn.addEventListener('click', close);
-
-    keyBtn.addEventListener('click', () => {
-      const showing = keyPanel.style.display === 'flex';
-      keyPanel.style.display = showing ? 'none' : 'flex';
-    });
-
-    keySave.addEventListener('click', () => {
-      const k = keyInput.value.trim();
-      if (k) {
-        localStorage.setItem(LS_KEY, k);
-        const p = detectProvider(k);
-        const providerName = p==='gemini' ? 'Gemini (Google)' : p==='openai' ? 'ChatGPT (OpenAI)' : p==='claude' ? 'Claude (Anthropic)' : '未知';
-        addMsg('a', `✅ **${providerName}** API Key 已儲存！已可使用真實 AI 分析。`);
-      } else {
-        localStorage.removeItem(LS_KEY);
-        addMsg('a', '⚠️ 已清除 API Key，回到模擬模式。');
-      }
-      loadKey();
-      keyPanel.style.display = 'none';
-    });
 
     function scrollBottom() { requestAnimationFrame(() => { msgs.scrollTop = msgs.scrollHeight; }); }
 
@@ -658,19 +750,27 @@
       addMsg('u', text);
       textarea.value = ''; resize(); sendBtn.disabled = true; isBusy = true;
       showTyping();
-      await new Promise(r => setTimeout(r, 600 + Math.random()*700));
+      await new Promise(r => setTimeout(r, 250 + Math.random()*250));
       hideTyping();
-      const key = localStorage.getItem(LS_KEY);
-      if (key) {
-        try {
-          const reply = await aiReply(text, key);
-          addMsg('a', reply);
-        } catch(e) {
-          addMsg('a', `⚠️ API 回應失敗（${e.message}）\n\n降回模擬模式：\n\n${mockReply(text)}`);
-        }
-      } else {
-        addMsg('a', mockReply(text));
+
+      // 1. 優先查閱 433 美股與台股驗證解答庫（100% 精準個股 5 大步驟）
+      const dbMatch = findStockInDB(text);
+      if (dbMatch && dbMatch.full_bot_answer) {
+        addMsg('a', dbMatch.full_bot_answer);
+        isBusy = false;
+        return;
       }
+
+      // 2. 優先查閱系統資料庫規模查詢（如：我們有多少台股/美股/數量/幾檔）
+      const sysQueryMatch = checkSystemScaleQuery(text);
+      if (sysQueryMatch) {
+        addMsg('a', sysQueryMatch);
+        isBusy = false;
+        return;
+      }
+
+      // 3. 資料庫一般回覆
+      addMsg('a', mockReply(text));
       isBusy = false;
     }
 

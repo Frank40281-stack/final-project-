@@ -276,10 +276,19 @@
           closeModal();
         }
       });
+
+      // 會員登入觸發：點擊時紀錄已登入狀態
+      const menuBtn = document.getElementById('menu-btn');
+      if (menuBtn) {
+        menuBtn.addEventListener('click', function() {
+          localStorage.setItem('is_logged_in', 'true');
+        });
+      }
     })();
   </script>
 
   <script src="js/reload-to-home.js"></script>
+  <script src="js/custom-cursor.js"></script>
   <script src="js/cycle-data.js"></script>
   <script src="js/main.js?v=20260729-header2"></script>
 </body>
