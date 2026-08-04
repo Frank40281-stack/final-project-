@@ -239,7 +239,6 @@
 
     <div class="c-modal__footer">
       <span class="c-modal__footer-note">Alpha 阿爾法投資 V2.1 Quant Research Platform</span>
-      <button class="c-modal__btn-primary" id="guide-modal-confirm">我知道了，開始體驗</button>
     </div>
   </div>
 
@@ -249,7 +248,6 @@
       const modal = document.getElementById('guide-modal');
       const backdrop = document.getElementById('guide-modal-backdrop');
       const closeBtn = document.getElementById('guide-modal-close');
-      const confirmBtn = document.getElementById('guide-modal-confirm');
 
       function openModal() {
         if (modal && backdrop) {
@@ -271,7 +269,6 @@
 
       if (guideBtn) guideBtn.addEventListener('click', openModal);
       if (closeBtn) closeBtn.addEventListener('click', closeModal);
-      if (confirmBtn) confirmBtn.addEventListener('click', closeModal);
       if (backdrop) backdrop.addEventListener('click', closeModal);
 
       document.addEventListener('keydown', function(e) {
