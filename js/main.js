@@ -324,8 +324,8 @@ window.addEventListener('keydown', function(e) {
 
 
 function initLenis() {
-
-
+  /* V2.0: Disabled Lenis smooth scroll for 1:1 instant native scrolling */
+  return;
   if (typeof Lenis === 'undefined') return;
 
 

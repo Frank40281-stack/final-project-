@@ -3360,3 +3360,162 @@ body:has(.cinema-study--tw) .r-shell{
   border-color: #ffffff !important;
   box-shadow: 0 0 24px rgba(245, 215, 127, 0.9), 0 0 40px rgba(212, 175, 55, 0.7) !important;
 }
+
+/* ════════════════════════════════════════════════════════════════
+   SUBPAGE NATIVE CURSOR OVERRIDE (HIDE CUSTOM CURSOR ON RESEARCH PAGES)
+   ════════════════════════════════════════════════════════════════ */
+.cursor {
+  display: none !important;
+}
+
+body, html {
+  cursor: auto !important;
+}
+
+a, button, select, input, label, [role="button"], [data-market], [data-industry], [data-cycle], .market-tabs button, .industry-tabs button, .stock-card {
+  cursor: pointer !important;
+}
+
+/* ════════════════════════════════════════════════════════════════
+   OPTION 2: RESPONSIVE BREAKPOINT & CLICKABILITY FIX (MAX-WIDTH: 1150PX)
+   ════════════════════════════════════════════════════════════════ */
+@media (max-width: 1150px) {
+  .cycle-layout {
+    grid-template-columns: 240px 1fr !important;
+    gap: 24px !important;
+  }
+
+  .cycle-layout aside {
+    position: sticky !important;
+    top: 100px !important;
+    max-height: calc(100vh - 120px) !important;
+    overflow-y: auto !important;
+    overscroll-behavior: contain !important;
+    padding-bottom: 80px !important;
+    z-index: 50 !important;
+  }
+
+  .industry-tabs button {
+    position: relative !important;
+    z-index: 10 !important;
+    pointer-events: auto !important;
+    padding: 14px 0 !important;
+  }
+
+  .stock-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 860px) {
+  .cycle-layout {
+    grid-template-columns: 1fr !important;
+  }
+
+  .cycle-layout aside {
+    position: static !important;
+    max-height: none !important;
+    overflow: visible !important;
+    padding-bottom: 0 !important;
+  }
+
+  .industry-tabs {
+    display: flex !important;
+    overflow-x: auto !important;
+    gap: 8px !important;
+    padding-bottom: 12px !important;
+  }
+
+  .industry-tabs button {
+    min-width: 180px !important;
+    padding: 10px 14px !important;
+    border: 1px solid var(--line) !important;
+    white-space: nowrap !important;
+  }
+}
+
+/* ════════════════════════════════════════════════════════════════
+   UNIVERSAL SIDEBAR SCROLLABILITY & STOCKAI OVERLAP PREVENTION
+   ════════════════════════════════════════════════════════════════ */
+.cycle-layout aside {
+  position: sticky !important;
+  top: 95px !important;
+  max-height: calc(100vh - 110px) !important;
+  overflow-y: auto !important;
+  overscroll-behavior: contain !important;
+  padding-bottom: 130px !important;
+  scrollbar-width: thin !important;
+  scrollbar-color: rgba(189, 255, 84, 0.3) transparent !important;
+}
+
+.cycle-layout aside::-webkit-scrollbar {
+  width: 4px;
+}
+.cycle-layout aside::-webkit-scrollbar-thumb {
+  background: rgba(189, 255, 84, 0.3);
+  border-radius: 4px;
+}
+
+/* Ensure cycle switcher & market tab buttons pop to front on hover with zero overlap */
+.market-tabs button, nav.cycle-switcher button, [data-cycle], [data-market] {
+  position: relative !important;
+  z-index: 1 !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+}
+
+.market-tabs button:hover, nav.cycle-switcher button:hover, [data-cycle]:hover, [data-market]:hover {
+  z-index: 10 !important;
+  cursor: pointer !important;
+  filter: brightness(1.2);
+}
+
+.market-tabs button *, nav.cycle-switcher button * {
+  pointer-events: none !important;
+}
+
+/* Ensure top stock medals pop to front on hover with zero overlap */
+.cycle-top-stock {
+  position: relative !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+}
+
+.cycle-top-stock:hover,
+.cycle-top-stock:focus-visible {
+  z-index: 20 !important;
+  cursor: pointer !important;
+}
+
+.cycle-top-stock::before,
+.cycle-top-stock::after {
+  pointer-events: none !important;
+}
+
+.cycle-top-stock * {
+  pointer-events: none !important;
+}
+
+/* StockAI chatbot button compact tuck & pointer fix on research subpages */
+#sai-btn {
+  cursor: pointer !important;
+  bottom: 14px !important;
+  left: 14px !important;
+  transform: scale(0.85) !important;
+  transform-origin: bottom left !important;
+  z-index: 9999 !important;
+}
+
+#sai-btn:hover {
+  transform: scale(0.9) translateY(-2px) !important;
+  cursor: pointer !important;
+}
+
+#sai-panel:not(.open) {
+  pointer-events: none !important;
+}
+
+
+
+
+

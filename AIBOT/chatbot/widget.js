@@ -87,13 +87,13 @@
     padding: 0 20px 0 14px; height: 52px; border-radius: 999px; border: none;
     background: var(--sai-primary-grad);
     color: var(--sai-btn-color); font-family: 'Inter','Noto Sans TC',sans-serif;
-    font-size: 0.9rem; font-weight: 700; cursor: none !important; letter-spacing: 0.3px;
+    font-size: 0.9rem; font-weight: 700; cursor: pointer !important; letter-spacing: 0.3px;
     box-shadow: var(--sai-btn-shadow);
     pointer-events: auto !important;
     transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1);
     animation: sai-ring 3s ease-in-out infinite;
   }
-  #sai-btn:hover { transform: translateY(-2px) scale(1.04); cursor: none !important; }
+  #sai-btn:hover { transform: translateY(-2px) scale(1.04); cursor: pointer !important; }
   #sai-btn.open { background: linear-gradient(135deg, #2a3142, #1a2035); color: #fff; animation: none; box-shadow: 0 4px 16px rgba(0,0,0,0.5); }
   #sai-btn .sai-btn-icon { font-size: 1.2rem; line-height: 1; pointer-events: none; }
   #sai-btn .sai-btn-label { white-space: nowrap; pointer-events: none; }

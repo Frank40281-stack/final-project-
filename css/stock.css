@@ -182,7 +182,7 @@
   letter-spacing: 0.15em;
   color: var(--gray);
   background: transparent;
-  cursor: none;
+  cursor: pointer;
   transition: all 0.3s;
 }
 .stk-range-btn:hover { border-color: var(--gold); color: var(--gold); }
@@ -243,7 +243,7 @@
   padding: 20px;
   border: 1px solid var(--border);
   border-radius: 4px;
-  cursor: none;
+  cursor: pointer;
   transition: all 0.35s var(--ease-expo);
 }
 .stk-related-card:hover {
