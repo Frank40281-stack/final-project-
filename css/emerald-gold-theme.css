@@ -75,6 +75,14 @@ body {
   margin-top: 10px !important;
 }
 
+/* 轉場色塊出現後必須同步恢復實色文字，避免 Chrome 在合成幀中只顯示色塊。 */
+.s-statement__carry.is-hero-title.is-started .s-statement__carry-line--two {
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
+  -webkit-text-fill-color: #ffffff !important;
+  color: #ffffff !important;
+}
+
 .s-statement__carry-subtitle {
   color: var(--color-emerald-glow) !important;
   font-weight: 300 !important;
