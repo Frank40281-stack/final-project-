@@ -1,0 +1,1747 @@
+{
+  "success": true,
+  "message": "Stock KPI data retrieved successfully",
+  "data": {
+    "symbol": "HONA",
+    "stock_name": "Honeywell Aerospace Inc",
+    "source_section": "1.國防／太空／情報",
+    "policy_subsector": "受惠股",
+    "classification_effective_from": "2025-04-09",
+    "policy_return_now": 5.82,
+    "run_id": 7494,
+    "run_date": "2026-08-05",
+    "scores": {
+      "chip_score": 1.0,
+      "sentiment_score": 0.0,
+      "fundamental_score": 1.0,
+      "technical_score": 1.0,
+      "total_score": 3.0
+    },
+    "score_categories": [
+      {
+        "key": "chip_score",
+        "label": "籌碼",
+        "score": 1.0,
+        "max_score": 7,
+        "stars": {
+          "filled": 1,
+          "half": false,
+          "empty": 6,
+          "max": 7,
+          "items": [
+            "full",
+            "empty",
+            "empty",
+            "empty",
+            "empty",
+            "empty",
+            "empty"
+          ],
+          "text": "★☆☆☆☆☆☆"
+        }
+      },
+      {
+        "key": "sentiment_score",
+        "label": "情緒",
+        "score": 0.0,
+        "max_score": 4,
+        "stars": {
+          "filled": 0,
+          "half": false,
+          "empty": 4,
+          "max": 4,
+          "items": [
+            "empty",
+            "empty",
+            "empty",
+            "empty"
+          ],
+          "text": "☆☆☆☆"
+        }
+      },
+      {
+        "key": "fundamental_score",
+        "label": "基本面",
+        "score": 1.0,
+        "max_score": 6,
+        "stars": {
+          "filled": 1,
+          "half": false,
+          "empty": 5,
+          "max": 6,
+          "items": [
+            "full",
+            "empty",
+            "empty",
+            "empty",
+            "empty",
+            "empty"
+          ],
+          "text": "★☆☆☆☆☆"
+        }
+      },
+      {
+        "key": "technical_score",
+        "label": "技術面",
+        "score": 1.0,
+        "max_score": 4,
+        "stars": {
+          "filled": 1,
+          "half": false,
+          "empty": 3,
+          "max": 4,
+          "items": [
+            "full",
+            "empty",
+            "empty",
+            "empty"
+          ],
+          "text": "★☆☆☆"
+        }
+      }
+    ],
+    "kpis": [
+      {
+        "code": "01",
+        "name": "Institutional Ownership",
+        "value": 13.709,
+        "display_value": "13.71%",
+        "score": 0.0,
+        "score_label": "普通",
+        "score_percent": 0.0,
+        "score_average": 0.78,
+        "score_average_label": "良好",
+        "score_average_percent": 78.0,
+        "status": "OK",
+        "source": "Yahoo Finance/yfinance; Fintel",
+        "detail": "Shares Outstanding=316,939,750; yfinance heldPercentInstitutions=13.71%",
+        "formula": "Institutional shares / shares outstanding * 100"
+      },
+      {
+        "code": "02",
+        "name": "MRQ Institutional Shares Change",
+        "value": null,
+        "display_value": "N/A",
+        "score": 0.0,
+        "score_label": "普通",
+        "score_percent": 0.0,
+        "score_average": 0.42,
+        "score_average_label": "普通",
+        "score_average_percent": 42.0,
+        "status": "需 Fintel 資料",
+        "source": "Fintel",
+        "detail": "Fintel change shares=N/A; Fintel 自動抓取成功 (chrome120, session warmup)",
+        "formula": "(current institutional shares - prior institutional shares) / prior institutional shares * 100"
+      },
+      {
+        "code": "03",
+        "name": "Owners Count Change",
+        "value": null,
+        "display_value": "N/A",
+        "score": 0.0,
+        "score_label": "普通",
+        "score_percent": 0.0,
+        "score_average": 0.32,
+        "score_average_label": "普通",
+        "score_average_percent": 32.0,
+        "status": "需 Fintel 資料",
+        "source": "Fintel",
+        "detail": "Owners=734; Fintel 自動抓取成功 (chrome120, session warmup)",
+        "formula": "(current owners - prior owners) / prior owners * 100"
+      },
+      {
+        "code": "04",
+        "name": "Portfolio Allocation Growth",
+        "value": 100.0,
+        "display_value": "100.00%",
+        "score": 1.0,
+        "score_label": "優質",
+        "score_percent": 100.0,
+        "score_average": 0.61,
+        "score_average_label": "良好",
+        "score_average_percent": 61.0,
+        "status": "歷史資料備援",
+        "source": "Fintel",
+        "detail": "Historical fallback from run_id=2185 queried_at=2026-07-17T10:54:05; live Fintel status: Fintel 自動抓取成功 (chrome120, session warmup); previous detail: Source=yfinance 估算; Average Portfolio Allocation=N/A; Fintel curl_cffi 抓取失敗：chrome120: HTTP 403; chrome124: HTTP 403; chrome136: HTTP 403; safari17_0: HTTP 403; 未啟用 Fintel Playwright fallback",
+        "formula": "(new allocation - old allocation) / old allocation * 100"
+      },
+      {
+        "code": "05",
+        "name": "Buyer/Seller Ratio",
+        "value": null,
+        "display_value": "N/A",
+        "score": 0.0,
+        "score_label": "普通",
+        "score_percent": 0.0,
+        "score_average": 0.55,
+        "score_average_label": "良好",
+        "score_average_percent": 55.0,
+        "status": "需 Buyers/Sellers 資料",
+        "source": "MarketBeat Institutional Ownership",
+        "detail": "Source=yfinance 估算/yfinance 估算; Buyers=10; Sellers=0; MarketBeat Institutional Ownership 自動抓取成功 (NASDAQ)",
+        "formula": "buyers / sellers"
+      },
+      {
+        "code": "06",
+        "name": "Relative Net Inflow",
+        "value": 0.3203121417013947,
+        "display_value": "0.32%",
+        "score": 0.0,
+        "score_label": "普通",
+        "score_percent": 0.0,
+        "score_average": 0.23,
+        "score_average_label": "普通",
+        "score_average_percent": 23.0,
+        "status": "yfinance 估算",
+        "source": "MarketBeat Institutional Ownership + yfinance market cap fallback",
+        "detail": "Source=yfinance 估算; Inflows=$207.17M; Outflows=$0; Net=$207.17M; Market Cap=$64.68B",
+        "formula": "(inflows - outflows) / market cap * 100"
+      },
+      {
+        "code": "07",
+        "name": "Institutional Activity Score",
+        "value": null,
+        "display_value": "N/A",
+        "score": 0.0,
+        "score_label": "普通",
+        "score_percent": 0.0,
+        "score_average": 0.2,
+        "score_average_label": "普通",
+        "score_average_percent": 20.0,
+        "status": "需 KPI 5 與 KPI 6 資料",
+        "source": "MarketBeat Institutional Ownership",
+        "detail": "Source=KPI 5/6; Buyer/Seller Ratio=N/A; Relative Net Inflow=0.32%",
+        "formula": "buyer/seller ratio * relative net inflow %"
+      },
+      {
+        "code": "08",
+        "name": "Short Interest %",
+        "value": null,
+        "display_value": "N/A",
+        "score": 0.0,
+        "score_label": "普通",
+        "score_percent": 0.0,
+        "score_average": 0.72,
+        "score_average_label": "良好",
+        "score_average_percent": 72.0,
+        "status": "需 MarketBeat 資料",
+        "source": "MarketBeat Short Interest",
+        "detail": "Current short=N/A; Previous short=N/A; Record date=N/A; MarketBeat Short Interest 自動抓取成功 (NASDAQ)",
+        "formula": "short shares / float * 100"
+      },
+      {
+        "code": "09",
+        "name": "Short Interest Change",
+        "value": null,
+        "display_value": "N/A",
+        "score": 0.0,
+        "score_label": "普通",
+        "score_percent": 0.0,
+        "score_average": 0.42,
+        "score_average_label": "普通",
+        "score_average_percent": 42.0,
+        "status": "需 MarketBeat 資料",
+        "source": "MarketBeat Short Interest",
+        "detail": "Current short=N/A; Previous short=N/A; Record date=N/A; MarketBeat Short Interest 自動抓取成功 (NASDAQ)",
+        "formula": "(current short interest - previous short interest) / previous short interest * 100"
+      },
+      {
+        "code": "10",
+        "name": "Days To Cover",
+        "value": null,
+        "display_value": "N/A",
+        "score": 0.0,
+        "score_label": "普通",
+        "score_percent": 0.0,
+        "score_average": 0.31,
+        "score_average_label": "普通",
+        "score_average_percent": 31.0,
+        "status": "需 MarketBeat 資料",
+        "source": "MarketBeat Short Interest",
+        "detail": "Current short=N/A; Previous short=N/A; Record date=N/A; MarketBeat Short Interest 自動抓取成功 (NASDAQ)",
+        "formula": "short shares / average daily volume"
+      },
+      {
+        "code": "11",
+        "name": "ESG Score",
+        "value": null,
+        "display_value": "N/A",
+        "score": 0.0,
+        "score_label": "普通",
+        "score_percent": 0.0,
+        "score_average": 0.3,
+        "score_average_label": "普通",
+        "score_average_percent": 30.0,
+        "status": "需 CSRHub / StockCircle ESG 資料",
+        "source": "CSRHub ESG Rank / StockCircle ESG Score fallback",
+        "detail": "Environment=N/A/100; Social=N/A/100; Governance=N/A/100; Total=N/A/100; CSRHub 抓取失敗：chrome120: HTTP 429; chrome124: HTTP 429; chrome136: HTTP 429; safari17_0: HTTP 429; url=https://www.csrhub.com/CSR_and_sustainability_information/Honeywell-Aerospace-Inc; fallback StockCircle Playwright 渲染抓取成功; static fetch failed: chrome120: HTTP 404; chrome124: HTTP 404; chrome136: HTTP 404; safari17_0: HTTP 404",
+        "formula": "CSRHub ESG Rank percentile; fallback StockCircle ESG total"
+      },
+      {
+        "code": "12",
+        "name": "Institutional Float Control",
+        "value": null,
+        "display_value": "N/A",
+        "score": 0.0,
+        "score_label": "普通",
+        "score_percent": 0.0,
+        "score_average": 0.85,
+        "score_average_label": "良好",
+        "score_average_percent": 85.0,
+        "status": "缺資料",
+        "source": "Yahoo Finance/yfinance",
+        "detail": "Institutional shares estimate=43,449,270; Float=N/A",
+        "formula": "shares outstanding * institutional ownership / float * 100"
+      },
+      {
+        "code": "13",
+        "name": "Volume Activity",
+        "value": 0.9093368692314548,
+        "display_value": "0.91%",
+        "score": 0.0,
+        "score_label": "普通",
+        "score_percent": 0.0,
+        "score_average": 0.03,
+        "score_average_label": "普通",
+        "score_average_percent": 3.0,
+        "status": "OK",
+        "source": "Yahoo Finance/yfinance",
+        "detail": "10-day avg volume=2,882,050; Float version=N/A",
+        "formula": "10-day average volume / shares outstanding * 100"
+      },
+      {
+        "code": "14",
+        "name": "Volume Growth",
+        "value": -0.18563349160666479,
+        "display_value": "-0.19%",
+        "score": 0.0,
+        "score_label": "普通",
+        "score_percent": 0.0,
+        "score_average": 0.14,
+        "score_average_label": "普通",
+        "score_average_percent": 14.0,
+        "status": "OK",
+        "source": "Yahoo Finance/yfinance",
+        "detail": "10-day avg volume=2,882,050; 3-month avg volume=2,887,410",
+        "formula": "(10-day average volume - 3-month average volume) / 3-month average volume * 100"
+      },
+      {
+        "code": "15",
+        "name": "Insider Ownership",
+        "value": 0.0030000001,
+        "display_value": "0.003%",
+        "score": 0.0,
+        "score_label": "普通",
+        "score_percent": 0.0,
+        "score_average": 0.2,
+        "score_average_label": "普通",
+        "score_average_percent": 20.0,
+        "status": "OK",
+        "source": "Yahoo Finance/yfinance",
+        "detail": "yfinance heldPercentInsiders=0.003%",
+        "formula": "insider ownership * 100"
+      },
+      {
+        "code": "16",
+        "name": "Form 4 Net Insider Trading",
+        "value": null,
+        "display_value": "N/A",
+        "score": 0.5,
+        "score_label": "良好",
+        "score_percent": 50.0,
+        "score_average": 0.5,
+        "score_average_label": "良好",
+        "score_average_percent": 50.0,
+        "status": "OK",
+        "source": "Finviz Insider Trading / SEC Form 4",
+        "detail": "Buy=N/A; Sale=N/A; Other=N/A; Period=2026-04-01 to 2026-06-30; Fetch ID=12; Fetched at=2026-07-25T09:23:27; Previous quarter=2026-04-01 to 2026-06-30; Finviz Form 4 使用 24 小時內快取 fetch_id=12; Finviz recent feed has no HONA row for previous quarter 2026-04-01 to 2026-06-30; SEC CIK cache hit; SEC Form 4 fallback found no parsable Form 4 transactions for previous quarter 2026-04-01 to 2026-06-30; filing_grace_days=10; skipped=12",
+        "formula": "sum(buy value) - sum(sale value)"
+      },
+      {
+        "code": "17",
+        "name": "13F Holder Shares Change",
+        "value": null,
+        "display_value": "N/A",
+        "score": 0.5,
+        "score_label": "良好",
+        "score_percent": 50.0,
+        "score_average": 0.58,
+        "score_average_label": "良好",
+        "score_average_percent": 58.0,
+        "status": "需 WhaleWisdom 資料",
+        "source": "WhaleWisdom stock holdings",
+        "detail": "Stock ID=N/A; Rows downloaded=0; Total records new=N/A, closed_out=N/A, added_to=N/A, reduced=N/A; Downloaded new=N/A, closed_out=N/A, added_to=N/A, reduced=N/A; WhaleWisdom stock id resolver failed: Failed to perform, curl: (28) Connection timed out after 3015 milliseconds. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.",
+        "formula": "sum(new + closed out + added to + reduced change in shares)"
+      },
+      {
+        "code": "18",
+        "name": "RSI 14 Momentum",
+        "value": 74.29258704032355,
+        "display_value": "74.29",
+        "score": 0.0,
+        "score_label": "普通",
+        "score_percent": 0.0,
+        "score_average": 0.41,
+        "score_average_label": "普通",
+        "score_average_percent": 41.0,
+        "status": "OK",
+        "source": "Yahoo Finance/yfinance",
+        "detail": "Date=2026-07-29; Close=205.19; RSI14=74.29; Chart=0_png\\HONA_KPI_18_19_20_combined.png; OK",
+        "formula": "RSI14 with 14-day price/RSI previous-high divergence filter"
+      },
+      {
+        "code": "19",
+        "name": "Composite RS Line",
+        "value": 2.367410349390761,
+        "display_value": "2.37",
+        "score": 0.0,
+        "score_label": "普通",
+        "score_percent": 0.0,
+        "score_average": 0.4,
+        "score_average_label": "普通",
+        "score_average_percent": 40.0,
+        "status": "OK",
+        "source": "Yahoo Finance/yfinance",
+        "detail": "Date=2026-07-29; Composite RS=2.37; Composite 21MA=2.43; SP500=2.80; NASDAQ=0.84; DJI=0.40; Weights=SP500 80%, NASDAQ 10%, DJI 10%; Chart=0_png\\HONA_KPI_18_19_20_combined.png; OK",
+        "formula": "RS Composite = SP500 80% + NASDAQ 10% + DJI 10%; 3-day stable filter"
+      },
+      {
+        "code": "20",
+        "name": "OBV 55D Money Flow",
+        "value": -9848617.0,
+        "display_value": "-9,848,617",
+        "score": 0.0,
+        "score_label": "普通",
+        "score_percent": 0.0,
+        "score_average": 0.47,
+        "score_average_label": "普通",
+        "score_average_percent": 47.0,
+        "status": "OK",
+        "source": "Yahoo Finance/yfinance",
+        "detail": "Date=2026-07-29; Close=205.19; 55D price high=N/A; OBV=-9,848,617; 55D OBV high=N/A; Chart=0_png\\HONA_KPI_18_19_20_combined.png; OK",
+        "formula": "OBV with 55-day price/OBV previous-high filter and 3-day OBV persistence"
+      },
+      {
+        "code": "21",
+        "name": "Cumulative Alpha Excess Return",
+        "value": 5.747383979206589,
+        "display_value": "5.75%",
+        "score": 1.0,
+        "score_label": "優質",
+        "score_percent": 100.0,
+        "score_average": 0.37,
+        "score_average_label": "普通",
+        "score_average_percent": 37.0,
+        "status": "OK",
+        "source": "Yahoo Finance/yfinance vs S&P 500",
+        "detail": "Date=2026-07-29; R_P=2.60%; R_B=-3.15%; Excess Return=5.75%; Signals=P1(False), P2(False), P3(False); Chart=0_png\\HONA_KPI_18_19_20_combined.png; OK",
+        "formula": "Excess Return = R_P - R_B with Pattern 1/2/3 Entry Signals"
+      }
+    ],
+    "backtest": {
+      "symbol": "HONA",
+      "source_csv": "0_data/HONA_KPI_18_19_20_1y_report.csv",
+      "image_url": "/api/stocks/HONA/backtest-image/",
+      "summary": {
+        "latest_date": "2026-08-05",
+        "latest_close": 203.63999938964844,
+        "latest_judgments": {
+          "kpi18": "計算中",
+          "kpi19": "計算中",
+          "kpi20": "計算中"
+        },
+        "trigger_count": 0,
+        "win_count": 0,
+        "loss_count": 0,
+        "win_rate": null,
+        "avg_ret_m": null,
+        "avg_ret_q": null,
+        "avg_ret_h": null,
+        "avg_ret_y": null,
+        "avg_ret_2y": null
+      },
+      "series": {
+        "price": [
+          {
+            "date": "2026-06-15",
+            "close": 200.0,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-06-16",
+            "close": 269.95001220703125,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-06-17",
+            "close": 269.95001220703125,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-06-18",
+            "close": 267.79998779296875,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-06-22",
+            "close": 261.0299987792969,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-06-23",
+            "close": 245.0,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-06-24",
+            "close": 245.0,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-06-25",
+            "close": 221.00999450683594,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-06-26",
+            "close": 221.00999450683594,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-06-29",
+            "close": 220.19000244140625,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-06-30",
+            "close": 221.0800018310547,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-07-01",
+            "close": 227.2899932861328,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-07-02",
+            "close": 247.14999389648438,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-07-06",
+            "close": 237.6999969482422,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-07-07",
+            "close": 238.13999938964844,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-07-08",
+            "close": 224.35000610351562,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-07-09",
+            "close": 223.1199951171875,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-07-10",
+            "close": 220.75,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-07-13",
+            "close": 213.0500030517578,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-07-14",
+            "close": 207.50999450683594,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-07-15",
+            "close": 212.5500030517578,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-07-16",
+            "close": 208.3699951171875,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-07-17",
+            "close": 211.6300048828125,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-07-20",
+            "close": 202.47000122070312,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-07-21",
+            "close": 200.13999938964844,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-07-22",
+            "close": 207.77999877929688,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-07-23",
+            "close": 195.8699951171875,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-07-24",
+            "close": 204.07000732421875,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-07-27",
+            "close": 210.8300018310547,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-07-28",
+            "close": 215.89999389648438,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-07-29",
+            "close": 205.19000244140625,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-07-30",
+            "close": 204.32000732421875,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-07-31",
+            "close": 206.74000549316406,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-08-03",
+            "close": 208.27000427246094,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-08-04",
+            "close": 216.47999572753906,
+            "price_50ma": null
+          },
+          {
+            "date": "2026-08-05",
+            "close": 203.63999938964844,
+            "price_50ma": null
+          }
+        ],
+        "rsi14": [
+          {
+            "date": "2026-06-15",
+            "value": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-16",
+            "value": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-17",
+            "value": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-18",
+            "value": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-22",
+            "value": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-23",
+            "value": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-24",
+            "value": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-25",
+            "value": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-26",
+            "value": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-29",
+            "value": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-30",
+            "value": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-01",
+            "value": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-02",
+            "value": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-06",
+            "value": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-07",
+            "value": 91.67809116085571,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-08",
+            "value": 88.63748238393528,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-09",
+            "value": 88.35599390886455,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-10",
+            "value": 87.77756514643623,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-13",
+            "value": 85.81199013220994,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-14",
+            "value": 84.34850588512617,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-15",
+            "value": 84.6057259323251,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-16",
+            "value": 83.38181206044422,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-17",
+            "value": 83.58129986481579,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-20",
+            "value": 80.65170434243997,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-21",
+            "value": 79.88468316045316,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-22",
+            "value": 80.53826082329091,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-23",
+            "value": 76.3723521556628,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-24",
+            "value": 77.24506309569526,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-27",
+            "value": 77.96754882739856,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-28",
+            "value": 78.51843908791665,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-29",
+            "value": 74.29258704032355,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-30",
+            "value": 73.94444173831187,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-31",
+            "value": 74.30514013865223,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-08-03",
+            "value": 74.54506571353305,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-08-04",
+            "value": 75.8482766622251,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-08-05",
+            "value": 69.82719886808952,
+            "judgment": "計算中"
+          }
+        ],
+        "rs_composite": [
+          {
+            "date": "2026-06-15",
+            "value": 2.231659672575671,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-16",
+            "value": 3.0293750588032498,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-17",
+            "value": 3.066638562435273,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-18",
+            "value": 3.0092353087679635,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-22",
+            "value": 2.9446921613227435,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-23",
+            "value": 2.8042401825005534,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-24",
+            "value": 2.8071068241102717,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-25",
+            "value": 2.5328227738832028,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-26",
+            "value": 2.534203359986199,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-29",
+            "value": 2.494971884173755,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-30",
+            "value": 2.4849814903709113,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-01",
+            "value": 2.5605991506724983,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-02",
+            "value": 2.7845644761166564,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-06",
+            "value": 2.6586765571092923,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-07",
+            "value": 2.6760878132366464,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-08",
+            "value": 2.5281732994611654,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-09",
+            "value": 2.493825719905091,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-10",
+            "value": 2.457165335593236,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-13",
+            "value": 2.390820774371437,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-14",
+            "value": 2.3196536965132863,
+            "ma21": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-15",
+            "value": 2.366799178122328,
+            "ma21": 2.6274425371443537,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-16",
+            "value": 2.3328078122303477,
+            "ma21": 2.632259115223148,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-17",
+            "value": 2.3937037946745976,
+            "ma21": 2.601989055026545,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-20",
+            "value": 2.294569626848038,
+            "ma21": 2.5652238676176293,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-21",
+            "value": 2.2479959194171673,
+            "ma21": 2.5289743728866396,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-22",
+            "value": 2.3372946914569352,
+            "ma21": 2.5000506838454104,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-23",
+            "value": 2.230937327455601,
+            "ma21": 2.472750547890888,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-24",
+            "value": 2.3235875339424927,
+            "ma21": 2.449725819787661,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-27",
+            "value": 2.4001337402675187,
+            "ma21": 2.4434072943773906,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-28",
+            "value": 2.452729936477101,
+            "ma21": 2.439527607543624,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-29",
+            "value": 2.367410356098549,
+            "ma21": 2.433453249063852,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-30",
+            "value": 2.318155678622993,
+            "ma21": 2.4255091627901413,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-31",
+            "value": 2.329121308596191,
+            "ma21": 2.4144864084055553,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-08-03",
+            "value": 2.311705998447867,
+            "ma21": 2.3919693380403753,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-08-04",
+            "value": 2.3599804387358905,
+            "ma21": 2.377745713355928,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-08-05",
+            "value": 2.2240013716436087,
+            "ma21": 2.356217787565783,
+            "judgment": "計算中"
+          }
+        ],
+        "obv55": [
+          {
+            "date": "2026-06-15",
+            "value": 0.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-16",
+            "value": 7300.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-17",
+            "value": 7300.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-18",
+            "value": 4500.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-22",
+            "value": -5000.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-23",
+            "value": -13400.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-24",
+            "value": -13400.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-25",
+            "value": -57400.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-26",
+            "value": -57400.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-29",
+            "value": -8528600.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-06-30",
+            "value": -2542300.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-01",
+            "value": 3967400.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-02",
+            "value": 9524600.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-06",
+            "value": 1973800.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-07",
+            "value": 6839900.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-08",
+            "value": 2683200.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-09",
+            "value": -712000.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-10",
+            "value": -2638200.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-13",
+            "value": -5594900.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-14",
+            "value": -8929100.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-15",
+            "value": -6821300.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-16",
+            "value": -9699800.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-17",
+            "value": -7151300.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-20",
+            "value": -10430500.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-21",
+            "value": -13651700.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-22",
+            "value": -11302900.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-23",
+            "value": -14739100.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-24",
+            "value": -12029700.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-27",
+            "value": -10179200.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-28",
+            "value": -7963800.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-29",
+            "value": -10066300.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-30",
+            "value": -12240400.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-07-31",
+            "value": -9921400.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-08-03",
+            "value": -6593100.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-08-04",
+            "value": -3776800.0,
+            "high55": null,
+            "judgment": "計算中"
+          },
+          {
+            "date": "2026-08-05",
+            "value": -7934757.0,
+            "high55": null,
+            "judgment": "計算中"
+          }
+        ],
+        "kpi21_returns": [
+          {
+            "date": "2026-06-15",
+            "r_p": 0.0,
+            "r_b": 0.0
+          },
+          {
+            "date": "2026-06-16",
+            "r_p": 34.975006103515625,
+            "r_b": -0.5684179609759754
+          },
+          {
+            "date": "2026-06-17",
+            "r_p": 34.975006103515625,
+            "r_b": -1.7763408700535277
+          },
+          {
+            "date": "2026-06-18",
+            "r_p": 33.89999389648437,
+            "r_b": -0.7109862165705971
+          },
+          {
+            "date": "2026-06-22",
+            "r_p": 30.514999389648434,
+            "r_b": -1.0788571735870778
+          },
+          {
+            "date": "2026-06-23",
+            "r_p": 22.500000000000007,
+            "r_b": -2.4996402990695055
+          },
+          {
+            "date": "2026-06-24",
+            "r_p": 22.500000000000007,
+            "r_b": -2.5954765200289054
+          },
+          {
+            "date": "2026-06-25",
+            "r_p": 10.504997253417958,
+            "r_b": -2.6051396447563824
+          },
+          {
+            "date": "2026-06-26",
+            "r_p": 10.504997253417958,
+            "r_b": -2.6510766530762453
+          },
+          {
+            "date": "2026-06-29",
+            "r_p": 10.095001220703125,
+            "r_b": -1.5072212304861443
+          },
+          {
+            "date": "2026-06-30",
+            "r_p": 10.540000915527337,
+            "r_b": -0.727138824392648
+          },
+          {
+            "date": "2026-07-01",
+            "r_p": 13.6449966430664,
+            "r_b": -0.9406583309127026
+          },
+          {
+            "date": "2026-07-02",
+            "r_p": 23.574996948242188,
+            "r_b": -0.9405225947125229
+          },
+          {
+            "date": "2026-07-06",
+            "r_p": 18.8499984741211,
+            "r_b": -0.22318263124753157
+          },
+          {
+            "date": "2026-07-07",
+            "r_p": 19.06999969482421,
+            "r_b": -0.667699295968649
+          },
+          {
+            "date": "2026-07-08",
+            "r_p": 12.175003051757805,
+            "r_b": -0.947542095350673
+          },
+          {
+            "date": "2026-07-09",
+            "r_p": 11.55999755859376,
+            "r_b": -0.14097820296388175
+          },
+          {
+            "date": "2026-07-10",
+            "r_p": 10.375,
+            "r_b": 0.27931278183843666
+          },
+          {
+            "date": "2026-07-13",
+            "r_p": 6.525001525878915,
+            "r_b": -0.51560365184673
+          },
+          {
+            "date": "2026-07-14",
+            "r_p": 3.7549972534179688,
+            "r_b": -0.14164395670764884
+          },
+          {
+            "date": "2026-07-15",
+            "r_p": 6.275001525878898,
+            "r_b": 0.239729520412979
+          },
+          {
+            "date": "2026-07-16",
+            "r_p": 4.184997558593739,
+            "r_b": -0.27163399108510733
+          },
+          {
+            "date": "2026-07-17",
+            "r_p": 5.815002441406247,
+            "r_b": -1.2787448874313823
+          },
+          {
+            "date": "2026-07-20",
+            "r_p": 1.2350006103515554,
+            "r_b": -1.469499494091786
+          },
+          {
+            "date": "2026-07-21",
+            "r_p": 0.06999969482421875,
+            "r_b": -0.596877317614819
+          },
+          {
+            "date": "2026-07-22",
+            "r_p": 3.8899993896484464,
+            "r_b": -0.7324325361998785
+          },
+          {
+            "date": "2026-07-23",
+            "r_p": -2.0650024414062496,
+            "r_b": -1.9325473819524874
+          },
+          {
+            "date": "2026-07-24",
+            "r_p": 2.0350036621093803,
+            "r_b": -1.883831013343129
+          },
+          {
+            "date": "2026-07-27",
+            "r_p": 5.415000915527335,
+            "r_b": -1.867943414292872
+          },
+          {
+            "date": "2026-07-28",
+            "r_p": 7.949996948242188,
+            "r_b": -1.6614434084109675
+          },
+          {
+            "date": "2026-07-29",
+            "r_p": 2.5950012207031303,
+            "r_b": -3.152382758503458
+          },
+          {
+            "date": "2026-07-30",
+            "r_p": 2.1600036621093777,
+            "r_b": -1.5442901403938891
+          },
+          {
+            "date": "2026-07-31",
+            "r_p": 3.370002746582035,
+            "r_b": -0.8547437798239854
+          },
+          {
+            "date": "2026-08-03",
+            "r_p": 4.135002136230459,
+            "r_b": 0.6117048815779125
+          },
+          {
+            "date": "2026-08-04",
+            "r_p": 8.23999786376952,
+            "r_b": 2.412271431550228
+          },
+          {
+            "date": "2026-08-05",
+            "r_p": 1.8199996948242259,
+            "r_b": 2.2405780655729846
+          }
+        ],
+        "kpi21_alpha": [
+          {
+            "date": "2026-06-15",
+            "excess_return": 0.0,
+            "judgment": "落後大盤",
+            "p1": false,
+            "p2": false,
+            "p3": false
+          },
+          {
+            "date": "2026-06-16",
+            "excess_return": 35.5434240644916,
+            "judgment": "超越大盤",
+            "p1": false,
+            "p2": false,
+            "p3": false
+          },
+          {
+            "date": "2026-06-17",
+            "excess_return": 36.751346973569156,
+            "judgment": "超越大盤",
+            "p1": false,
+            "p2": false,
+            "p3": false
+          },
+          {
+            "date": "2026-06-18",
+            "excess_return": 34.610980113054964,
+            "judgment": "超越大盤",
+            "p1": false,
+            "p2": false,
+            "p3": false
+          },
+          {
+            "date": "2026-06-22",
+            "excess_return": 31.593856563235512,
+            "judgment": "超越大盤",
+            "p1": false,
+            "p2": false,
+            "p3": false
+          },
+          {
+            "date": "2026-06-23",
+            "excess_return": 24.99964029906951,
+            "judgment": "超越大盤",
+            "p1": false,
+            "p2": false,
+            "p3": false
+          },
+          {
+            "date": "2026-06-24",
+            "excess_return": 25.095476520028914,
+            "judgment": "超越大盤",
+            "p1": false,
+            "p2": false,
+            "p3": false
+          },
+          {
+            "date": "2026-06-25",
+            "excess_return": 13.110136898174341,
+            "judgment": "超越大盤",
+            "p1": false,
+            "p2": false,
+            "p3": false
+          },
+          {
+            "date": "2026-06-26",
+            "excess_return": 13.156073906494203,
+            "judgment": "超越大盤",
+            "p1": false,
+            "p2": false,
+            "p3": false
+          },
+          {
+            "date": "2026-06-29",
+            "excess_return": 11.60222245118927,
+            "judgment": "超越大盤",
+            "p1": false,
+            "p2": false,
+            "p3": false
+          },
+          {
+            "date": "2026-06-30",
+            "excess_return": 11.267139739919985,
+            "judgment": "超越大盤",
+            "p1": false,
+            "p2": false,
+            "p3": false
+          },
+          {
+            "date": "2026-07-01",
+            "excess_return": 14.585654973979102,
+            "judgment": "超越大盤",
+            "p1": false,
+            "p2": false,
+            "p3": false
+          },
+          {
+            "date": "2026-07-02",
+            "excess_return": 24.51551954295471,
+            "judgment": "超越大盤",
+            "p1": false,
+            "p2": false,
+            "p3": false
+          },
+          {
+            "date": "2026-07-06",
+            "excess_return": 19.073181105368633,
+            "judgment": "超越大盤",
+            "p1": false,
+            "p2": false,
+            "p3": false
+          },
+          {
+            "date": "2026-07-07",
+            "excess_return": 19.73769899079286,
+            "judgment": "超越大盤",
+            "p1": false,
+            "p2": false,
+            "p3": false
+          },
+          {
+            "date": "2026-07-08",
+            "excess_return": 13.122545147108479,
+            "judgment": "超越大盤",
+            "p1": false,
+            "p2": false,
+            "p3": false
+          },
+          {
+            "date": "2026-07-09",
+            "excess_return": 11.700975761557643,
+            "judgment": "超越大盤",
+            "p1": false,
+            "p2": false,
+            "p3": false
+          },
+          {
+            "date": "2026-07-10",
+            "excess_return": 10.095687218161563,
+            "judgment": "超越大盤",
+            "p1": false,
+            "p2": false,
+            "p3": false
+          },
+          {
+            "date": "2026-07-13",
+            "excess_return": 7.040605177725645,
+            "judgment": "超越大盤",
+            "p1": false,
+            "p2": false,
+            "p3": false
+          },
+          {
+            "date": "2026-07-14",
+            "excess_return": 3.8966412101256176,
+            "judgment": "超越大盤",
+            "p1": false,
+            "p2": false,
+            "p3": false
+          },
+          {
+            "date": "2026-07-15",
+            "excess_return": 6.035272005465919,
+            "judgment": "超越大盤",
+            "p1": false,
+            "p2": false,
+            "p3": false
+          },
+          {
+            "date": "2026-07-16",
+            "excess_return": 4.456631549678846,
+            "judgment": "超越大盤",
+            "p1": false,
+            "p2": false,
+            "p3": false
+          },
+          {
+            "date": "2026-07-17",
+            "excess_return": 7.09374732883763,
+            "judgment": "超越大盤",
+            "p1": false,
+            "p2": false,
+            "p3": false
+          },
+          {
+            "date": "2026-07-20",
+            "excess_return": 2.7045001044433414,
+            "judgment": "超越大盤",
+            "p1": false,
+            "p2": false,
+            "p3": false
+          },
+          {
+            "date": "2026-07-21",
+            "excess_return": 0.6668770124390377,
+            "judgment": "超越大盤",
+            "p1": false,
+            "p2": false,
+            "p3": false
+          },
+          {
+            "date": "2026-07-22",
+            "excess_return": 4.622431925848325,
+            "judgment": "超越大盤",
+            "p1": false,
+            "p2": false,
+            "p3": false
+          },
+          {
+            "date": "2026-07-23",
+            "excess_return": -0.13245505945376213,
+            "judgment": "落後大盤",
+            "p1": false,
+            "p2": false,
+            "p3": false
+          },
+          {
+            "date": "2026-07-24",
+            "excess_return": 3.9188346754525094,
+            "judgment": "超越大盤",
+            "p1": false,
+            "p2": false,
+            "p3": false
+          },
+          {
+            "date": "2026-07-27",
+            "excess_return": 7.282944329820207,
+            "judgment": "超越大盤",
+            "p1": false,
+            "p2": false,
+            "p3": false
+          },
+          {
+            "date": "2026-07-28",
+            "excess_return": 9.611440356653155,
+            "judgment": "超越大盤",
+            "p1": false,
+            "p2": false,
+            "p3": false
+          },
+          {
+            "date": "2026-07-29",
+            "excess_return": 5.747383979206589,
+            "judgment": "超越大盤",
+            "p1": false,
+            "p2": false,
+            "p3": false
+          },
+          {
+            "date": "2026-07-30",
+            "excess_return": 3.704293802503267,
+            "judgment": "超越大盤",
+            "p1": false,
+            "p2": false,
+            "p3": false
+          },
+          {
+            "date": "2026-07-31",
+            "excess_return": 4.224746526406021,
+            "judgment": "超越大盤",
+            "p1": false,
+            "p2": false,
+            "p3": false
+          },
+          {
+            "date": "2026-08-03",
+            "excess_return": 3.5232972546525465,
+            "judgment": "超越大盤",
+            "p1": false,
+            "p2": false,
+            "p3": false
+          },
+          {
+            "date": "2026-08-04",
+            "excess_return": 5.8277264322192925,
+            "judgment": "超越大盤",
+            "p1": false,
+            "p2": false,
+            "p3": false
+          },
+          {
+            "date": "2026-08-05",
+            "excess_return": -0.4205783707487587,
+            "judgment": "落後大盤",
+            "p1": false,
+            "p2": false,
+            "p3": false
+          }
+        ]
+      },
+      "markers": {
+        "kpi18": [],
+        "kpi19": [],
+        "kpi20": [],
+        "kpi21": []
+      },
+      "triggers": []
+    },
+    "backtest_error": null
+  }
+}
