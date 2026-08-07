@@ -244,7 +244,9 @@ window.SECTORS = SECTORS;
 ───────────────────────────────────────────── */
 
 
-if (typeof ScrollTrigger !== 'undefined') {
+const MOBILE_LITE = window.__ALPHA_MOBILE_LITE__ === true;
+
+if (!MOBILE_LITE && typeof ScrollTrigger !== 'undefined' && typeof gsap !== 'undefined') {
 
 
   gsap.registerPlugin(ScrollTrigger);
@@ -257,6 +259,7 @@ if (typeof ScrollTrigger !== 'undefined') {
 
 
 let lenis;
+
 
 const HERO_REVEAL_PANEL_COUNT = 6;
 const HERO_REVEAL_MOBILE_PANEL_COUNT = 5;
@@ -311,6 +314,7 @@ function blockTransitionTouchMove(e) {
   }
 }
 
+if (!MOBILE_LITE) {
 window.addEventListener('wheel', blockTransitionInput, { capture: true, passive: false });
 window.addEventListener('touchstart', rememberTransitionTouch, { capture: true, passive: true });
 window.addEventListener('touchmove', blockTransitionTouchMove, { capture: true, passive: false });
@@ -321,6 +325,7 @@ window.addEventListener('keydown', function(e) {
     stopTransitionEvent(e);
   }
 }, { capture: true });
+}
 
 
 function initLenis() {
@@ -363,6 +368,8 @@ function initLenis() {
 
 
 function initCursor() {
+
+  if (MOBILE_LITE) return;
 
 
   const cursor = document.getElementById('cursor');
@@ -2096,6 +2103,18 @@ function goToIndustry(id) {
 
 
 document.addEventListener('DOMContentLoaded', () => {
+
+  if (MOBILE_LITE) {
+    document.documentElement.classList.add('is-hero-first-frame-ready');
+    document.documentElement.classList.remove('is-home-booting');
+    document.body.classList.add('on-white-hero');
+    document.body.style.background = '#eef0ec';
+    buildHeroGallery();
+    buildStatementStrip();
+    buildIndustryCards();
+    buildMenuSectors();
+    return;
+  }
 
   // Avoid a permanently locked page if an external animation dependency fails.
   window.setTimeout(() => {

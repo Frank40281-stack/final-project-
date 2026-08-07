@@ -1,0 +1,67 @@
+/* Mobile Lite keeps the desktop composition inside the 1440px logical viewport. */
+html.mobile-lite {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  touch-action: pan-y;
+  overscroll-behavior-y: auto;
+}
+
+html.mobile-lite body {
+  touch-action: pan-y;
+  overscroll-behavior-y: auto;
+  background-attachment: scroll !important;
+}
+
+html.mobile-lite .cursor,
+html.mobile-lite #cursor { display: none !important; }
+
+/* The home page is immediately readable; cinematic entry effects are desktop-only. */
+html.mobile-lite.is-home-booting .s-loading,
+html.mobile-lite .s-loading,
+html.mobile-lite .hero-curtain { display: none !important; }
+
+html.mobile-lite .l-wrapper { opacity: 1 !important; visibility: visible !important; }
+html.mobile-lite .s-hero-new__collage { opacity: 1 !important; }
+html.mobile-lite .s-hero-new__ticker-track { animation: none !important; transform: none !important; }
+
+/* Decorative continuous effects are not useful at the scaled mobile size. */
+html.mobile-lite *, html.mobile-lite *::before, html.mobile-lite *::after {
+  animation: none !important;
+  transition-duration: 0s !important;
+  scroll-behavior: auto !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+html.mobile-lite .s-hero-new::before,
+html.mobile-lite .s-hero-new::after,
+html.mobile-lite .s-hero-new__collage::before,
+html.mobile-lite .s-hero-new__collage::after,
+html.mobile-lite .cycle-top-five::before,
+html.mobile-lite .cycle-top-five::after,
+html.mobile-lite .cycle-top-stock::before,
+html.mobile-lite .cycle-top-stock::after {
+  filter: none !important;
+  mix-blend-mode: normal !important;
+}
+
+html.mobile-lite .r-header,
+html.mobile-lite .macro-schedule-toggle,
+html.mobile-lite .stock-card,
+html.mobile-lite .cycle-top-stock {
+  box-shadow: 0 1px 5px rgba(0, 0, 0, .22) !important;
+  text-shadow: none !important;
+}
+
+/* Keep the primary navigation practical after the browser scales the canvas. */
+html.mobile-lite :is(.p-header__logo, .c-guide-btn, .c-burger, .r-logo, .r-back,
+.macro-schedule-toggle, #macro-schedule-close) {
+  position: relative;
+}
+
+html.mobile-lite :is(.p-header__logo, .c-guide-btn, .c-burger, .r-logo, .r-back,
+.macro-schedule-toggle, #macro-schedule-close)::after {
+  content: '';
+  position: absolute;
+  inset: -14px -10px;
+}

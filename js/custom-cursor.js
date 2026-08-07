@@ -1,6 +1,7 @@
 (function () {
   'use strict';
   if (typeof window === 'undefined') return;
+  if (window.__ALPHA_MOBILE_LITE__) return;
 
   function initGlobalCursor() {
     const pathname = window.location.pathname;
